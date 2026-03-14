@@ -25,8 +25,7 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
                                                                        @selector(setImage:forState:),
                                                                        icon,
                                                                        UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([itemBtn respondsToSelector:@selector(setTintColor:)]) {
@@ -34,8 +33,7 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
             ((void (*)(id, SEL, id))objc_msgSend)(itemBtn,
                                                   @selector(setTintColor:),
                                                   [UIColor whiteColor]);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([itemBtn respondsToSelector:@selector(setTitle:forState:)]) {
@@ -44,8 +42,7 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
                                                                        @selector(setTitle:forState:),
                                                                        @"一键已读",
                                                                        UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return itemBtn;

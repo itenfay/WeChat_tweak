@@ -45,14 +45,7 @@ static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *m
         bubbleRect = cellView.bounds;
     }
 
-    CGRect menuRect = CGRectZero;
-    if ([cellView respondsToSelector:@selector(showRectForMenuController)]) {
-        @try {
-            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)(cellView, @selector(showRectForMenuController));
-        } @catch (__unused NSException *exception) {
-            menuRect = CGRectZero;
-        }
-    }
+    CGRect menuRect = WCPLRepeatCellAdapterMenuRect(cellView);
 
     BOOL menuRectValid = !CGRectIsEmpty(menuRect) && !CGRectIsNull(menuRect) && !CGRectIsInfinite(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, cellView.bounds);
 
@@ -166,8 +159,7 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
                     }
                     @try {
                         ((void (*)(id, SEL))objc_msgSend)(cellView, updateSelector);
-                    } @catch (__unused NSException *exception) {
-                    }
+                    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
                 }
             }
         }];
@@ -239,4 +231,3 @@ static NSArray<UIWindow *> *wcpl_applicationWindows(void) {
     }
     return [result copy];
 }
-

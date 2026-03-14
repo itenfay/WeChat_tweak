@@ -2,7 +2,7 @@
 
 #import <objc/message.h>
 
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatUIHeaders.h"
 
 @implementation WCHookTableViewFactory
 

@@ -11,7 +11,10 @@
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
-#import "WeChatRedEnvelop.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatCompatibilityHeaders.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatUIHeaders.h"
 #import <dispatch/dispatch.h>
 #import <objc/runtime.h>
 
@@ -183,8 +186,7 @@
         if ([self.selectView respondsToSelector:@selector(reloadContacts)]) {
             @try {
                 [self.selectView reloadContacts];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -273,8 +275,7 @@
                 [self.selectView addSelect:contact];
                 [selectedNames addObject:userName];
                 didAddSelection = YES;
-            } @catch (__unused NSException *exception2) {
-            }
+            } @catch (__unused NSException *exception2) { WCPLCatchLog(exception2); }
         }
     } @finally {
         self.wcpl_isApplyingInitialSelections = NO;
@@ -295,22 +296,19 @@
     if ([selectView respondsToSelector:@selector(loadHeaderViewSelection)]) {
         @try {
             [selectView loadHeaderViewSelection];
-        } @catch (__unused NSException *exception0) {
-        }
+        } @catch (__unused NSException *exception0) { WCPLCatchLog(exception0); }
     }
 
     if ([selectView respondsToSelector:@selector(updateMultiSelectView)]) {
         @try {
             [selectView updateMultiSelectView];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([selectView respondsToSelector:@selector(reloadTableView)]) {
         @try {
             [selectView reloadTableView];
-        } @catch (__unused NSException *exception2) {
-        }
+        } @catch (__unused NSException *exception2) { WCPLCatchLog(exception2); }
         return;
     }
 
@@ -320,8 +318,7 @@
             if ([tableView respondsToSelector:@selector(reloadData)]) {
                 [tableView reloadData];
             }
-        } @catch (__unused NSException *exception3) {
-        }
+        } @catch (__unused NSException *exception3) { WCPLCatchLog(exception3); }
     }
 }
 
@@ -342,21 +339,20 @@
     } @catch (__unused NSException *exception) {
         all = nil;
     }
-    if (![all isKindOfClass:[NSDictionary class]] || all.count == 0) {
+    NSDictionary *allContacts = WCPLDictionaryOrNil(all);
+    if (allContacts.count == 0) {
         self.wcpl_contactIndex = @{};
         return;
     }
 
-    NSMutableDictionary<NSString *, id> *index = [NSMutableDictionary dictionaryWithCapacity:all.count];
-    for (id key in all) {
-        id value = all[key];
+    NSMutableDictionary<NSString *, id> *index = [NSMutableDictionary dictionaryWithCapacity:allContacts.count];
+    for (id key in allContacts) {
+        id value = allContacts[key];
 
         NSString *keyName = [self wcpl_userNameFromObject:key];
         NSString *valueName = [self wcpl_userNameFromObject:value];
         NSString *directName = nil;
-        if ([key isKindOfClass:[NSString class]]) {
-            directName = [self wcpl_userNameFromObject:key];
-        }
+        directName = WCPLNonEmptyStringOrNil(key);
 
         if (directName.length > 0 && !index[directName] && [self wcpl_isSelectableContactObject:value expectedUserName:directName]) {
             index[directName] = value;
@@ -412,8 +408,7 @@
     if ([selectView respondsToSelector:@selector(getTotalSelectCount)]) {
         @try {
             return (unsigned long)[selectView getTotalSelectCount];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return (unsigned long)[selectView.m_dicMultiSelect count];
@@ -429,10 +424,11 @@
 }
 
 - (BOOL)wcpl_shouldKeepUserName:(NSString *)userName {
-    if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
+    NSString *normalizedUserName = WCPLNonEmptyStringOrNil(userName);
+    if (normalizedUserName.length == 0) {
         return NO;
     }
-    BOOL isChatroom = WCPLIsChatRoomName(userName);
+    BOOL isChatroom = WCPLIsChatRoomName(normalizedUserName);
     if (self.selectType == WCPLUnifiedMultiSelectTypeChatroom) {
         return isChatroom;
     }
@@ -463,12 +459,13 @@
 }
 
 - (NSArray<NSString *> *)wcpl_sanitizedUserNames:(NSArray *)names {
-    if (![names isKindOfClass:[NSArray class]]) {
+    NSArray *sourceNames = WCPLArrayOrNil(names);
+    if (sourceNames.count == 0) {
         return @[];
     }
 
-    NSMutableArray<NSString *> *rawNames = [NSMutableArray arrayWithCapacity:[(NSArray *)names count]];
-    for (id obj in names) {
+    NSMutableArray<NSString *> *rawNames = [NSMutableArray arrayWithCapacity:sourceNames.count];
+    for (id obj in sourceNames) {
         NSString *value = [self wcpl_userNameFromObject:obj];
         if (value.length > 0) {
             [rawNames addObject:value];
@@ -513,8 +510,9 @@
     if (!obj) {
         return nil;
     }
-    if ([obj isKindOfClass:[NSString class]]) {
-        return WCPLTrimText(obj);
+    NSString *directName = WCPLNonEmptyStringOrNil(obj);
+    if (directName.length > 0) {
+        return directName;
     }
 
     NSArray<NSString *> *keys = @[@"m_nsUsrName", @"m_nsUserName", @"userName", @"username", @"m_nsChatRoomName"];
@@ -525,8 +523,7 @@
             if (usrName.length > 0) {
                 return usrName;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     return nil;
 }
@@ -542,8 +539,9 @@
             orderKeys = nil;
         }
     }
-    if ([orderKeys isKindOfClass:[NSArray class]] && orderKeys.count > 0) {
-        for (id obj in orderKeys) {
+    NSArray *orderedKeys = WCPLArrayOrNil(orderKeys);
+    if (orderedKeys.count > 0) {
+        for (id obj in orderedKeys) {
             NSString *name = [self wcpl_userNameFromObject:obj];
             if (name.length > 0) {
                 [candidateNames addObject:name];
@@ -559,9 +557,7 @@
     if ([self.selectView respondsToSelector:@selector(getDicSelectedContacts)]) {
         @try {
             id value = [self.selectView getDicSelectedContacts];
-            if ([value isKindOfClass:[NSDictionary class]]) {
-                selected = (NSDictionary *)value;
-            }
+            selected = WCPLDictionaryOrNil(value) ?: @{};
         } @catch (__unused NSException *exception) {
             selected = @{};
         }
@@ -595,7 +591,7 @@
     }
     @try {
         NSDictionary *all = [logic getAllContactsDictionary];
-        return [all isKindOfClass:[NSDictionary class]] && all.count > 0;
+        return WCPLDictionaryOrNil(all).count > 0;
     } @catch (__unused NSException *exception) {
         return NO;
     }

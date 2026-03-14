@@ -178,8 +178,7 @@ static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap) {
             if (value > 0 && value < 10000) {
                 return (NSInteger)value;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     NSArray<NSString *> *kvcKeys = @[
@@ -202,8 +201,7 @@ static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap) {
             if (innerType > 0 && innerType < 10000) {
                 return innerType;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return 0;

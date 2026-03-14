@@ -27,6 +27,8 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
 
 @interface WCPLRedEnvelopConfig ()
 
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
 - (void)wcpl_setBool:(BOOL)value forKey:(NSString *)key;
 - (void)wcpl_setInteger:(NSInteger)value forKey:(NSString *)key;
 - (void)wcpl_setObject:(id)value forKey:(NSString *)key;
@@ -39,39 +41,47 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
     static WCPLRedEnvelopConfig *config = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        config = [WCPLRedEnvelopConfig new];
+        config = [WCPLRedEnvelopConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
     });
     return config;
 }
 
 - (instancetype)init {
-    if (self = [super init]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        _delaySeconds = [defaults integerForKey:kWCPLDelaySeconds];
-        _autoReceiveEnable = [defaults boolForKey:kWCPLAutoReceiveRedEnvelop];
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+}
 
-        id privateEnable = [defaults objectForKey:kWCPLPrivateRedEnvelopEnable];
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
+    return [[self alloc] initWithDefaults:defaults];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
+    if (self = [super init]) {
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _delaySeconds = [_defaults integerForKey:kWCPLDelaySeconds];
+        _autoReceiveEnable = [_defaults boolForKey:kWCPLAutoReceiveRedEnvelop];
+
+        id privateEnable = [_defaults objectForKey:kWCPLPrivateRedEnvelopEnable];
         _privateRedEnvelopEnable = privateEnable ? [privateEnable boolValue] : NO;
 
-        id groupEnable = [defaults objectForKey:kWCPLGroupRedEnvelopEnable];
+        id groupEnable = [_defaults objectForKey:kWCPLGroupRedEnvelopEnable];
         _groupRedEnvelopEnable = groupEnable ? [groupEnable boolValue] : YES;
 
-        _serialReceive = [defaults boolForKey:kWCPLSerialReceive];
+        _serialReceive = [_defaults boolForKey:kWCPLSerialReceive];
 
-        _blackList = WCPLSanitizeUserNameArray([defaults objectForKey:kWCPLBlackList]);
-        _groupDenyList = WCPLSanitizeUserNameArray([defaults objectForKey:kWCPLGroupDenyList]);
+        _blackList = WCPLSanitizeUserNameArray([_defaults objectForKey:kWCPLBlackList]);
+        _groupDenyList = WCPLSanitizeUserNameArray([_defaults objectForKey:kWCPLGroupDenyList]);
 
-        id scopeValue = [defaults objectForKey:kWCPLGroupRedEnvelopScope];
+        id scopeValue = [_defaults objectForKey:kWCPLGroupRedEnvelopScope];
         _groupRedEnvelopScope = WCPLResolveRedEnvelopGroupScope(scopeValue, _blackList);
 
-        _receiveSelfRedEnvelop = [defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
-        _privateAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLPrivateAutoReplyText]);
-        _groupAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLGroupAutoReplyText]);
+        _receiveSelfRedEnvelop = [_defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
+        _privateAutoReplyText = WCPLSanitizeReplyText([_defaults objectForKey:kWCPLPrivateAutoReplyText]);
+        _groupAutoReplyText = WCPLSanitizeReplyText([_defaults objectForKey:kWCPLGroupAutoReplyText]);
 
-        id notifyTargetValue = [defaults objectForKey:kWCPLRedEnvelopNotifyTarget];
+        id notifyTargetValue = [_defaults objectForKey:kWCPLRedEnvelopNotifyTarget];
         _redEnvelopNotifyTarget = WCPLNormalizeRedEnvelopNotifyTarget(notifyTargetValue);
 
-        id receiveDonePageSummaryEnableValue = [defaults objectForKey:kWCPLReceiveDonePageSummaryEnable];
+        id receiveDonePageSummaryEnableValue = [_defaults objectForKey:kWCPLReceiveDonePageSummaryEnable];
         _receiveDonePageSummaryEnable = receiveDonePageSummaryEnableValue ? [receiveDonePageSummaryEnableValue boolValue] : YES;
 
         WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu) notifyTarget=%ld pageSummary=%d",
@@ -89,19 +99,18 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
 #pragma mark - UserDefaults
 
 - (void)wcpl_setBool:(BOOL)value forKey:(NSString *)key {
-    [[NSUserDefaults standardUserDefaults] setBool:value forKey:key];
+    [self.defaults setBool:value forKey:key];
 }
 
 - (void)wcpl_setInteger:(NSInteger)value forKey:(NSString *)key {
-    [[NSUserDefaults standardUserDefaults] setInteger:value forKey:key];
+    [self.defaults setInteger:value forKey:key];
 }
 
 - (void)wcpl_setObject:(id)value forKey:(NSString *)key {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (value) {
-        [defaults setObject:value forKey:key];
+        [self.defaults setObject:value forKey:key];
     } else {
-        [defaults removeObjectForKey:key];
+        [self.defaults removeObjectForKey:key];
     }
 }
 
@@ -150,7 +159,7 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
     _blackList = WCPLSanitizeUserNameArray(blackList);
     [self wcpl_setObject:_blackList forKey:kWCPLBlackList];
 
-    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLBlackList];
+    id stored = [self.defaults objectForKey:kWCPLBlackList];
     NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
     WCPLLogInfo(@"[红包配置] Save legacy blacklist: sanitized=%lu storedType=%@ storedCount=%lu",
                 (unsigned long)_blackList.count,
@@ -166,7 +175,7 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
     _blackList = WCPLSanitizeUserNameArray(allowedGroupList);
     [self wcpl_setObject:_blackList forKey:kWCPLBlackList];
 
-    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLBlackList];
+    id stored = [self.defaults objectForKey:kWCPLBlackList];
     NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
     WCPLLogInfo(@"[红包配置] Save whitelist: sanitized=%lu storedType=%@ storedCount=%lu",
                 (unsigned long)_blackList.count,
@@ -178,7 +187,7 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
     _groupDenyList = WCPLSanitizeUserNameArray(groupDenyList);
     [self wcpl_setObject:_groupDenyList forKey:kWCPLGroupDenyList];
 
-    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLGroupDenyList];
+    id stored = [self.defaults objectForKey:kWCPLGroupDenyList];
     NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
     WCPLLogInfo(@"[红包配置] Save legacy denylist: sanitized=%lu storedType=%@ storedCount=%lu",
                 (unsigned long)_groupDenyList.count,
@@ -194,7 +203,7 @@ static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePag
     _groupDenyList = WCPLSanitizeUserNameArray(blockedGroupList);
     [self wcpl_setObject:_groupDenyList forKey:kWCPLGroupDenyList];
 
-    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLGroupDenyList];
+    id stored = [self.defaults objectForKey:kWCPLGroupDenyList];
     NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
     WCPLLogInfo(@"[红包配置] Save denylist: sanitized=%lu storedType=%@ storedCount=%lu",
                 (unsigned long)_groupDenyList.count,

@@ -4,11 +4,16 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLContactAdapter.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
+#import "WCPLMessageActionAdapter.h"
+#import "WCPLMessageAdapter.h"
+#import "WCPLRepeatCellAdapter.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLServiceCenterAdapter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
@@ -130,37 +135,6 @@ static BOOL wcpl_sceneTagLooksLikeAnyVideo(NSString *sceneTag) {
         return NO;
     }
     return ([sceneTag rangeOfString:@"video" options:NSCaseInsensitiveSearch].location != NSNotFound);
-}
-
-static NSString *wcpl_extractInputTextFromToolView(id toolView) {
-    if (!toolView) {
-        return nil;
-    }
-
-    NSString *inputText = nil;
-    if ([toolView respondsToSelector:@selector(inputText)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(toolView, @selector(inputText));
-            if ([value isKindOfClass:[NSString class]]) {
-                inputText = (NSString *)value;
-            }
-        } @catch (__unused NSException *exceptionInputText) {
-            inputText = nil;
-        }
-    }
-
-    if (inputText.length == 0 && [toolView respondsToSelector:@selector(text)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(toolView, @selector(text));
-            if ([value isKindOfClass:[NSString class]]) {
-                inputText = (NSString *)value;
-            }
-        } @catch (__unused NSException *exceptionText) {
-            inputText = nil;
-        }
-    }
-
-    return wcpl_trimTextForRepeat(inputText);
 }
 
 static NSString *wcpl_quoteMentionUserNameForMessage(CMessageWrap *msgWrap,

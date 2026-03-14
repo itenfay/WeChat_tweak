@@ -40,38 +40,7 @@ static BOOL wcpl_repeatTryDetachedThenSendMgr(CMessageWrap *msgWrap,
 }
 
 static id wcpl_repeatResolveEmoticonWrap(CMessageWrap *msgWrap, NSString *emoticonMD5) {
-    id emoticonMgr = WCPLGetService(objc_getClass("CEmoticonMgr"));
-    if (!emoticonMgr) {
-        return nil;
-    }
-
-    id emoticonWrap = nil;
-    if (emoticonMD5.length == 32 && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
-        @try {
-            emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByMd5:), emoticonMD5);
-        } @catch (__unused NSException *exception) {
-            emoticonWrap = nil;
-        }
-    }
-
-    if (!emoticonWrap && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMessageWrap:)]) {
-        @try {
-            emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByMessageWrap:), msgWrap);
-        } @catch (__unused NSException *exception) {
-            emoticonWrap = nil;
-        }
-    }
-
-    if (!emoticonWrap &&
-        [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByContent:)] &&
-        msgWrap.m_nsContent.length > 0) {
-        @try {
-            emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByContent:), msgWrap.m_nsContent);
-        } @catch (__unused NSException *exception) {
-            emoticonWrap = nil;
-        }
-    }
-    return emoticonWrap;
+    return WCPLMessageActionAdapterResolveEmoticonWrap(msgWrap, emoticonMD5);
 }
 
 static BOOL wcpl_repeatSendEmoticonViaLogicOrChatVC(CMessageWrap *msgWrap,
@@ -83,28 +52,11 @@ static BOOL wcpl_repeatSendEmoticonViaLogicOrChatVC(CMessageWrap *msgWrap,
         return NO;
     }
 
-    if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(logicController, @selector(SendEmoticonMessage:), emoticonWrap);
-            WCPLLogInfo(@"Repeat sent: flow=logic_emoticon msg=%@ md5=%@",
-                        wcpl_repeatMessageDebugInfo(msgWrap),
-                        emoticonMD5 ?: @"(nil)");
-            return YES;
-        } @catch (NSException *exception) {
-            WCPLLogWarning(@"Repeat emoticon via logicController failed: %@", exception.reason ?: exception);
-        }
-    }
-
-    if ([chatVC respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(SendEmoticonMesssageToolView:), emoticonWrap);
-            WCPLLogInfo(@"Repeat sent: flow=chatvc_emoticon msg=%@ md5=%@",
-                        wcpl_repeatMessageDebugInfo(msgWrap),
-                        emoticonMD5 ?: @"(nil)");
-            return YES;
-        } @catch (NSException *exception) {
-            WCPLLogWarning(@"Repeat emoticon via chatVC failed: %@", exception.reason ?: exception);
-        }
+    if (WCPLMessageActionAdapterSendEmoticon(emoticonWrap, logicController, chatVC)) {
+        WCPLLogInfo(@"Repeat sent: flow=adapter_emoticon msg=%@ md5=%@",
+                    wcpl_repeatMessageDebugInfo(msgWrap),
+                    emoticonMD5 ?: @"(nil)");
+        return YES;
     }
     return NO;
 }
@@ -113,7 +65,7 @@ static BOOL wcpl_repeatSendEmoticonViaMessageMgr(CMessageWrap *msgWrap,
                                                  NSString *chatName,
                                                  NSString *emoticonMD5,
                                                  BOOL isFromOtherEmoticon) {
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    id messageMgr = WCPLMessageActionAdapterMessageManager();
     if (!(messageMgr && [messageMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)])) {
         return NO;
     }
@@ -139,8 +91,7 @@ static BOOL wcpl_repeatSendEmoticonViaMessageMgr(CMessageWrap *msgWrap,
             [newWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(newWrap, @selector(setM_nsRealChatUsr:), selfUserName);
-            } @catch (__unused NSException *exceptionSetReal) {
-            }
+            } @catch (__unused NSException *exceptionSetReal) { WCPLCatchLog(exceptionSetReal); }
         }
 
         newWrap.m_nsContent = msgWrap.m_nsContent ?: @"";
@@ -592,10 +543,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         }
 
         // 方法2: 通过 CMessageMgr 删除
-        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (messageMgr && [messageMgr respondsToSelector:@selector(DelMsg:MsgWrap:)]) {
-            NSString *chatName = msgWrap.m_nsFromUsr ?: msgWrap.m_nsToUsr;
-            [messageMgr DelMsg:chatName MsgWrap:msgWrap];
+        NSString *chatName = wcpl_chatNameForMessage(msgWrap, nil);
+        if (WCPLMessageActionAdapterDeleteMessage(chatName, msgWrap)) {
             WCPLLogDebug(@"Message deleted via CMessageMgr DelMsg:MsgWrap:");
             return;
         }
@@ -627,10 +576,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         }
 
         // 备用方案：通过 CMessageMgr 撤回 (正确的方法签名是 RevokeMsg:MsgWrap:Counter:)
-        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (messageMgr && [messageMgr respondsToSelector:@selector(RevokeMsg:MsgWrap:Counter:)]) {
-            NSString *chatName = msgWrap.m_nsToUsr;
-            [messageMgr RevokeMsg:chatName MsgWrap:msgWrap Counter:0];
+        NSString *chatName = wcpl_chatNameForMessage(msgWrap, nil);
+        if (WCPLMessageActionAdapterRevokeMessage(chatName, msgWrap, 0)) {
             WCPLLogDebug(@"Message revoked via CMessageMgr RevokeMsg:MsgWrap:Counter:");
         }
     } @catch (NSException *exception) {
@@ -650,155 +597,15 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
     id contact = wcpl_repeatContactForChatName(chatName, msgWrap);
     UIViewController *fromVC = chatVC ?: [self wchook_findTopViewController];
-
-    id forwardMgr = WCPLGetService(objc_getClass("ForwardMessageMgr"));
-    if (forwardMgr && fromVC) {
-        SEL forwardToContactSel = NSSelectorFromString(@"forwardMessage:fromViewController:toContact:");
-        if (contact && [forwardMgr respondsToSelector:forwardToContactSel]) {
-            @try {
-                ((void (*)(id, SEL, id, id, id))objc_msgSend)(forwardMgr,
-                                                               forwardToContactSel,
-                                                               msgWrap,
-                                                               fromVC,
-                                                               contact);
-                WCPLLogInfo(@"Gesture forward route=ForwardMessageMgr.toContact scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=ForwardMessageMgr.toContact failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-
-        SEL forwardSel = NSSelectorFromString(@"forwardMessage:fromViewController:");
-        if ([forwardMgr respondsToSelector:forwardSel]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(forwardMgr,
-                                                           forwardSel,
-                                                           msgWrap,
-                                                           fromVC);
-                WCPLLogInfo(@"Gesture forward route=ForwardMessageMgr.default scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=ForwardMessageMgr.default failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
+    NSString *routeUsed = nil;
+    BOOL forwarded = WCPLMessageActionAdapterForwardMessage(msgWrap, fromVC, contact, &routeUsed);
+    if (forwarded) {
+        WCPLLogInfo(@"Gesture forward route=%@ scene=%@ msg=%@",
+                    routeUsed ?: @"adapter",
+                    routeScene,
+                    wcpl_repeatMessageDebugInfo(msgWrap));
+        return YES;
     }
-
-    Class forwardUtilClass = objc_getClass("ForwardMsgUtil");
-    if (forwardUtilClass && contact) {
-        SEL sendMsgSelector = @selector(SendMsgWithOriMsg:Contact:ForwardType:EditImageAttr:);
-        if ([forwardUtilClass respondsToSelector:sendMsgSelector]) {
-            @try {
-                ((id (*)(id, SEL, id, id, unsigned int, id))objc_msgSend)(forwardUtilClass,
-                                                                           sendMsgSelector,
-                                                                           msgWrap,
-                                                                           contact,
-                                                                           (unsigned int)0,
-                                                                           nil);
-                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.SendMsg scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.SendMsg failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-
-        SEL forward4Selector = @selector(ForwardMsg:ToContact:Scene:forwardType:);
-        if ([forwardUtilClass respondsToSelector:forward4Selector]) {
-            @try {
-                ((void (*)(id, SEL, id, id, unsigned int, unsigned int))objc_msgSend)(forwardUtilClass,
-                                                                                       forward4Selector,
-                                                                                       msgWrap,
-                                                                                       contact,
-                                                                                       (unsigned int)0,
-                                                                                       (unsigned int)0);
-                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.ForwardMsg4 scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.ForwardMsg4 failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-
-        SEL forward3Selector = @selector(ForwardMsg:ToContact:Scene:);
-        if ([forwardUtilClass respondsToSelector:forward3Selector]) {
-            @try {
-                ((void (*)(id, SEL, id, id, unsigned int))objc_msgSend)(forwardUtilClass,
-                                                                         forward3Selector,
-                                                                         msgWrap,
-                                                                         contact,
-                                                                         (unsigned int)0);
-                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.ForwardMsg3 scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.ForwardMsg3 failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-    }
-
-    Class lmUtilsClass = objc_getClass("LMUtils");
-    if (lmUtilsClass && contact) {
-        SEL lmForwardSelector = @selector(ForwardMsg:ToContact:);
-        if ([lmUtilsClass respondsToSelector:lmForwardSelector]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(lmUtilsClass,
-                                                           lmForwardSelector,
-                                                           msgWrap,
-                                                           contact);
-                WCPLLogInfo(@"Gesture forward route=LMUtils.class scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=LMUtils.class failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-
-        id lmUtilsInstance = nil;
-        if ([lmUtilsClass instancesRespondToSelector:@selector(init)]) {
-            @try {
-                lmUtilsInstance = [[lmUtilsClass alloc] init];
-            } @catch (__unused NSException *exceptionLMUtilsAlloc) {
-                lmUtilsInstance = nil;
-            }
-        }
-        if (lmUtilsInstance && [lmUtilsInstance respondsToSelector:lmForwardSelector]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(lmUtilsInstance,
-                                                           lmForwardSelector,
-                                                           msgWrap,
-                                                           contact);
-                WCPLLogInfo(@"Gesture forward route=LMUtils.instance scene=%@ msg=%@",
-                            routeScene,
-                            wcpl_repeatMessageDebugInfo(msgWrap));
-                return YES;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Gesture forward route=LMUtils.instance failed scene=%@ reason=%@",
-                               routeScene,
-                               exception.reason ?: exception);
-            }
-        }
-    }
-
     return NO;
 }
 

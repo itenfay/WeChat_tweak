@@ -174,6 +174,12 @@
             WCPLLogDebug(@"Double tap receive blocked: feature disabled cell=%p", self);
             return NO;
         }
+        if (wcpl_viewIsReferJumpArea(touch.view)) {
+            WCPLLogDebug(@"Double tap receive blocked: refer jump area cell=%p touchClass=%@",
+                         self,
+                         NSStringFromClass([touch.view class]));
+            return NO;
+        }
         CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
         if (!msgWrap) {
             WCPLLogDebug(@"Double tap receive blocked: message wrap unavailable cell=%p touchClass=%@",
@@ -181,14 +187,20 @@
                          NSStringFromClass([touch.view class]));
             return NO;
         }
-        if (!wcpl_isTouchInMessageBubbleArea(self, touch, @"gesture_shouldReceive_scope")) {
-            WCPLLogDebug(@"Double tap receive blocked: outside bubble cell=%p touchClass=%@",
+        CGPoint pointInCell = [touch locationInView:(UIView *)self];
+        WCPLTapHitZone zone = wcpl_tapGestureHitZoneForPoint(self, pointInCell, @"gesture_shouldReceive_scope");
+        if (!wcpl_shouldAllowCustomTapForZone(self, msgWrap, zone)) {
+            WCPLLogDebug(@"Double tap receive blocked: zone=%@ cell=%p touchClass=%@ point=(%.1f,%.1f)",
+                         wcpl_tapHitZoneName(zone),
                          self,
-                         NSStringFromClass([touch.view class]));
+                         NSStringFromClass([touch.view class]),
+                         pointInCell.x,
+                         pointInCell.y);
             return NO;
         }
-        WCPLLogDebug(@"Double tap receive allow: cell=%p touchClass=%@ tapCount=%ld msg=%@",
+        WCPLLogDebug(@"Double tap receive allow: cell=%p zone=%@ touchClass=%@ tapCount=%ld msg=%@",
                      self,
+                     wcpl_tapHitZoneName(zone),
                      NSStringFromClass([touch.view class]),
                      (long)touch.tapCount,
                      wcpl_repeatMessageDebugInfo(msgWrap));
@@ -237,7 +249,8 @@
 - (BOOL)supportDoubleTap {
     BOOL original = %orig;
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.doubleTapGestureEnable) {
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (config.doubleTapGestureEnable && wcpl_messageUsesTripleTapPolicy(self, msgWrap)) {
         return NO;
     }
     return original;
@@ -331,7 +344,8 @@
 - (BOOL)supportDoubleTap {
     BOOL original = %orig;
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.doubleTapGestureEnable) {
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (config.doubleTapGestureEnable && wcpl_messageUsesTripleTapPolicy(self, msgWrap)) {
         return NO;
     }
     return original;
@@ -339,7 +353,8 @@
 
 - (void)showFloatPreviewForContentText {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.doubleTapGestureEnable) {
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (config.doubleTapGestureEnable && wcpl_messageUsesTripleTapPolicy(self, msgWrap)) {
         WCPLLogInfo(@"Native double tap blocked: scope=TextMessageCellView.showFloatPreviewForContentText class=%@",
                     NSStringFromClass([(id)self class]));
         return;
@@ -349,7 +364,8 @@
 
 - (void)showFloatPreviewWithForceUseOriginText:(BOOL)forceUseOriginText {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.doubleTapGestureEnable) {
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (config.doubleTapGestureEnable && wcpl_messageUsesTripleTapPolicy(self, msgWrap)) {
         WCPLLogInfo(@"Native double tap blocked: scope=TextMessageCellView.showFloatPreviewWithForce class=%@ force=%d",
                     NSStringFromClass([(id)self class]),
                     forceUseOriginText ? 1 : 0);
@@ -425,7 +441,8 @@
 - (BOOL)supportDoubleTap {
     BOOL original = %orig;
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.doubleTapGestureEnable) {
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (config.doubleTapGestureEnable && wcpl_messageUsesTripleTapPolicy(self, msgWrap)) {
         return NO;
     }
     return original;

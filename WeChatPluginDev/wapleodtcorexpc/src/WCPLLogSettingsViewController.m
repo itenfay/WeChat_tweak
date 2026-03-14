@@ -1,11 +1,12 @@
 #import "WCPLLogSettingsViewController.h"
 
-#import "WeChatRedEnvelop.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLRealtimeLogUploader.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
 @interface WCPLLogSettingsViewController ()
@@ -135,9 +136,9 @@
     ];
 
     for (NSDictionary *item in items) {
-        NSString *title = item[@"title"];
+        NSString *title = WCPLStringOrNil(item[@"title"]);
         NSNumber *levelNum = item[@"level"];
-        if (![title isKindOfClass:[NSString class]] || ![levelNum respondsToSelector:@selector(integerValue)]) {
+        if (title.length == 0 || ![levelNum respondsToSelector:@selector(integerValue)]) {
             continue;
         }
         UIAlertActionStyle style = ([levelNum integerValue] == WCPLLogLevelNone) ? UIAlertActionStyleDestructive : UIAlertActionStyleDefault;

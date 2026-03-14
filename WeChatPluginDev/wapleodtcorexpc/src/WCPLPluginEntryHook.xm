@@ -25,7 +25,7 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribut
 }
 #endif
 
-// 入口主链 Stage-2：注册插件入口 + 设置页注入；启动探针/CrashReporter/RealtimeUploader 仍由 Tweak.xm 负责。
+// 入口主链 Stage-2：启动期优先注册插件归纳，设置页按需注入/兜底；启动探针/CrashReporter/RealtimeUploader 仍由 Tweak.xm 负责。
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -38,40 +38,25 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribut
     uint64_t registerMs = 0;
     uint64_t push2chatLaunchMs = 0;
 
-    Class pluginsMgrClass = objc_getClass("WCPluginsMgr");
-    if (pluginsMgrClass && !wcpl_entry_didRegister) {
-        uint64_t registerStartMs = wcpl_entry_perf_uptimeMillis();
-        @try {
-            if ([pluginsMgrClass respondsToSelector:@selector(sharedInstance)]) {
-                id mgr = ((id (*)(id, SEL))objc_msgSend)(pluginsMgrClass, @selector(sharedInstance));
-                if (mgr && [mgr respondsToSelector:@selector(registerControllerWithTitle:version:controller:)]) {
-                    ((void (*)(id, SEL, id, id, id))objc_msgSend)(mgr,
-                                                                   @selector(registerControllerWithTitle:version:controller:),
-                                                                   kWCPLEntryPluginTitle,
-                                                                   kWCPLEntryPluginVersion,
-                                                                   kWCPLEntryControllerClassName);
-                    wcpl_entry_didRegister = YES;
-                    WCPLLogInfo(@"[入口] 已通过 WCPluginsMgr 注册插件");
-                    wcpl_entryHookLog(@"MicroMessengerAppDelegate",
-                                      kHookSelector,
-                                      @"feature",
-                                      @"register_plugin",
-                                      kOrigPolicy,
-                                      @"result=success");
-                }
-            }
-        } @catch (NSException *exception) {
-            WCPLLogWarning(@"[入口] WCPluginsMgr 注册失败: %@", exception.reason ?: @"unknown");
-            wcpl_entryHookLog(@"MicroMessengerAppDelegate",
-                              kHookSelector,
-                              @"feature",
-                              @"exception",
-                              kOrigPolicy,
-                              exception.reason ?: @"unknown");
-        }
-        uint64_t registerEndMs = wcpl_entry_perf_uptimeMillis();
-        registerMs = registerEndMs >= registerStartMs ? (registerEndMs - registerStartMs) : 0;
+    uint64_t registerStartMs = wcpl_entry_perf_uptimeMillis();
+    if (wcpl_entry_registerPluginToPluginsPortalIfNeeded(@"MicroMessengerAppDelegate")) {
+        wcpl_entryHookLog(@"MicroMessengerAppDelegate",
+                          kHookSelector,
+                          @"feature",
+                          @"register_plugin",
+                          kOrigPolicy,
+                          @"result=success");
+    } else {
+        WCPLLogWarning(@"[入口] 启动期插件归纳注册未完成，等待设置页链路兜底");
+        wcpl_entryHookLog(@"MicroMessengerAppDelegate",
+                          kHookSelector,
+                          @"fallback",
+                          @"delay_plugin_register",
+                          kOrigPolicy,
+                          @"reason=plugins_portal_unavailable");
     }
+    uint64_t registerEndMs = wcpl_entry_perf_uptimeMillis();
+    registerMs = registerEndMs >= registerStartMs ? (registerEndMs - registerStartMs) : 0;
 
     // 统一入口分发：冷启动 push2chat 解析归并到主入口 didFinish 链路。
     if (wcpl_push2chat_handleLaunchOptions) {
@@ -212,14 +197,12 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribut
                                                                        @selector(setImage:forState:),
                                                                        icon,
                                                                        UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([itemBtn respondsToSelector:@selector(setTintColor:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(itemBtn, @selector(setTintColor:), [UIColor whiteColor]);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([itemBtn respondsToSelector:@selector(setTitle:forState:)]) {
         @try {
@@ -227,8 +210,7 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribut
                                                                        @selector(setTitle:forState:),
                                                                        @"一键已读",
                                                                        UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     return itemBtn;
 }

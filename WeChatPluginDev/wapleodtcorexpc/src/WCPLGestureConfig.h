@@ -10,6 +10,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WCPLGestureConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 // 消息手势总开关
 @property (assign, nonatomic) BOOL swipeGestureEnable;

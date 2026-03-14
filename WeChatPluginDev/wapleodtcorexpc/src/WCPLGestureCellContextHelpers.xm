@@ -18,8 +18,7 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
             // 主路径可信时直接采用，仅在“判为非发送者”时再做兜底补判
             shouldFallback = !isSender;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     if (shouldFallback) {
         @try {
@@ -28,8 +27,7 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
                 isSender = YES;
                 shouldFallback = NO;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
         if (shouldFallback) {
             @try {
@@ -38,8 +36,7 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
                 if ([fromMeValue respondsToSelector:@selector(boolValue)]) {
                     isSender = [fromMeValue boolValue];
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
 
         if (shouldFallback) {
@@ -51,8 +48,7 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
                     isSender = YES;
                     shouldFallback = NO;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -211,8 +207,7 @@ static BOOL wcpl_tryResolveIsSelfFromCellView(id cellView, BOOL *isSelfOut) {
             BOOL isSender = ((BOOL (*)(id, SEL))objc_msgSend)(viewModel, @selector(isSender));
             *isSelfOut = isSender;
             return YES;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
@@ -221,8 +216,7 @@ static BOOL wcpl_tryResolveIsSelfFromCellView(id cellView, BOOL *isSelfOut) {
             *isSelfOut = [isSenderValue boolValue];
             return YES;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return NO;
 }
@@ -374,8 +368,7 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
                 if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                     return (CMessageWrap *)wrap;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -401,8 +394,7 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
                         if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                             return (CMessageWrap *)wrap;
                         }
-                    } @catch (__unused NSException *exception) {
-                    }
+                    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
                 }
             }
         }
@@ -416,8 +408,7 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
                     if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                         return (CMessageWrap *)wrap;
                     }
-                } @catch (__unused NSException *exceptionKVC) {
-                }
+                } @catch (__unused NSException *exceptionKVC) { WCPLCatchLog(exceptionKVC); }
             }
         }
     }

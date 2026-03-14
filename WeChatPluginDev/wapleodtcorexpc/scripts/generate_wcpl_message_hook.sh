@@ -18,6 +18,10 @@ cat > "$TMP_FILE" <<'HEADER'
 // Source modules:
 // - WCPLMessageHookCommon.xm
 // - WCPLMessageSearchCore.xm
+//   - includes: WCPLMessageSearchStateStore.xm
+//   - includes: WCPLMessageSearchResidualCleanup.xm
+//   - includes: WCPLMessageSearchNavButtonHelpers.xm
+//   - includes: WCPLMessageSearchPresentationBridge.xm
 // - WCPLMessageSearchHook.xm
 // - WCPLMessageLongPressMenuHook.xm
 // - WCPLMessageLocalReplaceHook.xm

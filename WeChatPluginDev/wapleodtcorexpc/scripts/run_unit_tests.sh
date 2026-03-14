@@ -91,6 +91,7 @@ run_darwin_host_tests() {
     "src/WCPLAlertTextHelpers.m" \
     "src/WCPLConfigSanitizer.m" \
     "src/WCPLPureHelpers.m" \
+    "src/WCPLRevokeAnchor.m" \
     "src/WCPLSharedConfigHelpers.m" \
     "src/WCPLThreadSafeMutableDictionary.m" \
     "src/WCPLRedEnvelopParamQueue.m" \
@@ -98,6 +99,7 @@ run_darwin_host_tests() {
     "src/WCPLRedEnvelopConfig.m" \
     "src/WCPLIgnoreConfig.m" \
     "src/WCPLGestureConfig.m" \
+    "src/WCPLTypeGuard.m" \
     -o "$OUT_BIN"
 
   run_with_timeout "$OUT_BIN"

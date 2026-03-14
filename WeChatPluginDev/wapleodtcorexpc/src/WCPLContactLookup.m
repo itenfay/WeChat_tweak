@@ -3,19 +3,18 @@
 //
 
 #import "WCPLContactLookup.h"
-#import "WeChatRedEnvelop.h"
 #import "WCPLDispatchUtils.h"
+#import "WCPLLogger.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatContactHeaders.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
 static NSString *wcpl_userNameFromObject(id obj);
 
-static NSString *wcpl_trimUserName(NSString *value) {
-    if (![value isKindOfClass:[NSString class]]) {
-        return @"";
-    }
-    return [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+static NSString *wcpl_trimUserName(id value) {
+    return WCPLNonEmptyStringOrNil(value) ?: @"";
 }
 
 static BOOL wcpl_isContactObject(id obj) {
@@ -41,34 +40,29 @@ static NSString *wcpl_userNameFromObject(id obj) {
         return @"";
     }
 
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_trimUserName((NSString *)obj);
+    NSString *directName = WCPLNonEmptyStringOrNil(obj);
+    if (directName.length > 0) {
+        return directName;
     }
 
     Class contactClass = objc_getClass("CContact");
     if (contactClass && [obj isKindOfClass:contactClass]) {
         @try {
             id value = [obj valueForKey:@"m_nsUsrName"];
-            if ([value isKindOfClass:[NSString class]]) {
-                NSString *name = wcpl_trimUserName((NSString *)value);
-                if (name.length > 0) {
-                    return name;
-                }
+            NSString *name = wcpl_trimUserName(value);
+            if (name.length > 0) {
+                return name;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
         if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
             @try {
                 id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-                if ([value isKindOfClass:[NSString class]]) {
-                    NSString *name = wcpl_trimUserName((NSString *)value);
-                    if (name.length > 0) {
-                        return name;
-                    }
+                NSString *name = wcpl_trimUserName(value);
+                if (name.length > 0) {
+                    return name;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -76,13 +70,14 @@ static NSString *wcpl_userNameFromObject(id obj) {
 }
 
 __attribute__((unused)) static id wcpl_findContactFromDictionary(NSDictionary *allContacts, NSString *targetUserName) {
-    if (![allContacts isKindOfClass:[NSDictionary class]] || allContacts.count == 0 || targetUserName.length == 0) {
+    NSDictionary *contactMap = WCPLDictionaryOrNil(allContacts);
+    if (contactMap.count == 0 || targetUserName.length == 0) {
         return nil;
     }
 
     NSString *targetLower = [targetUserName lowercaseString];
 
-    id direct = allContacts[targetUserName];
+    id direct = contactMap[targetUserName];
     if (wcpl_isMatchedContactObject(direct, targetLower)) {
         return direct;
     }
@@ -90,7 +85,7 @@ __attribute__((unused)) static id wcpl_findContactFromDictionary(NSDictionary *a
         wcpl_logUnexpectedContactType(direct, @"dict_direct", targetUserName);
     }
 
-    for (id value in allContacts.allValues) {
+    for (id value in contactMap.allValues) {
         if (wcpl_isMatchedContactObject(value, targetLower)) {
             return value;
         }
@@ -99,7 +94,7 @@ __attribute__((unused)) static id wcpl_findContactFromDictionary(NSDictionary *a
         }
     }
 
-    for (id key in allContacts.allKeys) {
+    for (id key in contactMap.allKeys) {
         if (wcpl_isMatchedContactObject(key, targetLower)) {
             return key;
         }
@@ -132,8 +127,7 @@ __attribute__((unused)) static id wcpl_findContactFromContactMgr(CContactMgr *co
             if (contact && [[wcpl_userNameFromObject(contact) lowercaseString] isEqualToString:targetLower] && !wcpl_isContactObject(contact)) {
                 wcpl_logUnexpectedContactType(contact, selectorName, targetUserName);
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -175,7 +169,6 @@ CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr,
         if (wcpl_isContactObject(contact)) {
             return (CContact *)contact;
         }
-    } @catch (__unused NSException *exceptionGetContact) {
-    }
+    } @catch (__unused NSException *exceptionGetContact) { WCPLCatchLog(exceptionGetContact); }
     return nil;
 }

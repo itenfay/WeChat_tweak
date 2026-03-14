@@ -1,4 +1,5 @@
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
@@ -81,8 +82,7 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     if (contactClass && [obj isKindOfClass:contactClass]) {
         @try {
             return wcpl_trimString(((CContact *)obj).m_nsUsrName);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
@@ -91,8 +91,7 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
             if ([value isKindOfClass:[NSString class]]) {
                 return wcpl_trimString((NSString *)value);
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
@@ -100,8 +99,7 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return nil;
 }
@@ -141,7 +139,7 @@ static UIImage *wcpl_clownMenuIconImage(void) {
         if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
             @try {
                 image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) {}
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([image isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)image;
@@ -558,8 +556,7 @@ static UIImage *wcpl_repeatMenuIconImage(void) {
                     return;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
         // 兜底：老版本使用的循环箭头图标
         NSString *svg =
@@ -576,7 +573,7 @@ static UIImage *wcpl_repeatMenuIconImage(void) {
         if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
             @try {
                 image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) {}
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([image isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)image;
@@ -642,15 +639,13 @@ static id wcpl_createRepeatMenuItem(Class menuItemClass, id cell, SEL action) {
     if (icon && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
         @try {
             menuItem = [[menuItemClass alloc] initWithTitle:title icon:icon target:cell action:action];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (!menuItem && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
         @try {
             menuItem = [[menuItemClass alloc] initWithTitle:title target:cell action:action];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (menuItem && icon) {
@@ -740,8 +735,7 @@ static BOOL wcpl_isTransferMessage(CMessageWrap *msgWrap) {
                 if ([value respondsToSelector:@selector(integerValue)]) {
                     subType = [value integerValue];
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
             if (subType == 3 || subType == 4) {
                 hasTransferSubtype = YES;
@@ -753,14 +747,12 @@ static BOOL wcpl_isTransferMessage(CMessageWrap *msgWrap) {
                 if ([value isKindOfClass:[NSString class]]) {
                     transferID = (NSString *)value;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             if (transferID.length > 0) {
                 hasTransferId = YES;
             }
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     if (hasTransferSubtype || hasTransferId) {
         return YES;
@@ -901,18 +893,14 @@ static void wcpl_applyTransferAmountToPayInfo(CMessageWrap *msgWrap, NSString *a
 
         @try {
             [payInfo setValue:normalized forKey:@"m_nsFeeDesc"];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         @try {
             [payInfo setValue:normalized forKey:@"m_receiverDesc"];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         @try {
             [payInfo setValue:normalized forKey:@"m_senderDesc"];
-        } @catch (__unused NSException *exception) {
-        }
-    } @catch (__unused NSException *exception) {
-    }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 }
 
 static BOOL wcpl_isClownSupportedMessage(CMessageWrap *msgWrap) {
@@ -1014,8 +1002,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
                     }
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
         return wcpl_trimString(msgWrap.m_nsContent);
     }
@@ -1036,8 +1023,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
                     }
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     NSString *title = wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
@@ -1065,8 +1051,7 @@ static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shou
     if (shouldTint && [finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
         @try {
             finalIcon = [finalIcon imageWithTintColor:wcpl_menuIconTintColor()];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([finalIcon respondsToSelector:@selector(imageWithRenderingMode:)]) {
         finalIcon = [finalIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -1076,14 +1061,12 @@ static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shou
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), finalIcon);
             return;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
         [menuItem setValue:finalIcon forKey:@"iconImage"];
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 }
 
 static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
@@ -1094,8 +1077,7 @@ static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([cell respondsToSelector:@selector(getMediaWrap)]) {
         @try {
@@ -1103,16 +1085,14 @@ static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([cell respondsToSelector:@selector(viewModel)]) {
         id viewModel = [cell viewModel];
         if ([viewModel respondsToSelector:@selector(messageWrap)]) {
             @try {
                 return [viewModel messageWrap];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([viewModel respondsToSelector:@selector(msgWrap)]) {
             @try {
@@ -1120,23 +1100,20 @@ static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
                 if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                     return (CMessageWrap *)wrap;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         @try {
             id wrap = [viewModel valueForKey:@"messageWrap"];
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         @try {
             id wrap = [viewModel valueForKey:@"msgWrap"];
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     return nil;
 }
@@ -1325,8 +1302,7 @@ static NSArray *wcpl_injectClownMenuItemIfNeeded(id cell, NSArray *items) {
                 if (itemAction == action) {
                     return mutableItems;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -1354,8 +1330,7 @@ static BOOL wcpl_isRepeatSupportedForCell(id cell) {
     if ([cell respondsToSelector:supportSel]) {
         @try {
             return ((BOOL (*)(id, SEL, id))objc_msgSend)(cell, supportSel, msgWrap);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     switch (msgWrap.m_uiMessageType) {
@@ -1395,8 +1370,7 @@ static NSArray *wcpl_injectRepeatMenuItemIfNeeded(id cell, NSArray *items) {
             if (itemAction == action) {
                 return mutableItems;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id menuItem = wcpl_createRepeatMenuItem(menuItemClass, cell, action);
@@ -1473,20 +1447,17 @@ static void wcpl_reloadCellAfterLocalReplace(id viewController, CMessageWrap *ms
     if ([viewController respondsToSelector:@selector(clearNodeLayoutCache)]) {
         @try {
             [(BaseMsgContentViewController *)viewController clearNodeLayoutCache];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([viewController respondsToSelector:@selector(reloadNodeWithMessageWrap:)]) {
         @try {
             [viewController reloadNodeWithMessageWrap:msgWrap];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([viewController respondsToSelector:@selector(reloadVisibleNodeWithCellView:)]) {
         @try {
             [(BaseMsgContentViewController *)viewController reloadVisibleNodeWithCellView:cell];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -1505,8 +1476,7 @@ static void wcpl_reloadCellAfterLocalReplace(id viewController, CMessageWrap *ms
             @try {
                 [tableView beginUpdates];
                 [tableView endUpdates];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }];
     });
 }

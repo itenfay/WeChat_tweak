@@ -3,6 +3,7 @@
 //
 
 #import "WCPLServiceCenter.h"
+#import "WCPLLogger.h"
 #import <dispatch/dispatch.h>
 #import <objc/message.h>
 #import <objc/runtime.h>
@@ -33,8 +34,7 @@ static id wcpl_getServiceCenterFromMMContext(void) {
             if (center && [center respondsToSelector:@selector(getService:)]) {
                 return center;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;

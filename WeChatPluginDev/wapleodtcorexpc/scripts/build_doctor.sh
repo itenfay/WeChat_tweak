@@ -103,6 +103,7 @@ REQUIRED_SCRIPTS=(
   "$ROOT_DIR/scripts/build_doctor.sh"
   "$ROOT_DIR/scripts/gate_common.sh"
   "$ROOT_DIR/scripts/local_gate.sh"
+  "$ROOT_DIR/scripts/maintainability_guard.sh"
   "$ROOT_DIR/scripts/validate_local.sh"
   "$ROOT_DIR/scripts/run_unit_tests.sh"
 )

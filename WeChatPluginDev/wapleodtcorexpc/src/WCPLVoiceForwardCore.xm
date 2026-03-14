@@ -23,7 +23,7 @@ static UIImage *wcpl_voiceForwardMenuIconImage(void) {
         if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
             @try {
                 image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) {}
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([image isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)image;
@@ -67,8 +67,7 @@ static NSString *wcpl_voiceAudioPathFromWrap(CMessageWrap *msgWrap) {
         if ([value isKindOfClass:[NSString class]]) {
             return (NSString *)value;
         }
-    } @catch (__unused NSException *exceptionGetAudioPath) {
-    }
+    } @catch (__unused NSException *exceptionGetAudioPath) { WCPLCatchLog(exceptionGetAudioPath); }
     return nil;
 }
 
@@ -111,6 +110,7 @@ static void wcpl_startDownloadVoiceIfNeeded(CMessageWrap *msgWrap, NSString *sce
                      audioPath ?: @"(nil)",
                      audioSize);
     } @catch (__unused NSException *exceptionStartDownload) {
+        WCPLCatchLog(exceptionStartDownload);
         WCPLLogWarning(@"[语音转发] 语音预下载异常: scene=%@ path=%@",
                        sceneTag ?: @"(nil)",
                        audioPath ?: @"(nil)");
@@ -131,6 +131,7 @@ static id wcpl_serviceByClass(Class serviceClass) {
     @try {
         serviceCenter = ((id (*)(id, SEL))objc_msgSend)(serviceCenterClass, @selector(defaultCenter));
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         serviceCenter = nil;
     }
     if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) {
@@ -140,6 +141,7 @@ static id wcpl_serviceByClass(Class serviceClass) {
     @try {
         return ((id (*)(id, SEL, Class))objc_msgSend)(serviceCenter, @selector(getService:), serviceClass);
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         return nil;
     }
 }
@@ -156,15 +158,13 @@ static id wcpl_createVoiceForwardMenuItem(Class menuItemClass, id cell, SEL acti
     if (icon && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
         @try {
             menuItem = [[menuItemClass alloc] initWithTitle:title icon:icon target:cell action:action];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (!menuItem && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
         @try {
             menuItem = [[menuItemClass alloc] initWithTitle:title target:cell action:action];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (menuItem && icon) {
@@ -209,8 +209,7 @@ static NSArray *wcpl_injectVoiceForwardMenuItemIfNeeded(id cell, NSArray *items)
                 itemAction == nativeDoForwardAction) {
                 return mutableItems;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id menuItem = wcpl_createVoiceForwardMenuItem(menuItemClass, cell, injectedAction);
@@ -239,6 +238,7 @@ static BOOL wcpl_tryForwardObjObj(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -263,6 +263,7 @@ static BOOL wcpl_tryForwardObjObjUInt(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -293,6 +294,7 @@ static BOOL wcpl_tryForwardObjObjUIntUInt(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -317,6 +319,7 @@ static BOOL wcpl_tryForwardObjObjObj(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -342,6 +345,7 @@ static BOOL wcpl_tryForwardObjObjObjLong(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -372,6 +376,7 @@ static BOOL wcpl_tryForwardObjObjUIntObj(id target,
         WCPLLogInfo(@"[语音转发] 命中链路 route=%@", routeTag ?: @"unknown");
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                        routeTag ?: @"unknown",
                        exception.reason ?: @"unknown");
@@ -391,8 +396,7 @@ static NSString *wcpl_vmiyou_currentSelfUserName(void) {
         if (userName.length > 0) {
             return userName;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     return nil;
 }
 
@@ -414,18 +418,15 @@ static void wcpl_vmiyou_applyClientMsgID(CMessageWrap *sendWrap, NSString *clien
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, setClientMsgIDSelector, clientMsgID);
             return;
-        } @catch (__unused NSException *exceptionSetClientMsgID) {
-        }
+        } @catch (__unused NSException *exceptionSetClientMsgID) { WCPLCatchLog(exceptionSetClientMsgID); }
     }
     @try {
         [sendWrap setValue:clientMsgID forKey:@"m_nsClientMsgID"];
         return;
-    } @catch (__unused NSException *exceptionClientMsgIDUpper) {
-    }
+    } @catch (__unused NSException *exceptionClientMsgIDUpper) { WCPLCatchLog(exceptionClientMsgIDUpper); }
     @try {
         [sendWrap setValue:clientMsgID forKey:@"m_nsClientMsgId"];
-    } @catch (__unused NSException *exceptionClientMsgIDLower) {
-    }
+    } @catch (__unused NSException *exceptionClientMsgIDLower) { WCPLCatchLog(exceptionClientMsgIDLower); }
 }
 
 static void wcpl_vmiyou_resetIdentity(CMessageWrap *sendWrap) {
@@ -436,48 +437,40 @@ static void wcpl_vmiyou_resetIdentity(CMessageWrap *sendWrap) {
     if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0);
-        } @catch (__unused NSException *exceptionSetLocalID) {
-        }
+        } @catch (__unused NSException *exceptionSetLocalID) { WCPLCatchLog(exceptionSetLocalID); }
     }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiMesLocalID"];
-    } @catch (__unused NSException *exceptionLocalIDKVC) {
-    }
+    } @catch (__unused NSException *exceptionLocalIDKVC) { WCPLCatchLog(exceptionLocalIDKVC); }
 
     if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
         @try {
             ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0);
-        } @catch (__unused NSException *exceptionSetSvrID) {
-        }
+        } @catch (__unused NSException *exceptionSetSvrID) { WCPLCatchLog(exceptionSetSvrID); }
     }
     @try {
         [sendWrap setValue:@((long long)0) forKey:@"m_n64MesSvrID"];
-    } @catch (__unused NSException *exceptionSvrIDKVC) {
-    }
+    } @catch (__unused NSException *exceptionSvrIDKVC) { WCPLCatchLog(exceptionSvrIDKVC); }
 
     if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exceptionSetStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetStatus) { WCPLCatchLog(exceptionSetStatus); }
     }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiStatus"];
-    } @catch (__unused NSException *exceptionStatusKVC) {
-    }
+    } @catch (__unused NSException *exceptionStatusKVC) { WCPLCatchLog(exceptionStatusKVC); }
 
     unsigned int now = (unsigned int)[[NSDate date] timeIntervalSince1970];
     if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), now);
-        } @catch (__unused NSException *exceptionSetCreateTime) {
-        }
+        } @catch (__unused NSException *exceptionSetCreateTime) { WCPLCatchLog(exceptionSetCreateTime); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiSendTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiSendTime:), now);
-        } @catch (__unused NSException *exceptionSetSendTime) {
-        }
+        } @catch (__unused NSException *exceptionSetSendTime) { WCPLCatchLog(exceptionSetSendTime); }
     }
 }
 
@@ -491,32 +484,27 @@ static void wcpl_vmiyou_prepareRoute(CMessageWrap *sendWrap,
     if ([sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exceptionSetTo) {
-        }
+        } @catch (__unused NSException *exceptionSetTo) { WCPLCatchLog(exceptionSetTo); }
     }
     if (selfUserName.length > 0 && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionSetFrom) {
-        }
+        } @catch (__unused NSException *exceptionSetFrom) { WCPLCatchLog(exceptionSetFrom); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1);
-        } @catch (__unused NSException *exceptionSetSenderStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetSenderStatus) { WCPLCatchLog(exceptionSetSenderStatus); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), nil);
-        } @catch (__unused NSException *exceptionSetRealChatUsr) {
-        }
+        } @catch (__unused NSException *exceptionSetRealChatUsr) { WCPLCatchLog(exceptionSetRealChatUsr); }
     }
     wcpl_vmiyou_applyClientMsgID(sendWrap, wcpl_vmiyou_generateClientMsgID(selfUserName));
     @try {
         [sendWrap setValue:@(sendWrap.m_uiMessageType) forKey:@"m_uiMsgType"];
-    } @catch (__unused NSException *exceptionSetMsgType) {
-    }
+    } @catch (__unused NSException *exceptionSetMsgType) { WCPLCatchLog(exceptionSetMsgType); }
 }
 
 static NSString *wcpl_vmiyou_audioPathForMessage(CMessageWrap *msgWrap) {
@@ -533,8 +521,7 @@ static NSString *wcpl_vmiyou_audioPathForMessage(CMessageWrap *msgWrap) {
         if ([value isKindOfClass:[NSString class]]) {
             return (NSString *)value;
         }
-    } @catch (__unused NSException *exceptionGetAudioPath) {
-    }
+    } @catch (__unused NSException *exceptionGetAudioPath) { WCPLCatchLog(exceptionGetAudioPath); }
     return nil;
 }
 
@@ -586,8 +573,7 @@ static unsigned int wcpl_vmiyou_voiceLengthMs(CMessageWrap *msgWrap) {
     if ([msgWrap respondsToSelector:@selector(m_duration)]) {
         @try {
             duration = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_duration));
-        } @catch (__unused NSException *exceptionDuration) {
-        }
+        } @catch (__unused NSException *exceptionDuration) { WCPLCatchLog(exceptionDuration); }
     }
     if (duration > 300) {
         return duration;
@@ -606,8 +592,7 @@ static unsigned int wcpl_vmiyou_voiceTime(CMessageWrap *msgWrap) {
     if ([msgWrap respondsToSelector:@selector(m_uiVoiceTime)]) {
         @try {
             voiceTime = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceTime));
-        } @catch (__unused NSException *exceptionVoiceTime) {
-        }
+        } @catch (__unused NSException *exceptionVoiceTime) { WCPLCatchLog(exceptionVoiceTime); }
     }
     if (voiceTime > 300) {
         voiceTime = (voiceTime + 999) / 1000;
@@ -632,8 +617,7 @@ static unsigned int wcpl_vmiyou_voiceFormat(CMessageWrap *msgWrap) {
     if ([msgWrap respondsToSelector:@selector(m_uiVoiceFormat)]) {
         @try {
             voiceFormat = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceFormat));
-        } @catch (__unused NSException *exceptionVoiceFormat) {
-        }
+        } @catch (__unused NSException *exceptionVoiceFormat) { WCPLCatchLog(exceptionVoiceFormat); }
     }
     if (voiceFormat == 0) {
         voiceFormat = wcpl_vmiyou_extractVoiceAttrUInt(msgWrap.m_nsContent, @"voiceformat");
@@ -966,15 +950,13 @@ static void wcpl_voiceForwardCollectTargetsFromPayload(id payload,
             @try {
                 id value = ((id (*)(id, SEL))objc_msgSend)(payload, selector);
                 wcpl_voiceForwardCollectTargetsFromPayload(value, targetMap, visited, depth + 1);
-            } @catch (__unused NSException *exceptionSelector) {
-            }
+            } @catch (__unused NSException *exceptionSelector) { WCPLCatchLog(exceptionSelector); }
         }
 
         @try {
             id value = [payload valueForKey:key];
             wcpl_voiceForwardCollectTargetsFromPayload(value, targetMap, visited, depth + 1);
-        } @catch (__unused NSException *exceptionKVC) {
-        }
+        } @catch (__unused NSException *exceptionKVC) { WCPLCatchLog(exceptionKVC); }
 
         const char *ivarName = key.UTF8String;
         id ivarValue = wcpl_safeObjectIvar(payload, ivarName);
@@ -990,15 +972,13 @@ static void wcpl_voiceForwardCollectTargetsFromPayload(id payload,
         @try {
             id values = ((id (*)(id, SEL))objc_msgSend)(payload, @selector(allValues));
             wcpl_voiceForwardCollectTargetsFromPayload(values, targetMap, visited, depth + 1);
-        } @catch (__unused NSException *exceptionAllValues) {
-        }
+        } @catch (__unused NSException *exceptionAllValues) { WCPLCatchLog(exceptionAllValues); }
     }
     if ([payload respondsToSelector:@selector(allObjects)]) {
         @try {
             id values = ((id (*)(id, SEL))objc_msgSend)(payload, @selector(allObjects));
             wcpl_voiceForwardCollectTargetsFromPayload(values, targetMap, visited, depth + 1);
-        } @catch (__unused NSException *exceptionAllObjects) {
-        }
+        } @catch (__unused NSException *exceptionAllObjects) { WCPLCatchLog(exceptionAllObjects); }
     }
 }
 
@@ -1043,8 +1023,7 @@ static void wcpl_vmiyou_applyVoiceExtendInfo(CMessageWrap *sendWrap,
     id extendInfo = nil;
     @try {
         extendInfo = [[extendClass alloc] init];
-    } @catch (__unused NSException *exceptionAllocExtend) {
-    }
+    } @catch (__unused NSException *exceptionAllocExtend) { WCPLCatchLog(exceptionAllocExtend); }
     if (!extendInfo) {
         return;
     }
@@ -1052,50 +1031,42 @@ static void wcpl_vmiyou_applyVoiceExtendInfo(CMessageWrap *sendWrap,
     if (audioData && [extendInfo respondsToSelector:@selector(setM_dtVoice:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(extendInfo, @selector(setM_dtVoice:), audioData);
-        } @catch (__unused NSException *exceptionSetExtendVoice) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendVoice) { WCPLCatchLog(exceptionSetExtendVoice); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceTime:), voiceTime);
-        } @catch (__unused NSException *exceptionSetExtendVoiceTime) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendVoiceTime) { WCPLCatchLog(exceptionSetExtendVoiceTime); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceFormat:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceFormat:), voiceFormat);
-        } @catch (__unused NSException *exceptionSetExtendVoiceFormat) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendVoiceFormat) { WCPLCatchLog(exceptionSetExtendVoiceFormat); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceForwardFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceForwardFlag:), 0);
-        } @catch (__unused NSException *exceptionSetExtendForwardFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendForwardFlag) { WCPLCatchLog(exceptionSetExtendForwardFlag); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceCancelFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceCancelFlag:), 0);
-        } @catch (__unused NSException *exceptionSetExtendCancelFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendCancelFlag) { WCPLCatchLog(exceptionSetExtendCancelFlag); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceEndFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceEndFlag:), 1);
-        } @catch (__unused NSException *exceptionSetExtendEndFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendEndFlag) { WCPLCatchLog(exceptionSetExtendEndFlag); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_refMessageWrap:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(extendInfo, @selector(setM_refMessageWrap:), sendWrap);
-        } @catch (__unused NSException *exceptionSetExtendRefWrap) {
-        }
+        } @catch (__unused NSException *exceptionSetExtendRefWrap) { WCPLCatchLog(exceptionSetExtendRefWrap); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_extendInfoWithMsgType:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_extendInfoWithMsgType:), extendInfo);
-        } @catch (__unused NSException *exceptionSetWrapExtendInfo) {
-        }
+        } @catch (__unused NSException *exceptionSetWrapExtendInfo) { WCPLCatchLog(exceptionSetWrapExtendInfo); }
     }
 }
 
@@ -1114,62 +1085,52 @@ static void wcpl_vmiyou_applyVoiceFields(CMessageWrap *sendWrap,
     if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), 34);
-        } @catch (__unused NSException *exceptionSetType) {
-        }
+        } @catch (__unused NSException *exceptionSetType) { WCPLCatchLog(exceptionSetType); }
     }
     if (audioData && [sendWrap respondsToSelector:@selector(setM_dtVoice:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_dtVoice:), audioData);
-        } @catch (__unused NSException *exceptionSetVoiceData) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceData) { WCPLCatchLog(exceptionSetVoiceData); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceEndFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceEndFlag:), 1);
-        } @catch (__unused NSException *exceptionSetVoiceEndFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceEndFlag) { WCPLCatchLog(exceptionSetVoiceEndFlag); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceCancelFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceCancelFlag:), 0);
-        } @catch (__unused NSException *exceptionSetVoiceCancelFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceCancelFlag) { WCPLCatchLog(exceptionSetVoiceCancelFlag); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceForwardFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceForwardFlag:), 0);
-        } @catch (__unused NSException *exceptionSetVoiceForwardFlag) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceForwardFlag) { WCPLCatchLog(exceptionSetVoiceForwardFlag); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceTime:), voiceTime);
-        } @catch (__unused NSException *exceptionSetVoiceTime) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceTime) { WCPLCatchLog(exceptionSetVoiceTime); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceFormat:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceFormat:), voiceFormat);
-        } @catch (__unused NSException *exceptionSetVoiceFormat) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceFormat) { WCPLCatchLog(exceptionSetVoiceFormat); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1);
-        } @catch (__unused NSException *exceptionSetSenderStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetSenderStatus) { WCPLCatchLog(exceptionSetSenderStatus); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 1);
-        } @catch (__unused NSException *exceptionSetStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetStatus) { WCPLCatchLog(exceptionSetStatus); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiDownloadStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiDownloadStatus:), 9);
-        } @catch (__unused NSException *exceptionSetDownloadStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetDownloadStatus) { WCPLCatchLog(exceptionSetDownloadStatus); }
     }
 
     unsigned int voiceLengthMs = wcpl_vmiyou_voiceLengthMs(sourceWrap);
@@ -1180,45 +1141,38 @@ static void wcpl_vmiyou_applyVoiceFields(CMessageWrap *sendWrap,
     if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), voiceContent);
-        } @catch (__unused NSException *exceptionSetContent) {
-        }
+        } @catch (__unused NSException *exceptionSetContent) { WCPLCatchLog(exceptionSetContent); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsPushContent:), @"");
-        } @catch (__unused NSException *exceptionSetPushContent) {
-        }
+        } @catch (__unused NSException *exceptionSetPushContent) { WCPLCatchLog(exceptionSetPushContent); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsPushTitle:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsPushTitle:), @"");
-        } @catch (__unused NSException *exceptionSetPushTitle) {
-        }
+        } @catch (__unused NSException *exceptionSetPushTitle) { WCPLCatchLog(exceptionSetPushTitle); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0);
-        } @catch (__unused NSException *exceptionSetLocalID) {
-        }
+        } @catch (__unused NSException *exceptionSetLocalID) { WCPLCatchLog(exceptionSetLocalID); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
         @try {
             ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0);
-        } @catch (__unused NSException *exceptionSetSvrID) {
-        }
+        } @catch (__unused NSException *exceptionSetSvrID) { WCPLCatchLog(exceptionSetSvrID); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
         NSString *msgSource = sourceWrap.m_nsMsgSource ?: @"";
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsMsgSource:), msgSource);
-        } @catch (__unused NSException *exceptionSetMsgSource) {
-        }
+        } @catch (__unused NSException *exceptionSetMsgSource) { WCPLCatchLog(exceptionSetMsgSource); }
     }
     if ([sendWrap respondsToSelector:@selector(setVoiceUrl:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setVoiceUrl:), @"");
-        } @catch (__unused NSException *exceptionSetVoiceURL) {
-        }
+        } @catch (__unused NSException *exceptionSetVoiceURL) { WCPLCatchLog(exceptionSetVoiceURL); }
     }
 
     wcpl_vmiyou_applyVoiceExtendInfo(sendWrap, audioData, voiceTime, voiceFormat);
@@ -1236,14 +1190,12 @@ static CMessageWrap *wcpl_vmiyou_buildFreshVoiceWrap(void) {
             if ([created isKindOfClass:%c(CMessageWrap)]) {
                 sendWrap = (CMessageWrap *)created;
             }
-        } @catch (__unused NSException *exceptionInitWithMsgType) {
-        }
+        } @catch (__unused NSException *exceptionInitWithMsgType) { WCPLCatchLog(exceptionInitWithMsgType); }
     }
     if (!sendWrap) {
         @try {
             sendWrap = [[wrapClass alloc] init];
-        } @catch (__unused NSException *exceptionInit) {
-        }
+        } @catch (__unused NSException *exceptionInit) { WCPLCatchLog(exceptionInit); }
     }
     return sendWrap;
 }
@@ -1302,8 +1254,7 @@ static CMessageWrap *wcpl_extractForwardMessageWrap(id generated) {
             if ([value isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)value;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     return nil;
 }
@@ -1331,6 +1282,7 @@ static CMessageWrap *wcpl_generatedForwardVoiceWrap(CMessageWrap *msgWrap,
         }
         return sendWrap;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] 生成转发语音包异常: target=%@ reason=%@",
                        targetIdentifier ?: @"(unknown)",
                        exception.reason ?: @"unknown");
@@ -1404,8 +1356,7 @@ static CContact *wcpl_forwardContactForIdentifier(NSString *identifier, UIViewCo
                 dataLogic = (ContactsDataLogic *)value;
                 break;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return WCPLFindContactByUserName(userName, contactMgr, dataLogic);
@@ -1442,6 +1393,7 @@ static BOOL wcpl_forwardQueueVoiceBySendMessageMgr(NSString *chatName,
                                                sendStatus]);
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] SendMessageMgr.queue 异常: target=%@ reason=%@",
                        targetTag ?: @"(unknown)",
                        exception.reason ?: @"unknown");
@@ -1493,6 +1445,7 @@ static BOOL wcpl_forwardAddLocalVoiceMsg(id messageMgr,
             return YES;
         }
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] AddLocalMsg 异常: target=%@ reason=%@",
                        targetTag ?: @"(unknown)",
                        exception.reason ?: @"unknown");
@@ -1517,6 +1470,7 @@ static BOOL wcpl_forwardInvokeResendVoiceTarget(id target,
                                                targetTag ?: @"(unknown)"]);
         return YES;
     } @catch (NSException *exception) {
+        WCPLCatchLog(exception);
         WCPLLogWarning(@"[语音转发] ResendVoice 异常: sender=%@ target=%@ reason=%@",
                        senderTag ?: @"(unknown)",
                        targetTag ?: @"(unknown)",
@@ -1564,6 +1518,7 @@ static BOOL wcpl_forwardVoiceByResendRoute(NSString *chatName,
                            targetTag ?: @"(unknown)",
                            sendWrap.m_uiMesLocalID);
         } @catch (NSException *exception) {
+            WCPLCatchLog(exception);
             WCPLLogWarning(@"[语音转发] ResendVoice 清理占位异常: target=%@ reason=%@",
                            targetTag ?: @"(unknown)",
                            exception.reason ?: @"unknown");
@@ -1597,8 +1552,7 @@ static BOOL wcpl_forwardVoiceToTargetStrict(CMessageWrap *msgWrap,
         if (messageMgr && [messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
             @try {
                 ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
-            } @catch (__unused NSException *exceptionDownloadVoice) {
-            }
+            } @catch (__unused NSException *exceptionDownloadVoice) { WCPLCatchLog(exceptionDownloadVoice); }
         }
         WCPLLogWarning(@"[语音转发][strict] 音频未就绪: target=%@ path=%@",
                        target,
@@ -1658,8 +1612,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
         if (downloadMgr && [downloadMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
             @try {
                 ((BOOL (*)(id, SEL, id))objc_msgSend)(downloadMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
-            } @catch (__unused NSException *exceptionDownloadVoice) {
-            }
+            } @catch (__unused NSException *exceptionDownloadVoice) { WCPLCatchLog(exceptionDownloadVoice); }
         }
         WCPLLogWarning(@"[语音转发] 密友链路语音文件未就绪: target=%@ path=%@",
                        target,
@@ -1702,6 +1655,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
         @try {
             currentForwardLogic = ((id (*)(id, SEL))objc_msgSend)(forwardMgr, @selector(currentLogicController));
         } @catch (__unused NSException *exceptionCurrentLogic) {
+            WCPLCatchLog(exceptionCurrentLogic);
             currentForwardLogic = nil;
         }
     }
@@ -1724,6 +1678,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
             @try {
                 forwardUtilObj = [[forwardUtilClass alloc] init];
             } @catch (__unused NSException *exceptionForwardUtilAlloc) {
+                WCPLCatchLog(exceptionForwardUtilAlloc);
                 forwardUtilObj = nil;
             }
         }
@@ -1793,6 +1748,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
             WCPLLogInfo(@"[语音转发] 命中链路 route=%@", [NSString stringWithFormat:@"ForwardMsgUtil.api6.scene0/%@", target]);
             return YES;
         } @catch (NSException *exception) {
+            WCPLCatchLog(exception);
             WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                            [NSString stringWithFormat:@"ForwardMsgUtil.api6.scene0/%@", target],
                            exception.reason ?: @"unknown");
@@ -1814,6 +1770,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
             WCPLLogInfo(@"[语音转发] 命中链路 route=%@", [NSString stringWithFormat:@"ForwardMsgUtil.api7.scene0/%@", target]);
             return YES;
         } @catch (NSException *exception) {
+            WCPLCatchLog(exception);
             WCPLLogWarning(@"[语音转发] 链路异常 route=%@ reason=%@",
                            [NSString stringWithFormat:@"ForwardMsgUtil.api7.scene0/%@", target],
                            exception.reason ?: @"unknown");
@@ -1915,6 +1872,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
     @try {
         allItems = ((id (*)(id, SEL))objc_msgSend)(pickerDataProviderClass, allItemsSelector);
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         allItems = nil;
     }
     if (![allItems isKindOfClass:[NSArray class]] || allItems.count == 0) {
@@ -1937,6 +1895,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
                                                                       (NSUInteger)1,
                                                                       nil);
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         picker = nil;
     }
     if (!picker) {
@@ -1946,20 +1905,17 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
     if ([picker respondsToSelector:@selector(setTitleText:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(picker, @selector(setTitleText:), @"语音转发");
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([picker respondsToSelector:@selector(setEnableTypeSegment:)]) {
         @try {
             ((void (*)(id, SEL, BOOL))objc_msgSend)(picker, @selector(setEnableTypeSegment:), YES);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([picker respondsToSelector:@selector(setEnableSectionByType:)]) {
         @try {
             ((void (*)(id, SEL, BOOL))objc_msgSend)(picker, @selector(setEnableSectionByType:), NO);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     __weak UIViewController *weakViewController = viewController;
@@ -1975,8 +1931,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
     if ([picker respondsToSelector:@selector(setOnFinish:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(picker, @selector(setOnFinish:), onFinishBlock);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:picker];
@@ -2078,6 +2033,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
             WCPLLogWarning(@"[语音转发] 密友链路不可用，回退原生 onForward:");
             return;
         } @catch (NSException *exception) {
+            WCPLCatchLog(exception);
             WCPLLogWarning(@"[语音转发] 回退 onForward 异常: %@", exception.reason ?: @"unknown");
         }
     }
@@ -2087,6 +2043,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
             WCPLLogWarning(@"[语音转发] 密友链路不可用，回退原生 doForward");
             return;
         } @catch (NSException *exception) {
+            WCPLCatchLog(exception);
             WCPLLogWarning(@"[语音转发] 回退 doForward 异常: %@", exception.reason ?: @"unknown");
         }
     }

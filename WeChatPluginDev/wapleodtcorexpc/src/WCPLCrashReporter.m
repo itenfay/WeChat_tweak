@@ -13,6 +13,8 @@
 #import <fcntl.h>
 #import <unistd.h>
 #import <sys/stat.h>
+#import <sys/ucontext.h>
+#import <mach/arm/thread_status.h>
 #import <stdint.h>
 #import <limits.h>
 #import <string.h>
@@ -25,6 +27,8 @@ static NSString *const kWCPLCrashPendingMarkerName = @"wcpl_crash_pending.flag";
 enum {
     kWCPLCrashBreadcrumbRingSize = 24,
     kWCPLCrashBreadcrumbMaxLen = 240,
+    kWCPLCrashDiagnosticRingSize = 48,
+    kWCPLCrashDiagnosticMaxLen = 320,
     kWCPLCrashSignalDebugLogTailMaxBytes = 24 * 1024,
 };
 
@@ -36,6 +40,33 @@ static char wcpl_last_action[256] = {0};
 static char wcpl_debug_log_path[PATH_MAX] = {0};
 static volatile uint32_t wcpl_breadcrumb_seq = 0;
 static char wcpl_breadcrumb_ring[kWCPLCrashBreadcrumbRingSize][kWCPLCrashBreadcrumbMaxLen] = {{0}};
+static volatile uint32_t wcpl_diagnostic_seq = 0;
+static char wcpl_diagnostic_ring[kWCPLCrashDiagnosticRingSize][kWCPLCrashDiagnosticMaxLen] = {{0}};
+
+static NSString *WCPLNormalizeCrashText(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+        return @"";
+    }
+    NSString *normalized = [text stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    normalized = [normalized stringByReplacingOccurrencesOfString:@"\r" withString:@" "];
+    return normalized;
+}
+
+static void WCPLStoreRingEntry(volatile uint32_t *seqStorage,
+                               uint32_t ringSize,
+                               size_t slotLen,
+                               char *ringStorage,
+                               const char *text) {
+    if (!seqStorage || !ringStorage || !text || text[0] == '\0' || ringSize == 0 || slotLen == 0) {
+        return;
+    }
+
+    uint32_t seq = __atomic_fetch_add(seqStorage, 1, __ATOMIC_RELAXED);
+    size_t offset = ((size_t)(seq % ringSize)) * slotLen;
+    char *slot = ringStorage + offset;
+    strncpy(slot, text, slotLen - 1);
+    slot[slotLen - 1] = '\0';
+}
 
 static void WCPLWriteCString(int fd, const char *text) {
     if (fd < 0 || !text) {
@@ -102,6 +133,29 @@ static void WCPLWriteInt(int fd, int value) {
     write(fd, buf, idx);
 }
 
+static void WCPLWriteUInt64Hex(int fd, uint64_t value) {
+    char buf[32] = {0};
+    static const char hexChars[] = "0123456789abcdef";
+    size_t idx = 0;
+    buf[idx++] = '0';
+    buf[idx++] = 'x';
+
+    BOOL started = NO;
+    for (int shift = 60; shift >= 0; shift -= 4) {
+        uint8_t nibble = (uint8_t)((value >> shift) & 0xf);
+        if (!started && nibble == 0 && shift > 0) {
+            continue;
+        }
+        started = YES;
+        buf[idx++] = hexChars[nibble];
+    }
+
+    if (!started) {
+        buf[idx++] = '0';
+    }
+    write(fd, buf, idx);
+}
+
 static const char *WCPLSignalName(int sig) {
     switch (sig) {
         case SIGABRT: return "SIGABRT";
@@ -113,6 +167,49 @@ static const char *WCPLSignalName(int sig) {
         case SIGTRAP: return "SIGTRAP";
         default: return "UNKNOWN";
     }
+}
+
+static void WCPLWriteSignalContext(int fd, siginfo_t *info, void *uap) {
+    if (fd < 0) {
+        return;
+    }
+
+    if (info) {
+        WCPLWriteCString(fd, "SignalCode: ");
+        WCPLWriteInt(fd, info->si_code);
+        WCPLWriteCString(fd, "\n");
+
+        if (info->si_addr) {
+            WCPLWriteCString(fd, "FaultAddress: ");
+            WCPLWriteUInt64Hex(fd, (uint64_t)(uintptr_t)info->si_addr);
+            WCPLWriteCString(fd, "\n");
+        }
+    }
+
+#if defined(__arm64__) || defined(__aarch64__)
+    if (!uap) {
+        return;
+    }
+    ucontext_t *context = (ucontext_t *)uap;
+    if (!context || !context->uc_mcontext) {
+        return;
+    }
+    uintptr_t pc = arm_thread_state64_get_pc(context->uc_mcontext->__ss);
+    uintptr_t lr = arm_thread_state64_get_lr(context->uc_mcontext->__ss);
+    uintptr_t sp = arm_thread_state64_get_sp(context->uc_mcontext->__ss);
+
+    WCPLWriteCString(fd, "PC: ");
+    WCPLWriteUInt64Hex(fd, (uint64_t)pc);
+    WCPLWriteCString(fd, "\n");
+    WCPLWriteCString(fd, "LR: ");
+    WCPLWriteUInt64Hex(fd, (uint64_t)lr);
+    WCPLWriteCString(fd, "\n");
+    WCPLWriteCString(fd, "SP: ");
+    WCPLWriteUInt64Hex(fd, (uint64_t)sp);
+    WCPLWriteCString(fd, "\n");
+#else
+    (void)uap;
+#endif
 }
 
 static void WCPLWriteBreadcrumbRing(int fd) {
@@ -130,6 +227,25 @@ static void WCPLWriteBreadcrumbRing(int fd) {
             continue;
         }
         WCPLWriteCString(fd, wcpl_breadcrumb_ring[idx]);
+        WCPLWriteCString(fd, "\n");
+    }
+}
+
+static void WCPLWriteDiagnosticRing(int fd) {
+    uint32_t seq = __atomic_load_n(&wcpl_diagnostic_seq, __ATOMIC_RELAXED);
+    uint32_t total = seq < (uint32_t)kWCPLCrashDiagnosticRingSize ? seq : (uint32_t)kWCPLCrashDiagnosticRingSize;
+    if (total == 0) {
+        return;
+    }
+
+    WCPLWriteCString(fd, "\n--- Recent Diagnostics ---\n");
+    uint32_t startSeq = seq - total;
+    for (uint32_t s = startSeq; s < seq; s++) {
+        uint32_t idx = s % (uint32_t)kWCPLCrashDiagnosticRingSize;
+        if (wcpl_diagnostic_ring[idx][0] == '\0') {
+            continue;
+        }
+        WCPLWriteCString(fd, wcpl_diagnostic_ring[idx]);
         WCPLWriteCString(fd, "\n");
     }
 }
@@ -184,7 +300,7 @@ static void WCPLCreateCrashMarkerFile(void) {
     }
 }
 
-static void WCPLSignalHandler(int sig) {
+static void WCPLSignalHandler(int sig, siginfo_t *info, void *uap) {
     if (!wcpl_crash_enabled || wcpl_is_handling_crash) {
         kill(getpid(), sig);
         _exit(128 + sig);
@@ -204,6 +320,7 @@ static void WCPLSignalHandler(int sig) {
         WCPLWriteCString(fd, " (");
         WCPLWriteInt(fd, sig);
         WCPLWriteCString(fd, ")\n");
+        WCPLWriteSignalContext(fd, info, uap);
 
         if (wcpl_last_action[0] != '\0') {
             WCPLWriteCString(fd, "LastAction: ");
@@ -212,6 +329,7 @@ static void WCPLSignalHandler(int sig) {
         }
 
         WCPLWriteBreadcrumbRing(fd);
+        WCPLWriteDiagnosticRing(fd);
         WCPLWriteFileTail(fd, wcpl_debug_log_path, (size_t)kWCPLCrashSignalDebugLogTailMaxBytes);
 
         close(fd);
@@ -227,22 +345,81 @@ static void WCPLSignalHandler(int sig) {
 static void WCPLInstallSignalHandler(int sig) {
     struct sigaction action;
     memset(&action, 0, sizeof(action));
-    action.sa_handler = WCPLSignalHandler;
+    action.sa_sigaction = WCPLSignalHandler;
     sigemptyset(&action.sa_mask);
-    action.sa_flags = SA_RESETHAND | SA_NODEFER;
+    action.sa_flags = SA_RESETHAND | SA_NODEFER | SA_SIGINFO;
     sigaction(sig, &action, NULL);
+}
+
+static NSString *WCPLApplicationStateDescription(UIApplicationState state) {
+    switch (state) {
+        case UIApplicationStateActive: return @"active";
+        case UIApplicationStateInactive: return @"inactive";
+        case UIApplicationStateBackground: return @"background";
+    }
+    return [NSString stringWithFormat:@"unknown(%ld)", (long)state];
+}
+
+static UIViewController *WCPLTopVisibleViewController(void) {
+    UIApplication *application = [UIApplication sharedApplication];
+    UIWindow *keyWindow = nil;
+    if ([application respondsToSelector:@selector(connectedScenes)]) {
+        for (id scene in application.connectedScenes) {
+            if (![scene isKindOfClass:[UIWindowScene class]]) {
+                continue;
+            }
+            for (UIWindow *window in ((UIWindowScene *)scene).windows) {
+                if ([window isKindOfClass:[UIWindow class]] && window.isKeyWindow) {
+                    keyWindow = window;
+                    break;
+                }
+            }
+            if (keyWindow) {
+                break;
+            }
+        }
+    }
+    if (!keyWindow) {
+        for (UIWindow *window in application.windows) {
+            if (![window isKindOfClass:[UIWindow class]]) {
+                continue;
+            }
+            if (window.isKeyWindow) {
+                keyWindow = window;
+                break;
+            }
+            if (!keyWindow && !window.hidden && window.alpha > 0.01) {
+                keyWindow = window;
+            }
+        }
+    }
+
+    UIViewController *controller = keyWindow.rootViewController;
+    while (controller.presentedViewController) {
+        controller = controller.presentedViewController;
+    }
+    if ([controller isKindOfClass:[UINavigationController class]]) {
+        controller = ((UINavigationController *)controller).topViewController;
+    } else if ([controller isKindOfClass:[UITabBarController class]]) {
+        controller = ((UITabBarController *)controller).selectedViewController;
+    }
+    return controller;
 }
 
 @interface WCPLCrashReporter (Private)
 - (void)handleException:(NSException *)exception;
+- (void)recordLifecycleDiagnostic:(NSString *)event;
+- (NSString *)diagnosticSnapshot;
 @end
 
 static void WCPLHandleException(NSException *exception) {
     [[WCPLCrashReporter sharedReporter] handleException:exception];
 }
 
-@interface WCPLCrashReporter ()
+@interface WCPLCrashReporter () <WCPLLogSink>
 
+@property (nonatomic, strong) NSUserDefaults *defaults;
+@property (nonatomic, strong) id<WCPLLogging> logger;
 @property (nonatomic, assign) BOOL installed;
 @property (nonatomic, strong) NSString *crashLogPathInternal;
 @property (nonatomic, strong) NSString *crashMarkerPathInternal;
@@ -256,15 +433,40 @@ static void WCPLHandleException(NSException *exception) {
     static WCPLCrashReporter *reporter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        reporter = [[WCPLCrashReporter alloc] init];
+        reporter = [WCPLCrashReporter reporterWithDefaults:[NSUserDefaults standardUserDefaults]
+                                                    logger:[WCPLLogger sharedLogging]];
     });
     return reporter;
 }
 
 - (instancetype)init {
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]
+                           logger:[WCPLLogger sharedLogging]];
+}
+
++ (instancetype)reporterWithDefaults:(NSUserDefaults *)defaults {
+    return [self reporterWithDefaults:defaults logger:[WCPLLogger sharedLogging]];
+}
+
++ (instancetype)reporterWithDefaults:(NSUserDefaults *)defaults
+                              logger:(id<WCPLLogging>)logger {
+    return [[self alloc] initWithDefaults:defaults logger:logger];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
+    return [self initWithDefaults:defaults logger:[WCPLLogger sharedLogging]];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults
+                          logger:(id<WCPLLogging>)logger {
     if (self = [super init]) {
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _logger = logger ?: [WCPLLogger sharedLogging];
         _enabled = YES;
         _autoUploadEnabled = YES;
+        if ([_logger isKindOfClass:[WCPLLogger class]]) {
+            ((WCPLLogger *)_logger).sink = self;
+        }
     }
     return self;
 }
@@ -281,7 +483,8 @@ static void WCPLHandleException(NSException *exception) {
 
     [self setupPaths];
     [self loadSettings];
-    [self recordBreadcrumb:@"启动"];    
+    [self recordBreadcrumb:@"启动"];
+    [self recordLifecycleDiagnostic:@"launch"];
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(wcpl_onDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -312,29 +515,33 @@ static void WCPLHandleException(NSException *exception) {
 
 - (void)wcpl_onDidEnterBackground {
     [self recordBreadcrumb:@"进入后台"];
+    [self recordLifecycleDiagnostic:@"enter_background"];
 }
 
 - (void)wcpl_onDidBecomeActive {
     [self recordBreadcrumb:@"回到前台"];
+    [self recordLifecycleDiagnostic:@"become_active"];
 }
 
 - (void)wcpl_onWillTerminate {
     [self recordBreadcrumb:@"WillTerminate"];
+    [self recordLifecycleDiagnostic:@"terminate"];
 }
 
 - (void)wcpl_onMemoryWarning {
     [self recordBreadcrumb:@"内存警告"];
+    [self recordDiagnostic:@"lifecycle memory_warning"];
 }
 
 - (void)setEnabled:(BOOL)enabled {
     _enabled = enabled;
     wcpl_crash_enabled = enabled ? 1 : 0;
-    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kWCPLCrashReporterEnabledKey];
+    [self.defaults setBool:enabled forKey:kWCPLCrashReporterEnabledKey];
 }
 
 - (void)setAutoUploadEnabled:(BOOL)autoUploadEnabled {
     _autoUploadEnabled = autoUploadEnabled;
-    [[NSUserDefaults standardUserDefaults] setBool:autoUploadEnabled forKey:kWCPLCrashAutoUploadEnabledKey];
+    [self.defaults setBool:autoUploadEnabled forKey:kWCPLCrashAutoUploadEnabledKey];
 }
 
 - (NSString *)crashLogPath {
@@ -345,22 +552,23 @@ static void WCPLHandleException(NSException *exception) {
     if (!self.enabled) {
         return;
     }
-    if (breadcrumb.length == 0) {
+    NSString *normalized = WCPLNormalizeCrashText(breadcrumb);
+    if (normalized.length == 0) {
         return;
     }
     NSString *timestamp = [self currentTimestamp];
-    NSString *entry = [NSString stringWithFormat:@"[%@] %@", timestamp, breadcrumb];
+    NSString *entry = [NSString stringWithFormat:@"[%@] %@", timestamp, normalized];
     self.lastAction = entry;
 
     const char *cString = [entry UTF8String];
     if (cString) {
         strncpy(wcpl_last_action, cString, sizeof(wcpl_last_action) - 1);
         wcpl_last_action[sizeof(wcpl_last_action) - 1] = '\0';
-
-        uint32_t seq = __atomic_fetch_add(&wcpl_breadcrumb_seq, 1, __ATOMIC_RELAXED);
-        uint32_t idx = seq % (uint32_t)kWCPLCrashBreadcrumbRingSize;
-        strncpy(wcpl_breadcrumb_ring[idx], cString, kWCPLCrashBreadcrumbMaxLen - 1);
-        wcpl_breadcrumb_ring[idx][kWCPLCrashBreadcrumbMaxLen - 1] = '\0';
+        WCPLStoreRingEntry(&wcpl_breadcrumb_seq,
+                           (uint32_t)kWCPLCrashBreadcrumbRingSize,
+                           (size_t)kWCPLCrashBreadcrumbMaxLen,
+                           &wcpl_breadcrumb_ring[0][0],
+                           cString);
     }
 }
 
@@ -373,6 +581,37 @@ static void WCPLHandleException(NSException *exception) {
     NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
     va_end(args);
     [self recordBreadcrumb:message];
+}
+
+- (void)recordDiagnostic:(NSString *)diagnostic {
+    if (!self.enabled) {
+        return;
+    }
+    NSString *normalized = WCPLNormalizeCrashText(diagnostic);
+    if (normalized.length == 0) {
+        return;
+    }
+
+    NSString *entry = [NSString stringWithFormat:@"[%@] %@", [self currentTimestamp], normalized];
+    const char *cString = [entry UTF8String];
+    if (cString) {
+        WCPLStoreRingEntry(&wcpl_diagnostic_seq,
+                           (uint32_t)kWCPLCrashDiagnosticRingSize,
+                           (size_t)kWCPLCrashDiagnosticMaxLen,
+                           &wcpl_diagnostic_ring[0][0],
+                           cString);
+    }
+}
+
+- (void)recordDiagnosticFormat:(NSString *)format, ... {
+    if (format.length == 0) {
+        return;
+    }
+    va_list args;
+    va_start(args, format);
+    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
+    va_end(args);
+    [self recordDiagnostic:message];
 }
 
 - (void)tryUploadPendingReport {
@@ -402,12 +641,17 @@ static void WCPLHandleException(NSException *exception) {
         }
         if (!success || error) {
             NSString *message = error.localizedDescription ?: @"上传崩溃日志失败";
-            WCPLLog(@"崩溃日志自动上传失败: %@ (status=%ld)", message, (long)statusCode);
+            [self.logger logWithLevel:WCPLLogLevelWarning
+                               format:@"崩溃日志自动上传失败: %@ (status=%ld)",
+                                      message,
+                                      (long)statusCode];
             return;
         }
 
         [self clearCrashMarker];
-        WCPLLog(@"崩溃日志自动上传成功: status=%ld", (long)statusCode);
+        [self.logger logWithLevel:WCPLLogLevelInfo
+                           format:@"崩溃日志自动上传成功: status=%ld",
+                                  (long)statusCode];
     }];
 }
 
@@ -451,15 +695,30 @@ static void WCPLHandleException(NSException *exception) {
 }
 
 - (void)loadSettings {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:kWCPLCrashReporterEnabledKey] == nil) {
-        [defaults setBool:YES forKey:kWCPLCrashReporterEnabledKey];
+    if ([self.defaults objectForKey:kWCPLCrashReporterEnabledKey] == nil) {
+        [self.defaults setBool:YES forKey:kWCPLCrashReporterEnabledKey];
     }
-    if ([defaults objectForKey:kWCPLCrashAutoUploadEnabledKey] == nil) {
-        [defaults setBool:YES forKey:kWCPLCrashAutoUploadEnabledKey];
+    if ([self.defaults objectForKey:kWCPLCrashAutoUploadEnabledKey] == nil) {
+        [self.defaults setBool:YES forKey:kWCPLCrashAutoUploadEnabledKey];
     }
-    self.enabled = [defaults boolForKey:kWCPLCrashReporterEnabledKey];
-    self.autoUploadEnabled = [defaults boolForKey:kWCPLCrashAutoUploadEnabledKey];
+    self.enabled = [self.defaults boolForKey:kWCPLCrashReporterEnabledKey];
+    self.autoUploadEnabled = [self.defaults boolForKey:kWCPLCrashAutoUploadEnabledKey];
+}
+
+- (void)recordLifecycleDiagnostic:(NSString *)event {
+    UIApplication *application = [UIApplication sharedApplication];
+    UIViewController *topVC = WCPLTopVisibleViewController();
+    NSString *topVCClass = topVC ? NSStringFromClass([topVC class]) : @"(nil)";
+    NSUInteger windowCount = 0;
+    if ([application respondsToSelector:@selector(windows)]) {
+        windowCount = application.windows.count;
+    }
+
+    [self recordDiagnosticFormat:@"lifecycle event=%@ state=%@ topVC=%@ windows=%lu",
+                                 WCPLNormalizeCrashText(event),
+                                 WCPLApplicationStateDescription(application.applicationState),
+                                 topVCClass,
+                                 (unsigned long)windowCount];
 }
 
 - (NSString *)currentTimestamp {
@@ -544,8 +803,15 @@ static void WCPLHandleException(NSException *exception) {
         [report appendString:@"\n"];
     }
 
-    if ([WCPLLogger sharedLogger].enabled) {
-        NSString *recentLog = [[WCPLLogger sharedLogger] readRecentLog:600];
+    NSString *diagnosticSnapshot = [self diagnosticSnapshot];
+    if (diagnosticSnapshot.length > 0) {
+        [report appendString:@"\n--- Recent Diagnostics ---\n"];
+        [report appendString:diagnosticSnapshot];
+        [report appendString:@"\n"];
+    }
+
+    if (self.logger.enabled) {
+        NSString *recentLog = [self.logger readRecentLog:600];
         if (recentLog.length > 0) {
             [report appendString:@"\n--- Recent Debug Log ---\n"];    
             [report appendString:recentLog];
@@ -555,6 +821,21 @@ static void WCPLHandleException(NSException *exception) {
 
     [self appendCrashReport:report];
     [self createCrashMarker];
+}
+
+- (void)logger:(id<WCPLLogging>)logger
+didRecordMessage:(NSString *)message
+         level:(WCPLLogLevel)level {
+    NSString *levelText = @"INFO";
+    switch (level) {
+        case WCPLLogLevelDebug: levelText = @"DEBUG"; break;
+        case WCPLLogLevelInfo: levelText = @"INFO"; break;
+        case WCPLLogLevelWarning: levelText = @"WARN"; break;
+        case WCPLLogLevelError: levelText = @"ERROR"; break;
+        case WCPLLogLevelNone: levelText = @"NONE"; break;
+    }
+
+    [self recordDiagnosticFormat:@"log[%@] %@", levelText, message ?: @""];
 }
 
 - (NSString *)breadcrumbSnapshot {
@@ -569,6 +850,29 @@ static void WCPLHandleException(NSException *exception) {
     for (uint32_t s = startSeq; s < seq; s++) {
         uint32_t idx = s % (uint32_t)kWCPLCrashBreadcrumbRingSize;
         const char *cString = wcpl_breadcrumb_ring[idx];
+        if (!cString || cString[0] == '\0') {
+            continue;
+        }
+        NSString *line = [NSString stringWithUTF8String:cString];
+        if (line.length > 0) {
+            [items addObject:line];
+        }
+    }
+    return [items componentsJoinedByString:@"\n"];
+}
+
+- (NSString *)diagnosticSnapshot {
+    uint32_t seq = __atomic_load_n(&wcpl_diagnostic_seq, __ATOMIC_RELAXED);
+    uint32_t total = seq < (uint32_t)kWCPLCrashDiagnosticRingSize ? seq : (uint32_t)kWCPLCrashDiagnosticRingSize;
+    if (total == 0) {
+        return @"";
+    }
+
+    NSMutableArray<NSString *> *items = [NSMutableArray arrayWithCapacity:(NSUInteger)total];
+    uint32_t startSeq = seq - total;
+    for (uint32_t s = startSeq; s < seq; s++) {
+        uint32_t idx = s % (uint32_t)kWCPLCrashDiagnosticRingSize;
+        const char *cString = wcpl_diagnostic_ring[idx];
         if (!cString || cString[0] == '\0') {
             continue;
         }

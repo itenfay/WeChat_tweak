@@ -9,6 +9,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WCPLLocationConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 @property (assign, nonatomic) double fakeLatitude;
 @property (assign, nonatomic) double fakeLongitude;
@@ -21,4 +24,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-

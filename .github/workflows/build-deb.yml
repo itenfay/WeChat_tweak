@@ -110,6 +110,11 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
+      - name: Run Maintainability Guard
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          ./scripts/maintainability_guard.sh
+
       - name: Run Darwin Host + Cross-Platform Unit Suites
         run: |
           cd WeChatPluginDev/wapleodtcorexpc
@@ -174,9 +179,10 @@ jobs:
           {
             echo "### Darwin Acceptance Passed"
             echo ""
+            echo "- Executed: \`./scripts/maintainability_guard.sh\`"
             echo "- Executed: \`./scripts/run_unit_tests.sh --auto\`"
             echo "- Executed: \`FINALPACKAGE=1 ./scripts/local_gate.sh --strict-toolchain --skip-tests\`"
-            echo "- Result: macOS runner completed Darwin host suite, cross-platform suite, \`make before-all\`, and real \`make clean package\`."
+            echo "- Result: macOS runner completed maintainability guard, Darwin host suite, cross-platform suite, \`make before-all\`, and real \`make clean + make package\`."
             echo ""
           } >> "$GITHUB_STEP_SUMMARY"
         env:

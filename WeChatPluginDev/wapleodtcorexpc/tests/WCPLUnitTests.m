@@ -12,7 +12,9 @@
 #import "WCPLAlertTextHelpers.h"
 #import "WCPLConfigSanitizer.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLRevokeAnchor.h"
 #import "WCPLSharedConfigHelpers.h"
+#import "WCPLTypeGuard.h"
 
 static NSString *const kWCPLGroupRedEnvelopScopeKey = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackListKey = @"kWCPLBlackList";
@@ -183,6 +185,30 @@ static BOOL testConfigSanitizerHostFunctions(void) {
     WCPL_ASSERT(ignoreInfo.count == 2, "WCPLSanitizeIgnoreDictionary should keep enabled string keys only");
     WCPL_ASSERT(ignoreInfo[@"alice"].boolValue == YES, "alice should be retained");
     WCPL_ASSERT(ignoreInfo[@"carol"].boolValue == YES, "carol should be retained");
+    return YES;
+}
+
+static BOOL testTypeGuardHostFunctions(void) {
+    WCPL_ASSERT(WCPLIsString(@"alice") == YES, "string guard should accept NSString");
+    WCPL_ASSERT(WCPLIsArray(@[@"alice"]) == YES, "array guard should accept NSArray");
+    WCPL_ASSERT(WCPLIsDictionary(@{@"alice": @1}) == YES, "dictionary guard should accept NSDictionary");
+    WCPL_ASSERT(WCPLIsString(@1) == NO, "string guard should reject NSNumber");
+    WCPL_ASSERT(WCPLStringOrNil(@1) == nil, "string coercion should reject NSNumber");
+    WCPL_ASSERT([WCPLStringOrNil(@"alice") isEqualToString:@"alice"], "string coercion should keep NSString");
+    WCPL_ASSERT([WCPLNonEmptyStringOrNil(@"  alice  ") isEqualToString:@"alice"],
+                "non-empty string helper should trim whitespace");
+    WCPL_ASSERT(WCPLNonEmptyStringOrNil(@"   ") == nil, "non-empty string helper should reject blank input");
+    WCPL_ASSERT([[WCPLArrayOrNil(@[@"alice"]) firstObject] isEqualToString:@"alice"],
+                "array coercion should preserve NSArray");
+    WCPL_ASSERT(WCPLArrayOrNil(@"alice") == nil, "array coercion should reject non-array input");
+    WCPL_ASSERT([WCPLDictionaryOrNil(@{@"alice": @1})[@"alice"] isEqualToNumber:@1],
+                "dictionary coercion should preserve NSDictionary");
+    WCPL_ASSERT(WCPLDictionaryOrNil(@[@"alice"]) == nil, "dictionary coercion should reject non-dictionary input");
+
+    NSArray<NSString *> *strings = WCPLArrayOfStringsOrNil(@[@" alice ", @1, @"", @"bob"]);
+    WCPL_ASSERT([strings isEqualToArray:@[@"alice", @"bob"]],
+                "arrayOfStringsOrNil should keep trimmed non-empty strings");
+    WCPL_ASSERT(WCPLArrayOfStringsOrNil(@[]) == nil, "arrayOfStringsOrNil should reject empty arrays");
     return YES;
 }
 
@@ -417,6 +443,54 @@ static BOOL testQuitMonitorPureHelpers(void) {
     return YES;
 }
 
+static BOOL testRevokeAnchorPureHelpers(void) {
+    WCPLRevokeAnchorSource source = WCPLRevokeAnchorSourceRevokeEvent;
+    WCPLRevokeAnchorFields fields = WCPLResolveRevokeAnchorFields(300,
+                                                                  301,
+                                                                  9,
+                                                                  120,
+                                                                  121,
+                                                                  5,
+                                                                  YES,
+                                                                  &source);
+    WCPL_ASSERT(fields.createTime == 120, "revoke anchor should reuse revoked createTime");
+    WCPL_ASSERT(fields.svrCreateTime == 121, "revoke anchor should reuse revoked svrCreateTime");
+    WCPL_ASSERT(fields.sequenceId == 5, "revoke anchor should reuse revoked sequenceId");
+    WCPL_ASSERT(source == WCPLRevokeAnchorSourceRevokedMessage,
+                "revoke anchor source should indicate revoked message");
+    WCPL_ASSERT([WCPLRevokeAnchorSourceDescription(source) isEqualToString:@"revoked_msg"],
+                "revoke anchor source description mismatch");
+
+    source = WCPLRevokeAnchorSourceRevokedMessage;
+    fields = WCPLResolveRevokeAnchorFields(300,
+                                           0,
+                                           9,
+                                           0,
+                                           0,
+                                           0,
+                                           NO,
+                                           &source);
+    WCPL_ASSERT(fields.createTime == 300, "event anchor should keep revoke createTime");
+    WCPL_ASSERT(fields.svrCreateTime == 300, "event anchor should fall back svrCreateTime to createTime");
+    WCPL_ASSERT(fields.sequenceId == 9, "event anchor should keep revoke sequenceId");
+    WCPL_ASSERT(source == WCPLRevokeAnchorSourceRevokeEvent,
+                "event anchor source should indicate revoke event");
+    WCPL_ASSERT([WCPLRevokeAnchorSourceDescription(source) isEqualToString:@"revoke_event"],
+                "event anchor source description mismatch");
+
+    NSString *svrKey = WCPLBuildRevokeDedupKey(@" room@chatroom ", 7788, 0, nil);
+    WCPL_ASSERT([svrKey isEqualToString:@"room@chatroom#svr:7788"],
+                "revoke dedup key should prefer server id");
+
+    NSString *fallbackKey = WCPLBuildRevokeDedupKey(@" room@chatroom ", 0, 456, @"  line1\nline2  ");
+    WCPL_ASSERT([fallbackKey isEqualToString:@"room@chatroom#ts:456#text:line1 line2"],
+                "revoke dedup fallback key mismatch");
+
+    WCPL_ASSERT(WCPLBuildRevokeDedupKey(nil, 0, 0, nil) == nil,
+                "empty revoke dedup input should return nil");
+    return YES;
+}
+
 static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
     wcpl_clearDefaultsKeys(@[kWCPLReceiveDonePageSummaryEnableKey]);
 
@@ -502,9 +576,11 @@ int main(void) {
     failed += !runTest("testPureHelperSharedContracts", testPureHelperSharedContracts);
     failed += !runTest("testGenerateClientMsgID", testGenerateClientMsgID);
     failed += !runTest("testConfigSanitizerHostFunctions", testConfigSanitizerHostFunctions);
+    failed += !runTest("testTypeGuardHostFunctions", testTypeGuardHostFunctions);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
     failed += !runTest("testQuitMonitorScopeMigration", testQuitMonitorScopeMigration);
     failed += !runTest("testQuitMonitorPureHelpers", testQuitMonitorPureHelpers);
+    failed += !runTest("testRevokeAnchorPureHelpers", testRevokeAnchorPureHelpers);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
     failed += !runTest("testThreadSafeDictionaryConcurrentReadWriteNoDeadlock",
                        testThreadSafeDictionaryConcurrentReadWriteNoDeadlock);

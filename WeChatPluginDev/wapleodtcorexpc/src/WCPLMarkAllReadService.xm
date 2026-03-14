@@ -18,8 +18,7 @@ static UIViewController * _Nullable wcpl_markAllRead_topMostViewController(void)
             if ([vc isKindOfClass:[UIViewController class]]) {
                 return (UIViewController *)vc;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     UIWindow *keyWindow = nil;
@@ -83,6 +82,7 @@ static id _Nullable wcpl_markAllRead_createLoadingView(UIView * _Nullable hostVi
     @try {
         loadingView = [[loadingClass alloc] init];
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         loadingView = nil;
     }
     if (!loadingView) {
@@ -92,8 +92,7 @@ static id _Nullable wcpl_markAllRead_createLoadingView(UIView * _Nullable hostVi
     if ([loadingView respondsToSelector:@selector(setFrame:)]) {
         @try {
             ((void (*)(id, SEL, CGRect))objc_msgSend)(loadingView, @selector(setFrame:), hostView.bounds);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     [hostView addSubview:loadingView];
@@ -102,6 +101,7 @@ static id _Nullable wcpl_markAllRead_createLoadingView(UIView * _Nullable hostVi
     @try {
         label = [loadingView valueForKey:@"m_label"];
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         label = nil;
     }
     if ([label isKindOfClass:[UILabel class]] && [text isKindOfClass:[NSString class]] && text.length > 0) {
@@ -111,20 +111,17 @@ static id _Nullable wcpl_markAllRead_createLoadingView(UIView * _Nullable hostVi
     if ([loadingView respondsToSelector:@selector(setM_bIgnoringInteractionEventsWhenLoading:)]) {
         @try {
             [loadingView performSelector:@selector(setM_bIgnoringInteractionEventsWhenLoading:) withObject:@YES];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([loadingView respondsToSelector:@selector(setFitFrame:)]) {
         @try {
             [loadingView performSelector:@selector(setFitFrame:) withObject:@1];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([loadingView respondsToSelector:@selector(startLoading)]) {
         @try {
             [loadingView performSelector:@selector(startLoading)];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return loadingView;
@@ -139,21 +136,18 @@ static void wcpl_markAllRead_stopLoadingView(id _Nullable loadingView, BOOL ok, 
     if ([loadingView respondsToSelector:sel] && [text isKindOfClass:[NSString class]] && text.length > 0) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(loadingView, sel, text);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     } else if ([loadingView respondsToSelector:@selector(stopLoading)]) {
         @try {
             [loadingView performSelector:@selector(stopLoading)];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([loadingView respondsToSelector:@selector(removeFromSuperview)]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             @try {
                 [loadingView removeFromSuperview];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         });
     }
 }
@@ -178,8 +172,7 @@ static id _Nullable wcpl_markAllRead_fetchSessionMgr(void) {
                 [obj respondsToSelector:@selector(ChangeSessionUnReadCount:to:)]) {
                 return obj;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -228,6 +221,7 @@ static NSUInteger wcpl_markAllRead_markAllSessionsAsReadInternal(NSString * _Nul
         @try {
             userNames = ((id (*)(id, SEL))objc_msgSend)(sessionMgr, @selector(GetUserNamesOnSessionList));
         } @catch (__unused NSException *exception) {
+            WCPLCatchLog(exception);
             userNames = nil;
         }
 
@@ -251,15 +245,13 @@ static NSUInteger wcpl_markAllRead_markAllSessionsAsReadInternal(NSString * _Nul
                                                                     userName,
                                                                     0);
                 processedCount += 1;
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
 
         if ([sessionMgr respondsToSelector:@selector(recountUnReadCountAndFireExtension)]) {
             @try {
                 ((void (*)(id, SEL))objc_msgSend)(sessionMgr, @selector(recountUnReadCountAndFireExtension));
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
 
         WCPLLogInfo(@"[一键已读][+] 完成: sessions=%lu", (unsigned long)processedCount);
@@ -269,14 +261,12 @@ static NSUInteger wcpl_markAllRead_markAllSessionsAsReadInternal(NSString * _Nul
             if (canRestoreRoom) {
                 @try {
                     ((void (*)(id, SEL, BOOL))objc_msgSend)(groupConfig, @selector(setIsOpenRoomEnable:), roomEnabled);
-                } @catch (__unused NSException *exception) {
-                }
+                } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             }
             if (canRestoreBrand) {
                 @try {
                     ((void (*)(id, SEL, BOOL))objc_msgSend)(groupConfig, @selector(setIsOpenBrandEnable:), brandEnabled);
-                } @catch (__unused NSException *exception) {
-                }
+                } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             }
         }
 
@@ -340,6 +330,7 @@ static NSString * _Nullable wcpl_topRightMenu_safeItemIDFromSender(id _Nullable 
         @try {
             data = ((id (*)(id, SEL))objc_msgSend)(sender, @selector(m_data));
         } @catch (__unused NSException *exception) {
+            WCPLCatchLog(exception);
             data = nil;
         }
     }
@@ -373,8 +364,7 @@ static UIImage * _Nullable wcpl_topRightMenu_markAllReadIconImage(void) {
         if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
             @try {
                 image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([image isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)image;
@@ -426,6 +416,7 @@ static id _Nullable wcpl_topRightMenu_createMarkAllReadItemData(void) {
             nil,
             nil);
     } @catch (__unused NSException *exception) {
+        WCPLCatchLog(exception);
         btnData = nil;
     }
     return btnData;

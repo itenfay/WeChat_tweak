@@ -5,18 +5,27 @@
 static void wcpl_entry_afterSettingsReload(id controller,
                                            uint64_t startMs,
                                            uint64_t afterOrigMs) {
+    static NSString *const kSceneTag = @"NewSettingViewController";
     id tableViewMgr = wcpl_entry_safeObjectIvar(controller, "m_tableViewMgr");
     if (!tableViewMgr) {
         tableViewMgr = wcpl_entry_safeValueForKey(controller, @"m_tableViewMgr");
     }
     uint64_t injectStartMs = wcpl_entry_perf_uptimeMillis();
-    if (wcpl_entry_hasExternalPluginsPortal(controller, tableViewMgr)) {
-        WCPLLogInfo(@"[入口] 检测到设置页已有插件入口，跳过微信辣椒入口注入");
+    if (wcpl_entry_shouldUsePluginsPortal(controller, tableViewMgr)) {
+        if (wcpl_entry_registerPluginToPluginsPortalIfNeeded(kSceneTag)) {
+            WCPLLogInfo(@"[入口] 检测到插件归纳入口，微信辣椒显示在插件归纳中");
+        } else {
+            WCPLLogWarning(@"[入口] 插件归纳注册失败，回退插入微信设置入口");
+            wcpl_entry_insertPluginCell(tableViewMgr,
+                                        controller,
+                                        @selector(wcpl_setting),
+                                        kSceneTag);
+        }
     } else {
         wcpl_entry_insertPluginCell(tableViewMgr,
                                     controller,
                                     @selector(wcpl_setting),
-                                    @"NewSettingViewController");
+                                    kSceneTag);
     }
     uint64_t endMs = wcpl_entry_perf_uptimeMillis();
     uint64_t totalMs = endMs >= startMs ? (endMs - startMs) : 0;

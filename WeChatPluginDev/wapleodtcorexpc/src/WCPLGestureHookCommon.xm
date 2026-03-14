@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
@@ -61,6 +62,13 @@ static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
 static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
 static unsigned int gWCPLQuoteLongPressSuppressMsgType = 0;
 
+typedef NS_ENUM(NSInteger, WCPLTapHitZone) {
+    WCPLTapHitZoneOutside = 0,
+    WCPLTapHitZoneBubbleBlank = 1,
+    WCPLTapHitZoneTextBody = 2,
+    WCPLTapHitZoneMediaBody = 3,
+};
+
 static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap);
 static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap);
 static NSString *wcpl_currentSelfUserNameForRepeat(void);
@@ -110,6 +118,18 @@ static BOOL wcpl_repeatQuoteNativeResendFresh(CMessageWrap *msgWrap,
 static UIView *wcpl_findMessageCellAncestorView(UIView *view);
 static BOOL wcpl_shouldBlockNativeDoubleTapForView(id ownerView, id sender, NSString *scopeTag);
 static void wcpl_enforceTripleTapPriorityForViewTree(UIView *root, UITapGestureRecognizer *tripleTap, id ownerCell);
+static BOOL wcpl_messageUsesTripleTapPolicy(id cell, CMessageWrap *msgWrap);
+static NSInteger wcpl_configuredTapCountForCell(id cell, CMessageWrap *msgWrap);
+static NSString *wcpl_configuredTapSceneTagForCell(id cell, CMessageWrap *msgWrap);
+static NSString *wcpl_tapHitZoneName(WCPLTapHitZone zone);
+static WCPLTapHitZone wcpl_tapGestureHitZoneForPoint(id cell, CGPoint pointInCell, NSString *scopeTag);
+static BOOL wcpl_shouldAllowCustomTapForZone(id cell, CMessageWrap *msgWrap, WCPLTapHitZone zone);
+static CGPoint wcpl_resolveTapPointInCellFromOwnerAndSender(UIView *cellView, id ownerView, id sender, BOOL *resolvedOut);
+static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
+                                                           CMessageWrap *msgWrap,
+                                                           WCPLTapHitZone zone,
+                                                           BOOL zoneResolved,
+                                                           NSString *scopeTag);
 static BOOL wcpl_isPointInMessageBubbleArea(id cell, CGPoint pointInCell, NSString *scopeTag);
 static BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag);
 static NSDateFormatter *wcpl_messageTimeFormatter(void);
@@ -237,6 +257,9 @@ static BOOL wcpl_shouldSuppressTapForTripleSequence(id cell, NSString *entry) {
     if (!msgWrap) {
         return NO;
     }
+    if (!wcpl_messageUsesTripleTapPolicy(cell, msgWrap)) {
+        return NO;
+    }
 
     NSNumber *lastTapAt = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey);
     NSNumber *tapCountObj = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey);
@@ -261,154 +284,12 @@ static BOOL wcpl_shouldSuppressTapForTripleSequence(id cell, NSString *entry) {
 }
 
 static BOOL wcpl_isPointInMessageBubbleArea(id cell, CGPoint pointInCell, NSString *scopeTag) {
-    if (![cell isKindOfClass:[UIView class]]) {
-        return NO;
-    }
-
-    UIView *cellView = (UIView *)cell;
-    if (!CGRectContainsPoint(cellView.bounds, pointInCell)) {
-        return NO;
-    }
-
-    BOOL (^isRectUsable)(CGRect) = ^BOOL(CGRect rect) {
-        return !CGRectIsEmpty(rect) &&
-               !CGRectIsNull(rect) &&
-               !CGRectIsInfinite(rect) &&
-               CGRectGetWidth(rect) > 8.0f &&
-               CGRectGetHeight(rect) > 8.0f &&
-               CGRectIntersectsRect(rect, cellView.bounds);
-    };
-    BOOL (^isRowWideRect)(CGRect) = ^BOOL(CGRect rect) {
-        if (!isRectUsable(rect)) {
-            return NO;
-        }
-        CGFloat cellWidth = CGRectGetWidth(cellView.bounds);
-        if (cellWidth <= 24.0f) {
-            return NO;
-        }
-        CGFloat widthRatio = CGRectGetWidth(rect) / cellWidth;
-        BOOL spansBothSides = (CGRectGetMinX(rect) <= 10.0f) &&
-                              ((cellWidth - CGRectGetMaxX(rect)) <= 10.0f);
-        return widthRatio >= 0.80f || spansBothSides;
-    };
-
-    CGRect anchorRect = CGRectZero;
-    BOOL anchorRectValid = NO;
-    if ([(id)cell respondsToSelector:@selector(wchook_bubbleAnchorView)]) {
-        @try {
-            UIView *bubbleView = ((id (*)(id, SEL))objc_msgSend)((id)cell, @selector(wchook_bubbleAnchorView));
-            if ([bubbleView isKindOfClass:[UIView class]]) {
-                anchorRect = [cellView convertRect:bubbleView.bounds fromView:bubbleView];
-                anchorRectValid = isRectUsable(anchorRect);
-            }
-        } @catch (__unused NSException *exception) {
-            anchorRectValid = NO;
-        }
-    }
-
-    CGRect menuRect = CGRectZero;
-    BOOL menuRectValid = NO;
-    if ([(id)cell respondsToSelector:@selector(showRectForMenuController)]) {
-        @try {
-            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)((id)cell, @selector(showRectForMenuController));
-            menuRectValid = isRectUsable(menuRect);
-        } @catch (__unused NSException *exception) {
-            menuRectValid = NO;
-        }
-    }
-
-    CGRect bubbleRect = CGRectZero;
-    BOOL bubbleRectValid = NO;
-    if (anchorRectValid && menuRectValid) {
-        CGRect intersectRect = CGRectIntersection(anchorRect, menuRect);
-        if (isRectUsable(intersectRect)) {
-            bubbleRect = intersectRect;
-        } else {
-            BOOL anchorWide = isRowWideRect(anchorRect);
-            BOOL menuWide = isRowWideRect(menuRect);
-            if (anchorWide && !menuWide) {
-                bubbleRect = menuRect;
-            } else if (menuWide && !anchorWide) {
-                bubbleRect = anchorRect;
-            } else {
-                CGFloat anchorArea = CGRectGetWidth(anchorRect) * CGRectGetHeight(anchorRect);
-                CGFloat menuArea = CGRectGetWidth(menuRect) * CGRectGetHeight(menuRect);
-                bubbleRect = (menuArea > 0.0f && menuArea < anchorArea) ? menuRect : anchorRect;
-            }
-        }
-        bubbleRectValid = YES;
-    } else if (anchorRectValid) {
-        bubbleRect = anchorRect;
-        bubbleRectValid = YES;
-    } else if (menuRectValid) {
-        bubbleRect = menuRect;
-        bubbleRectValid = YES;
-    }
-
-    if (!bubbleRectValid) {
-        WCPLLogDebug(@"Triple tap ignored: bubble rect unavailable scope=%@ class=%@ point=(%.1f,%.1f)",
-                     scopeTag ?: @"unknown",
-                     NSStringFromClass([cellView class]),
-                     pointInCell.x,
-                     pointInCell.y);
-        return NO;
-    }
-    if (isRowWideRect(bubbleRect)) {
-        WCPLLogDebug(@"Triple tap ignored: bubble rect too wide scope=%@ class=%@ point=(%.1f,%.1f) bubble=(%.1f,%.1f,%.1f,%.1f)",
-                     scopeTag ?: @"unknown",
-                     NSStringFromClass([cellView class]),
-                     pointInCell.x,
-                     pointInCell.y,
-                     bubbleRect.origin.x,
-                     bubbleRect.origin.y,
-                     bubbleRect.size.width,
-                     bubbleRect.size.height);
-        return NO;
-    }
-
     CMessageWrap *msgWrap = wcpl_messageWrapForCellView(cell);
-    if (msgWrap && CGRectGetWidth(cellView.bounds) > 20.0f) {
-        BOOL isSelf = !wcpl_isMessageFromOther(msgWrap);
-        CGFloat cellMidX = CGRectGetMidX(cellView.bounds);
-        CGRect sideClampedRect = bubbleRect;
-        if (isSelf) {
-            CGFloat minX = MAX(CGRectGetMinX(sideClampedRect), cellMidX - 12.0f);
-            CGFloat maxX = CGRectGetMaxX(sideClampedRect);
-            if (maxX - minX > 8.0f) {
-                sideClampedRect.origin.x = minX;
-                sideClampedRect.size.width = maxX - minX;
-            }
-        } else {
-            CGFloat minX = CGRectGetMinX(sideClampedRect);
-            CGFloat maxX = MIN(CGRectGetMaxX(sideClampedRect), cellMidX + 12.0f);
-            if (maxX - minX > 8.0f) {
-                sideClampedRect.origin.x = minX;
-                sideClampedRect.size.width = maxX - minX;
-            }
-        }
-        bubbleRect = sideClampedRect;
-    }
-
-    CGRect hitRect = CGRectInset(bubbleRect, 1.0f, 1.0f);
-    if (CGRectIsEmpty(hitRect) || CGRectGetWidth(hitRect) <= 2.0f || CGRectGetHeight(hitRect) <= 2.0f) {
-        hitRect = bubbleRect;
-    }
-    BOOL inside = CGRectContainsPoint(hitRect, pointInCell);
-    if (!inside) {
-        WCPLLogDebug(@"Triple tap ignored outside bubble: scope=%@ class=%@ point=(%.1f,%.1f) bubble=(%.1f,%.1f,%.1f,%.1f)",
-                     scopeTag ?: @"unknown",
-                     NSStringFromClass([cellView class]),
-                     pointInCell.x,
-                     pointInCell.y,
-                     bubbleRect.origin.x,
-                     bubbleRect.origin.y,
-                     bubbleRect.size.width,
-                     bubbleRect.size.height);
-    }
-    return inside;
+    WCPLTapHitZone zone = wcpl_tapGestureHitZoneForPoint(cell, pointInCell, scopeTag);
+    return wcpl_shouldAllowCustomTapForZone(cell, msgWrap, zone);
 }
 
-static BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag) {
+static __attribute__((unused)) BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag) {
     if (![cell isKindOfClass:[UIView class]] || ![touch isKindOfClass:[UITouch class]]) {
         return NO;
     }
@@ -443,8 +324,7 @@ static NSArray<id> *wcpl_revokeCandidatesFromRichTextObject(id richTextObj) {
             if (delegateView) {
                 [candidates addObject:delegateView];
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     SEL coverViewSelector = @selector(richTextCoverView);
@@ -454,8 +334,7 @@ static NSArray<id> *wcpl_revokeCandidatesFromRichTextObject(id richTextObj) {
             if (coverView) {
                 [candidates addObject:coverView];
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     NSArray<NSString *> *keys = @[@"linkDelegate", @"layoutDelegate", @"delegate", @"textSelectEventDelegate", @"menuResponder"];
@@ -517,6 +396,15 @@ static BOOL wcpl_shouldBlockNativeDoubleTap(id cell, id sender, NSString *scopeT
     return wcpl_shouldBlockNativeDoubleTapForView(cell, sender, scopeTag);
 }
 
+static BOOL wcpl_viewIsReferJumpArea(UIView *view) {
+    for (UIView *cursor = view; cursor; cursor = cursor.superview) {
+        if ([WCHookMessageNavigator senderLooksLikeReferView:cursor]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 static BOOL wcpl_shouldBlockNativeDoubleTapForView(id ownerView, id sender, NSString *scopeTag) {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     if (!config.doubleTapGestureEnable) {
@@ -542,10 +430,24 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForView(id ownerView, id sender, NSSt
     }
 
     CMessageWrap *msgWrap = wcpl_messageWrapForCellView(cellView);
+    BOOL pointResolved = NO;
+    CGPoint pointInCell = wcpl_resolveTapPointInCellFromOwnerAndSender(cellView, ownerView, sender, &pointResolved);
+    WCPLTapHitZone zone = pointResolved
+        ? wcpl_tapGestureHitZoneForPoint(cellView, pointInCell, [scopeTag stringByAppendingString:@"_native"])
+        : WCPLTapHitZoneOutside;
+    if (!wcpl_shouldBlockNativeDoubleTapForResolvedZone(cellView, msgWrap, zone, pointResolved, scopeTag)) {
+        return NO;
+    }
+
     NSString *scope = ([scopeTag isKindOfClass:[NSString class]] && scopeTag.length > 0) ? scopeTag : @"unknown";
     NSString *senderClass = sender ? NSStringFromClass([sender class]) : @"(nil)";
-    WCPLLogInfo(@"Native double tap blocked: scope=%@ class=%@ sender=%@ msg=%@",
+    NSString *gestureTag = wcpl_configuredTapSceneTagForCell(cellView, msgWrap);
+    NSString *zoneName = pointResolved ? wcpl_tapHitZoneName(zone) : @"unresolved";
+    WCPLLogInfo(@"Native double tap blocked: scope=%@ gesture=%@ zone=%@ resolved=%d class=%@ sender=%@ msg=%@",
                 scope,
+                gestureTag,
+                zoneName,
+                pointResolved ? 1 : 0,
                 NSStringFromClass([cellView class]),
                 senderClass,
                 wcpl_repeatMessageDebugInfo(msgWrap));
@@ -557,10 +459,13 @@ static void wcpl_enforceTripleTapPriorityForViewTree(UIView *root, UITapGestureR
         return;
     }
 
+    BOOL usesTriplePolicy = tripleTap.numberOfTapsRequired >= 3;
+
     NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:root];
     while (stack.count > 0) {
         UIView *view = stack.lastObject;
         [stack removeLastObject];
+        BOOL viewIsReferJumpArea = wcpl_viewIsReferJumpArea(view);
 
         NSArray<UIGestureRecognizer *> *recognizers = [view.gestureRecognizers copy];
         for (UIGestureRecognizer *recognizer in recognizers) {
@@ -574,18 +479,39 @@ static void wcpl_enforceTripleTapPriorityForViewTree(UIView *root, UITapGestureR
             }
 
             if (tap.numberOfTapsRequired == 2) {
-                if (tap.enabled) {
-                    tap.enabled = NO;
-                    NSNumber *didLog = objc_getAssociatedObject(tap, kWCPLNativeDoubleTapRecognizerDisabledKey);
-                    if (![didLog isKindOfClass:[NSNumber class]] || !didLog.boolValue) {
-                        WCPLLogInfo(@"Native double tap recognizer disabled: cell=%p owner=%@ view=%@ recognizer=%@",
-                                    ownerCell,
-                                    ownerCell ? NSStringFromClass([ownerCell class]) : @"(nil)",
-                                    NSStringFromClass([view class]),
-                                    NSStringFromClass([tap class]));
-                        objc_setAssociatedObject(tap, kWCPLNativeDoubleTapRecognizerDisabledKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                NSNumber *didDisable = objc_getAssociatedObject(tap, kWCPLNativeDoubleTapRecognizerDisabledKey);
+                BOOL disabledByWCPL = [didDisable isKindOfClass:[NSNumber class]] && didDisable.boolValue;
+                if (usesTriplePolicy) {
+                    if (tap.enabled) {
+                        tap.enabled = NO;
+                        if (!disabledByWCPL) {
+                            WCPLLogInfo(@"Native double tap recognizer disabled: cell=%p owner=%@ view=%@ recognizer=%@",
+                                        ownerCell,
+                                        ownerCell ? NSStringFromClass([ownerCell class]) : @"(nil)",
+                                        NSStringFromClass([view class]),
+                                        NSStringFromClass([tap class]));
+                            objc_setAssociatedObject(tap,
+                                                     kWCPLNativeDoubleTapRecognizerDisabledKey,
+                                                     @(YES),
+                                                     OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                        }
                     }
+                } else if (disabledByWCPL && !tap.enabled) {
+                    tap.enabled = YES;
+                    objc_setAssociatedObject(tap,
+                                             kWCPLNativeDoubleTapRecognizerDisabledKey,
+                                             nil,
+                                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    WCPLLogInfo(@"Native double tap recognizer restored: cell=%p owner=%@ view=%@ recognizer=%@",
+                                ownerCell,
+                                ownerCell ? NSStringFromClass([ownerCell class]) : @"(nil)",
+                                NSStringFromClass([view class]),
+                                NSStringFromClass([tap class]));
                 }
+                continue;
+            }
+
+            if (viewIsReferJumpArea && tap.numberOfTapsRequired == 1) {
                 continue;
             }
 
@@ -618,57 +544,14 @@ static CMessageWrap *wcpl_quoteTargetFromMessageWrap(CMessageWrap *msgWrap) {
                 if ([target isKindOfClass:%c(CMessageWrap)]) {
                     return (CMessageWrap *)target;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
     return nil;
 }
 
 static id wcpl_quoteContactForUserName(NSString *userName) {
-    if (userName.length == 0) {
-        return nil;
-    }
-
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr) {
-        return nil;
-    }
-
-    id contact = nil;
-    if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), userName);
-        } @catch (__unused NSException *exceptionGetByName) {
-            contact = nil;
-        }
-    }
-
-    if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), userName);
-        } @catch (__unused NSException *exceptionGetFromCache) {
-            contact = nil;
-        }
-    }
-
-    if (!contact && [contactMgr respondsToSelector:@selector(getContactForSearchByName:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactForSearchByName:), userName);
-        } @catch (__unused NSException *exceptionSearchByName) {
-            contact = nil;
-        }
-    }
-
-    if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromDB:), userName);
-        } @catch (__unused NSException *exceptionGetByNameFromDB) {
-            contact = nil;
-        }
-    }
-
-    return contact;
+    return WCPLContactAdapterFindContactByUserName(userName);
 }
 
 static id wcpl_quoteContactFromMessage(CMessageWrap *msgWrap, NSString *expectedUserName) {
@@ -676,32 +559,12 @@ static id wcpl_quoteContactFromMessage(CMessageWrap *msgWrap, NSString *expected
         return nil;
     }
 
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!(contactMgr && [contactMgr respondsToSelector:@selector(getMessageChatContactByMessageWrap:)])) {
-        return nil;
-    }
-
-    id contact = nil;
-    @try {
-        contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getMessageChatContactByMessageWrap:), msgWrap);
-    } @catch (__unused NSException *exceptionGetByWrap) {
-        contact = nil;
-    }
-
-    if (!contact || expectedUserName.length == 0 || ![contact respondsToSelector:@selector(m_nsUsrName)]) {
+    id contact = WCPLContactAdapterMessageChatContact(msgWrap);
+    if (!contact || expectedUserName.length == 0) {
         return contact;
     }
 
-    NSString *contactUserName = nil;
-    @try {
-        id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
-        if ([value isKindOfClass:[NSString class]]) {
-            contactUserName = wcpl_trimTextForRepeat((NSString *)value);
-        }
-    } @catch (__unused NSException *exceptionContactUser) {
-        contactUserName = nil;
-    }
-
+    NSString *contactUserName = WCPLContactAdapterSafeUserName(contact);
     if (contactUserName.length > 0 && ![contactUserName isEqualToString:expectedUserName]) {
         WCPLLogDebug(@"Swipe quote mention contact mismatch(fromMessage): expect=%@ got=%@",
                      expectedUserName ?: @"(nil)",
@@ -712,28 +575,7 @@ static id wcpl_quoteContactFromMessage(CMessageWrap *msgWrap, NSString *expected
 }
 
 static BOOL wcpl_quoteContactMatchesUserName(id contact, NSString *expectedUserName) {
-    if (!contact) {
-        return NO;
-    }
-    if (expectedUserName.length == 0) {
-        return YES;
-    }
-
-    NSString *contactUserName = nil;
-    if ([contact isKindOfClass:[NSString class]]) {
-        contactUserName = wcpl_trimTextForRepeat((NSString *)contact);
-    } else if ([contact respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                contactUserName = wcpl_trimTextForRepeat((NSString *)value);
-            }
-        } @catch (__unused NSException *exceptionContactUser) {
-            contactUserName = nil;
-        }
-    }
-
-    return (contactUserName.length > 0 && [contactUserName isEqualToString:expectedUserName]);
+    return WCPLContactAdapterContactMatchesUserName(contact, expectedUserName);
 }
 
 static id wcpl_quoteContactFromChatVC(BaseMsgContentViewController *chatVC,
@@ -743,19 +585,7 @@ static id wcpl_quoteContactFromChatVC(BaseMsgContentViewController *chatVC,
         return nil;
     }
 
-    if (![chatVC respondsToSelector:@selector(getMessageChatContactByMessageWrap:)]) {
-        return nil;
-    }
-
-    id contact = nil;
-    @try {
-        contact = ((id (*)(id, SEL, id))objc_msgSend)(chatVC,
-                                                       @selector(getMessageChatContactByMessageWrap:),
-                                                       msgWrap);
-    } @catch (__unused NSException *exceptionGetByChatVC) {
-        contact = nil;
-    }
-
+    id contact = WCPLContactAdapterMessageChatContactFromController(chatVC, msgWrap);
     if (contact && expectedUserName.length > 0 && !wcpl_quoteContactMatchesUserName(contact, expectedUserName)) {
         WCPLLogDebug(@"Swipe quote mention contact mismatch(fromChatVC): expect=%@",
                      expectedUserName ?: @"(nil)");
@@ -765,63 +595,21 @@ static id wcpl_quoteContactFromChatVC(BaseMsgContentViewController *chatVC,
 }
 
 static id wcpl_quoteLogicControllerForChatVC(BaseMsgContentViewController *chatVC) {
-    if (!chatVC) {
-        return nil;
-    }
-
-    id logicController = nil;
-    if ([chatVC respondsToSelector:@selector(m_logicController)]) {
-        @try {
-            logicController = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(m_logicController));
-        } @catch (__unused NSException *exceptionLogic0) {
-            logicController = nil;
-        }
-    }
-
-    if (!logicController && [chatVC respondsToSelector:@selector(logicController)]) {
-        @try {
-            logicController = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(logicController));
-        } @catch (__unused NSException *exceptionLogic1) {
-            logicController = nil;
-        }
-    }
-
-    return logicController;
+    return WCPLMessageAdapterLogicController(chatVC);
 }
 
 static id wcpl_quoteToolViewForChatVC(BaseMsgContentViewController *chatVC) {
-    if (!(chatVC && [chatVC respondsToSelector:@selector(toolView)])) {
-        return nil;
-    }
-
-    id toolView = nil;
-    @try {
-        toolView = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(toolView));
-    } @catch (__unused NSException *exceptionToolView) {
-        toolView = nil;
-    }
-    return toolView;
+    return WCPLMessageAdapterToolView(chatVC);
 }
 
 static id wcpl_quoteCurrentLogicControllerFromManager(void) {
-    id logicManager = WCPLGetService(objc_getClass("MMMsgLogicManager"));
-    if (!(logicManager && [logicManager respondsToSelector:@selector(GetCurrentLogicController)])) {
-        return nil;
-    }
-
-    id currentLogic = nil;
-    @try {
-        currentLogic = ((id (*)(id, SEL))objc_msgSend)(logicManager, @selector(GetCurrentLogicController));
-    } @catch (__unused NSException *exceptionCurrentLogic) {
-        currentLogic = nil;
-    }
-    return currentLogic;
+    return WCPLMessageAdapterCurrentLogicController();
 }
 
 
 static BOOL wcpl_quoteInputHasAtSymbol(BaseMsgContentViewController *chatVC) {
     id toolView = wcpl_quoteToolViewForChatVC(chatVC);
-    NSString *inputText = wcpl_extractInputTextFromToolView(toolView);
+    NSString *inputText = WCPLMessageAdapterInputTextFromToolView(toolView);
     if (inputText.length == 0) {
         return NO;
     }
@@ -829,38 +617,7 @@ static BOOL wcpl_quoteInputHasAtSymbol(BaseMsgContentViewController *chatVC) {
 }
 
 static NSString *wcpl_quoteUserNameFromContact(id contact) {
-    if (!contact) {
-        return nil;
-    }
-
-    if ([contact isKindOfClass:[NSString class]]) {
-        return wcpl_trimTextForRepeat((NSString *)contact);
-    }
-
-    NSString *userName = nil;
-    if ([contact respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                userName = wcpl_trimTextForRepeat((NSString *)value);
-            }
-        } @catch (__unused NSException *exceptionUser0) {
-            userName = nil;
-        }
-    }
-
-    if (userName.length == 0) {
-        @try {
-            id value = [contact valueForKey:@"m_nsUsrName"];
-            if ([value isKindOfClass:[NSString class]]) {
-                userName = wcpl_trimTextForRepeat((NSString *)value);
-            }
-        } @catch (__unused NSException *exceptionUser1) {
-            userName = nil;
-        }
-    }
-
-    return userName;
+    return WCPLContactAdapterSafeUserName(contact);
 }
 
 static BOOL wcpl_tryInvokeSingleArgSelector(id target, SEL selector, id arg) {
@@ -979,7 +736,7 @@ static BOOL wcpl_applySwipeQuoteAtUserIfNeeded(CMessageWrap *msgWrap,
     }
 
     BOOL syncedToSession = NO;
-    id sessionMgr = WCPLGetService(objc_getClass("MMNewSessionMgr"));
+    id sessionMgr = WCPLServiceCenterAdapterGetServiceNamed(@"MMNewSessionMgr");
     if (sessionMgr && mentionTarget && [sessionMgr respondsToSelector:@selector(addContact:AtUser:)]) {
         @try {
             ((void (*)(id, SEL, id, id))objc_msgSend)(sessionMgr, @selector(addContact:AtUser:), mentionTarget, mentionUserName);
@@ -1065,35 +822,7 @@ static void wcpl_clearToolViewReplyingMessageIfNeeded(id toolView, NSString *sce
 static NSString *wcpl_currentSelfUserNameForRepeat(void) {
     __block NSString *selfUserName = nil;
     void (^resolveBlock)(void) = ^{
-        id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-        if (!(contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)])) {
-            return;
-        }
-        @try {
-            id selfContact = ((id (*)(id, SEL))objc_msgSend)(contactMgr, @selector(getSelfContact));
-            if ([selfContact respondsToSelector:@selector(m_nsUsrName)]) {
-                id value = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsUsrName));
-                if ([value isKindOfClass:[NSString class]]) {
-                    NSString *trimmed = wcpl_trimTextForRepeat((NSString *)value);
-                    if (trimmed.length > 0) {
-                        selfUserName = [trimmed copy];
-                        return;
-                    }
-                }
-            }
-            @try {
-                id value = [selfContact valueForKey:@"m_nsUsrName"];
-                if ([value isKindOfClass:[NSString class]]) {
-                    NSString *trimmed = wcpl_trimTextForRepeat((NSString *)value);
-                    if (trimmed.length > 0) {
-                        selfUserName = [trimmed copy];
-                    }
-                }
-            } @catch (__unused NSException *exception0) {
-            }
-        } @catch (__unused NSException *exception) {
-            selfUserName = nil;
-        }
+        selfUserName = [WCPLContactAdapterCurrentSelfUserName() copy];
     };
 
     if ([NSThread isMainThread]) {
@@ -1109,38 +838,13 @@ static NSString *wcpl_currentSelfUserNameForRepeat(void) {
 }
 
 static id wcpl_repeatContactForChatName(NSString *chatName, CMessageWrap *msgWrap) {
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr) {
-        return nil;
-    }
-
     id contact = nil;
     if (chatName.length > 0) {
-        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
-            @try {
-                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), chatName);
-            } @catch (__unused NSException *exceptionGetByName) {
-                contact = nil;
-            }
-        }
-
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-            @try {
-                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), chatName);
-            } @catch (__unused NSException *exceptionGetFromCache) {
-                contact = nil;
-            }
-        }
+        contact = WCPLContactAdapterFindContactByUserName(chatName);
     }
-
-    if (!contact && msgWrap && [contactMgr respondsToSelector:@selector(getMessageChatContactByMessageWrap:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getMessageChatContactByMessageWrap:), msgWrap);
-        } @catch (__unused NSException *exceptionGetFromMsg) {
-            contact = nil;
-        }
+    if (!contact) {
+        contact = WCPLContactAdapterMessageChatContact(msgWrap);
     }
-
     return contact;
 }
 
@@ -1165,24 +869,21 @@ static void wcpl_applyClientMsgIDToSendWrap(CMessageWrap *sendWrap,
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, setClientMsgIDSelector, clientMsgID);
             didSetClientID = YES;
-        } @catch (__unused NSException *exceptionClientIDSetter) {
-        }
+        } @catch (__unused NSException *exceptionClientIDSetter) { WCPLCatchLog(exceptionClientIDSetter); }
     }
 
     if (!didSetClientID) {
         @try {
             [sendWrap setValue:clientMsgID forKey:@"m_nsClientMsgID"];
             didSetClientID = YES;
-        } @catch (__unused NSException *exceptionClientIDKVCUpper) {
-        }
+        } @catch (__unused NSException *exceptionClientIDKVCUpper) { WCPLCatchLog(exceptionClientIDKVCUpper); }
     }
 
     if (!didSetClientID) {
         @try {
             [sendWrap setValue:clientMsgID forKey:@"m_nsClientMsgId"];
             didSetClientID = YES;
-        } @catch (__unused NSException *exceptionClientIDKVCLower) {
-        }
+        } @catch (__unused NSException *exceptionClientIDKVCLower) { WCPLCatchLog(exceptionClientIDKVCLower); }
     }
 
     if (didSetClientID) {
@@ -1200,49 +901,41 @@ static void wcpl_resetSendWrapIdentity(CMessageWrap *sendWrap) {
     if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0);
-        } @catch (__unused NSException *exceptionLocalId) {
-        }
+        } @catch (__unused NSException *exceptionLocalId) { WCPLCatchLog(exceptionLocalId); }
     }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiMesLocalID"];
-    } @catch (__unused NSException *exceptionLocalIdKVC) {
-    }
+    } @catch (__unused NSException *exceptionLocalIdKVC) { WCPLCatchLog(exceptionLocalIdKVC); }
 
     if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
         @try {
             ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0);
-        } @catch (__unused NSException *exceptionSvrId) {
-        }
+        } @catch (__unused NSException *exceptionSvrId) { WCPLCatchLog(exceptionSvrId); }
     }
     @try {
         [sendWrap setValue:@((long long)0) forKey:@"m_n64MesSvrID"];
-    } @catch (__unused NSException *exceptionSvrIdKVC) {
-    }
+    } @catch (__unused NSException *exceptionSvrIdKVC) { WCPLCatchLog(exceptionSvrIdKVC); }
 
     if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exceptionStatus) {
-        }
+        } @catch (__unused NSException *exceptionStatus) { WCPLCatchLog(exceptionStatus); }
     }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiStatus"];
-    } @catch (__unused NSException *exceptionStatusKVC) {
-    }
+    } @catch (__unused NSException *exceptionStatusKVC) { WCPLCatchLog(exceptionStatusKVC); }
 
     unsigned int now = (unsigned int)[[NSDate date] timeIntervalSince1970];
     if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), now);
-        } @catch (__unused NSException *exceptionCreateTime) {
-        }
+        } @catch (__unused NSException *exceptionCreateTime) { WCPLCatchLog(exceptionCreateTime); }
     }
 
     if ([sendWrap respondsToSelector:@selector(setM_uiSendTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiSendTime:), now);
-        } @catch (__unused NSException *exceptionSendTime) {
-        }
+        } @catch (__unused NSException *exceptionSendTime) { WCPLCatchLog(exceptionSendTime); }
     }
 }
 
@@ -1257,31 +950,27 @@ static void wcpl_prepareSendWrapRoute(CMessageWrap *sendWrap,
     if ([sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exceptionTo) {
-        }
+        } @catch (__unused NSException *exceptionTo) { WCPLCatchLog(exceptionTo); }
     }
 
     if (selfUserName.length > 0 && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionFrom) {
-        }
+        } @catch (__unused NSException *exceptionFrom) { WCPLCatchLog(exceptionFrom); }
     }
 
     // 设置发送者身份
     if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1);
-        } @catch (__unused NSException *exceptionSenderStatus) {
-        }
+        } @catch (__unused NSException *exceptionSenderStatus) { WCPLCatchLog(exceptionSenderStatus); }
     }
 
     // 主动发送场景 realChatUsr 保持空，避免被误判为"代他人发言"
     if ([sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), nil);
-        } @catch (__unused NSException *exceptionReal) {
-        }
+        } @catch (__unused NSException *exceptionReal) { WCPLCatchLog(exceptionReal); }
     }
 
     NSString *clientMsgID = wcpl_generateRepeatClientMsgID(selfUserName);
@@ -1289,8 +978,7 @@ static void wcpl_prepareSendWrapRoute(CMessageWrap *sendWrap,
 
     @try {
         [sendWrap setValue:@(sendWrap.m_uiMessageType) forKey:@"m_uiMsgType"];
-    } @catch (__unused NSException *exceptionMsgType) {
-    }
+    } @catch (__unused NSException *exceptionMsgType) { WCPLCatchLog(exceptionMsgType); }
 
     WCPLLogDebug(@"Repeat send route prepared: scene=%@ msg=%@ to=%@ from=%@ senderStatus=%u",
                  sceneTag ?: @"(nil)",
@@ -1347,29 +1035,25 @@ static CMessageWrap *wcpl_buildFreshQuoteResendWrap(CMessageWrap *msgWrap,
     if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), quoteContent);
-        } @catch (__unused NSException *exceptionSetContent) {
-        }
+        } @catch (__unused NSException *exceptionSetContent) { WCPLCatchLog(exceptionSetContent); }
     }
 
     if (selfUserName.length > 0 && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionFrom) {
-        }
+        } @catch (__unused NSException *exceptionFrom) { WCPLCatchLog(exceptionFrom); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exceptionTo) {
-        }
+        } @catch (__unused NSException *exceptionTo) { WCPLCatchLog(exceptionTo); }
     }
 
     unsigned int now = (unsigned int)[[NSDate date] timeIntervalSince1970];
     if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), now);
-        } @catch (__unused NSException *exceptionCreateTime) {
-        }
+        } @catch (__unused NSException *exceptionCreateTime) { WCPLCatchLog(exceptionCreateTime); }
     }
 
     NSString *clientMsgID = wcpl_generateRepeatClientMsgID(selfUserName);
@@ -1378,49 +1062,40 @@ static CMessageWrap *wcpl_buildFreshQuoteResendWrap(CMessageWrap *msgWrap,
     if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), 49);
-        } @catch (__unused NSException *exceptionSetType) {
-        }
+        } @catch (__unused NSException *exceptionSetType) { WCPLCatchLog(exceptionSetType); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exceptionSetStatus) {
-        }
+        } @catch (__unused NSException *exceptionSetStatus) { WCPLCatchLog(exceptionSetStatus); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0);
-        } @catch (__unused NSException *exceptionSetLocal) {
-        }
+        } @catch (__unused NSException *exceptionSetLocal) { WCPLCatchLog(exceptionSetLocal); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
         @try {
             ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0);
-        } @catch (__unused NSException *exceptionSetSvr) {
-        }
+        } @catch (__unused NSException *exceptionSetSvr) { WCPLCatchLog(exceptionSetSvr); }
     }
 
     @try {
         [sendWrap setValue:@(49) forKey:@"m_uiMessageType"];
-    } @catch (__unused NSException *exceptionTypeKVC) {
-    }
+    } @catch (__unused NSException *exceptionTypeKVC) { WCPLCatchLog(exceptionTypeKVC); }
 
     @try {
         [sendWrap setValue:@(49) forKey:@"m_uiMsgType"];
-    } @catch (__unused NSException *exceptionMsgTypeKVC) {
-    }
+    } @catch (__unused NSException *exceptionMsgTypeKVC) { WCPLCatchLog(exceptionMsgTypeKVC); }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiStatus"];
-    } @catch (__unused NSException *exceptionStatusKVC) {
-    }
+    } @catch (__unused NSException *exceptionStatusKVC) { WCPLCatchLog(exceptionStatusKVC); }
     @try {
         [sendWrap setValue:@(0) forKey:@"m_uiMesLocalID"];
-    } @catch (__unused NSException *exceptionLocalKVC) {
-    }
+    } @catch (__unused NSException *exceptionLocalKVC) { WCPLCatchLog(exceptionLocalKVC); }
     @try {
         [sendWrap setValue:@((long long)0) forKey:@"m_n64MesSvrID"];
-    } @catch (__unused NSException *exceptionSvrKVC) {
-    }
+    } @catch (__unused NSException *exceptionSvrKVC) { WCPLCatchLog(exceptionSvrKVC); }
 
     BOOL hasReferMsg = (quoteContent.length > 0 &&
                         [quoteContent rangeOfString:@"<refermsg" options:NSCaseInsensitiveSearch].location != NSNotFound);
@@ -1449,8 +1124,7 @@ static CMessageWrap *wcpl_buildDetachedSendWrap(CMessageWrap *msgWrap, NSString 
                 sendWrap = (CMessageWrap *)copiedWrap;
                 usedCopyPath = YES;
             }
-        } @catch (__unused NSException *exceptionCopy) {
-        }
+        } @catch (__unused NSException *exceptionCopy) { WCPLCatchLog(exceptionCopy); }
     }
 
     if (!sendWrap) {
@@ -1473,34 +1147,29 @@ static CMessageWrap *wcpl_buildDetachedSendWrap(CMessageWrap *msgWrap, NSString 
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(copyToMsg:), sendWrap);
                 usedCopyPath = YES;
-            } @catch (__unused NSException *exceptionCopyTo) {
-            }
+            } @catch (__unused NSException *exceptionCopyTo) { WCPLCatchLog(exceptionCopyTo); }
         }
 
         if (sendWrap && !usedCopyPath) {
             if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
                 @try {
                     ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), msgWrap.m_uiMessageType);
-                } @catch (__unused NSException *exceptionType) {
-                }
+                } @catch (__unused NSException *exceptionType) { WCPLCatchLog(exceptionType); }
             }
             if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
                 @try {
                     ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), msgWrap.m_nsContent);
-                } @catch (__unused NSException *exceptionContent) {
-                }
+                } @catch (__unused NSException *exceptionContent) { WCPLCatchLog(exceptionContent); }
             }
             if ([sendWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
                 @try {
                     ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsMsgSource:), msgWrap.m_nsMsgSource);
-                } @catch (__unused NSException *exceptionSource) {
-                }
+                } @catch (__unused NSException *exceptionSource) { WCPLCatchLog(exceptionSource); }
             }
             if ([sendWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
                 @try {
                     ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsEmoticonMD5:), msgWrap.m_nsEmoticonMD5);
-                } @catch (__unused NSException *exceptionMd5) {
-                }
+                } @catch (__unused NSException *exceptionMd5) { WCPLCatchLog(exceptionMd5); }
             }
         }
     }
@@ -1617,8 +1286,7 @@ static BOOL wcpl_probeVideoLocalAsset(CMessageWrap *msgWrap,
         @try {
             id value = ((id (*)(id, SEL, id))objc_msgSend)(wrapClass, selector, msgWrap);
             appendCandidate(value);
-        } @catch (__unused NSException *exceptionClass) {
-        }
+        } @catch (__unused NSException *exceptionClass) { WCPLCatchLog(exceptionClass); }
     }
 
     NSArray<NSString *> *instanceSelectors = @[
@@ -1635,8 +1303,7 @@ static BOOL wcpl_probeVideoLocalAsset(CMessageWrap *msgWrap,
         @try {
             id value = ((id (*)(id, SEL))objc_msgSend)(msgWrap, selector);
             appendCandidate(value);
-        } @catch (__unused NSException *exceptionInstance) {
-        }
+        } @catch (__unused NSException *exceptionInstance) { WCPLCatchLog(exceptionInstance); }
     }
 
     NSString *bestPath = candidates.firstObject;
@@ -1666,7 +1333,7 @@ static unsigned long long wcpl_getSendMessageQueueCount(BOOL *availableOut) {
         *availableOut = NO;
     }
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    id sendMessageMgr = WCPLMessageActionAdapterSendMessageManager();
     if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(GetCountOfSendMessage)])) {
         return 0;
     }
@@ -1677,8 +1344,7 @@ static unsigned long long wcpl_getSendMessageQueueCount(BOOL *availableOut) {
             *availableOut = YES;
         }
         return count;
-    } @catch (__unused NSException *exceptionQueueCount) {
-    }
+    } @catch (__unused NSException *exceptionQueueCount) { WCPLCatchLog(exceptionQueueCount); }
 
     return 0;
 }
@@ -1722,7 +1388,7 @@ static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
         return NO;
     }
 
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    id messageMgr = WCPLMessageActionAdapterMessageManager();
     BOOL preferMessageMgrFirst = (originWrap.m_uiMessageType == 49);
 
     BOOL (^tryResendViaMessageMgr)(void) = ^BOOL {
@@ -1890,7 +1556,7 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
         return NO;
     }
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    id sendMessageMgr = WCPLMessageActionAdapterSendMessageManager();
     if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
         return NO;
     }
@@ -2024,7 +1690,7 @@ static BOOL wcpl_repeatTextBySendMessageMgrFresh(CMessageWrap *msgWrap,
         return NO;
     }
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    id sendMessageMgr = WCPLMessageActionAdapterSendMessageManager();
     if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
         return NO;
     }
@@ -2175,8 +1841,7 @@ static CMessageWrap *wcpl_extractForwardGeneratedWrap(id generated) {
             if ([nested isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)nested;
             }
-        } @catch (__unused NSException *exceptionNestedWrap) {
-        }
+        } @catch (__unused NSException *exceptionNestedWrap) { WCPLCatchLog(exceptionNestedWrap); }
     }
 
     if ([generated isKindOfClass:[NSArray class]]) {
@@ -2191,8 +1856,7 @@ static CMessageWrap *wcpl_extractForwardGeneratedWrap(id generated) {
                     if ([nested isKindOfClass:%c(CMessageWrap)]) {
                         return (CMessageWrap *)nested;
                     }
-                } @catch (__unused NSException *exceptionNestedListWrap) {
-                }
+                } @catch (__unused NSException *exceptionNestedListWrap) { WCPLCatchLog(exceptionNestedListWrap); }
             }
         }
     }
@@ -2259,7 +1923,7 @@ static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
                        videoInfoClassName);
     }
 
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    id messageMgr = WCPLMessageActionAdapterMessageManager();
     if (!messageMgr) {
         WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward error/fallback_reason=message_mgr_unavailable",
                        scene,
@@ -2591,7 +2255,7 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
     }
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    id sendMessageMgr = WCPLMessageActionAdapterSendMessageManager();
     if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
         WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ branch_decision=reject_forward_send error/fallback_reason=sendmsgmgr_unavailable",
                        scene,
@@ -2654,8 +2318,7 @@ static NSString *wcpl_repeatAudioPathForMessage(CMessageWrap *msgWrap) {
         if ([value isKindOfClass:[NSString class]]) {
             return (NSString *)value;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return nil;
 }
@@ -2692,12 +2355,11 @@ static NSData *wcpl_loadVoiceAudioData(CMessageWrap *msgWrap, NSString **outPath
 }
 
 static unsigned int wcpl_generateSendMsgTime(void) {
-    id sessionMgr = WCPLGetService(objc_getClass("MMNewSessionMgr"));
+    id sessionMgr = WCPLServiceCenterAdapterGetServiceNamed(@"MMNewSessionMgr");
     if (sessionMgr && [sessionMgr respondsToSelector:@selector(GenSendMsgTime)]) {
         @try {
             return ((unsigned int (*)(id, SEL))objc_msgSend)(sessionMgr, @selector(GenSendMsgTime));
-        } @catch (__unused NSException *exceptionSendTime) {
-        }
+        } @catch (__unused NSException *exceptionSendTime) { WCPLCatchLog(exceptionSendTime); }
     }
     return (unsigned int)[[NSDate date] timeIntervalSince1970];
 }
@@ -2735,7 +2397,7 @@ static unsigned int wcpl_voiceTimeFromWrap(CMessageWrap *msgWrap) {
     unsigned int t = 0;
     if ([msgWrap respondsToSelector:@selector(m_uiVoiceTime)]) {
         @try { t = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceTime)); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if (t > 300) {
         t = (t + 999) / 1000;
@@ -2757,7 +2419,7 @@ static unsigned int wcpl_voiceFormatFromWrap(CMessageWrap *msgWrap) {
     unsigned int f = 0;
     if ([msgWrap respondsToSelector:@selector(m_uiVoiceFormat)]) {
         @try { f = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceFormat)); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if (f == 0) {
         f = wcpl_extractVoiceAttrUInt(msgWrap.m_nsContent, @"voiceformat");
@@ -2791,51 +2453,43 @@ static void wcpl_applyVoiceExtendInfoToWrap(CMessageWrap *sendWrap,
     if (audioData && [extendInfo respondsToSelector:@selector(setM_dtVoice:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(extendInfo, @selector(setM_dtVoice:), audioData);
-        } @catch (__unused NSException *exceptionDtVoice) {
-        }
+        } @catch (__unused NSException *exceptionDtVoice) { WCPLCatchLog(exceptionDtVoice); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceTime:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceTime:), voiceTime);
-        } @catch (__unused NSException *exceptionVoiceTime) {
-        }
+        } @catch (__unused NSException *exceptionVoiceTime) { WCPLCatchLog(exceptionVoiceTime); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceFormat:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceFormat:), voiceFormat);
-        } @catch (__unused NSException *exceptionVoiceFmt) {
-        }
+        } @catch (__unused NSException *exceptionVoiceFmt) { WCPLCatchLog(exceptionVoiceFmt); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceForwardFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceForwardFlag:), 0);
-        } @catch (__unused NSException *exceptionVoiceForward) {
-        }
+        } @catch (__unused NSException *exceptionVoiceForward) { WCPLCatchLog(exceptionVoiceForward); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceCancelFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceCancelFlag:), 0);
-        } @catch (__unused NSException *exceptionVoiceCancel) {
-        }
+        } @catch (__unused NSException *exceptionVoiceCancel) { WCPLCatchLog(exceptionVoiceCancel); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_uiVoiceEndFlag:)]) {
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(extendInfo, @selector(setM_uiVoiceEndFlag:), 1);
-        } @catch (__unused NSException *exceptionVoiceEnd) {
-        }
+        } @catch (__unused NSException *exceptionVoiceEnd) { WCPLCatchLog(exceptionVoiceEnd); }
     }
     if ([extendInfo respondsToSelector:@selector(setM_refMessageWrap:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(extendInfo, @selector(setM_refMessageWrap:), sendWrap);
-        } @catch (__unused NSException *exceptionRefWrap) {
-        }
+        } @catch (__unused NSException *exceptionRefWrap) { WCPLCatchLog(exceptionRefWrap); }
     }
 
     if ([sendWrap respondsToSelector:@selector(setM_extendInfoWithMsgType:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_extendInfoWithMsgType:), extendInfo);
-        } @catch (__unused NSException *exceptionSetExt) {
-        }
+        } @catch (__unused NSException *exceptionSetExt) { WCPLCatchLog(exceptionSetExt); }
     }
 }
 
@@ -2848,47 +2502,47 @@ static void wcpl_applyVoiceFieldsToWrap(CMessageWrap *sendWrap,
 
     if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), 34); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if (audioData && [sendWrap respondsToSelector:@selector(setM_dtVoice:)]) {
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_dtVoice:), audioData); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceEndFlag:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceEndFlag:), 1); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceCancelFlag:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceCancelFlag:), 0); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceForwardFlag:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceForwardFlag:), 0); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceTime:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceTime:), voiceTime); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiVoiceFormat:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceFormat:), voiceFormat); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 1); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiDownloadStatus:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiDownloadStatus:), 9); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), wcpl_generateSendMsgTime()); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     unsigned int voiceLengthMs = wcpl_voiceLengthMsFromWrap(sourceWrap);
     if (voiceLengthMs == 0) {
@@ -2897,32 +2551,32 @@ static void wcpl_applyVoiceFieldsToWrap(CMessageWrap *sendWrap,
     NSString *voiceContent = wcpl_buildMinimalVoiceContent(voiceLengthMs, voiceFormat);
     if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), voiceContent); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsPushContent:), @""); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsPushTitle:)]) {
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsPushTitle:), @""); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
         @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
         @try { ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
         NSString *msgSource = sourceWrap.m_nsMsgSource ?: @"";
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsMsgSource:), msgSource); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if ([sendWrap respondsToSelector:@selector(setVoiceUrl:)]) {
         @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setVoiceUrl:), @""); }
-        @catch (__unused NSException *e) {}
+        @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
 }
 
@@ -2938,12 +2592,12 @@ static CMessageWrap *wcpl_buildFreshVoiceSendWrap(void) {
             if ([created isKindOfClass:%c(CMessageWrap)]) {
                 sendWrap = (CMessageWrap *)created;
             }
-        } @catch (__unused NSException *e) {}
+        } @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     if (!sendWrap) {
         @try {
             sendWrap = [[wrapClass alloc] init];
-        } @catch (__unused NSException *e) {}
+        } @catch (__unused NSException *e) { WCPLCatchLog(e); }
     }
     return sendWrap;
 }
@@ -3070,7 +2724,7 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap,
         return NO;
     }
 
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    id messageMgr = WCPLMessageActionAdapterMessageManager();
     if (!messageMgr) {
         return NO;
     }
@@ -3083,7 +2737,7 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap,
         if ([messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
             @try {
                 ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
-            } @catch (__unused NSException *e) {}
+            } @catch (__unused NSException *e) { WCPLCatchLog(e); }
         }
         WCPLLogWarning(@"Repeat voice audio missing: msg=%@ path=%@",
                        wcpl_repeatMessageDebugInfo(msgWrap), srcAudioPath ?: @"(nil)");
@@ -3107,7 +2761,7 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap,
     (void)logicController;
 
     if (addLocalOK) {
-        id audioSender = WCPLGetService(objc_getClass("AudioSender"));
+        id audioSender = WCPLServiceCenterAdapterGetServiceNamed(@"AudioSender");
         if (wcpl_tryInvokeResendVoiceTarget(audioSender,
                                             chatName,
                                             sendWrap,
@@ -3116,7 +2770,7 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap,
             return YES;
         }
 
-        id uploadVoiceMgr = WCPLGetService(objc_getClass("MMNewUploadVoiceMgr"));
+        id uploadVoiceMgr = WCPLServiceCenterAdapterGetServiceNamed(@"MMNewUploadVoiceMgr");
         if (wcpl_tryInvokeResendVoiceTarget(uploadVoiceMgr,
                                             chatName,
                                             sendWrap,
@@ -3125,7 +2779,7 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap,
             return YES;
         }
 
-        id uploadVoiceCDNMgr = WCPLGetService(objc_getClass("UploadVoiceCDNMgr"));
+        id uploadVoiceCDNMgr = WCPLServiceCenterAdapterGetServiceNamed(@"UploadVoiceCDNMgr");
         if (wcpl_tryInvokeResendVoiceTarget(uploadVoiceCDNMgr,
                                             chatName,
                                             sendWrap,
@@ -3166,7 +2820,7 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap,
         return NO;
     }
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    id sendMessageMgr = WCPLMessageActionAdapterSendMessageManager();
     if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
         return NO;
     }
@@ -3247,6 +2901,7 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap,
 - (void)wchook_setupDoubleTapGestureIfNeeded;
 - (void)wchook_handleDoubleTap:(UITapGestureRecognizer *)gesture;
 - (void)wchook_fireDoubleTapActionWithSource:(NSString *)source;
+- (BOOL)wchook_tryFireManualBlankDoubleTapWithSource:(NSString *)source;
 - (BOOL)wchook_tryFireManualDoubleTapWithSource:(NSString *)source;
 - (BOOL)wchook_tryHandleDoubleTapFromTouches:(id)touches event:(id)event;
 - (NSString *)wchook_actionNameForAction:(NSInteger)action;

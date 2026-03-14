@@ -30,6 +30,7 @@ class TestFailure(AssertionError):
 
 
 CONTRACTS_PATH = Path(__file__).resolve().parents[1] / "contracts" / "wcpl_pure_helper_contracts.json"
+SRC_DIR = Path(__file__).resolve().parents[2] / "src"
 
 
 @dataclass
@@ -137,6 +138,10 @@ def assert_true(condition: bool, message: str) -> None:
         raise TestFailure(message)
 
 
+def read_source_file(name: str) -> str:
+    return (SRC_DIR / name).read_text(encoding="utf-8")
+
+
 @lru_cache(maxsize=1)
 def load_pure_helper_contracts() -> Dict[str, List[Dict[str, Any]]]:
     with CONTRACTS_PATH.open("r", encoding="utf-8") as handle:
@@ -228,6 +233,43 @@ def sanitize_ignore_dictionary(value: Any) -> Dict[str, bool]:
 
 def sanitize_reply_text(value: Any) -> str:
     return trim_text(value) or ""
+
+
+def is_string(value: Any) -> bool:
+    return isinstance(value, str)
+
+
+def is_array(value: Any) -> bool:
+    return isinstance(value, list)
+
+
+def is_dictionary(value: Any) -> bool:
+    return isinstance(value, dict)
+
+
+def string_or_none(value: Any) -> Optional[str]:
+    return value if is_string(value) else None
+
+
+def non_empty_string_or_none(value: Any) -> Optional[str]:
+    return trim_text(string_or_none(value))
+
+
+def array_or_none(value: Any) -> Optional[List[Any]]:
+    return value if is_array(value) else None
+
+
+def dictionary_or_none(value: Any) -> Optional[Dict[str, Any]]:
+    return value if is_dictionary(value) else None
+
+
+def array_of_strings_or_none(value: Any) -> Optional[List[str]]:
+    array = array_or_none(value)
+    if not array:
+        return None
+
+    results = [text for item in array if (text := non_empty_string_or_none(item))]
+    return results or None
 
 
 def string_value(value: Any) -> Optional[str]:
@@ -469,6 +511,60 @@ def alert_tip_display_text_from_content(content: Optional[str]) -> Optional[str]
     if not trimmed:
         return None
     return plain_text_from_sysmsg_template_content(trimmed) or trimmed
+
+
+def resolve_revoke_anchor_fields(
+    revoke_create_time: int,
+    revoke_svr_create_time: int,
+    revoke_sequence_id: int,
+    revoked_create_time: int,
+    revoked_svr_create_time: int,
+    revoked_sequence_id: int,
+    has_revoked_message: bool,
+) -> tuple[int, int, int, str]:
+    create_time = revoke_create_time
+    svr_create_time = revoke_svr_create_time if revoke_svr_create_time > 0 else revoke_create_time
+    sequence_id = revoke_sequence_id
+    source = "revoke_event"
+
+    if has_revoked_message:
+        source = "revoked_msg"
+        if revoked_create_time > 0:
+            create_time = revoked_create_time
+        if revoked_svr_create_time > 0:
+            svr_create_time = revoked_svr_create_time
+        elif revoked_create_time > 0:
+            svr_create_time = revoked_create_time
+        if revoked_sequence_id > 0:
+            sequence_id = revoked_sequence_id
+
+    return create_time, svr_create_time, sequence_id, source
+
+
+def build_revoke_dedup_key(
+    session: Optional[str],
+    revoked_msg_id: int,
+    revoke_create_time: int,
+    replace_text: Optional[str],
+) -> Optional[str]:
+    trimmed_session = trim_text(session)
+    if not trimmed_session:
+        return None
+
+    if revoked_msg_id > 0:
+        return f"{trimmed_session}#svr:{revoked_msg_id}"
+
+    trimmed_text = trim_text(replace_text)
+    suffix = ""
+    if trimmed_text:
+        suffix = trimmed_text.replace("\r", " ").replace("\n", " ")
+        if len(suffix) > 64:
+            suffix = suffix[:64]
+
+    if revoke_create_time == 0 and not suffix:
+        return None
+
+    return f"{trimmed_session}#ts:{revoke_create_time}#text:{suffix}"
 
 
 def quit_monitor_is_date_like_text(text: Optional[str]) -> bool:
@@ -941,6 +1037,26 @@ def test_sanitize_ignore_dictionary() -> None:
     assert_true(sanitize_ignore_dictionary(raw) == expected, "ignore dictionary sanitize mismatch")
 
 
+def test_type_guard_contracts() -> None:
+    assert_true(is_string("alice"), "string guard should accept str")
+    assert_true(not is_string(1), "string guard should reject int")
+    assert_true(is_array(["alice"]), "array guard should accept list")
+    assert_true(not is_array("alice"), "array guard should reject non-list")
+    assert_true(is_dictionary({"alice": 1}), "dictionary guard should accept dict")
+    assert_true(not is_dictionary(["alice"]), "dictionary guard should reject non-dict")
+    assert_true(string_or_none("alice") == "alice", "string_or_none should preserve strings")
+    assert_true(string_or_none(1) is None, "string_or_none should reject non-string")
+    assert_true(non_empty_string_or_none("  alice  ") == "alice", "non_empty_string_or_none should trim")
+    assert_true(non_empty_string_or_none("   ") is None, "non_empty_string_or_none should reject blanks")
+    assert_true(array_or_none(["alice"]) == ["alice"], "array_or_none should preserve lists")
+    assert_true(array_or_none("alice") is None, "array_or_none should reject non-lists")
+    assert_true(dictionary_or_none({"alice": 1}) == {"alice": 1}, "dictionary_or_none should preserve dicts")
+    assert_true(dictionary_or_none(["alice"]) is None, "dictionary_or_none should reject non-dicts")
+    assert_true(array_of_strings_or_none([" alice ", 1, "", "bob"]) == ["alice", "bob"],
+                "array_of_strings_or_none should keep trimmed strings")
+    assert_true(array_of_strings_or_none([]) is None, "array_of_strings_or_none should reject empty lists")
+
+
 def test_red_envelop_param_to_params_extracts_sender_and_total() -> None:
     case = pure_helper_contract_case("build_red_envelop_params", "full_fields_and_query_extraction")
     input_fields = case["input"]
@@ -986,12 +1102,87 @@ def test_generate_client_msg_id_format_and_fallback() -> None:
     assert_true(pattern.match(explicit) is not None, "explicit sender client msg id format mismatch")
     assert_true(pattern.match(fallback) is not None, "fallback sender client msg id format mismatch")
 
+
+def test_revoke_anchor_helpers() -> None:
+    anchored = resolve_revoke_anchor_fields(300, 301, 9, 120, 121, 5, True)
+    assert_true(anchored == (120, 121, 5, "revoked_msg"), "revoke anchor should prefer revoked message")
+
+    event_fallback = resolve_revoke_anchor_fields(300, 0, 9, 0, 0, 0, False)
+    assert_true(event_fallback == (300, 300, 9, "revoke_event"), "revoke anchor should fall back to event fields")
+
+    svr_key = build_revoke_dedup_key(" room@chatroom ", 7788, 0, None)
+    assert_true(svr_key == "room@chatroom#svr:7788", "revoke dedup key should prefer server id")
+
+    fallback_key = build_revoke_dedup_key(" room@chatroom ", 0, 456, "  line1\nline2  ")
+    assert_true(fallback_key == "room@chatroom#ts:456#text:line1 line2", "revoke dedup fallback key mismatch")
+
+    assert_true(build_revoke_dedup_key(None, 0, 0, None) is None, "empty revoke dedup input should return None")
+
+
+def test_injectable_config_and_infra_contracts() -> None:
+    config_names = [
+        "WCPLAVConfig",
+        "WCPLGestureConfig",
+        "WCPLIgnoreConfig",
+        "WCPLLocationConfig",
+        "WCPLLoginConfig",
+        "WCPLPush2ChatConfig",
+        "WCPLRedEnvelopConfig",
+        "WCPLRevokeConfig",
+        "WCPLTimelineConfig",
+    ]
+
+    for config_name in config_names:
+        header = read_source_file(f"{config_name}.h")
+        implementation = read_source_file(f"{config_name}.m")
+        assert_true(
+            "+ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;" in header,
+            f"{config_name} header should expose configWithDefaults",
+        )
+        assert_true(
+            "- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;" in header,
+            f"{config_name} header should expose initWithDefaults",
+        )
+        assert_true(
+            "@property (nonatomic, strong) NSUserDefaults *defaults;" in implementation,
+            f"{config_name} implementation should retain injected defaults",
+        )
+        assert_true(
+            "return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];" in implementation,
+            f"{config_name} should preserve default init compatibility",
+        )
+
+    center_header = read_source_file("WCPLConfigCenter.h")
+    center_impl = read_source_file("WCPLConfigCenter.m")
+    assert_true("WCPLConfigCenterComponents" in center_header, "config center should define components container")
+    assert_true("+ (instancetype)centerWithDefaults:(NSUserDefaults *)defaults" in center_header, "config center should expose injectable factory")
+    assert_true("- (instancetype)initWithDefaults:(NSUserDefaults *)defaults" in center_header, "config center should expose injectable init")
+    assert_true("[WCPLRedEnvelopConfig configWithDefaults:_defaults]" in center_impl, "config center should assemble configs from injected defaults")
+
+    logger_header = read_source_file("WCPLLogger.h")
+    logger_impl = read_source_file("WCPLLogger.m")
+    assert_true("@protocol WCPLLogging" in logger_header, "logger should expose WCPLLogging protocol")
+    assert_true("@protocol WCPLLogSink" in logger_header, "logger should expose WCPLLogSink protocol")
+    assert_true("+ (id<WCPLLogging>)sharedLogging;" in logger_header, "logger should expose shared logging facade")
+    assert_true("- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;" in logger_header, "logger should expose injectable init")
+    assert_true("[self.sink logger:self didRecordMessage:message level:level];" in logger_impl, "logger should forward warning and error logs through sink boundary")
+
+    crash_header = read_source_file("WCPLCrashReporter.h")
+    crash_impl = read_source_file("WCPLCrashReporter.m")
+    assert_true("reporterWithDefaults:(NSUserDefaults *)defaults" in crash_header, "crash reporter should expose defaults injection")
+    assert_true("logger:(id<WCPLLogging>)logger" in crash_header, "crash reporter should expose logger injection")
+    assert_true("((WCPLLogger *)_logger).sink = self;" in crash_impl, "crash reporter should bind itself as logger sink")
+    assert_true("[self.logger readRecentLog:600]" in crash_impl, "crash reporter should read logs from injected logger protocol")
+
 TESTS = [
     test_pure_helper_shared_contracts,
     test_sanitize_ignore_dictionary,
+    test_type_guard_contracts,
     test_red_envelop_param_to_params_extracts_sender_and_total,
     test_param_queue_match_by_trimmed_sendid_and_sign_fifo,
     test_generate_client_msg_id_format_and_fallback,
+    test_revoke_anchor_helpers,
+    test_injectable_config_and_infra_contracts,
 ]
 
 

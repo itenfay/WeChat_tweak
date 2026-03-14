@@ -32,6 +32,46 @@ static BOOL wcpl_entry_hasExternalPluginsPortal(id controller, id tableViewMgr) 
     return wcpl_entry_tableMgrContainsCellWithTitles(tableViewMgr, externalPortalTitles);
 }
 
+static BOOL wcpl_entry_shouldUsePluginsPortal(id controller, id tableViewMgr) {
+    return wcpl_entry_hasExternalPluginsPortal(controller, tableViewMgr);
+}
+
+static BOOL wcpl_entry_registerPluginToPluginsPortalIfNeeded(NSString *sceneTag) {
+    if (wcpl_entry_didRegister) {
+        return YES;
+    }
+
+    Class pluginsMgrClass = objc_getClass("WCPluginsMgr");
+    if (!pluginsMgrClass || ![pluginsMgrClass respondsToSelector:@selector(sharedInstance)]) {
+        WCPLLogWarning(@"[入口] WCPluginsMgr 不可用，无法注册到插件归纳: scene=%@",
+                       sceneTag ?: @"unknown");
+        return NO;
+    }
+
+    @try {
+        id mgr = ((id (*)(id, SEL))objc_msgSend)(pluginsMgrClass, @selector(sharedInstance));
+        if (!mgr || ![mgr respondsToSelector:@selector(registerControllerWithTitle:version:controller:)]) {
+            WCPLLogWarning(@"[入口] WCPluginsMgr 实例不可用，无法注册到插件归纳: scene=%@",
+                           sceneTag ?: @"unknown");
+            return NO;
+        }
+
+        ((void (*)(id, SEL, id, id, id))objc_msgSend)(mgr,
+                                                       @selector(registerControllerWithTitle:version:controller:),
+                                                       kWCPLEntryPluginTitle,
+                                                       kWCPLEntryPluginVersion,
+                                                       kWCPLEntryControllerClassName);
+        wcpl_entry_didRegister = YES;
+        WCPLLogInfo(@"[入口] 已注册到插件归纳: scene=%@", sceneTag ?: @"unknown");
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[入口] 注册到插件归纳失败: scene=%@ reason=%@",
+                       sceneTag ?: @"unknown",
+                       exception.reason ?: @"unknown");
+        return NO;
+    }
+}
+
 static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, NSString *sceneTag) {
     if (!tableViewMgr) {
         WCPLLogWarning(@"[入口] tableViewMgr 不可用: scene=%@", sceneTag ?: @"unknown");

@@ -7,12 +7,13 @@
 
 #import "WCPLReceiveRedEnvelopOperation.h"
 #import "WeChatRedEnvelopParam.h"
-#import "WeChatRedEnvelop.h"
 #import "WCPLDispatchUtils.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLConstants.h"
 #import "WCPLLogger.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import <objc/runtime.h>
 #import <dispatch/dispatch.h>
 
@@ -36,7 +37,7 @@ static NSUInteger const kWCPLHotPathLogSampleMask = 0x0F; // 约 1/16 采样
 @synthesize finished  = _finished;
 
 static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
-    if (![sendId isKindOfClass:[NSString class]] || sendId.length == 0) {
+    if (WCPLNonEmptyStringOrNil(sendId).length == 0) {
         return NO;
     }
     return ((sendId.hash & kWCPLHotPathLogSampleMask) == 0);
@@ -104,17 +105,22 @@ static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
     NSDictionary *params = [self.redEnvelopParam toParams];
     BOOL shouldLogDetail = wcpl_shouldSampleHotPathLog(self.redEnvelopParam.sendId);
     if (shouldLogDetail) {
+        NSString *timingIdentifier = WCPLStringOrNil(params[@"timingIdentifier"]) ?: @"";
+        NSString *sign = WCPLStringOrNil(params[@"sign"]);
+        NSString *channelId = WCPLStringOrNil(params[@"channelId"]) ?: @"";
+        NSString *nativeUrl = WCPLStringOrNil(params[@"nativeUrl"]) ?: @"";
+        NSString *sendUserName = WCPLStringOrNil(params[@"sendUserName"]) ?: @"";
         WCPLLogDebug(@"[抢红包] 任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
                      [NSThread isMainThread],
                      self.redEnvelopParam.sessionUserName ?: @"",
                      self.redEnvelopParam.sendId ?: @"",
-                     [params[@"timingIdentifier"] isKindOfClass:[NSString class]] ? params[@"timingIdentifier"] : @"",
-                     (unsigned long)([params[@"sign"] isKindOfClass:[NSString class]] ? [(NSString *)params[@"sign"] length] : 0),
+                     timingIdentifier,
+                     (unsigned long)sign.length,
                      (unsigned long)params.count);
         WCPLLogDebug(@"[抢红包] 参数详情: channelId=%@ nativeUrl=%@ sendUserName=%@",
-                     [params[@"channelId"] isKindOfClass:[NSString class]] ? params[@"channelId"] : @"",
-                     [params[@"nativeUrl"] isKindOfClass:[NSString class]] ? params[@"nativeUrl"] : @"",
-                     [params[@"sendUserName"] isKindOfClass:[NSString class]] ? params[@"sendUserName"] : @"");
+                     channelId,
+                     nativeUrl,
+                     sendUserName);
     }
 
     NSInteger maxRetry = self.maxRetryCount > 0 ? self.maxRetryCount : 1;

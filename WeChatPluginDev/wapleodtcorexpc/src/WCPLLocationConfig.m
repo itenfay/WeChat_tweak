@@ -9,40 +9,54 @@ static NSString *const kWCPLFakeLocLat              = @"kWCPLFakeLocLat";
 static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
 
+@interface WCPLLocationConfig ()
+
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
+@end
+
 @implementation WCPLLocationConfig
 
 + (instancetype)sharedConfig {
     static WCPLLocationConfig *config = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        config = [WCPLLocationConfig new];
+        config = [WCPLLocationConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
     });
     return config;
 }
 
 - (instancetype)init {
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+}
+
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
+    return [[self alloc] initWithDefaults:defaults];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
     if (self = [super init]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        _fakeLatitude = [defaults doubleForKey:kWCPLFakeLocLat];
-        _fakeLongitude = [defaults doubleForKey:kWCPLFakeLocLng];
-        _fakeLocEnable = [defaults boolForKey:kWCPLFakeLocEnable];
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _fakeLatitude = [_defaults doubleForKey:kWCPLFakeLocLat];
+        _fakeLongitude = [_defaults doubleForKey:kWCPLFakeLocLng];
+        _fakeLocEnable = [_defaults boolForKey:kWCPLFakeLocEnable];
     }
     return self;
 }
 
 - (void)setFakeLatitude:(double)fakeLatitude {
     _fakeLatitude = fakeLatitude;
-    [[NSUserDefaults standardUserDefaults] setDouble:fakeLatitude forKey:kWCPLFakeLocLat];
+    [self.defaults setDouble:fakeLatitude forKey:kWCPLFakeLocLat];
 }
 
 - (void)setFakeLongitude:(double)fakeLongitude {
     _fakeLongitude = fakeLongitude;
-    [[NSUserDefaults standardUserDefaults] setDouble:fakeLongitude forKey:kWCPLFakeLocLng];
+    [self.defaults setDouble:fakeLongitude forKey:kWCPLFakeLocLng];
 }
 
 - (void)setFakeLocEnable:(BOOL)fakeLocEnable {
     _fakeLocEnable = fakeLocEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:fakeLocEnable forKey:kWCPLFakeLocEnable];
+    [self.defaults setBool:fakeLocEnable forKey:kWCPLFakeLocEnable];
 }
 
 - (double)lat {

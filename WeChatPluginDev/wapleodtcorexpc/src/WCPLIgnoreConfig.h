@@ -16,6 +16,9 @@ typedef NS_ENUM(NSInteger, WCPLQuitMonitorScope) {
 @interface WCPLIgnoreConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 // 屏蔽联系人消息（总开关 + 名单）
 @property (assign, nonatomic) BOOL userIgnoreEnable;

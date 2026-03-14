@@ -16,6 +16,9 @@ static NSString *const kWCPLQuitMonitorScope        = @"kWCPLQuitMonitorScope";
 static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhitelistInfo";
 
 @interface WCPLIgnoreConfig ()
+
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
 @end
 
 @implementation WCPLIgnoreConfig
@@ -24,45 +27,53 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
     static WCPLIgnoreConfig *config = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        config = [WCPLIgnoreConfig new];
+        config = [WCPLIgnoreConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
     });
     return config;
 }
 
 - (instancetype)init {
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+}
+
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
+    return [[self alloc] initWithDefaults:defaults];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
     if (self = [super init]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        _userIgnoreEnable = [defaults boolForKey:kWCPLUserIgnoreEnable];
-        NSNumber *quitMonitorEnableObj = [defaults objectForKey:kWCPLQuitMonitorEnable];
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _userIgnoreEnable = [_defaults boolForKey:kWCPLUserIgnoreEnable];
+        NSNumber *quitMonitorEnableObj = [_defaults objectForKey:kWCPLQuitMonitorEnable];
         _quitMonitorEnable = quitMonitorEnableObj ? quitMonitorEnableObj.boolValue : NO;
         _chatIgnoreInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLChatIgnoreInfo];
         _userIgnoreInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLUserIgnoreInfo];
         _quitMonitorWhitelistInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLQuitMonitorWhitelistInfo];
 
-        NSNumber *scopeObj = [defaults objectForKey:kWCPLQuitMonitorScope];
+        NSNumber *scopeObj = [_defaults objectForKey:kWCPLQuitMonitorScope];
         _quitMonitorScope = (WCPLQuitMonitorScope)WCPLResolveQuitMonitorScope(scopeObj,
                                                                               _quitMonitorWhitelistInfo);
 
-        [defaults setBool:_quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
-        [defaults setInteger:_quitMonitorScope forKey:kWCPLQuitMonitorScope];
+        [_defaults setBool:_quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
+        [_defaults setInteger:_quitMonitorScope forKey:kWCPLQuitMonitorScope];
     }
     return self;
 }
 
 - (NSMutableDictionary<NSString *,NSNumber *> *)wcpl_loadThreadSafeIgnoreDictionaryForKey:(NSString *)key {
-    NSDictionary *raw = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    NSDictionary *raw = [self.defaults objectForKey:key];
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(raw);
     return [[WCPLThreadSafeMutableDictionary alloc] initWithDictionary:sanitized];
 }
 
 - (void)setUserIgnoreEnable:(BOOL)userIgnoreEnable {
     _userIgnoreEnable = userIgnoreEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:userIgnoreEnable forKey:kWCPLUserIgnoreEnable];
+    [self.defaults setBool:userIgnoreEnable forKey:kWCPLUserIgnoreEnable];
 }
 
 - (void)setQuitMonitorEnable:(BOOL)quitMonitorEnable {
     _quitMonitorEnable = quitMonitorEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
+    [self.defaults setBool:quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
 }
 
 - (void)setQuitMonitorScope:(WCPLQuitMonitorScope)quitMonitorScope {
@@ -71,7 +82,7 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
         normalized = WCPLQuitMonitorScopeWhitelist;
     }
     _quitMonitorScope = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLQuitMonitorScope];
+    [self.defaults setInteger:normalized forKey:kWCPLQuitMonitorScope];
 }
 
 - (void)setChatIgnoreInfo:(NSMutableDictionary<NSString *,NSNumber *> *)chatIgnoreInfo {
@@ -94,7 +105,7 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
         ? [(WCPLThreadSafeMutableDictionary *)_chatIgnoreInfo dictionaryRepresentation]
         : [_chatIgnoreInfo copy];
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(snapshot);
-    [[NSUserDefaults standardUserDefaults] setObject:sanitized forKey:kWCPLChatIgnoreInfo];
+    [self.defaults setObject:sanitized forKey:kWCPLChatIgnoreInfo];
 }
 
 - (void)saveUserIgnoreNameListToLocalFile {
@@ -102,7 +113,7 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
         ? [(WCPLThreadSafeMutableDictionary *)_userIgnoreInfo dictionaryRepresentation]
         : [_userIgnoreInfo copy];
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(snapshot);
-    [[NSUserDefaults standardUserDefaults] setObject:sanitized forKey:kWCPLUserIgnoreInfo];
+    [self.defaults setObject:sanitized forKey:kWCPLUserIgnoreInfo];
 }
 
 - (void)saveQuitMonitorWhitelistToLocalFile {
@@ -110,7 +121,7 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
         ? [(WCPLThreadSafeMutableDictionary *)_quitMonitorWhitelistInfo dictionaryRepresentation]
         : [_quitMonitorWhitelistInfo copy];
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(snapshot);
-    [[NSUserDefaults standardUserDefaults] setObject:sanitized forKey:kWCPLQuitMonitorWhitelistInfo];
+    [self.defaults setObject:sanitized forKey:kWCPLQuitMonitorWhitelistInfo];
 }
 
 @end

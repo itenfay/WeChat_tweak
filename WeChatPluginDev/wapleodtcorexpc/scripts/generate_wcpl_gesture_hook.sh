@@ -20,6 +20,7 @@ cat > "$TMP_FILE" <<'HEADER'
 // - WCPLGestureRepeatEligibilityHelpers.xm
 // - WCPLGestureCellContextHelpers.xm
 // - WCPLGestureLayoutHelpers.xm
+// - WCPLGestureTapPolicyHelpers.xm
 // - WCPLRepeatButtonHook.xm
 // - WCPLMessageTimeHook.xm
 // - WCPLSwipeQuoteHook.xm
@@ -45,6 +46,7 @@ append_module "WCPLGestureHookCommon.xm"
 append_module "WCPLGestureRepeatEligibilityHelpers.xm"
 append_module "WCPLGestureCellContextHelpers.xm"
 append_module "WCPLGestureLayoutHelpers.xm"
+append_module "WCPLGestureTapPolicyHelpers.xm"
 append_module "WCPLRepeatButtonHook.xm"
 append_module "WCPLMessageTimeHook.xm"
 append_module "WCPLSwipeQuoteHook.xm"

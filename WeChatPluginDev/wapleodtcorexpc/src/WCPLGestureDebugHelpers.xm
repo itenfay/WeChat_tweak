@@ -40,17 +40,7 @@ static NSString *wcpl_emoticonMD5FromMessageWrap(CMessageWrap *msgWrap) {
 }
 
 static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentViewController *chatVC) {
-    NSString *chatName = nil;
-    if (chatVC && [chatVC respondsToSelector:@selector(getCurrentChatName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(getCurrentChatName));
-            if ([value isKindOfClass:[NSString class]]) {
-                chatName = (NSString *)value;
-            }
-        } @catch (__unused NSException *exception) {
-            chatName = nil;
-        }
-    }
+    NSString *chatName = WCPLMessageAdapterCurrentChatName(chatVC);
     if (chatName.length > 0) {
         return chatName;
     }
@@ -58,6 +48,39 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         return msgWrap.m_nsFromUsr;
     }
     return msgWrap.m_nsToUsr;
+}
+
+static NSString *wcpl_chatUserNameForController(BaseMsgContentViewController *chatVC) {
+    if (!chatVC) {
+        return nil;
+    }
+
+    NSString *chatName = wcpl_trimTextForRepeat(WCPLMessageAdapterCurrentChatName(chatVC));
+    if (chatName.length > 0) {
+        return chatName;
+    }
+    return wcpl_trimTextForRepeat(WCPLMessageAdapterChatUserName(chatVC));
+}
+
+static BOOL wcpl_shouldSkipCellGestureEnhancements(BaseMsgContentViewController *chatVC,
+                                                   NSString **reasonOut,
+                                                   NSString **chatNameOut) {
+    NSString *chatName = wcpl_chatUserNameForController(chatVC);
+    if (chatNameOut) {
+        *chatNameOut = chatName;
+    }
+    if (reasonOut) {
+        *reasonOut = nil;
+    }
+
+    if (chatName.length > 0 && [chatName caseInsensitiveCompare:@"filehelper"] == NSOrderedSame) {
+        if (reasonOut) {
+            *reasonOut = @"filehelper_skip";
+        }
+        return YES;
+    }
+
+    return NO;
 }
 
 static NSString *wcpl_repeatMessageKey(CMessageWrap *msgWrap) {

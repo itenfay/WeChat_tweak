@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLLogger.h"
 #import "WCPLServiceCenter.h"
@@ -237,8 +238,7 @@ static NSString *wcpl_douyin_safeUserNameFromObject(id obj) {
             if ([value isKindOfClass:[NSString class]]) {
                 return wcpl_douyin_trimString((NSString *)value);
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
@@ -246,8 +246,7 @@ static NSString *wcpl_douyin_safeUserNameFromObject(id obj) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_douyin_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return nil;
 }
@@ -261,8 +260,7 @@ static BOOL wcpl_douyin_isSenderFromMsgWrap(CMessageWrap *msgWrap) {
     if (wrapClass && [wrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
         @try {
             return ((BOOL (*)(id, SEL, id))objc_msgSend)(wrapClass, @selector(isSenderFromMsgWrap:), msgWrap);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return NO;
@@ -279,8 +277,7 @@ static CMessageWrap *wcpl_douyin_messageWrapFromCell(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([cell respondsToSelector:@selector(messageWrap)]) {
@@ -289,8 +286,7 @@ static CMessageWrap *wcpl_douyin_messageWrapFromCell(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([cell respondsToSelector:@selector(getMediaWrap)]) {
@@ -299,8 +295,7 @@ static CMessageWrap *wcpl_douyin_messageWrapFromCell(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([cell respondsToSelector:@selector(viewModel)]) {
@@ -318,8 +313,7 @@ static CMessageWrap *wcpl_douyin_messageWrapFromCell(id cell) {
                     return (CMessageWrap *)wrap;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -336,8 +330,7 @@ static UIViewController *wcpl_douyin_viewControllerFromCell(id cell) {
             if ([vc isKindOfClass:[UIViewController class]]) {
                 return (UIViewController *)vc;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if ([cell respondsToSelector:@selector(viewController)]) {
@@ -346,8 +339,7 @@ static UIViewController *wcpl_douyin_viewControllerFromCell(id cell) {
             if ([vc isKindOfClass:[UIViewController class]]) {
                 return (UIViewController *)vc;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -362,8 +354,7 @@ static NSString *wcpl_douyin_chatUserNameFromCellAndWrap(id cell, CMessageWrap *
             if (userName.length > 0) {
                 return userName;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (msgWrap) {
@@ -395,8 +386,7 @@ static NSString *wcpl_douyin_chatUserNameFromInputTool(id inputTool) {
                     return chatName;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id contact = nil;
@@ -436,8 +426,7 @@ static NSString *wcpl_douyin_chatUserNameFromInputTool(id inputTool) {
                     return chatName;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (delegate && [delegate respondsToSelector:@selector(chatUserNameForSightStatistics)]) {
@@ -449,8 +438,7 @@ static NSString *wcpl_douyin_chatUserNameFromInputTool(id inputTool) {
                     return chatName;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (delegate && [delegate respondsToSelector:@selector(GetContact)]) {
@@ -460,8 +448,7 @@ static NSString *wcpl_douyin_chatUserNameFromInputTool(id inputTool) {
             if (chatName.length > 0) {
                 return chatName;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -494,8 +481,7 @@ static UIViewController *wcpl_douyin_chatViewControllerFromInputTool(id inputToo
             if ([vc isKindOfClass:[UIViewController class]]) {
                 return (UIViewController *)vc;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return nil;
@@ -800,15 +786,13 @@ static void wcpl_douyin_showToast(NSString *text, BOOL isError) {
                     @try {
                         ((void (*)(id, SEL, id))objc_msgSend)(toast, errorSel, message);
                         return;
-                    } @catch (__unused NSException *exception) {
-                    }
+                    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
                 }
                 if ([toast respondsToSelector:textSel]) {
                     @try {
                         ((void (*)(id, SEL, id))objc_msgSend)(toast, textSel, message);
                         return;
-                    } @catch (__unused NSException *exception) {
-                    }
+                    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
                 }
             }
         }
@@ -962,8 +946,7 @@ static unsigned int wcpl_douyin_safeUnsignedIntForKey(id obj, NSString *key, uns
         if ([value respondsToSelector:@selector(unsignedIntValue)]) {
             return (unsigned int)[value unsignedIntValue];
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     return fallbackValue;
 }
 
@@ -985,8 +968,7 @@ static id wcpl_douyin_createCaptureVideoInfoNative(Class captureClass, NSString 
         if (info && [info isKindOfClass:captureClass]) {
             return info;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return nil;
 }
@@ -1022,15 +1004,15 @@ static id wcpl_douyin_createCaptureVideoInfoFallback(Class captureClass,
         }
     }
 
-    @try { [videoInfo setValue:videoPath forKey:@"video_path"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:thumbPath forKey:@"thumb_path"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)sizeObj.unsignedIntValue) forKey:@"video_size"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)durObj.unsignedIntValue) forKey:@"video_time"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)[[NSDate date] timeIntervalSince1970]) forKey:@"m_videoCreateTime"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)0) forKey:@"video_width"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)0) forKey:@"video_height"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@(thumbSize) forKey:@"thumb_size"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:chatUserName forKey:@"m_nsSpecifiedChatName"]; } @catch (__unused NSException *exception) {}
+    @try { [videoInfo setValue:videoPath forKey:@"video_path"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:thumbPath forKey:@"thumb_path"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)sizeObj.unsignedIntValue) forKey:@"video_size"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)durObj.unsignedIntValue) forKey:@"video_time"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)[[NSDate date] timeIntervalSince1970]) forKey:@"m_videoCreateTime"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)0) forKey:@"video_width"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)0) forKey:@"video_height"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@(thumbSize) forKey:@"thumb_size"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:chatUserName forKey:@"m_nsSpecifiedChatName"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     WCPLLogInfo(@"[抖音解析] 发送阶段: step=video_info_fallback size=%u dur=%u thumb=%u",
                 (unsigned int)sizeObj.unsignedIntValue,
@@ -1570,8 +1552,8 @@ static BOOL wcpl_douyin_sendVideoToSession(NSString *videoPath,
         WCPLLogWarning(@"[抖音解析] 发送失败: CaptureVideoInfo 构建失败");
         return NO;
     }
-    @try { [videoInfo setValue:chatUser forKey:@"m_nsSpecifiedChatName"]; } @catch (__unused NSException *exception) {}
-    @try { [videoInfo setValue:@((unsigned int)[[NSDate date] timeIntervalSince1970]) forKey:@"m_videoCreateTime"]; } @catch (__unused NSException *exception) {}
+    @try { [videoInfo setValue:chatUser forKey:@"m_nsSpecifiedChatName"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    @try { [videoInfo setValue:@((unsigned int)[[NSDate date] timeIntervalSince1970]) forKey:@"m_videoCreateTime"]; } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     unsigned int videoSize = wcpl_douyin_safeUnsignedIntForKey(videoInfo, @"video_size", 0);
     unsigned int videoDuration = wcpl_douyin_safeUnsignedIntForKey(videoInfo, @"video_time", 1);
@@ -1685,8 +1667,7 @@ static UIImage *wcpl_douyin_menuIconImage(void) {
         if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
             @try {
                 svgImage = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, svgData);
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if ([svgImage isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)svgImage;
@@ -1737,8 +1718,7 @@ static void wcpl_douyin_applyMenuItemIcon(id menuItem, UIImage *icon) {
     if ([finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
         @try {
             finalIcon = [finalIcon imageWithTintColor:wcpl_douyin_menuIconTintColor()];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if ([finalIcon respondsToSelector:@selector(imageWithRenderingMode:)]) {
         finalIcon = [finalIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -1748,14 +1728,12 @@ static void wcpl_douyin_applyMenuItemIcon(id menuItem, UIImage *icon) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), finalIcon);
             return;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
         [menuItem setValue:finalIcon forKey:@"iconImage"];
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 }
 
 static id wcpl_douyin_createMenuItemIfNeeded(Class menuItemClass, id cell, SEL action) {
@@ -1814,8 +1792,7 @@ static NSArray *wcpl_douyin_injectMenuItemIfNeeded(id cell, NSArray *items) {
                 if (existingAction == action) {
                     return [mutableItems copy];
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -1834,8 +1811,7 @@ static void wcpl_douyin_hideMenuFromCell(id cell) {
         if (menuController && [menuController respondsToSelector:hideMenuSelector]) {
             ((void (*)(id, SEL, id))objc_msgSend)(menuController, hideMenuSelector, cell);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 }
 
 static void wcpl_douyin_processLink(NSString *douyinLink, NSString *chatUserName, UIViewController *chatVC) {
