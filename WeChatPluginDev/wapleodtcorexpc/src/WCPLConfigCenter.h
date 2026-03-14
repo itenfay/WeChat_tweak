@@ -16,9 +16,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface WCPLConfigCenterComponents : NSObject
+
+@property (nullable, nonatomic, strong) WCPLRedEnvelopConfig *redEnvelop;
+@property (nullable, nonatomic, strong) WCPLGestureConfig *gesture;
+@property (nullable, nonatomic, strong) WCPLLocationConfig *location;
+@property (nullable, nonatomic, strong) WCPLIgnoreConfig *ignore;
+@property (nullable, nonatomic, strong) WCPLLoginConfig *login;
+@property (nullable, nonatomic, strong) WCPLAVConfig *av;
+@property (nullable, nonatomic, strong) WCPLRevokeConfig *revoke;
+@property (nullable, nonatomic, strong) WCPLTimelineConfig *timeline;
+@property (nullable, nonatomic, strong) WCPLPush2ChatConfig *push2Chat;
+
+@end
+
 @interface WCPLConfigCenter : NSObject
 
 + (instancetype)shared;
++ (instancetype)centerWithDefaults:(NSUserDefaults *)defaults
+                        components:(nullable WCPLConfigCenterComponents *)components;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults
+                      components:(nullable WCPLConfigCenterComponents *)components;
 
 @property (readonly, nonatomic) WCPLRedEnvelopConfig *redEnvelop;
 @property (readonly, nonatomic) WCPLGestureConfig *gesture;

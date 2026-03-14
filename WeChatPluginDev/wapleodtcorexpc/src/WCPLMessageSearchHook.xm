@@ -1,3 +1,37 @@
+#import "WCPLCrashReporter.h"
+#import "WCPLMessageAdapter.h"
+
+static NSString *wcpl_messageSearchAppStateDescription(void) {
+    UIApplicationState state = [UIApplication sharedApplication].applicationState;
+    switch (state) {
+        case UIApplicationStateActive: return @"active";
+        case UIApplicationStateInactive: return @"inactive";
+        case UIApplicationStateBackground: return @"background";
+    }
+    return [NSString stringWithFormat:@"unknown(%ld)", (long)state];
+}
+
+static void wcpl_messageSearchRecordChatLifecycle(BaseMsgContentViewController *viewController, NSString *stage) {
+    if (![viewController isKindOfClass:%c(BaseMsgContentViewController)]) {
+        return;
+    }
+
+    id contact = WCPLMessageAdapterChatContact(viewController);
+    NSString *userName = WCPLMessageAdapterChatUserName(viewController) ?: @"";
+    wcpl_cacheChatSearchUserName(viewController, userName);
+    NSString *vcClass = NSStringFromClass([viewController class]) ?: @"(nil)";
+    NSString *contactClass = contact ? NSStringFromClass([contact class]) : @"(nil)";
+    NSUInteger navDepth = WCPLMessageAdapterNavigationDepth(viewController);
+
+    WCPLCrashDiagnostic(@"chat_lifecycle stage=%@ vc=%@ user=%@ contactClass=%@ navDepth=%lu appState=%@",
+                        stage ?: @"(nil)",
+                        vcClass,
+                        userName,
+                        contactClass,
+                        (unsigned long)navDepth,
+                        wcpl_messageSearchAppStateDescription());
+}
+
 %group WCPLMessageSearchHookGroup
 
 %hook SyncCmdHandler
@@ -64,30 +98,35 @@
 
 - (void)viewDidLoad {
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_messageSearchRecordChatLifecycle(self, @"viewDidLoad");
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"viewDidLoad");
     wcpl_scheduleChatSearchButtonRepair(self, @"viewDidLoad");
 }
 
 - (void)viewWillAppear:(_Bool)arg1 {
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_messageSearchRecordChatLifecycle(self, @"viewWillAppear");
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"viewWillAppear");
     wcpl_scheduleChatSearchButtonRepair(self, @"viewWillAppear");
 }
 
 - (void)viewDidAppear:(_Bool)arg1 {
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"viewDidAppear");
     wcpl_scheduleChatSearchButtonRepair(self, @"viewDidAppear");
 
-    id contact = [self GetContact];
-    NSString *usrName = wcpl_safeUserNameFromObject(contact);
+    NSString *usrName = WCPLMessageAdapterChatUserName(self);
     if (usrName.length > 0) {
         [WCPLConfigCenter shared].ignore.curUsrName = usrName;
+        WCPLCrashBreadcrumb(@"聊天页出现: vc=%@ user=%@",
+                            NSStringFromClass([self class]) ?: @"(nil)",
+                            usrName);
     }
+    wcpl_messageSearchRecordChatLifecycle(self, @"viewDidAppear");
 
     WCPLAVConfig *config = [WCPLConfigCenter shared].av;
     if (config.thirdPartyPlaybackEnabled) {
-        UIView *view = [self valueForKey:@"view"];
+        UIView *view = WCPLMessageAdapterLoadedChatView(self);
         [[WCPLAVManager shareManager] startCaptureInView:view];
     }
 }
@@ -95,14 +134,14 @@
 - (void)viewDidLayoutSubviews {
     %orig;
     // 对齐密友：在布局完成后再补一次右上角按钮注入，减少“出现-消失-再出现”的闪烁。
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"viewDidLayoutSubviews");
 }
 
 - (void)viewWillDisappear:(_Bool)arg1 {
     %orig;
+    wcpl_messageSearchRecordChatLifecycle(self, @"viewWillDisappear");
 
-    UINavigationController *navCon = [self valueForKey:@"navigationController"];
-    if ([navCon.viewControllers indexOfObject:(UIViewController *)self] == NSNotFound) {
+    if (!WCPLMessageAdapterIsOnNavigationStack(self)) {
         [[WCPLAVManager shareManager] stop];
     }
 
@@ -125,7 +164,7 @@
 
     WCPLAVConfig *config = [WCPLConfigCenter shared].av;
     if (config.thirdPartyPlaybackEnabled) {
-        UIView *view = [self valueForKey:@"view"];
+        UIView *view = WCPLMessageAdapterLoadedChatView(self);
         [[WCPLAVManager shareManager] startCaptureInView:view];
     }
 }
@@ -133,26 +172,38 @@
 - (void)reloadMessages {
     wcpl_clearLocalReplaceMap(self);
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"reloadMessages");
     wcpl_scheduleChatSearchButtonRepair(self, @"reloadMessages");
 }
 
 - (void)reloadWholePage {
     wcpl_clearLocalReplaceMap(self);
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"reloadWholePage");
     wcpl_scheduleChatSearchButtonRepair(self, @"reloadWholePage");
 }
 
 - (void)updateRightBar {
+    WCPLCrashDiagnostic(@"chat_search stage=updateRightBar action=orig_pre vc=%@ user=%@",
+                        NSStringFromClass([self class]) ?: @"(nil)",
+                        wcpl_chatSearchUserNameFromController(self) ?: @"");
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    WCPLCrashDiagnostic(@"chat_search stage=updateRightBar action=orig_post vc=%@ user=%@",
+                        NSStringFromClass([self class]) ?: @"(nil)",
+                        wcpl_chatSearchUserNameFromController(self) ?: @"");
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"updateRightBar");
     wcpl_scheduleChatSearchButtonRepair(self, @"updateRightBar");
 }
 
 - (void)handleMsgUpdateRightBar {
+    WCPLCrashDiagnostic(@"chat_search stage=handleMsgUpdateRightBar action=orig_pre vc=%@ user=%@",
+                        NSStringFromClass([self class]) ?: @"(nil)",
+                        wcpl_chatSearchUserNameFromController(self) ?: @"");
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
+    WCPLCrashDiagnostic(@"chat_search stage=handleMsgUpdateRightBar action=orig_post vc=%@ user=%@",
+                        NSStringFromClass([self class]) ?: @"(nil)",
+                        wcpl_chatSearchUserNameFromController(self) ?: @"");
+    wcpl_updateChatSearchButtonForViewControllerStage(self, @"handleMsgUpdateRightBar");
     wcpl_scheduleChatSearchButtonRepair(self, @"handleMsgUpdateRightBar");
 }
 
@@ -214,8 +265,7 @@
         if ([self respondsToSelector:initSel]) {
             @try {
                 ((void (*)(id, SEL, int))objc_msgSend)(self, initSel, 1);
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         wcpl_miyouPrepareSearchBarContainerForSearchEntry(self, @"[搜索] onSearchItem/retry");
         launched = wcpl_miyouPushSearchController(self);

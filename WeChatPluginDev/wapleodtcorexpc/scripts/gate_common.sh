@@ -117,7 +117,7 @@ gate_emit_summary() {
     overall="failed"
   fi
 
-  echo "[gate][summary] overall=$overall exit_code=$exit_code strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=$doctor_reported_status generate=$generate_status doctor=$doctor_status unit_tests=$unit_tests_status before_all_dry_run=$before_all_dry_run_status before_all_real=$before_all_real_status package_preflight=$package_preflight_status package_real=$package_real_status"
+  echo "[gate][summary] overall=$overall exit_code=$exit_code strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=$doctor_reported_status generate=$generate_status maintainability_guard=$maintainability_guard_status doctor=$doctor_status unit_tests=$unit_tests_status before_all_dry_run=$before_all_dry_run_status before_all_real=$before_all_real_status package_preflight=$package_preflight_status package_real=$package_real_status"
 }
 
 gate_on_exit() {

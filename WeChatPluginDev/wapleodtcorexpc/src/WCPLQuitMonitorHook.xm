@@ -1,4 +1,3 @@
-#import "WeChatRedEnvelop.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLContactLookup.h"
 #import "WCPLDispatchUtils.h"
@@ -6,6 +5,9 @@
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatMessageHeaders.h"
+#import "WCPLWeChatServiceHeaders.h"
 
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -118,8 +120,7 @@ static BOOL wcpl_qm_isChatRoomUserName(NSString *userName) {
     if (contactClass && [contactClass respondsToSelector:@selector(IsChatRoomContact:)]) {
         @try {
             return ((BOOL (*)(id, SEL, id))objc_msgSend)(contactClass, @selector(IsChatRoomContact:), trimmed);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return [trimmed rangeOfString:@"@chatroom"].location != NSNotFound;
@@ -246,8 +247,7 @@ static NSString *wcpl_qm_displayNameForUser(CContactMgr *contactMgr, CContact *r
             if (name.length > 0) {
                 return name;
             }
-        } @catch (__unused NSException *exceptionName) {
-        }
+        } @catch (__unused NSException *exceptionName) { WCPLCatchLog(exceptionName); }
     }
 
     return trimmedUser;
@@ -646,14 +646,12 @@ static void wcpl_qm_setWrapObjectValue(id msgWrap, SEL setter, NSString *kvcKey,
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, setter, value);
             return;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if (kvcKey.length > 0) {
         @try {
             [msgWrap setValue:value forKey:kvcKey];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 }
 
@@ -665,14 +663,12 @@ static void wcpl_qm_setWrapUIntValue(id msgWrap, SEL setter, NSString *kvcKey, u
         @try {
             ((void (*)(id, SEL, unsigned int))objc_msgSend)(msgWrap, setter, value);
             return;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
     if (kvcKey.length > 0) {
         @try {
             [msgWrap setValue:@(value) forKey:kvcKey];
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 }
 
@@ -949,8 +945,7 @@ static NSString *wcpl_qm_wrapStringValueForKey(id wrap, NSString *key) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_qm_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     return nil;
 }
 
@@ -963,8 +958,7 @@ static NSString *wcpl_qm_wrapStringValueForSelector(id obj, SEL selector) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_qm_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     return nil;
 }
 
@@ -977,8 +971,7 @@ static NSString *wcpl_qm_rawStringValueForKey(id obj, NSString *key) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_qm_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     return nil;
 }
 
@@ -1075,8 +1068,7 @@ static NSString *wcpl_qm_roomNameFromMessageWrap(CMessageWrap *wrap) {
             if (wcpl_qm_isChatRoomUserName(candidate)) {
                 return candidate;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     NSString *fromUser = wcpl_qm_trimString(wrap.m_nsFromUsr);
@@ -1410,8 +1402,7 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
             if (fallbackRawMemberList.length == 0) {
                 fallbackRawMemberList = candidateRawMemberList;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     if (rawMemberList.length == 0) {
@@ -1440,8 +1431,7 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
                 }
                 members = normalized.array;
             }
-        } @catch (__unused NSException *exceptionGetGroupCardMembers) {
-        }
+        } @catch (__unused NSException *exceptionGetGroupCardMembers) { WCPLCatchLog(exceptionGetGroupCardMembers); }
     }
 
     if (members.count == 0) {
@@ -2195,8 +2185,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
                     oldList = wcpl_qm_copyChatRoomMemberList(contact, roomUserName, @"merge_new_memlist");
                 }
             }
-        } @catch (__unused NSException *exceptionWarmup) {
-        }
+        } @catch (__unused NSException *exceptionWarmup) { WCPLCatchLog(exceptionWarmup); }
 
         BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName);
         NSArray<NSString *> *cachedMembersBeforeMerge = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];

@@ -33,6 +33,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLBaseViewController.m \
 	src/WCPLConfigCenter.m \
 	src/WCPLConfigSanitizer.m \
+	src/WCPLContactAdapter.m \
 	src/WCPLContactGroupPickerViewController.m \
 	src/WCPLContactLookup.m \
 	src/WCPLCrashReporter.m \
@@ -51,7 +52,10 @@ WCPL_COMPILE_FILES := \
 	src/WCPLLogUploader.m \
 	src/WCPLLogger.m \
 	src/WCPLLoginConfig.m \
+	src/WCPLMessageActionAdapter.m \
+	src/WCPLMessageAdapter.m \
 	src/WCPLMessageHook.xm \
+	src/WCPLNavigationAdapter.m \
 	src/WCPLPickerDataProvider.m \
 	src/WCPLPickerItem.m \
 	src/WCPLPluginEntryHook.xm \
@@ -61,28 +65,45 @@ WCPL_COMPILE_FILES := \
 	src/WCPLQuitMonitorHook.xm \
 	src/WCPLRealtimeLogUploader.m \
 	src/WCPLReceiveRedEnvelopOperation.m \
+	src/WCPLRedEnvelopBackgroundTaskTracker.m \
 	src/WCPLRedEnvelopConfig.m \
+	src/WCPLRedEnvelopEntryCoordinator.m \
 	src/WCPLRedEnvelopHook.xm \
+	src/WCPLRedEnvelopOpenReplyTracker.m \
+	src/WCPLRedEnvelopReceiverQueryTracker.m \
+	src/WCPLRedEnvelopRequestParser.m \
+	src/WCPLRedEnvelopSessionResolver.m \
+	src/WCPLRedEnvelopSummaryPresenter.m \
 	src/WCPLRedEnvelopParamQueue.m \
 	src/WCPLRedEnvelopTaskManager.m \
+	src/WCPLRevokeAnchor.m \
+	src/WCPLRepeatCellAdapter.m \
 	src/WCPLRepeatButtonAssetManager.m \
 	src/WCPLRepeatButtonEngine.m \
 	src/WCPLRevokeConfig.m \
 	src/WCPLRevokeHook.xm \
 	src/WCPLSafeStringContact.m \
 	src/WCPLServiceCenter.m \
+	src/WCPLServiceCenterAdapter.m \
 	src/WCPLSharedConfigHelpers.m \
 	src/WCPLSettingViewController.m \
+	src/WCPLSettingsPageContext.m \
+	src/WCPLSettingsPickerCoordinator.m \
+	src/WCPLSettingsPageRouter.m \
+	src/WCPLSettingsSelectionCoordinator.m \
+	src/WCPLSettingsSelectionStore.m \
+	src/WCPLSettingsSectionFactory.m \
 	src/WCPLSystemHook.xm \
 	src/WCPLThreadSafeMutableDictionary.m \
 	src/WCPLTimelineAdHook.xm \
 	src/WCPLTimelineConfig.m \
+	src/WCPLTypeGuard.m \
 	src/WCPLUnifiedMultiSelectViewController.m \
 	src/WeChatRedEnvelopParam.m
 $(TWEAK_NAME)_FILES = $(WCPL_COMPILE_FILES)
 
 # Legacy 档案：历史入口文件仅保留用于对照，禁止恢复编译
-WCPL_LEGACY_FILES := src/Tweak.m
+WCPL_LEGACY_FILES := legacy/Tweak.m
 WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLGestureHookCommon.xm \
 	src/WCPLGesturePureHelpers.xm \
@@ -90,12 +111,17 @@ WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLGestureRepeatEligibilityHelpers.xm \
 	src/WCPLGestureCellContextHelpers.xm \
 	src/WCPLGestureLayoutHelpers.xm \
+	src/WCPLGestureTapPolicyHelpers.xm \
 	src/WCPLRepeatButtonHook.xm \
 	src/WCPLRepeatActionHook.xm \
 	src/WCPLSwipeQuoteHook.xm \
 	src/WCPLDoubleTapHook.xm \
 	src/WCPLMessageTimeHook.xm \
 	src/WCPLMessageHookCommon.xm \
+	src/WCPLMessageSearchStateStore.xm \
+	src/WCPLMessageSearchResidualCleanup.xm \
+	src/WCPLMessageSearchNavButtonHelpers.xm \
+	src/WCPLMessageSearchPresentationBridge.xm \
 	src/WCPLMessageSearchCore.xm \
 	src/WCPLMessageSearchHook.xm \
 	src/WCPLMessageLocalReplaceHook.xm \

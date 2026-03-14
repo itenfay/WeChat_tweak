@@ -59,7 +59,7 @@ cd /root/WeChat_tweak/WeChatPluginDev/wapleodtcorexpc
 说明：
 
 - 该入口会统一串起 generate / doctor / unit tests / `make before-all`
-- `--strict-toolchain` 会进一步真实执行 `make clean package`
+- `--strict-toolchain` 会进一步真实执行 `make clean` 与 `make package`
 - 若当前机器没有完整 make/Theos/宿主测试环境，会以 degraded 方式给出明确阻塞说明
 - 若你要求本机具备完整门禁能力，再使用：
 

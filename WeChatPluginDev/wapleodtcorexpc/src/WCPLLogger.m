@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WCPLLogger ()
+@property (nonatomic, strong) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSString *logFilePath;
 @property (nonatomic, strong) NSFileHandle *fileHandle;
 @property (nonatomic, strong) dispatch_queue_t logQueue;
@@ -33,13 +34,26 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
     static WCPLLogger *logger = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        logger = [[WCPLLogger alloc] init];
+        logger = [WCPLLogger loggerWithDefaults:[NSUserDefaults standardUserDefaults]];
     });
     return logger;
 }
 
 - (instancetype)init {
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+}
+
++ (id<WCPLLogging>)sharedLogging {
+    return [self sharedLogger];
+}
+
++ (instancetype)loggerWithDefaults:(NSUserDefaults *)defaults {
+    return [[self alloc] initWithDefaults:defaults];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
     if (self = [super init]) {
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
         // 创建日志队列，确保线程安全
         _logQueue = dispatch_queue_create(kWCPLLoggerQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
         dispatch_queue_set_specific(_logQueue, kWCPLLoggerQueueSpecificKey, (void *)kWCPLLoggerQueueSpecificKey, NULL);
@@ -65,12 +79,11 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
             [_fileHandle seekToEndOfFile];
         }
 
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSNumber *savedLevel = [defaults objectForKey:kWCPLLogLevelKey];
+        NSNumber *savedLevel = [_defaults objectForKey:kWCPLLogLevelKey];
         if ([savedLevel respondsToSelector:@selector(integerValue)]) {
             _logLevel = (WCPLLogLevel)savedLevel.integerValue;
         } else {
-            BOOL savedEnabled = [defaults boolForKey:kWCPLDebugLogEnabled];
+            BOOL savedEnabled = [_defaults boolForKey:kWCPLDebugLogEnabled];
             _logLevel = savedEnabled ? WCPLLogLevelDebug : WCPLLogLevelNone;
         }
 
@@ -127,9 +140,8 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
 
     _logLevel = normalized;
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:normalized forKey:kWCPLLogLevelKey];
-    [defaults setBool:willEnabled forKey:kWCPLDebugLogEnabled];
+    [self.defaults setInteger:normalized forKey:kWCPLLogLevelKey];
+    [self.defaults setBool:willEnabled forKey:kWCPLDebugLogEnabled];
 
     if (!wasEnabled && willEnabled) {
         NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n",
@@ -196,6 +208,10 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
         [self writeToFileUrgent:timestampedMessage];
     } else {
         [self writeToFile:timestampedMessage];
+    }
+
+    if (level >= WCPLLogLevelWarning && self.sink) {
+        [self.sink logger:self didRecordMessage:message level:level];
     }
 
     // 控制系统日志量：后台与高频场景只保留告警/错误
@@ -466,8 +482,7 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
             if (self.fileHandle) {
                 [self.fileHandle synchronizeFile];
             }
-        } @catch (__unused NSException *exceptionSync) {
-        }
+        } @catch (__unused NSException *exceptionSync) { WCPLCatchLog(exceptionSync); }
     });
 }
 

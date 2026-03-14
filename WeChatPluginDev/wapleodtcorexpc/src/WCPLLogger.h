@@ -14,9 +14,42 @@ typedef NS_ENUM(NSInteger, WCPLLogLevel) {
     WCPLLogLevelNone = 99,
 };
 
-@interface WCPLLogger : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol WCPLLogging;
+
+@protocol WCPLLogSink <NSObject>
+
+- (void)logger:(id<WCPLLogging>)logger
+didRecordMessage:(NSString *)message
+         level:(WCPLLogLevel)level;
+
+@end
+
+@protocol WCPLLogging <NSObject>
+
+@property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, assign) WCPLLogLevel logLevel;
+
+- (void)log:(NSString *)message;
+- (void)logFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+- (void)logWithLevel:(WCPLLogLevel)level message:(NSString *)message;
+- (void)logWithLevel:(WCPLLogLevel)level format:(NSString *)format, ... NS_FORMAT_FUNCTION(2,3);
+- (NSString *)logFilePath;
+- (void)clearLog;
+- (NSString *)readRecentLog:(NSInteger)lines;
+
+@end
+
+@interface WCPLLogger : NSObject <WCPLLogging>
 
 + (instancetype)sharedLogger;
++ (id<WCPLLogging>)sharedLogging;
++ (instancetype)loggerWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
+
+@property (nullable, nonatomic, weak) id<WCPLLogSink> sink;
 
 // 日志开关 (默认关闭)。兼容旧版开关：开启等价于 Debug，关闭等价于 None。
 @property (nonatomic, assign) BOOL enabled;
@@ -49,6 +82,70 @@ typedef NS_ENUM(NSInteger, WCPLLogLevel) {
 
 @end
 
+static inline NSString *WCPLLogReporterSafeText(NSString * _Nullable value) {
+    return value.length > 0 ? value : @"unknown";
+}
+
+static inline NSString *WCPLLogReporterStringFromCString(const char *value) {
+    if (!value || value[0] == '\0') {
+        return @"unknown";
+    }
+    NSString *text = [NSString stringWithUTF8String:value];
+    return WCPLLogReporterSafeText(text);
+}
+
+static inline NSString *WCPLLogReporterFileName(const char *path) {
+    NSString *filePath = WCPLLogReporterStringFromCString(path);
+    return filePath.lastPathComponent.length > 0 ? filePath.lastPathComponent : filePath;
+}
+
+static inline NSString *WCPLLogReporterTargetSummary(id _Nullable target) {
+    if (!target) {
+        return @"(nil)";
+    }
+    Class cls = [target class];
+    if (!cls) {
+        return @"(unknown)";
+    }
+    return NSStringFromClass(cls) ?: @"(unknown)";
+}
+
+static inline void WCPLRecordCaughtException(NSString * _Nullable feature,
+                                             NSString * _Nullable stage,
+                                             NSException * _Nullable exception,
+                                             id _Nullable target,
+                                             NSString * _Nullable detail) {
+    NSString *message = [NSString stringWithFormat:@"[异常][%@][%@] target=%@ name=%@ reason=%@ detail=%@",
+                         WCPLLogReporterSafeText(feature),
+                         WCPLLogReporterSafeText(stage),
+                         WCPLLogReporterTargetSummary(target),
+                         WCPLLogReporterSafeText(exception.name),
+                         WCPLLogReporterSafeText(exception.reason),
+                         detail.length > 0 ? detail : @"-"];
+    NSLog(@"[WCPL][ERROR] %@", message);
+}
+
+#define WCPLCatchLog(exception) \
+    WCPLRecordCaughtException(WCPLLogReporterFileName(__FILE__), \
+                              WCPLLogReporterStringFromCString(__func__), \
+                              (exception), \
+                              nil, \
+                              [NSString stringWithFormat:@"line=%d", __LINE__])
+
+#define WCPLCatchLogTarget(exception, target, detail) \
+    WCPLRecordCaughtException(WCPLLogReporterFileName(__FILE__), \
+                              WCPLLogReporterStringFromCString(__func__), \
+                              (exception), \
+                              (target), \
+                              (detail))
+
+#define WCPLCatchLogContext(exception, feature, stage, target, detail) \
+    WCPLRecordCaughtException((feature), \
+                              (stage), \
+                              (exception), \
+                              (target), \
+                              (detail))
+
 // 便捷宏：按级别输出
 #define WCPLLogDebug(fmt, ...) do { if ([WCPLLogger currentLevel] <= WCPLLogLevelDebug) { [[WCPLLogger sharedLogger] logWithLevel:WCPLLogLevelDebug format:fmt, ##__VA_ARGS__]; } } while(0)
 #define WCPLLogInfo(fmt, ...) do { if ([WCPLLogger currentLevel] <= WCPLLogLevelInfo) { [[WCPLLogger sharedLogger] logWithLevel:WCPLLogLevelInfo format:fmt, ##__VA_ARGS__]; } } while(0)
@@ -57,3 +154,5 @@ typedef NS_ENUM(NSInteger, WCPLLogLevel) {
 
 // 兼容旧宏：默认视为 Debug
 #define WCPLLog(fmt, ...) WCPLLogDebug(fmt, ##__VA_ARGS__)
+
+NS_ASSUME_NONNULL_END

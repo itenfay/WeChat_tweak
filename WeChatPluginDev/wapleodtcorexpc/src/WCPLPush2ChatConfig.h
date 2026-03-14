@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WCPLPush2ChatConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 @property (assign, nonatomic) BOOL enableForegroundPush;
 @property (assign, nonatomic) BOOL enableBackgroundPush;
@@ -20,4 +23,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-

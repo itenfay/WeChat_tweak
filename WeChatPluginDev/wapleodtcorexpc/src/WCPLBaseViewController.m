@@ -6,8 +6,9 @@
 //
 
 #import "WCPLBaseViewController.h"
-#import "WeChatRedEnvelop.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLWeChatServiceHeaders.h"
+#import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
 @interface WCPLBaseViewController ()

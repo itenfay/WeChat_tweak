@@ -1,14 +1,18 @@
-#import "WeChatRedEnvelop.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLHookGovernance.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLRevokeAnchor.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
 static void wcpl_applyRevokeTimeColorToMessageCell(id cell);
+static BOOL wcpl_revokeWasHandledRecently(NSString *dedupKey);
+static void wcpl_revokeRememberHandled(NSString *dedupKey);
 
 static NSString *wcpl_trimString(NSString *text) {
     return WCPLTrimText(text);
@@ -128,8 +132,7 @@ static NSString *wcpl_displayNameForUserName(NSString *userName) {
             id value = ((id (*)(id, SEL))objc_msgSend)(contact, selector);
             NSString *name = wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(value), 40);
             if (name.length > 0) return name;
-        } @catch (__unused NSException *exceptionName) {
-        }
+        } @catch (__unused NSException *exceptionName) { WCPLCatchLog(exceptionName); }
     }
 
     return trimmedUser;
@@ -165,8 +168,7 @@ static CMessageWrap *wcpl_revokeMsgWrapFromObject(id obj) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exceptionMsgWrap) {
-        }
+        } @catch (__unused NSException *exceptionMsgWrap) { WCPLCatchLog(exceptionMsgWrap); }
     }
 
     return nil;
@@ -181,8 +183,7 @@ static NSString *wcpl_revokeChatNameFromObject(id obj) {
             if ([chatName isKindOfClass:[NSString class]]) {
                 return wcpl_trimString(chatName);
             }
-        } @catch (__unused NSException *exceptionChatName) {
-        }
+        } @catch (__unused NSException *exceptionChatName) { WCPLCatchLog(exceptionChatName); }
     }
 
     return nil;
@@ -209,16 +210,14 @@ static NSString *wcpl_selfUserName(void) {
             id userName = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsUsrName));
             NSString *trimmed = wcpl_trimString(userName);
             if (trimmed.length > 0) return trimmed;
-        } @catch (__unused NSException *exceptionUserName) {
-        }
+        } @catch (__unused NSException *exceptionUserName) { WCPLCatchLog(exceptionUserName); }
     }
 
     @try {
         id userName = [selfContact valueForKey:@"m_nsUsrName"];
         NSString *trimmed = wcpl_trimString(userName);
         if (trimmed.length > 0) return trimmed;
-    } @catch (__unused NSException *exceptionUserNameKVC) {
-    }
+    } @catch (__unused NSException *exceptionUserNameKVC) { WCPLCatchLog(exceptionUserNameKVC); }
 
     return nil;
 }
@@ -248,8 +247,7 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
         if ([%c(CMessageWrap) isSenderFromMsgWrap:msgWrap]) {
             return YES;
         }
-    } @catch (__unused NSException *exceptionSender) {
-    }
+    } @catch (__unused NSException *exceptionSender) { WCPLCatchLog(exceptionSender); }
 
     NSString *xml = wcpl_trimString(msgWrap.m_nsContent);
     if (xml.length > 0) {
@@ -436,8 +434,7 @@ static NSString *wcpl_styleContentText(id style) {
             if ([value isKindOfClass:[NSString class]]) {
                 return (NSString *)value;
             }
-        } @catch (__unused NSException *exceptionSelector) {
-        }
+        } @catch (__unused NSException *exceptionSelector) { WCPLCatchLog(exceptionSelector); }
     }
 
     NSArray<NSString *> *keys = @[@"nsContent", @"m_nsContent", @"content", @"text", @"string"];
@@ -447,8 +444,7 @@ static NSString *wcpl_styleContentText(id style) {
             if ([value isKindOfClass:[NSString class]]) {
                 return (NSString *)value;
             }
-        } @catch (__unused NSException *exceptionKVC) {
-        }
+        } @catch (__unused NSException *exceptionKVC) { WCPLCatchLog(exceptionKVC); }
     }
 
     return nil;
@@ -534,8 +530,7 @@ static id wcpl_revokeRichTextViewFromCell(id cell) {
         @try {
             id view = ((id (*)(id, SEL))objc_msgSend)(cell, @selector(getRichTextView));
             if (view) return view;
-        } @catch (__unused NSException *exceptionGetRichTextView) {
-        }
+        } @catch (__unused NSException *exceptionGetRichTextView) { WCPLCatchLog(exceptionGetRichTextView); }
     }
 
     NSArray<NSString *> *keys = @[@"m_richTextView", @"richTextView"];
@@ -543,8 +538,7 @@ static id wcpl_revokeRichTextViewFromCell(id cell) {
         @try {
             id view = [cell valueForKey:key];
             if (view) return view;
-        } @catch (__unused NSException *exceptionRichTextKVC) {
-        }
+        } @catch (__unused NSException *exceptionRichTextKVC) { WCPLCatchLog(exceptionRichTextKVC); }
     }
 
     return nil;
@@ -599,15 +593,13 @@ static void wcpl_applyRevokeTimeTintToRichTextView(id richTextView, NSString *co
     if ([richTextView respondsToSelector:@selector(forceDisplayInSync)]) {
         @try {
             ((void (*)(id, SEL))objc_msgSend)(richTextView, @selector(forceDisplayInSync));
-        } @catch (__unused NSException *exceptionForceDisplay) {
-        }
+        } @catch (__unused NSException *exceptionForceDisplay) { WCPLCatchLog(exceptionForceDisplay); }
     }
 
     if ([richTextView respondsToSelector:@selector(setNeedsDisplay)]) {
         @try {
             ((void (*)(id, SEL))objc_msgSend)(richTextView, @selector(setNeedsDisplay));
-        } @catch (__unused NSException *exceptionNeedsDisplay) {
-        }
+        } @catch (__unused NSException *exceptionNeedsDisplay) { WCPLCatchLog(exceptionNeedsDisplay); }
     }
 }
 
@@ -624,8 +616,7 @@ static CMessageWrap *wcpl_messageWrapFromCellForRevoke(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exceptionSelector) {
-        }
+        } @catch (__unused NSException *exceptionSelector) { WCPLCatchLog(exceptionSelector); }
     }
 
     id viewModel = nil;
@@ -648,8 +639,7 @@ static CMessageWrap *wcpl_messageWrapFromCellForRevoke(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exceptionViewModelSelector) {
-        }
+        } @catch (__unused NSException *exceptionViewModelSelector) { WCPLCatchLog(exceptionViewModelSelector); }
     }
 
     NSArray<NSString *> *viewModelKeys = @[@"messageWrap", @"msgWrap"];
@@ -659,8 +649,7 @@ static CMessageWrap *wcpl_messageWrapFromCellForRevoke(id cell) {
             if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                 return (CMessageWrap *)wrap;
             }
-        } @catch (__unused NSException *exceptionViewModelKVC) {
-        }
+        } @catch (__unused NSException *exceptionViewModelKVC) { WCPLCatchLog(exceptionViewModelKVC); }
     }
 
     return nil;
@@ -679,8 +668,7 @@ static id wcpl_revokeTimeLabelFromCell(id cell) {
             if (label && [label respondsToSelector:@selector(setTextColor:)]) {
                 return label;
             }
-        } @catch (__unused NSException *exceptionLabelSelector) {
-        }
+        } @catch (__unused NSException *exceptionLabelSelector) { WCPLCatchLog(exceptionLabelSelector); }
     }
 
     NSArray<NSString *> *keys = @[@"m_msgTimeLabel", @"msgTimeLabel", @"m_timeLabel", @"timeLabel"];
@@ -690,8 +678,7 @@ static id wcpl_revokeTimeLabelFromCell(id cell) {
             if (label && [label respondsToSelector:@selector(setTextColor:)]) {
                 return label;
             }
-        } @catch (__unused NSException *exceptionLabelKVC) {
-        }
+        } @catch (__unused NSException *exceptionLabelKVC) { WCPLCatchLog(exceptionLabelKVC); }
     }
 
     return nil;
@@ -726,8 +713,7 @@ static void wcpl_applyRevokeColorToTimeLabel(id label) {
         NSMutableAttributedString *mutableAttr = [[NSMutableAttributedString alloc] initWithAttributedString:source];
         [mutableAttr addAttribute:NSForegroundColorAttributeName value:color range:timeRange];
         ((void (*)(id, SEL, id))objc_msgSend)(label, @selector(setAttributedText:), mutableAttr);
-    } @catch (__unused NSException *exceptionAttr) {
-    }
+    } @catch (__unused NSException *exceptionAttr) { WCPLCatchLog(exceptionAttr); }
 }
 
 static void wcpl_applyRevokeTimeColorToMessageCell(id cell) {
@@ -742,6 +728,59 @@ static void wcpl_applyRevokeTimeColorToMessageCell(id cell) {
 
     id richTextView = wcpl_revokeRichTextViewFromCell(cell);
     wcpl_applyRevokeTimeTintToRichTextView(richTextView, content);
+}
+
+static NSMutableDictionary<NSString *, NSNumber *> *wcpl_revokeHandledMap(void) {
+    static NSMutableDictionary<NSString *, NSNumber *> *map = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        map = [[NSMutableDictionary alloc] init];
+    });
+    return map;
+}
+
+static NSTimeInterval wcpl_revokeHandledNow(void) {
+    return [[NSDate date] timeIntervalSince1970];
+}
+
+static void wcpl_pruneExpiredHandledRevokeKeysLocked(NSMutableDictionary<NSString *, NSNumber *> *map,
+                                                     NSTimeInterval now) {
+    NSMutableArray<NSString *> *expiredKeys = nil;
+    for (NSString *key in map) {
+        NSNumber *expiry = map[key];
+        if (expiry.doubleValue > now) continue;
+        if (!expiredKeys) {
+            expiredKeys = [NSMutableArray array];
+        }
+        [expiredKeys addObject:key];
+    }
+    if (expiredKeys.count == 0) return;
+    [map removeObjectsForKeys:expiredKeys];
+}
+
+static BOOL wcpl_revokeWasHandledRecently(NSString *dedupKey) {
+    if (![dedupKey isKindOfClass:[NSString class]] || dedupKey.length == 0) return NO;
+
+    NSMutableDictionary<NSString *, NSNumber *> *map = wcpl_revokeHandledMap();
+    @synchronized (map) {
+        NSTimeInterval now = wcpl_revokeHandledNow();
+        wcpl_pruneExpiredHandledRevokeKeysLocked(map, now);
+        NSNumber *expiry = map[dedupKey];
+        return (expiry.doubleValue > now);
+    }
+}
+
+static void wcpl_revokeRememberHandled(NSString *dedupKey) {
+    if (![dedupKey isKindOfClass:[NSString class]] || dedupKey.length == 0) return;
+
+    static const NSTimeInterval kWCPLRevokeDedupTTL = 8.0;
+
+    NSMutableDictionary<NSString *, NSNumber *> *map = wcpl_revokeHandledMap();
+    @synchronized (map) {
+        NSTimeInterval now = wcpl_revokeHandledNow();
+        wcpl_pruneExpiredHandledRevokeKeysLocked(map, now);
+        map[dedupKey] = @(now + kWCPLRevokeDedupTTL);
+    }
 }
 
 static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNameHint) {
@@ -784,6 +823,11 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
 
     long long revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"newmsgid");
     if (revokedMsgId <= 0) revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"msgid");
+    NSString *dedupKey = WCPLBuildRevokeDedupKey(session, revokedMsgId, revokeWrap.m_uiCreateTime, replaceText);
+    if (wcpl_revokeWasHandledRecently(dedupKey)) {
+        WCPLLogDebug(@"[防撤回] skip duplicate revoke: key=%@", dedupKey);
+        return YES;
+    }
 
     CMessageWrap *revokedMsgWrap = nil;
     id messageMgr = wcpl_getMessageMgr();
@@ -822,10 +866,16 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     actorName = wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(actorName), 40);
     if (actorName.length == 0) actorName = @"对方";
 
-    unsigned int tipInsertTime = revokeWrap.m_uiCreateTime;
-    if (revokedMsgWrap && revokedMsgWrap.m_uiCreateTime > 0) {
-        tipInsertTime = revokedMsgWrap.m_uiCreateTime;
-    }
+    WCPLRevokeAnchorSource anchorSource = WCPLRevokeAnchorSourceRevokeEvent;
+    WCPLRevokeAnchorFields anchorFields =
+        WCPLResolveRevokeAnchorFields(revokeWrap.m_uiCreateTime,
+                                      revokeWrap.m_uiSvrCreateTime,
+                                      revokeWrap.m_sequenceId,
+                                      revokedMsgWrap ? revokedMsgWrap.m_uiCreateTime : 0,
+                                      revokedMsgWrap ? revokedMsgWrap.m_uiSvrCreateTime : 0,
+                                      revokedMsgWrap ? revokedMsgWrap.m_sequenceId : 0,
+                                      (revokedMsgWrap != nil),
+                                      &anchorSource);
 
     NSString *timeText = wcpl_revokeTimeTextFromTimestamp(revokeWrap.m_uiCreateTime);
     NSString *tipText = [NSString stringWithFormat:@"%@\n\"%@\"撤回了一条消息\n%@",
@@ -836,27 +886,61 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
     [msgWrap setM_uiStatus:0x4];
     [msgWrap setM_nsContent:tipText];
-    [msgWrap setM_uiCreateTime:tipInsertTime];
+    [msgWrap setM_uiCreateTime:anchorFields.createTime];
+    [msgWrap setM_uiSvrCreateTime:anchorFields.svrCreateTime];
+    [msgWrap setM_sequenceId:anchorFields.sequenceId];
     [msgWrap setM_nsToUsr:session];
     [msgWrap setM_nsFromUsr:session];
+
+    WCPLLogInfo(@"[防撤回] 本地提示锚点: session=%@ source=%@ revokedLocal=%u revokedSvr=%llu create=%u svrCreate=%u seq=%u -> tipCreate=%u tipSvrCreate=%u tipSeq=%u",
+                session ?: @"",
+                WCPLRevokeAnchorSourceDescription(anchorSource),
+                revokedMsgWrap ? revokedMsgWrap.m_uiMesLocalID : 0,
+                (unsigned long long)(revokedMsgWrap ? revokedMsgWrap.m_n64MesSvrID : 0),
+                revokedMsgWrap ? revokedMsgWrap.m_uiCreateTime : 0,
+                revokedMsgWrap ? revokedMsgWrap.m_uiSvrCreateTime : 0,
+                revokedMsgWrap ? revokedMsgWrap.m_sequenceId : 0,
+                anchorFields.createTime,
+                anchorFields.svrCreateTime,
+                anchorFields.sequenceId);
 
     if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), nil);
-        } @catch (__unused NSException *exceptionRealUsr) {
-        }
+        } @catch (__unused NSException *exceptionRealUsr) { WCPLCatchLog(exceptionRealUsr); }
     }
 
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
         [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
+        wcpl_revokeRememberHandled(dedupKey);
+        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg_fixTime_unique local=%u svr=%llu create=%u svrCreate=%u seq=%u",
+                    msgWrap.m_uiMesLocalID,
+                    (unsigned long long)msgWrap.m_n64MesSvrID,
+                    msgWrap.m_uiCreateTime,
+                    msgWrap.m_uiSvrCreateTime,
+                    msgWrap.m_sequenceId);
         return YES;
     }
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
         [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+        wcpl_revokeRememberHandled(dedupKey);
+        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg_fixTime local=%u svr=%llu create=%u svrCreate=%u seq=%u",
+                    msgWrap.m_uiMesLocalID,
+                    (unsigned long long)msgWrap.m_n64MesSvrID,
+                    msgWrap.m_uiCreateTime,
+                    msgWrap.m_uiSvrCreateTime,
+                    msgWrap.m_sequenceId);
         return YES;
     }
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
         [messageMgr AddLocalMsg:session MsgWrap:msgWrap];
+        wcpl_revokeRememberHandled(dedupKey);
+        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg local=%u svr=%llu create=%u svrCreate=%u seq=%u",
+                    msgWrap.m_uiMesLocalID,
+                    (unsigned long long)msgWrap.m_n64MesSvrID,
+                    msgWrap.m_uiCreateTime,
+                    msgWrap.m_uiSvrCreateTime,
+                    msgWrap.m_sequenceId);
         return YES;
     }
 

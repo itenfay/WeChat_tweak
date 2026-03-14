@@ -2,6 +2,8 @@
 // 导致部分 view 没被 reset，表现为头像/气泡残留偏移。
 // 这里缓存「本次滑动实际影响的 view 列表」，reset 时优先清理同一批 view。
 static const void *kWCPLSwipeQuoteAffectedViewsKey = &kWCPLSwipeQuoteAffectedViewsKey;
+static const void *kWCPLSwipeGestureSkipLoggedKey = &kWCPLSwipeGestureSkipLoggedKey;
+static const void *kWCPLDoubleTapGestureSkipLoggedKey = &kWCPLDoubleTapGestureSkipLoggedKey;
 
 static NSArray<UIView *> *wcpl_swipeQuote_affectedViews(id cell) {
     if (!cell) {
@@ -18,10 +20,56 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     objc_setAssociatedObject(cell, kWCPLSwipeQuoteAffectedViewsKey, views, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
+                                                       const void *markerKey,
+                                                       NSString *feature,
+                                                       NSString *chatName,
+                                                       NSString *reason) {
+    if (!cell || !markerKey) {
+        return;
+    }
+
+    id marker = objc_getAssociatedObject(cell, markerKey);
+    if ([marker respondsToSelector:@selector(boolValue)] && [marker boolValue]) {
+        return;
+    }
+
+    objc_setAssociatedObject(cell, markerKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSString *safeFeature = ([feature isKindOfClass:[NSString class]] && feature.length > 0) ? feature : @"unknown";
+    NSString *safeChatName = ([chatName isKindOfClass:[NSString class]] && chatName.length > 0) ? chatName : @"";
+    NSString *safeReason = ([reason isKindOfClass:[NSString class]] && reason.length > 0) ? reason : @"unknown";
+    WCPLLogWarning(@"[手势] 跳过%@增强 cell=%p chat=%@ reason=%@",
+                   safeFeature,
+                   cell,
+                   safeChatName,
+                   safeReason);
+    WCPLCrashDiagnostic(@"gesture_setup action=skip_%@ cell=%p chat=%@ reason=%@",
+                        safeFeature,
+                        cell,
+                        safeChatName,
+                        safeReason);
+}
+
 %hook CommonMessageCellView
 
 %new
 - (void)wchook_setupSwipeGestureIfNeeded {
+    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+    NSString *skipReason = nil;
+    NSString *chatName = nil;
+    if (wcpl_shouldSkipCellGestureEnhancements(chatVC, &skipReason, &chatName)) {
+        [self wchook_resetSwipeAnimated:NO];
+        if (self.wchook_swipeGesture) {
+            self.wchook_swipeGesture.enabled = NO;
+        }
+        wcpl_logCellGestureEnhancementSkipIfNeeded(self,
+                                                   kWCPLSwipeGestureSkipLoggedKey,
+                                                   @"swipe",
+                                                   chatName,
+                                                   skipReason);
+        return;
+    }
+
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     // 检查总开关和是否有任何滑动功能启用
     if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
@@ -77,6 +125,21 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
 
 %new
 - (void)wchook_setupDoubleTapGestureIfNeeded {
+    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+    NSString *skipReason = nil;
+    NSString *chatName = nil;
+    if (wcpl_shouldSkipCellGestureEnhancements(chatVC, &skipReason, &chatName)) {
+        if (self.wchook_doubleTapGesture) {
+            self.wchook_doubleTapGesture.enabled = NO;
+        }
+        wcpl_logCellGestureEnhancementSkipIfNeeded(self,
+                                                   kWCPLDoubleTapGestureSkipLoggedKey,
+                                                   @"doubletap",
+                                                   chatName,
+                                                   skipReason);
+        return;
+    }
+
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     if (!config.doubleTapGestureEnable) {
         if (self.wchook_doubleTapGesture) {
@@ -86,9 +149,12 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     }
 
     UITapGestureRecognizer *gesture = self.wchook_doubleTapGesture;
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    NSInteger tapCount = wcpl_configuredTapCountForCell(self, msgWrap);
+    NSString *gestureName = wcpl_configuredTapSceneTagForCell(self, msgWrap);
     if (!gesture) {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wchook_handleDoubleTap:)];
-        gesture.numberOfTapsRequired = 3;
+        gesture.numberOfTapsRequired = tapCount;
         gesture.numberOfTouchesRequired = 1;
         gesture.cancelsTouchesInView = YES;
         gesture.delaysTouchesBegan = NO;
@@ -96,10 +162,13 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
         [self addGestureRecognizer:gesture];
         self.wchook_doubleTapGesture = gesture;
-        WCPLLogDebug(@"Triple tap gesture created: cell=%p", self);
+        WCPLLogDebug(@"%@ gesture created: cell=%p taps=%ld", gestureName, self, (long)tapCount);
+    } else if (gesture.numberOfTapsRequired != tapCount) {
+        gesture.numberOfTapsRequired = tapCount;
+        WCPLLogDebug(@"%@ gesture updated: cell=%p taps=%ld", gestureName, self, (long)tapCount);
     }
 
-    // 递归约束整棵消息 cell 视图树：禁用原生双击，低阶点击等待三击失败。
+    // 文本消息保留三击优先级；非文本消息仅恢复/保留必要的双击竞争关系。
     wcpl_enforceTripleTapPriorityForViewTree(self, gesture, self);
 
     gesture.enabled = YES;
@@ -299,30 +368,41 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         return;
     }
 
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    NSInteger requiredTapCount = wcpl_configuredTapCountForCell(self, msgWrap);
+    NSString *gestureName = wcpl_configuredTapSceneTagForCell(self, msgWrap);
+
     if (gesture && [self isKindOfClass:[UIView class]]) {
         CGPoint pointInCell = [gesture locationInView:(UIView *)self];
-        if (!wcpl_isPointInMessageBubbleArea(self, pointInCell, @"gesture_recognized_scope")) {
-            CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        WCPLTapHitZone zone = wcpl_tapGestureHitZoneForPoint(self, pointInCell, @"gesture_recognized_scope");
+        if (!wcpl_shouldAllowCustomTapForZone(self, msgWrap, zone)) {
             if (msgWrap) {
                 objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                 objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
-            WCPLLogDebug(@"Triple tap gesture ignored at recognized stage: cell=%p point=(%.1f,%.1f)",
+            WCPLLogDebug(@"%@ gesture ignored at recognized stage: cell=%p zone=%@ point=(%.1f,%.1f)",
+                         gestureName,
                          self,
+                         wcpl_tapHitZoneName(zone),
                          pointInCell.x,
                          pointInCell.y);
             return;
         }
     }
 
-    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (requiredTapCount <= 2) {
+        [self wchook_fireDoubleTapActionWithSource:@"gesture"];
+        return;
+    }
+
     NSNumber *tapCountObj = msgWrap ? objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey) : nil;
     NSNumber *lastTapAt = msgWrap ? objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey) : nil;
     NSInteger tapCount = [tapCountObj isKindOfClass:[NSNumber class]] ? tapCountObj.integerValue : 0;
     CFTimeInterval delta = ([lastTapAt isKindOfClass:[NSNumber class]]) ? (CACurrentMediaTime() - lastTapAt.doubleValue) : -1.0;
     static const NSTimeInterval kWCPLManualGateInterval = 1.60;
     if (tapCount < 2 || delta < 0 || delta > kWCPLManualGateInterval) {
-        WCPLLogDebug(@"Triple tap gesture ignored: manual gate miss cell=%p tapCount=%ld delta=%.3f",
+        WCPLLogDebug(@"%@ gesture ignored: manual gate miss cell=%p tapCount=%ld delta=%.3f",
+                     gestureName,
                      self,
                      (long)tapCount,
                      delta);
@@ -366,8 +446,10 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     BOOL isSelf = !isFromOther;
     NSInteger action = isSelf ? config.doubleTapSelfAction : config.doubleTapOtherAction;
     action = wcpl_normalizeSwipeActionValueLegacyAware(action, isSelf);
+    NSString *gestureName = wcpl_configuredTapSceneTagForCell(self, msgWrap);
 
-    WCPLLogInfo(@"Triple tap trigger: cell=%p source=%@ isFromOther=%d action=%ld otherAction=%ld selfAction=%ld msg=%@",
+    WCPLLogInfo(@"%@ trigger: cell=%p source=%@ isFromOther=%d action=%ld otherAction=%ld selfAction=%ld msg=%@",
+                gestureName,
                 self,
                 triggerSource,
                 isFromOther ? 1 : 0,
@@ -376,7 +458,8 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
                 (long)config.doubleTapSelfAction,
                 wcpl_repeatMessageDebugInfo(msgWrap));
 
-    wcpl_armTouchSuppression(msgWrap, self, @"tripleTapTrigger", kWCPLSwipeTouchSuppressDuration);
+    NSString *suppressSource = [gestureName isEqualToString:@"三击"] ? @"tripleTapTrigger" : @"doubleTapTrigger";
+    wcpl_armTouchSuppression(msgWrap, self, suppressSource, kWCPLSwipeTouchSuppressDuration);
 
     [self.wchook_feedbackGenerator prepare];
     if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
@@ -385,7 +468,59 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         [self.wchook_feedbackGenerator impactOccurred];
     }
 
-    [self wchook_performConfiguredAction:action messageWrap:msgWrap isSelf:isSelf sceneTag:@"三击"];
+    [self wchook_performConfiguredAction:action messageWrap:msgWrap isSelf:isSelf sceneTag:gestureName];
+}
+
+%new
+- (BOOL)wchook_tryFireManualBlankDoubleTapWithSource:(NSString *)source {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (!msgWrap) {
+        return NO;
+    }
+    if (wcpl_configuredTapCountForCell(self, msgWrap) > 2) {
+        return NO;
+    }
+
+    NSString *triggerSource = ([source isKindOfClass:[NSString class]] && source.length > 0) ? source : @"manual_blank";
+    static const NSTimeInterval kWCPLManualBlankDoubleTapInterval = 0.55;
+    CFTimeInterval now = CACurrentMediaTime();
+    NSNumber *lastTapAt = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey);
+    NSNumber *manualTapCount = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey);
+    NSInteger sequenceCount = 1;
+    double delta = -1.0;
+    if ([lastTapAt isKindOfClass:[NSNumber class]] &&
+        (now - lastTapAt.doubleValue) <= kWCPLManualBlankDoubleTapInterval) {
+        delta = now - lastTapAt.doubleValue;
+        sequenceCount = [manualTapCount isKindOfClass:[NSNumber class]] ? manualTapCount.integerValue + 1 : 2;
+    }
+
+    if (sequenceCount >= 2) {
+        objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        WCPLLogDebug(@"双击 blank manual matched: cell=%p source=%@ count=%ld delta=%.3f msg=%@",
+                     self,
+                     triggerSource,
+                     (long)sequenceCount,
+                     delta,
+                     wcpl_repeatMessageDebugInfo(msgWrap));
+        [self wchook_fireDoubleTapActionWithSource:[@"manual_" stringByAppendingString:triggerSource]];
+        return YES;
+    }
+
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, @(sequenceCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    WCPLLogDebug(@"双击 blank manual armed: cell=%p source=%@ count=%ld delta=%.3f msg=%@",
+                 self,
+                 triggerSource,
+                 (long)sequenceCount,
+                 delta,
+                 wcpl_repeatMessageDebugInfo(msgWrap));
+    return YES;
 }
 
 %new
@@ -397,6 +532,9 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
 
     CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
     if (!msgWrap) {
+        return NO;
+    }
+    if (wcpl_configuredTapCountForCell(self, msgWrap) <= 2) {
         return NO;
     }
 
@@ -416,7 +554,7 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     if (sequenceCount >= 3) {
         objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        WCPLLogDebug(@"Triple tap manual matched: cell=%p source=%@ count=%ld delta=%.3f msg=%@",
+        WCPLLogDebug(@"三击 manual matched: cell=%p source=%@ count=%ld delta=%.3f msg=%@",
                      self,
                      triggerSource,
                      (long)sequenceCount,
@@ -429,7 +567,7 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, @(sequenceCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     BOOL shouldSuppressNativeTap = (sequenceCount >= 2);
-    WCPLLogDebug(@"Triple tap manual armed: cell=%p source=%@ count=%ld delta=%.3f suppress=%d msg=%@",
+    WCPLLogDebug(@"三击 manual armed: cell=%p source=%@ count=%ld delta=%.3f suppress=%d msg=%@",
                  self,
                  triggerSource,
                  (long)sequenceCount,
@@ -466,23 +604,48 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         return NO;
     }
 
-    if (!wcpl_isTouchInMessageBubbleArea(self, touch, @"touchesEnded_scope")) {
-        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    NSInteger requiredTapCount = wcpl_configuredTapCountForCell(self, msgWrap);
+    CGPoint pointInCell = [touch locationInView:(UIView *)self];
+    WCPLTapHitZone zone = wcpl_tapGestureHitZoneForPoint(self, pointInCell, @"touchesEnded_scope");
+    if (!wcpl_shouldAllowCustomTapForZone(self, msgWrap, zone)) {
         if (msgWrap) {
             objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
         return NO;
     }
+    BOOL blankZone = (zone == WCPLTapHitZoneBubbleBlank);
 
     NSInteger tapCount = touch.tapCount;
-    if (tapCount >= 3) {
-        [self wchook_fireDoubleTapActionWithSource:@"touchesEnded"];
+    if (tapCount >= requiredTapCount) {
+        NSString *touchSource = requiredTapCount <= 2 ? @"touchesEnded_double" : @"touchesEnded_triple";
+        [self wchook_fireDoubleTapActionWithSource:touchSource];
         return YES;
     }
 
+    if (requiredTapCount <= 2) {
+        if (blankZone) {
+            NSString *manualSource = [NSString stringWithFormat:@"touchesEnded_blank_tap%ld", (long)tapCount];
+            return [self wchook_tryFireManualBlankDoubleTapWithSource:manualSource];
+        }
+        return NO;
+    }
+
     NSString *manualSource = [NSString stringWithFormat:@"touchesEnded_tap%ld", (long)tapCount];
-    return [self wchook_tryFireManualDoubleTapWithSource:manualSource];
+    BOOL handled = [self wchook_tryFireManualDoubleTapWithSource:manualSource];
+    if (handled) {
+        return YES;
+    }
+    if (blankZone) {
+        WCPLLogDebug(@"三击 blank pre-suppress native tap: cell=%p tapCount=%ld point=(%.1f,%.1f)",
+                     self,
+                     (long)tapCount,
+                     pointInCell.x,
+                     pointInCell.y);
+        return YES;
+    }
+    return NO;
 }
 
 %new
@@ -652,8 +815,7 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
             if (menuController && [menuController respondsToSelector:hideMenuSelector]) {
                 ((void (*)(id, SEL, id))objc_msgSend)(menuController, hideMenuSelector, self);
             }
-        } @catch (__unused NSException *exceptionMenu) {
-        }
+        } @catch (__unused NSException *exceptionMenu) { WCPLCatchLog(exceptionMenu); }
 
         // 优先走 VC 引用入口，避免触发长按菜单链路
         if ([chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {

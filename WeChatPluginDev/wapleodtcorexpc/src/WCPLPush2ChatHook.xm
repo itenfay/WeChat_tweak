@@ -14,6 +14,7 @@
 #import "CContact.h"
 #import "CContactMgr.h"
 #import "MicroMessengerAppDelegate.h"
+#import "MessagePageSheetAdapter.h"
 #import "MMMsgLogicManager.h"
 #import "NotificationActionsMgr.h"
 #import "QuickReplyMsgMgr.h"
@@ -105,12 +106,10 @@ static void wcpl_push2chat_trace(NSString *format, ...) {
             @try {
                 [fh seekToEndOfFile];
                 [fh writeData:data];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             @try {
                 [fh closeFile];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     });
 }
@@ -120,27 +119,128 @@ static BOOL wcpl_push2chat_pageSheetIsVisible(void);
 static BOOL wcpl_push2chat_hasForegroundHostUI(void);
 static NSString *wcpl_push2chat_actionIdentifierFromResponse(id response);
 
+static UIWindow *wcpl_push2chat_activeKeyWindow(void) {
+    UIApplication *application = [UIApplication sharedApplication];
+    UIWindow *keyWindow = nil;
+
+    if ([application respondsToSelector:@selector(connectedScenes)]) {
+        for (id scene in application.connectedScenes) {
+            if (![scene isKindOfClass:[UIWindowScene class]]) continue;
+            UIWindowScene *windowScene = (UIWindowScene *)scene;
+            if (windowScene.activationState != UISceneActivationStateForegroundActive &&
+                windowScene.activationState != UISceneActivationStateForegroundInactive) {
+                continue;
+            }
+            for (UIWindow *window in windowScene.windows) {
+                if (![window isKindOfClass:[UIWindow class]]) continue;
+                if (window.isKeyWindow) return window;
+                if (!keyWindow && !window.hidden && window.alpha > 0.01) {
+                    keyWindow = window;
+                }
+            }
+            if (keyWindow) return keyWindow;
+        }
+    }
+
+    if (!keyWindow && [application respondsToSelector:@selector(windows)]) {
+        for (UIWindow *window in application.windows) {
+            if (![window isKindOfClass:[UIWindow class]]) continue;
+            if (window.isKeyWindow) return window;
+            if (!keyWindow && !window.hidden && window.alpha > 0.01) {
+                keyWindow = window;
+            }
+        }
+    }
+
+    return keyWindow;
+}
+
 static NSString *wcpl_push2chat_pendingUserName = nil;
 static CFAbsoluteTime wcpl_push2chat_pendingSetTime = 0;
+static WCPLPush2ChatContext wcpl_push2chat_pendingContext = WCPLPush2ChatContextBackground;
+static NSString *wcpl_push2chat_coldStartUserName = nil;
+static CFAbsoluteTime wcpl_push2chat_coldStartSetTime = 0;
 static NSString *wcpl_push2chat_lastPageSheetUserName = nil;
 static CFAbsoluteTime wcpl_push2chat_lastPageSheetSetTime = 0;
+static NSString *wcpl_push2chat_preparedPageSheetUserName = nil;
+static CFAbsoluteTime wcpl_push2chat_preparedPageSheetSetTime = 0;
+static NSString *wcpl_push2chat_lastAppearedChatUserName = nil;
+static CFAbsoluteTime wcpl_push2chat_lastAppearedChatSetTime = 0;
+static UIView *wcpl_push2chat_transitionCoverView = nil;
+static NSString *wcpl_push2chat_transitionCoverUserName = nil;
+static CFAbsoluteTime wcpl_push2chat_transitionCoverSetTime = 0;
 static const CFTimeInterval kWCPLPush2ChatPendingMaxAge = 30.0;
+static const CFTimeInterval kWCPLPush2ChatColdStartMaxAge = 30.0;
 static const CFTimeInterval kWCPLPush2ChatRecentPageSheetWindow = 8.0;
+static const CFTimeInterval kWCPLPush2ChatPreparedPageSheetMaxAge = 90.0;
+static const CFTimeInterval kWCPLPush2ChatChatAppearMaxAge = 2.0;
 static const CFTimeInterval kWCPLPush2ChatBecomeActiveDelay = 0.35;
 static const CFTimeInterval kWCPLPush2ChatBackgroundVerifyDelay = 0.9;
 static const CFTimeInterval kWCPLPush2ChatVerifyPostPushDelay = 0.6;
 static const CFTimeInterval kWCPLPush2ChatPageSheetRequestCooldown = 0.65;
+static const CFTimeInterval kWCPLPush2ChatRetryInterval = 0.2;
+static const CFTimeInterval kWCPLPush2ChatTransitionCoverMaxAge = 3.0;
 
-static void wcpl_push2chat_setPendingUserName(NSString *userName, NSString *source) {
+static void wcpl_push2chat_setPendingUserName(NSString *userName,
+                                              WCPLPush2ChatContext context,
+                                              NSString *source) {
     NSString *trimmed = wcpl_trimString(userName);
     if (trimmed.length == 0) return;
 
     wcpl_push2chat_pendingUserName = [trimmed copy];
     wcpl_push2chat_pendingSetTime = CFAbsoluteTimeGetCurrent();
-    wcpl_push2chat_trace(@"pending set: user=%@ source=%@", wcpl_push2chat_pendingUserName, source ?: @"(nil)");
+    wcpl_push2chat_pendingContext = context;
+    wcpl_push2chat_trace(@"pending set: user=%@ ctx=%@ source=%@",
+                         wcpl_push2chat_pendingUserName,
+                         wcpl_push2chat_contextDescription(context),
+                         source ?: @"(nil)");
 }
 
-static NSString *wcpl_push2chat_takePendingUserNameIfFresh(CFTimeInterval maxAge) {
+static void wcpl_push2chat_markColdStartUserName(NSString *userName, NSString *reason) {
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return;
+
+    wcpl_push2chat_coldStartUserName = [trimmed copy];
+    wcpl_push2chat_coldStartSetTime = CFAbsoluteTimeGetCurrent();
+    wcpl_push2chat_trace(@"cold_start mark: user=%@ reason=%@", trimmed, reason ?: @"(nil)");
+}
+
+static BOOL wcpl_push2chat_hasFreshColdStartUserName(NSString *userName, CFTimeInterval maxAge) {
+    if (![wcpl_push2chat_coldStartUserName isKindOfClass:[NSString class]] ||
+        wcpl_push2chat_coldStartUserName.length == 0 ||
+        wcpl_push2chat_coldStartSetTime <= 0) {
+        return NO;
+    }
+
+    CFAbsoluteTime delta = CFAbsoluteTimeGetCurrent() - wcpl_push2chat_coldStartSetTime;
+    if (delta > maxAge) {
+        wcpl_push2chat_coldStartUserName = nil;
+        wcpl_push2chat_coldStartSetTime = 0;
+        return NO;
+    }
+
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return YES;
+    return [wcpl_push2chat_coldStartUserName isEqualToString:trimmed];
+}
+
+static void wcpl_push2chat_clearColdStartUserNameIfMatch(NSString *userName, NSString *reason) {
+    if (![wcpl_push2chat_coldStartUserName isKindOfClass:[NSString class]]) return;
+
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length > 0 && ![wcpl_push2chat_coldStartUserName isEqualToString:trimmed]) {
+        return;
+    }
+
+    wcpl_push2chat_trace(@"cold_start clear: user=%@ reason=%@",
+                         wcpl_push2chat_coldStartUserName,
+                         reason ?: @"(nil)");
+    wcpl_push2chat_coldStartUserName = nil;
+    wcpl_push2chat_coldStartSetTime = 0;
+}
+
+static NSString *wcpl_push2chat_takePendingUserNameIfFresh(CFTimeInterval maxAge,
+                                                           WCPLPush2ChatContext *contextOut) {
     NSString *userName = wcpl_push2chat_pendingUserName;
     if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
         return nil;
@@ -150,11 +250,17 @@ static NSString *wcpl_push2chat_takePendingUserNameIfFresh(CFTimeInterval maxAge
     if (wcpl_push2chat_pendingSetTime <= 0 || (now - wcpl_push2chat_pendingSetTime) > maxAge) {
         wcpl_push2chat_pendingUserName = nil;
         wcpl_push2chat_pendingSetTime = 0;
+        wcpl_push2chat_pendingContext = WCPLPush2ChatContextBackground;
         return nil;
     }
 
+    WCPLPush2ChatContext context = wcpl_push2chat_pendingContext;
     wcpl_push2chat_pendingUserName = nil;
     wcpl_push2chat_pendingSetTime = 0;
+    wcpl_push2chat_pendingContext = WCPLPush2ChatContextBackground;
+    if (contextOut) {
+        *contextOut = context;
+    }
     return userName;
 }
 
@@ -167,6 +273,7 @@ static void wcpl_push2chat_clearPendingUserNameIfMatch(NSString *userName, NSStr
     wcpl_push2chat_trace(@"pending clear: user=%@ reason=%@", trimmed, reason ?: @"(nil)");
     wcpl_push2chat_pendingUserName = nil;
     wcpl_push2chat_pendingSetTime = 0;
+    wcpl_push2chat_pendingContext = WCPLPush2ChatContextBackground;
 }
 
 static void wcpl_push2chat_recordPageSheetUserName(NSString *userName, NSString *reason) {
@@ -193,20 +300,152 @@ static BOOL wcpl_push2chat_hasRecentPageSheet(CFTimeInterval maxAge) {
     return delta <= maxAge;
 }
 
-static WCPLPush2ChatContext wcpl_push2chat_resolveContextOnMainQueue(WCPLPush2ChatContext preferredContext,
-                                                                      UIApplicationState state,
-                                                                      WCPLPush2ChatConfig *cfg,
-                                                                      NSString *source) {
-    WCPLPush2ChatContext context = preferredContext;
-    // 修复：后台通知直达链路必须保持后台语义，否则会被误提升到前台模式，
-    // 进而导致“后台半屏配置失效（走全屏）”。
-    if (preferredContext == WCPLPush2ChatContextBackground) {
-        return WCPLPush2ChatContextBackground;
+static void wcpl_push2chat_markPreparedPageSheetUserName(NSString *userName, NSString *reason) {
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return;
+
+    wcpl_push2chat_preparedPageSheetUserName = [trimmed copy];
+    wcpl_push2chat_preparedPageSheetSetTime = CFAbsoluteTimeGetCurrent();
+    wcpl_push2chat_trace(@"pagesheet prepare mark: user=%@ reason=%@",
+                         trimmed,
+                         reason ?: @"(nil)");
+}
+
+static NSString *wcpl_push2chat_preparedPageSheetUserNameIfFresh(CFTimeInterval maxAge) {
+    if (![wcpl_push2chat_preparedPageSheetUserName isKindOfClass:[NSString class]] ||
+        wcpl_push2chat_preparedPageSheetUserName.length == 0 ||
+        wcpl_push2chat_preparedPageSheetSetTime <= 0) {
+        return nil;
     }
 
-    if (state == UIApplicationStateBackground) {
-        context = WCPLPush2ChatContextBackground;
-    } else if (state == UIApplicationStateActive) {
+    CFAbsoluteTime delta = CFAbsoluteTimeGetCurrent() - wcpl_push2chat_preparedPageSheetSetTime;
+    if (delta > maxAge) {
+        wcpl_push2chat_preparedPageSheetUserName = nil;
+        wcpl_push2chat_preparedPageSheetSetTime = 0;
+        return nil;
+    }
+
+    return [wcpl_push2chat_preparedPageSheetUserName copy];
+}
+
+static void wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(NSString *userName, NSString *reason) {
+    NSString *prepared = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+    if (prepared.length == 0) return;
+
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length > 0 && ![prepared isEqualToString:trimmed]) {
+        return;
+    }
+
+    wcpl_push2chat_trace(@"pagesheet prepare clear: user=%@ reason=%@",
+                         prepared,
+                         reason ?: @"(nil)");
+    wcpl_push2chat_preparedPageSheetUserName = nil;
+    wcpl_push2chat_preparedPageSheetSetTime = 0;
+}
+
+static void wcpl_push2chat_recordAppearedChatUserName(NSString *userName, NSString *reason) {
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return;
+
+    wcpl_push2chat_lastAppearedChatUserName = [trimmed copy];
+    wcpl_push2chat_lastAppearedChatSetTime = CFAbsoluteTimeGetCurrent();
+    wcpl_push2chat_trace(@"chat appear: user=%@ reason=%@",
+                         trimmed,
+                         reason ?: @"(nil)");
+}
+
+static BOOL wcpl_push2chat_chatDidAppearRecently(NSString *userName, CFTimeInterval maxAge) {
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return NO;
+    if (![wcpl_push2chat_lastAppearedChatUserName isKindOfClass:[NSString class]]) return NO;
+    if (![wcpl_push2chat_lastAppearedChatUserName isEqualToString:trimmed]) return NO;
+    if (wcpl_push2chat_lastAppearedChatSetTime <= 0) return NO;
+
+    CFAbsoluteTime delta = CFAbsoluteTimeGetCurrent() - wcpl_push2chat_lastAppearedChatSetTime;
+    return delta <= maxAge;
+}
+
+static void wcpl_push2chat_hideTransitionCover(NSString *reason) {
+    if (![wcpl_push2chat_transitionCoverView isKindOfClass:[UIView class]]) return;
+
+    wcpl_push2chat_trace(@"transition cover hide: user=%@ reason=%@",
+                         wcpl_push2chat_transitionCoverUserName ?: @"(nil)",
+                         reason ?: @"(nil)");
+    @try {
+        [wcpl_push2chat_transitionCoverView removeFromSuperview];
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    wcpl_push2chat_transitionCoverView = nil;
+    wcpl_push2chat_transitionCoverUserName = nil;
+    wcpl_push2chat_transitionCoverSetTime = 0;
+}
+
+static void wcpl_push2chat_showTransitionCover(NSString *userName, NSString *reason) {
+    NSString *trimmed = wcpl_trimString(userName);
+    if (trimmed.length == 0) return;
+
+    UIWindow *window = wcpl_push2chat_activeKeyWindow();
+    if (![window isKindOfClass:[UIWindow class]]) {
+        wcpl_push2chat_trace(@"transition cover skip: window=nil user=%@ reason=%@",
+                             trimmed,
+                             reason ?: @"(nil)");
+        return;
+    }
+
+    wcpl_push2chat_hideTransitionCover(@"replace");
+
+    UIView *cover = [[UIView alloc] initWithFrame:window.bounds];
+    cover.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cover.backgroundColor = window.backgroundColor ?: [UIColor blackColor];
+    UIView *snapshot = [window snapshotViewAfterScreenUpdates:NO];
+    if ([snapshot isKindOfClass:[UIView class]]) {
+        snapshot.frame = cover.bounds;
+        snapshot.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cover addSubview:snapshot];
+    }
+
+    [window addSubview:cover];
+    [window bringSubviewToFront:cover];
+
+    wcpl_push2chat_transitionCoverView = cover;
+    wcpl_push2chat_transitionCoverUserName = [trimmed copy];
+    wcpl_push2chat_transitionCoverSetTime = CFAbsoluteTimeGetCurrent();
+    wcpl_push2chat_trace(@"transition cover show: user=%@ reason=%@", trimmed, reason ?: @"(nil)");
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kWCPLPush2ChatTransitionCoverMaxAge * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        if (![wcpl_push2chat_transitionCoverView isKindOfClass:[UIView class]]) return;
+        CFAbsoluteTime delta = CFAbsoluteTimeGetCurrent() - wcpl_push2chat_transitionCoverSetTime;
+        if (delta < kWCPLPush2ChatTransitionCoverMaxAge) return;
+        [UIView animateWithDuration:0.12 animations:^{
+            wcpl_push2chat_transitionCoverView.alpha = 0.0;
+        } completion:^(__unused BOOL finished) {
+            wcpl_push2chat_hideTransitionCover(@"timeout");
+        }];
+    });
+}
+
+static WCPLPush2ChatContext wcpl_push2chat_resolveContextOnMainQueue(WCPLPush2ChatContext preferredContext,
+                                                                     UIApplicationState state,
+                                                                     WCPLPush2ChatConfig *cfg,
+                                                                     NSString *source,
+                                                                     NSString *userName) {
+    WCPLPush2ChatContext context = preferredContext;
+    if (preferredContext == WCPLPush2ChatContextBackground) {
+        BOOL launchedFromTerminatedState =
+            wcpl_push2chat_hasFreshColdStartUserName(userName, kWCPLPush2ChatColdStartMaxAge);
+        if (launchedFromTerminatedState) {
+            return WCPLPush2ChatContextBackground;
+        }
+
+        context = WCPLPush2ChatContextForeground;
+        wcpl_push2chat_trace(@"context promote -> fg: source=%@ state=%@ user=%@ reason=process_alive",
+                             source ?: @"(nil)",
+                             wcpl_push2chat_applicationStateDescription(state),
+                             userName ?: @"(nil)");
+    }
+
+    if (state == UIApplicationStateActive) {
         context = WCPLPush2ChatContextForeground;
     }
     if (!cfg) return context;
@@ -240,7 +479,8 @@ static void wcpl_push2chat_installDidBecomeActiveObserverOnce(void) {
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
                                                       usingBlock:^(__unused NSNotification *note) {
-            NSString *pending = wcpl_push2chat_takePendingUserNameIfFresh(kWCPLPush2ChatPendingMaxAge);
+            WCPLPush2ChatContext pendingContext = WCPLPush2ChatContextBackground;
+            NSString *pending = wcpl_push2chat_takePendingUserNameIfFresh(kWCPLPush2ChatPendingMaxAge, &pendingContext);
             if (pending.length == 0) return;
 
             wcpl_push2chat_trace(@"becomeActive: drain pending user=%@", pending);
@@ -249,14 +489,16 @@ static void wcpl_push2chat_installDidBecomeActiveObserverOnce(void) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kWCPLPush2ChatBecomeActiveDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 WCPLPush2ChatConfig *cfg = [WCPLConfigCenter shared].push2Chat;
                 UIApplicationState state = [UIApplication sharedApplication].applicationState;
-                WCPLPush2ChatContext context = wcpl_push2chat_resolveContextOnMainQueue(WCPLPush2ChatContextBackground,
+                WCPLPush2ChatContext context = wcpl_push2chat_resolveContextOnMainQueue(pendingContext,
                                                                                          state,
                                                                                          cfg,
-                                                                                         @"becomeActive");
+                                                                                         @"becomeActive",
+                                                                                         pending);
                 wcpl_push2chat_trace(@"becomeActive: pending open ctx=%@ state=%@ user=%@",
                                      wcpl_push2chat_contextDescription(context),
                                      wcpl_push2chat_applicationStateDescription(state),
                                      pending);
+                wcpl_push2chat_clearColdStartUserNameIfMatch(pending, @"becomeActive_open");
                 wcpl_push2chat_openWithUserNameOnMainQueue(pending, context);
             });
         }];
@@ -446,60 +688,7 @@ static id wcpl_push2chat_contactForUserName(NSString *userName) {
 }
 
 static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
-    UIApplication *application = [UIApplication sharedApplication];
-    UIWindow *keyWindow = nil;
-
-    if ([application respondsToSelector:@selector(connectedScenes)]) {
-        NSSet *connectedScenes = application.connectedScenes;
-        for (id scene in connectedScenes) {
-            if (![scene isKindOfClass:[UIWindowScene class]]) {
-                continue;
-            }
-            UIWindowScene *windowScene = (UIWindowScene *)scene;
-            // 冷启动/后台唤起初期可能处于 ForegroundInactive，但 UI 已存在；这里一并兼容。
-            if (windowScene.activationState != UISceneActivationStateForegroundActive &&
-                windowScene.activationState != UISceneActivationStateForegroundInactive) {
-                continue;
-            }
-
-            UIWindow *candidate = nil;
-            for (UIWindow *window in windowScene.windows) {
-                if (![window isKindOfClass:[UIWindow class]]) continue;
-                if (window.isKeyWindow) {
-                    candidate = window;
-                    break;
-                }
-                if (!candidate && !window.hidden && window.alpha > 0.01) {
-                    candidate = window;
-                }
-            }
-
-            if ([candidate isKindOfClass:[UIWindow class]]) {
-                keyWindow = candidate;
-                break;
-            }
-        }
-        // 若仍无法取到窗口（例如冷启动极早期），返回 nil 触发重试等待。
-        if (![keyWindow isKindOfClass:[UIWindow class]]) {
-            return nil;
-        }
-    }
-
-    // 避免使用 deprecated 的 application.keyWindow（工程开启了 -Werror）。
-    if (!keyWindow && ![application respondsToSelector:@selector(connectedScenes)] && [application respondsToSelector:@selector(windows)]) {
-        for (UIWindow *window in application.windows) {
-            if (![window isKindOfClass:[UIWindow class]]) {
-                continue;
-            }
-            if (window.isKeyWindow) {
-                keyWindow = window;
-                break;
-            }
-            if (!keyWindow) {
-                keyWindow = window;
-            }
-        }
-    }
+    UIWindow *keyWindow = wcpl_push2chat_activeKeyWindow();
     if (![keyWindow isKindOfClass:[UIWindow class]]) {
         return nil;
     }
@@ -541,6 +730,19 @@ static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
 static UIViewController *wcpl_push2chat_findTopViewController(void) {
     // 与 wcpush 逻辑保持一致：使用基于 keyWindow 的 topVC 选择，避免 topMostController 返回不可展示 VC。
     return wcpl_push2chat_findTopViewControllerFallback();
+}
+
+static UINavigationController *wcpl_push2chat_navigationControllerForViewController(UIViewController *viewController) {
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        return (UINavigationController *)viewController;
+    }
+
+    UINavigationController *nav = [viewController isKindOfClass:[UIViewController class]] ? viewController.navigationController : nil;
+    if ([nav isKindOfClass:[UINavigationController class]]) {
+        return nav;
+    }
+
+    return nil;
 }
 
 static BOOL wcpl_push2chat_classLooksLikePageSheet(Class cls) {
@@ -595,8 +797,7 @@ static BOOL wcpl_push2chat_hasForegroundHostUI(void) {
         if ([topWindow isKindOfClass:[UIWindow class]] && !topWindow.hidden && topWindow.alpha > 0.01) {
             return YES;
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     UINavigationController *nav = topVC.navigationController;
     if ([nav isKindOfClass:[UINavigationController class]]) {
@@ -605,8 +806,7 @@ static BOOL wcpl_push2chat_hasForegroundHostUI(void) {
             if ([navWindow isKindOfClass:[UIWindow class]] && !navWindow.hidden && navWindow.alpha > 0.01) {
                 return YES;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     return wcpl_push2chat_pageSheetIsVisible();
@@ -625,8 +825,7 @@ static NSString *wcpl_push2chat_userNameFromContact(id chatContact) {
             if ([userName isKindOfClass:[NSString class]]) {
                 return wcpl_trimString((NSString *)userName);
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     @try {
@@ -634,8 +833,7 @@ static NSString *wcpl_push2chat_userNameFromContact(id chatContact) {
         if ([value isKindOfClass:[NSString class]]) {
             return wcpl_trimString((NSString *)value);
         }
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
     return nil;
 }
@@ -751,7 +949,242 @@ static NSString *wcpl_push2chat_currentSessionUserName(void) {
     return nil;
 }
 
-static BOOL wcpl_push2chat_dismissVisiblePageSheetIfNeeded(UIViewController *topVC, NSString *reason) {
+static UIViewController *wcpl_push2chat_visibleChatViewControllerForUserName(NSString *userName) {
+    NSString *target = wcpl_trimString(userName);
+    if (target.length == 0) return nil;
+
+    Class baseMsgClass = objc_getClass("BaseMsgContentViewController");
+    if (!baseMsgClass) return nil;
+
+    UIViewController *topVC = wcpl_push2chat_findTopViewController();
+    if (![topVC isKindOfClass:[UIViewController class]]) return nil;
+
+    NSMutableArray<UIViewController *> *candidates = [NSMutableArray array];
+    [candidates addObject:topVC];
+
+    UINavigationController *nav = topVC.navigationController;
+    if ([nav isKindOfClass:[UINavigationController class]]) {
+        UIViewController *visible = nav.visibleViewController;
+        if ([visible isKindOfClass:[UIViewController class]]) {
+            [candidates addObject:visible];
+        }
+        NSArray<UIViewController *> *stack = nav.viewControllers;
+        if ([stack isKindOfClass:[NSArray class]]) {
+            for (UIViewController *vc in [stack reverseObjectEnumerator]) {
+                if ([vc isKindOfClass:[UIViewController class]]) {
+                    [candidates addObject:vc];
+                }
+            }
+        }
+    }
+
+    UIViewController *parent = topVC.parentViewController;
+    if ([parent isKindOfClass:[UIViewController class]]) {
+        [candidates addObject:parent];
+    }
+
+    NSMutableSet<NSValue *> *visited = [NSMutableSet set];
+    for (UIViewController *candidate in candidates) {
+        if (![candidate isKindOfClass:baseMsgClass]) continue;
+
+        NSValue *identity = [NSValue valueWithPointer:(__bridge const void *)(candidate)];
+        if ([visited containsObject:identity]) continue;
+        [visited addObject:identity];
+
+        NSString *sessionUser = wcpl_push2chat_extractSessionUserNameFromViewController(candidate, 0, [NSMutableSet set]);
+        if ([sessionUser isEqualToString:target]) {
+            return candidate;
+        }
+    }
+
+    return nil;
+}
+
+static UIViewController *wcpl_push2chat_pageSheetHostViewControllerForChatViewController(UIViewController *chatVC) {
+    if (![chatVC isKindOfClass:[UIViewController class]]) return nil;
+
+    UINavigationController *nav = wcpl_push2chat_navigationControllerForViewController(chatVC);
+    if ([nav isKindOfClass:[UINavigationController class]]) {
+        return nav;
+    }
+
+    UIViewController *parent = chatVC.parentViewController;
+    if ([parent isKindOfClass:[UIViewController class]]) {
+        return parent;
+    }
+
+    UIViewController *topVC = wcpl_push2chat_findTopViewController();
+    if ([topVC isKindOfClass:[UIViewController class]]) {
+        return topVC;
+    }
+
+    return chatVC;
+}
+
+static void wcpl_push2chat_recoverPreparedPageSheetIfNeeded(NSString *userName, NSString *reason) {
+    NSString *target = wcpl_trimString(userName);
+    if (target.length == 0) return;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *prepared = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+        if (![prepared isEqualToString:target]) {
+            return;
+        }
+
+        if (wcpl_push2chat_pageSheetIsVisible()) {
+            wcpl_push2chat_trace(@"pagesheet close recover skip: still_visible user=%@ reason=%@",
+                                 target,
+                                 reason ?: @"(nil)");
+            return;
+        }
+
+        UIViewController *topVC = wcpl_push2chat_findTopViewController();
+        UINavigationController *nav = wcpl_push2chat_navigationControllerForViewController(topVC);
+        if (![nav isKindOfClass:[UINavigationController class]]) {
+            wcpl_push2chat_trace(@"pagesheet close recover skip: nav=nil user=%@ top=%@ reason=%@",
+                                 target,
+                                 NSStringFromClass([topVC class]),
+                                 reason ?: @"(nil)");
+            wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(target, @"recover_nav_nil");
+            return;
+        }
+
+        NSArray<UIViewController *> *stack = nav.viewControllers;
+        if (![stack isKindOfClass:[NSArray class]] || stack.count <= 1) {
+            wcpl_push2chat_trace(@"pagesheet close recover skip: stack=%lu user=%@ reason=%@",
+                                 (unsigned long)stack.count,
+                                 target,
+                                 reason ?: @"(nil)");
+            wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(target, @"recover_stack_short");
+            return;
+        }
+
+        NSString *currentSession = wcpl_push2chat_currentSessionUserName();
+        if (currentSession.length > 0 && ![currentSession isEqualToString:target]) {
+            wcpl_push2chat_trace(@"pagesheet close recover skip: current=%@ target=%@ reason=%@",
+                                 currentSession,
+                                 target,
+                                 reason ?: @"(nil)");
+            wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(target, @"recover_session_changed");
+            return;
+        }
+
+        @try {
+            UIViewController *popped = nav.topViewController;
+            [nav popViewControllerAnimated:NO];
+            wcpl_push2chat_trace(@"pagesheet close recover: pop=%@ user=%@ stack=%lu reason=%@",
+                                 NSStringFromClass([popped class]),
+                                 target,
+                                 (unsigned long)stack.count,
+                                 reason ?: @"(nil)");
+        } @catch (__unused NSException *exception) {
+            wcpl_push2chat_trace(@"pagesheet close recover exception: user=%@ reason=%@",
+                                 target,
+                                 reason ?: @"(nil)");
+        }
+
+        wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(target, @"recover_done");
+    });
+}
+
+static BOOL wcpl_push2chat_promoteVisibleChatToPageSheet(NSString *userName, NSString *reason) {
+    NSString *target = wcpl_trimString(userName);
+    if (target.length == 0) return NO;
+
+    UIViewController *chatVC = wcpl_push2chat_visibleChatViewControllerForUserName(target);
+    if (![chatVC isKindOfClass:[UIViewController class]]) {
+        wcpl_push2chat_trace(@"promote skip: chatVC=nil user=%@ reason=%@", target, reason ?: @"(nil)");
+        return NO;
+    }
+
+    id quickMgr = WCPLGetService(objc_getClass("QuickReplyMsgMgr"));
+    if (!quickMgr) {
+        wcpl_push2chat_trace(@"promote skip: QuickReplyMsgMgr=nil user=%@ reason=%@", target, reason ?: @"(nil)");
+        return NO;
+    }
+
+    id adapter = nil;
+    @try {
+        if ([objc_getClass("MessagePageSheetAdapter") respondsToSelector:@selector(adapterWithMsgViewController:)]) {
+            adapter = ((id (*)(id, SEL, id))objc_msgSend)(objc_getClass("MessagePageSheetAdapter"),
+                                                          @selector(adapterWithMsgViewController:),
+                                                          chatVC);
+        }
+    } @catch (__unused NSException *exception) {
+        adapter = nil;
+    }
+    if (!adapter) {
+        wcpl_push2chat_trace(@"promote skip: adapter=nil user=%@ reason=%@", target, reason ?: @"(nil)");
+        return NO;
+    }
+
+    UIViewController *host = wcpl_push2chat_pageSheetHostViewControllerForChatViewController(chatVC);
+    if (![host isKindOfClass:[UIViewController class]]) {
+        wcpl_push2chat_trace(@"promote skip: host=nil user=%@ reason=%@", target, reason ?: @"(nil)");
+        return NO;
+    }
+
+    @try {
+        if ([chatVC respondsToSelector:@selector(setIsPageSheetSessionWillRestore:)]) {
+            ((void (*)(id, SEL, BOOL))objc_msgSend)(chatVC, @selector(setIsPageSheetSessionWillRestore:), YES);
+        }
+        if ([adapter respondsToSelector:@selector(setCurrUsername:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(adapter, @selector(setCurrUsername:), target);
+        }
+        if ([adapter respondsToSelector:@selector(setShouldCallbackAtPageSheetAppear:)]) {
+            ((void (*)(id, SEL, BOOL))objc_msgSend)(adapter, @selector(setShouldCallbackAtPageSheetAppear:), YES);
+        }
+        if ([adapter respondsToSelector:@selector(setHostViewController:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(adapter, @selector(setHostViewController:), host);
+        }
+        if ([adapter respondsToSelector:@selector(setDelegate:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(adapter, @selector(setDelegate:), quickMgr);
+        }
+        if ([adapter respondsToSelector:@selector(setBizDelegate:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(adapter, @selector(setBizDelegate:), quickMgr);
+        }
+        if ([chatVC respondsToSelector:@selector(setPageSheetAdapter:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(setPageSheetAdapter:), adapter);
+        }
+        if ([quickMgr respondsToSelector:@selector(setPageSheetAdapter:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(quickMgr, @selector(setPageSheetAdapter:), adapter);
+        }
+
+        wcpl_push2chat_trace(@"promote(pageSheet): user=%@ chatVC=%@ host=%@ reason=%@",
+                             target,
+                             NSStringFromClass([chatVC class]),
+                             NSStringFromClass([host class]),
+                             reason ?: @"(nil)");
+        if ([adapter respondsToSelector:@selector(showFromViewController:animated:)]) {
+            ((void (*)(id, SEL, id, BOOL))objc_msgSend)(adapter,
+                                                        @selector(showFromViewController:animated:),
+                                                        host,
+                                                        YES);
+        } else if ([adapter respondsToSelector:@selector(showFromViewController:animated:complete:)]) {
+            ((void (*)(id, SEL, id, BOOL, id))objc_msgSend)(adapter,
+                                                            @selector(showFromViewController:animated:complete:),
+                                                            host,
+                                                            YES,
+                                                            nil);
+        } else {
+            return NO;
+        }
+        wcpl_push2chat_recordPageSheetUserName(target, reason ?: @"promote_pagesheet");
+        NSString *preparedUser = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+        if ([preparedUser isEqualToString:target]) {
+            wcpl_push2chat_markPreparedPageSheetUserName(target, @"pagesheet_presented");
+        }
+        return YES;
+    } @catch (__unused NSException *exception) {
+        wcpl_push2chat_trace(@"promote(pageSheet) exception: user=%@ reason=%@", target, reason ?: @"(nil)");
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_push2chat_dismissVisiblePageSheetIfNeededWithCompletion(UIViewController *topVC,
+                                                                         NSString *reason,
+                                                                         dispatch_block_t completion) {
     if (![topVC isKindOfClass:[UIViewController class]]) return NO;
 
     UIViewController *target = nil;
@@ -768,12 +1201,16 @@ static BOOL wcpl_push2chat_dismissVisiblePageSheetIfNeeded(UIViewController *top
 
     @try {
         wcpl_push2chat_trace(@"dismiss pagesheet: reason=%@ vc=%@", reason ?: @"(nil)", NSStringFromClass([target class]));
-        [target dismissViewControllerAnimated:NO completion:nil];
+        [target dismissViewControllerAnimated:NO completion:completion];
         return YES;
     } @catch (__unused NSException *exception) {
         wcpl_push2chat_trace(@"dismiss pagesheet exception: reason=%@", reason ?: @"(nil)");
     }
     return NO;
+}
+
+static BOOL wcpl_push2chat_dismissVisiblePageSheetIfNeeded(UIViewController *topVC, NSString *reason) {
+    return wcpl_push2chat_dismissVisiblePageSheetIfNeededWithCompletion(topVC, reason, nil);
 }
 
 static void wcpl_push2chat_pruneChatControllersIfNeeded(UINavigationController *nav, NSString *reason) {
@@ -816,6 +1253,7 @@ static void wcpl_push2chat_pruneChatControllersIfNeeded(UINavigationController *
 
 static BOOL wcpl_push2chat_forcePushToChat(id contact, NSString *userName, NSString *reason) {
     if (!contact || userName.length == 0) return NO;
+    BOOL forPageSheetPrepare = [reason isEqualToString:@"prepare_pagesheet"];
 
     UIViewController *topVC = wcpl_push2chat_findTopViewController();
     if (![topVC isKindOfClass:[UIViewController class]]) {
@@ -823,7 +1261,7 @@ static BOOL wcpl_push2chat_forcePushToChat(id contact, NSString *userName, NSStr
         return NO;
     }
 
-    UINavigationController *nav = topVC.navigationController;
+    UINavigationController *nav = wcpl_push2chat_navigationControllerForViewController(topVC);
     if (![nav isKindOfClass:[UINavigationController class]]) {
         wcpl_push2chat_trace(@"push(fallback:%@) skip: nav=nil topVC=%@ user=%@", reason ?: @"unknown", NSStringFromClass([topVC class]), userName);
         return NO;
@@ -837,19 +1275,147 @@ static BOOL wcpl_push2chat_forcePushToChat(id contact, NSString *userName, NSStr
         return NO;
     }
 
+    BOOL animated = !forPageSheetPrepare;
+    if (forPageSheetPrepare) {
+        wcpl_push2chat_showTransitionCover(userName, reason);
+    }
     @try {
         wcpl_push2chat_trace(@"push(fallback:%@): user=%@ contact=%@ nav=%@", reason ?: @"unknown", userName, contact, nav);
         ((void (*)(id, SEL, id, id, BOOL))objc_msgSend)(logicMgr,
                                                         @selector(PushOtherBaseMsgControllerByContact:navigationController:animated:),
                                                         contact,
                                                         nav,
-                                                        YES);
+                                                        animated);
+        if (forPageSheetPrepare) {
+            wcpl_push2chat_markPreparedPageSheetUserName(userName, reason);
+        }
         return YES;
     } @catch (__unused NSException *exception) {
         wcpl_push2chat_trace(@"push(fallback:%@) exception: user=%@", reason ?: @"unknown", userName);
     }
 
+    if (forPageSheetPrepare) {
+        wcpl_push2chat_hideTransitionCover(@"prepare_push_exception");
+    }
+
     return NO;
+}
+
+static BOOL wcpl_push2chat_showDirectPageSheetForContact(id contact,
+                                                         NSString *userName,
+                                                         UIViewController *host,
+                                                         NSString *reason) {
+    NSString *target = wcpl_trimString(userName);
+    if (!contact || target.length == 0) return NO;
+    if (![host isKindOfClass:[UIViewController class]]) return NO;
+
+    id logicMgr = WCPLGetService(objc_getClass("MMMsgLogicManager"));
+    id quickMgr = WCPLGetService(objc_getClass("QuickReplyMsgMgr"));
+    if (!logicMgr || !quickMgr) {
+        wcpl_push2chat_trace(@"pagesheet direct skip: logic=%@ quick=%@ user=%@ reason=%@",
+                             logicMgr ? @"YES" : @"NO",
+                             quickMgr ? @"YES" : @"NO",
+                             target,
+                             reason ?: @"(nil)");
+        return NO;
+    }
+
+    wcpl_push2chat_hideTransitionCover(@"direct_pagesheet");
+    wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(target, @"direct_pagesheet");
+
+    @try {
+        wcpl_push2chat_trace(@"pagesheet direct request: user=%@ host=%@ reason=%@",
+                             target,
+                             NSStringFromClass([host class]),
+                             reason ?: @"(nil)");
+        if ([logicMgr respondsToSelector:@selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:fromViewController:animated:)]) {
+            ((void (*)(id, SEL, id, id, id, BOOL))objc_msgSend)(logicMgr,
+                                                                @selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:fromViewController:animated:),
+                                                                contact,
+                                                                quickMgr,
+                                                                host,
+                                                                YES);
+        } else if ([logicMgr respondsToSelector:@selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:toMessage:fromViewController:animated:complete:)]) {
+            ((void (*)(id, SEL, id, id, id, id, BOOL, id))objc_msgSend)(logicMgr,
+                                                                        @selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:toMessage:fromViewController:animated:complete:),
+                                                                        contact,
+                                                                        quickMgr,
+                                                                        nil,
+                                                                        host,
+                                                                        YES,
+                                                                        nil);
+        } else if ([logicMgr respondsToSelector:@selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:toMessage:fromViewController:animated:extraInfo:complete:)]) {
+            ((void (*)(id, SEL, id, id, id, id, BOOL, id, id))objc_msgSend)(logicMgr,
+                                                                             @selector(ShowPageSheetLogicControllerByContact:pageSheetDelegate:toMessage:fromViewController:animated:extraInfo:complete:),
+                                                                             contact,
+                                                                             quickMgr,
+                                                                             nil,
+                                                                             host,
+                                                                             YES,
+                                                                             nil,
+                                                                             nil);
+        } else {
+            wcpl_push2chat_trace(@"pagesheet direct skip: selector_missing user=%@ reason=%@",
+                                 target,
+                                 reason ?: @"(nil)");
+            return NO;
+        }
+
+        wcpl_push2chat_recordPageSheetUserName(target, reason ?: @"direct_pagesheet_request");
+        return YES;
+    } @catch (__unused NSException *exception) {
+        wcpl_push2chat_trace(@"pagesheet direct exception: user=%@ host=%@ reason=%@",
+                             target,
+                             NSStringFromClass([host class]),
+                             reason ?: @"(nil)");
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_push2chat_handleVisiblePageSheetSwitchIfNeeded(UIViewController *topVC,
+                                                                id contact,
+                                                                NSString *targetUserName,
+                                                                WCPLPush2ChatContext context) {
+    if (!wcpl_push2chat_pageSheetIsVisible()) {
+        return NO;
+    }
+
+    NSString *sheetSession = wcpl_push2chat_currentSessionUserName();
+    if ([sheetSession isKindOfClass:[NSString class]] && [sheetSession isEqualToString:targetUserName]) {
+        wcpl_push2chat_recordPageSheetUserName(targetUserName, @"pagesheet_visible_same_user");
+        wcpl_push2chat_trace(@"skip open: pagesheet already visible user=%@ ctx=%@",
+                             targetUserName,
+                             wcpl_push2chat_contextDescription(context));
+        return YES;
+    }
+
+    wcpl_push2chat_trace(@"pagesheet switch: close current=%@ target=%@ ctx=%@",
+                         sheetSession ?: @"(nil)",
+                         targetUserName ?: @"(nil)",
+                         wcpl_push2chat_contextDescription(context));
+    wcpl_push2chat_hideTransitionCover(@"pagesheet_switch");
+    wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(sheetSession, @"pagesheet_switch");
+    return wcpl_push2chat_dismissVisiblePageSheetIfNeededWithCompletion(topVC,
+                                                                        @"switch_pagesheet_user",
+                                                                        ^{
+        UIViewController *host = wcpl_push2chat_findTopViewController();
+        if (![host isKindOfClass:[UIViewController class]]) {
+            wcpl_push2chat_trace(@"pagesheet switch reopen skip: host=nil target=%@ ctx=%@",
+                                 targetUserName ?: @"(nil)",
+                                 wcpl_push2chat_contextDescription(context));
+            return;
+        }
+        if (!wcpl_push2chat_showDirectPageSheetForContact(contact,
+                                                          targetUserName,
+                                                          host,
+                                                          @"switch_pagesheet_user")) {
+            wcpl_push2chat_trace(@"pagesheet switch reopen failed: target=%@ host=%@ ctx=%@",
+                                 targetUserName ?: @"(nil)",
+                                 NSStringFromClass([host class]),
+                                 wcpl_push2chat_contextDescription(context));
+        }
+    });
 }
 
 static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPush2ChatContext context) {
@@ -857,15 +1423,7 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
         return YES;
     }
 
-    // 无论前台还是后台，若当前已经在目标会话，直接结束，避免重复弹窗/重复打开。
     NSString *currentSession = wcpl_push2chat_currentSessionUserName();
-    if ([currentSession isKindOfClass:[NSString class]] && [currentSession isEqualToString:userName]) {
-        if (wcpl_push2chat_pageSheetIsVisible()) {
-            wcpl_push2chat_recordPageSheetUserName(userName, @"already_in_session");
-        }
-        wcpl_push2chat_trace(@"skip open: already in session user=%@ ctx=%@", userName, wcpl_push2chat_contextDescription(context));
-        return YES;
-    }
 
     // 与 wcpush 对齐：以 topVC 作为展示 VC。
     UIViewController *topVC = wcpl_push2chat_findTopViewController();
@@ -879,26 +1437,6 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
         wcpl_push2chat_trace(@"tryOpen: nav=nil topVC=%@ user=%@", NSStringFromClass([topVC class]), userName);
         if (context == WCPLPush2ChatContextForeground) {
             return NO;
-        }
-    }
-
-    // 前台路径：再做一次兜底检查（覆盖上方 currentSession 因 UI 状态短暂不可见的情况）。
-    if (context == WCPLPush2ChatContextForeground) {
-        Class baseMsgClass = objc_getClass("BaseMsgContentViewController");
-        if (baseMsgClass && [topVC isKindOfClass:baseMsgClass]) {
-            @try {
-                id chatContact = ((id (*)(id, SEL))objc_msgSend)(topVC, @selector(getChatContact));
-                NSString *currentUsr = nil;
-                if ([chatContact isKindOfClass:objc_getClass("CContact")]) {
-                    currentUsr = ((CContact *)chatContact).m_nsUsrName;
-                } else if ([chatContact respondsToSelector:@selector(m_nsUsrName)]) {
-                    currentUsr = ((id (*)(id, SEL))objc_msgSend)(chatContact, @selector(m_nsUsrName));
-                }
-                if ([currentUsr isKindOfClass:[NSString class]] && [currentUsr isEqualToString:userName]) {
-                    return YES;
-                }
-            } @catch (__unused NSException *exception) {
-            }
         }
     }
 
@@ -922,18 +1460,42 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
                          hasNav ? NSStringFromClass([nav class]) : @"(nil)",
                          userName);
 
-    if (mode == 1) {
-        // 半屏模式：以“半屏真正出现”为成功条件。
-        // 如果没出现，返回 NO 触发外层重试，避免出现“只回到联系人页”的假直达。
+    if ([currentSession isKindOfClass:[NSString class]] && [currentSession isEqualToString:userName]) {
+        if (wcpl_push2chat_pageSheetIsVisible()) {
+            wcpl_push2chat_recordPageSheetUserName(userName, @"already_in_session");
+            wcpl_push2chat_trace(@"skip open: pagesheet already visible user=%@ ctx=%@",
+                                 userName,
+                                 wcpl_push2chat_contextDescription(context));
+            return YES;
+        }
 
-        // 已经有半屏且就是目标会话：直接成功。
-        if (pageSheetVisible) {
-            NSString *sheetSession = wcpl_push2chat_currentSessionUserName();
-            if ([sheetSession isKindOfClass:[NSString class]] && [sheetSession isEqualToString:userName]) {
-                wcpl_push2chat_recordPageSheetUserName(userName, @"pagesheet_visible_same_user");
-                wcpl_push2chat_trace(@"skip open: pagesheet already visible user=%@ ctx=%@",
+        if (mode == 1) {
+            if (wcpl_push2chat_recentPageSheetUserMatches(userName, kWCPLPush2ChatPageSheetRequestCooldown)) {
+                return NO;
+            }
+            if (wcpl_push2chat_showDirectPageSheetForContact(contact,
+                                                             userName,
+                                                             topVC,
+                                                             @"already_in_session_direct")) {
+                wcpl_push2chat_trace(@"pagesheet request accepted: user=%@ ctx=%@ reason=%@",
                                      userName,
-                                     wcpl_push2chat_contextDescription(context));
+                                     wcpl_push2chat_contextDescription(context),
+                                     @"already_in_session_direct");
+                return YES;
+            }
+            return NO;
+        }
+
+        wcpl_push2chat_trace(@"skip open: already in session user=%@ ctx=%@", userName, wcpl_push2chat_contextDescription(context));
+        return YES;
+    }
+
+    if (mode == 1) {
+        if (pageSheetVisible) {
+            if (wcpl_push2chat_handleVisiblePageSheetSwitchIfNeeded(topVC,
+                                                                    contact,
+                                                                    userName,
+                                                                    context)) {
                 return YES;
             }
         }
@@ -943,72 +1505,22 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
             return NO;
         }
 
-        id quickMgr = WCPLGetService(objc_getClass("QuickReplyMsgMgr"));
-        if (!(quickMgr && [quickMgr respondsToSelector:@selector(showPageSheetSession:fromViewController:)])) {
-            wcpl_push2chat_trace(@"pagesheet skip: QuickReplyMsgMgr unavailable user=%@", userName);
+        if (!contact) {
+            wcpl_push2chat_trace(@"pagesheet skip: contact=nil user=%@", userName);
             return NO;
         }
 
-        // 优先使用 QuickReplyMsgMgr 自己的 topVC，避免我们取到的 topVC 不可展示导致“调用了但不出半屏”。
-        UIViewController *pageSheetHost = nil;
-        if ([quickMgr respondsToSelector:@selector(getCurrentTopViewController)]) {
-            @try {
-                id host = ((id (*)(id, SEL))objc_msgSend)(quickMgr, @selector(getCurrentTopViewController));
-                if ([host isKindOfClass:[UIViewController class]]) {
-                    pageSheetHost = (UIViewController *)host;
-                }
-            } @catch (__unused NSException *exception) {
-            }
+        if (wcpl_push2chat_showDirectPageSheetForContact(contact,
+                                                         userName,
+                                                         topVC,
+                                                         @"direct_pagesheet")) {
+            wcpl_push2chat_trace(@"pagesheet request accepted: user=%@ ctx=%@ reason=%@",
+                                 userName,
+                                 wcpl_push2chat_contextDescription(context),
+                                 @"direct_pagesheet");
+            return YES;
         }
-        if (![pageSheetHost isKindOfClass:[UIViewController class]]) {
-            pageSheetHost = topVC;
-        }
-        if (wcpl_push2chat_classLooksLikePageSheet([pageSheetHost class])) {
-            UIViewController *presenting = pageSheetHost.presentingViewController;
-            if ([presenting isKindOfClass:[UIViewController class]]) {
-                pageSheetHost = presenting;
-            }
-        }
-
-        // 若已有半屏但不是目标会话：先关，再短延时打开新半屏。
-        if (pageSheetVisible && wcpl_push2chat_dismissVisiblePageSheetIfNeeded(topVC, @"replace_pagesheet")) {
-            NSString *targetUser = [userName copy];
-            __weak UIViewController *weakHost = pageSheetHost;
-            wcpl_push2chat_recordPageSheetUserName(targetUser, @"replace_pagesheet_schedule");
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.12 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                UIViewController *host = weakHost;
-                UIViewController *freshTop = wcpl_push2chat_findTopViewController();
-                if ([freshTop isKindOfClass:[UIViewController class]] &&
-                    !wcpl_push2chat_classLooksLikePageSheet([freshTop class])) {
-                    host = freshTop;
-                }
-                if (![host isKindOfClass:[UIViewController class]]) {
-                    host = wcpl_push2chat_findTopViewController();
-                }
-                if (![host isKindOfClass:[UIViewController class]]) {
-                    wcpl_push2chat_trace(@"pagesheet replace skip: host=nil user=%@", targetUser);
-                    return;
-                }
-                @try {
-                    wcpl_push2chat_trace(@"open(pageSheet,replace): user=%@ host=%@", targetUser, NSStringFromClass([host class]));
-                    ((void (*)(id, SEL, id, id))objc_msgSend)(quickMgr, @selector(showPageSheetSession:fromViewController:), targetUser, host);
-                    wcpl_push2chat_recordPageSheetUserName(targetUser, @"replace_pagesheet_open");
-                } @catch (__unused NSException *exception) {
-                    wcpl_push2chat_trace(@"open(pageSheet,replace) exception: user=%@", targetUser);
-                }
-            });
-            return NO;
-        }
-
-        @try {
-            wcpl_push2chat_trace(@"open(pageSheet): user=%@ host=%@", userName, NSStringFromClass([pageSheetHost class]));
-            ((void (*)(id, SEL, id, id))objc_msgSend)(quickMgr, @selector(showPageSheetSession:fromViewController:), userName, pageSheetHost);
-            wcpl_push2chat_recordPageSheetUserName(userName, @"open_pagesheet");
-        } @catch (__unused NSException *exception) {
-            wcpl_push2chat_trace(@"open(pageSheet) exception: user=%@", userName);
-        }
-
-        return wcpl_push2chat_pageSheetIsVisible();
+        return NO;
     }
 
     BOOL opened = NO;
@@ -1118,7 +1630,7 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
         return;
     }
 
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(__unused NSTimer *t) {
+    timer = [NSTimer scheduledTimerWithTimeInterval:kWCPLPush2ChatRetryInterval repeats:YES block:^(__unused NSTimer *t) {
         attempts += 1;
         if (attemptOpen() || attempts >= maxAttempts) {
             if (attempts >= maxAttempts) {
@@ -1126,6 +1638,7 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
                 wcpl_push2chat_trace(@"open failed(after retries): ctx=%@ user=%@",
                                      wcpl_push2chat_contextDescription(context),
                                      userName);
+                wcpl_push2chat_hideTransitionCover(@"open_failed_after_retries");
             } else {
                 wcpl_push2chat_trace(@"open done(retry#%ld): ctx=%@ user=%@",
                                      (long)attempts,
@@ -1174,7 +1687,8 @@ static BOOL wcpl_push2chat_handleNotificationResponse(id response, WCPLPush2Chat
         WCPLPush2ChatContext openContext = wcpl_push2chat_resolveContextOnMainQueue(preferredContext,
                                                                                      currentState,
                                                                                      cfg,
-                                                                                     source);
+                                                                                     source,
+                                                                                     userName);
 
         BOOL pageSheetVisible = wcpl_push2chat_pageSheetIsVisible();
         BOOL hasRecentPageSheet = wcpl_push2chat_hasRecentPageSheet(kWCPLPush2ChatRecentPageSheetWindow);
@@ -1208,13 +1722,15 @@ static BOOL wcpl_push2chat_handleNotificationResponse(id response, WCPLPush2Chat
             return;
         }
 
-        if (openContext == WCPLPush2ChatContextBackground && currentState != UIApplicationStateActive) {
-            // 后台点击通知：先缓存，等进入前台 active 后再尝试打开，避免 UI 未就绪导致“只进主页面不进会话”。
-            wcpl_push2chat_setPendingUserName(userName, source);
+        if (currentState != UIApplicationStateActive) {
+            // 无论最终采用前台还是后台模式，只要当前 UI 尚未 active，就先缓存到 becomeActive。
+            // 否则会在窗口/导航层级尚未稳定时直接触发开屏或半屏展示，存在闪退风险。
+            wcpl_push2chat_setPendingUserName(userName, openContext, source);
             return;
         }
 
         wcpl_push2chat_clearPendingUserNameIfMatch(userName, @"direct_open");
+        wcpl_push2chat_clearColdStartUserNameIfMatch(userName, @"direct_open");
         wcpl_push2chat_openWithUserNameOnMainQueue(userName, openContext);
     };
 
@@ -1282,7 +1798,8 @@ void wcpl_push2chat_handleLaunchOptions(id launchOptions) {
                            [NSString stringWithFormat:@"user=%@", userName ?: @"(nil)"]);
     dispatch_async(dispatch_get_main_queue(), ^{
         wcpl_push2chat_installDidBecomeActiveObserverOnce();
-        wcpl_push2chat_setPendingUserName(userName, @"launchOptions");
+        wcpl_push2chat_markColdStartUserName(userName, @"launchOptions");
+        wcpl_push2chat_setPendingUserName(userName, WCPLPush2ChatContextBackground, @"launchOptions");
     });
 }
 
@@ -1298,6 +1815,88 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) {
                            @"context=foreground");
     return wcpl_push2chat_handleNotificationResponse(response, WCPLPush2ChatContextForeground, @"MicroMessengerAppDelegate");
 }
+
+%hook BaseMsgContentViewController
+
+- (void)viewDidAppear:(_Bool)animated {
+    %orig(animated);
+
+    NSString *sessionUser = wcpl_push2chat_extractSessionUserNameFromViewController((UIViewController *)self,
+                                                                                    0,
+                                                                                    [NSMutableSet set]);
+    if (sessionUser.length == 0) {
+        return;
+    }
+
+    wcpl_push2chat_recordAppearedChatUserName(sessionUser, @"viewDidAppear");
+
+    NSString *preparedUser = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+    if (![preparedUser isEqualToString:sessionUser]) {
+        return;
+    }
+    if (wcpl_push2chat_pageSheetIsVisible()) {
+        return;
+    }
+    if (wcpl_push2chat_recentPageSheetUserMatches(sessionUser, kWCPLPush2ChatPageSheetRequestCooldown)) {
+        return;
+    }
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!wcpl_push2chat_chatDidAppearRecently(sessionUser, kWCPLPush2ChatChatAppearMaxAge)) {
+            return;
+        }
+        if (wcpl_push2chat_pageSheetIsVisible()) {
+            return;
+        }
+        wcpl_push2chat_promoteVisibleChatToPageSheet(sessionUser, @"chat_viewDidAppear");
+    });
+}
+
+- (void)onPageSheetDidAppear {
+    %orig;
+
+    NSString *sessionUser = wcpl_push2chat_extractSessionUserNameFromViewController((UIViewController *)self,
+                                                                                    0,
+                                                                                    [NSMutableSet set]);
+    wcpl_push2chat_hideTransitionCover([NSString stringWithFormat:@"pagesheet_did_appear:%@",
+                                        sessionUser ?: @"(nil)"]);
+}
+
+- (void)onDismissPageSheetSession {
+    wcpl_push2chat_hideTransitionCover(@"onDismissPageSheetSession");
+    %orig;
+}
+
+%end
+
+%hook QuickReplyMsgMgr
+
+- (void)pageSheetDidClose:(id)pageSheet closeType:(long long)closeType {
+    NSString *preparedUser = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+    wcpl_push2chat_trace(@"hook pageSheetDidClose: closeType=%lld prepared=%@",
+                         closeType,
+                         preparedUser ?: @"(nil)");
+    wcpl_push2chat_hideTransitionCover([NSString stringWithFormat:@"pageSheetDidClose:%lld", closeType]);
+    %orig(pageSheet, closeType);
+    if (preparedUser.length > 0) {
+        wcpl_push2chat_recoverPreparedPageSheetIfNeeded(preparedUser,
+                                                        [NSString stringWithFormat:@"closeType=%lld", closeType]);
+    }
+}
+
+- (void)onMsgPageSheetEnterFullscreen:(id)adapter {
+    NSString *preparedUser = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
+    wcpl_push2chat_trace(@"hook onMsgPageSheetEnterFullscreen: prepared=%@ adapter=%@",
+                         preparedUser ?: @"(nil)",
+                         NSStringFromClass([adapter class]));
+    wcpl_push2chat_hideTransitionCover(@"enter_fullscreen");
+    if (preparedUser.length > 0) {
+        wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(preparedUser, @"enter_fullscreen");
+    }
+    %orig(adapter);
+}
+
+%end
 
 %hook NotificationActionsMgr
 

@@ -31,89 +31,12 @@
 
 %new
 - (UIView *)wchook_repeatDisplayAnchorViewByNFQPrinciple {
-    SEL selectors[] = {
-        NSSelectorFromString(@"getContentView"),
-        NSSelectorFromString(@"contentView"),
-        NSSelectorFromString(@"getBgImageView"),
-        NSSelectorFromString(@"bgImageView")
-    };
-    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
-        SEL selector = selectors[idx];
-        if (![self respondsToSelector:selector]) {
-            continue;
-        }
-        @try {
-            id candidate = ((id (*)(id, SEL))objc_msgSend)(self, selector);
-            if ([candidate isKindOfClass:[UIView class]]) {
-                UIView *view = (UIView *)candidate;
-                if (!view.hidden && CGRectGetWidth(view.frame) > 16.0f && CGRectGetHeight(view.frame) > 12.0f) {
-                    return view;
-                }
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    NSArray<NSString *> *kvcKeys = @[@"m_contentView", @"_contentView", @"contentView", @"m_bgImageView", @"_bgImageView", @"bgImageView"];
-    for (NSString *key in kvcKeys) {
-        @try {
-            id candidate = [self valueForKey:key];
-            if ([candidate isKindOfClass:[UIView class]]) {
-                UIView *view = (UIView *)candidate;
-                if (!view.hidden && CGRectGetWidth(view.frame) > 16.0f && CGRectGetHeight(view.frame) > 12.0f) {
-                    return view;
-                }
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    return [self wchook_bubbleAnchorView];
+    return WCPLRepeatCellAdapterDisplayAnchorView(self);
 }
 
 %new
 - (UIView *)wchook_bubbleAnchorView {
-    NSArray<NSString *> *priorityIvars = @[@"m_bgImageView", @"_bgImageView", @"m_maskImageView"];
-    for (NSString *ivarName in priorityIvars) {
-        @try {
-            id candidate = [self valueForKey:ivarName];
-            if ([candidate isKindOfClass:[UIView class]]) {
-                UIView *view = (UIView *)candidate;
-                if (!view.hidden && CGRectGetWidth(view.frame) > 20.0f) {
-                    return view;
-                }
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    UIView *bestView = nil;
-    CGFloat bestScore = 0.0f;
-    CGFloat cellWidth = CGRectGetWidth(self.bounds);
-    for (UIView *subview in self.subviews) {
-        if (subview.hidden || subview.tag == kWCPLRepeatButtonTag) {
-            continue;
-        }
-        NSString *name = NSStringFromClass([subview class]);
-        if ([name containsString:@"Head"] || [name containsString:@"Avatar"] || [name containsString:@"Label"] || [name containsString:@"Button"]) {
-            continue;
-        }
-        CGRect frame = subview.frame;
-        if (CGRectGetWidth(frame) < 24.0f || CGRectGetHeight(frame) < 16.0f) {
-            continue;
-        }
-        if (cellWidth > 20.0f && CGRectGetWidth(frame) >= (cellWidth - 12.0f)) {
-            // 过滤整行容器，避免按钮锚到 cell 而非气泡。
-            continue;
-        }
-        CGFloat score = CGRectGetWidth(frame) * CGRectGetHeight(frame);
-        if (score > bestScore) {
-            bestScore = score;
-            bestView = subview;
-        }
-    }
-
-    return bestView;
+    return WCPLRepeatCellAdapterBubbleAnchorView(self);
 }
 
 %new
@@ -153,19 +76,13 @@
 
     CGRect menuRect = CGRectZero;
     BOOL menuRectValid = NO;
-    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
-        @try {
-            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)(self, @selector(showRectForMenuController));
-        } @catch (__unused NSException *exception) {
-            menuRect = CGRectZero;
-        }
-        menuRectValid = !CGRectIsEmpty(menuRect) &&
-                        !CGRectIsNull(menuRect) &&
-                        !CGRectIsInfinite(menuRect) &&
-                        CGRectGetWidth(menuRect) > 8.0f &&
-                        CGRectGetHeight(menuRect) > 8.0f &&
-                        CGRectIntersectsRect(menuRect, self.bounds);
-    }
+    menuRect = WCPLRepeatCellAdapterMenuRect(self);
+    menuRectValid = !CGRectIsEmpty(menuRect) &&
+                    !CGRectIsNull(menuRect) &&
+                    !CGRectIsInfinite(menuRect) &&
+                    CGRectGetWidth(menuRect) > 8.0f &&
+                    CGRectGetHeight(menuRect) > 8.0f &&
+                    CGRectIntersectsRect(menuRect, self.bounds);
 
     BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) &&
                            !CGRectIsNull(bubbleFrame) &&

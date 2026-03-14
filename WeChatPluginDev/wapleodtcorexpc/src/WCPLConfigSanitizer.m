@@ -4,19 +4,20 @@
 
 #import "WCPLConfigSanitizer.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLTypeGuard.h"
 
 NSArray<NSString *> *WCPLSanitizeUserNameArray(id value) {
     return WCPLSanitizeIdentifierArray(value);
 }
 
 NSDictionary<NSString *, NSNumber *> *WCPLSanitizeIgnoreDictionary(id value) {
-    if (![value isKindOfClass:[NSDictionary class]]) {
+    if (!WCPLIsDictionary(value)) {
         return @{};
     }
 
     NSMutableDictionary<NSString *, NSNumber *> *result = [NSMutableDictionary dictionary];
     [(NSDictionary *)value enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        if (![key isKindOfClass:[NSString class]]) {
+        if (!WCPLIsString(key)) {
             return;
         }
         NSString *name = WCPLTrimText(key);
@@ -34,4 +35,3 @@ NSDictionary<NSString *, NSNumber *> *WCPLSanitizeIgnoreDictionary(id value) {
     }];
     return result;
 }
-

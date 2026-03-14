@@ -4,6 +4,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO_ROOT="$(cd "$ROOT_DIR/../.." && pwd)"
 COMMON_SCRIPT="$ROOT_DIR/scripts/gate_common.sh"
 DOCTOR_SCRIPT="$ROOT_DIR/scripts/build_doctor.sh"
+MAINTAINABILITY_GUARD_SCRIPT="$ROOT_DIR/scripts/maintainability_guard.sh"
 UNIT_TEST_SCRIPT="$ROOT_DIR/scripts/run_unit_tests.sh"
 MESSAGE_GEN="$ROOT_DIR/scripts/generate_wcpl_message_hook.sh"
 GESTURE_GEN="$ROOT_DIR/scripts/generate_wcpl_gesture_hook.sh"
@@ -19,6 +20,7 @@ ARCHS_VALUE="${ARCHS:-arm64e}"
 THEOS_VALUE="${THEOS:-}"
 HOST_OS="$(uname -s 2>/dev/null || echo unknown)"
 generate_status="not_run"
+maintainability_guard_status="not_run"
 doctor_status="not_run"
 unit_tests_status="not_run"
 before_all_dry_run_status="not_run"
@@ -34,12 +36,13 @@ Usage: scripts/local_gate.sh [options]
 
 Unified local acceptance gate:
   1. regenerate generated hook sources
-  2. run build doctor
-  3. run host unit tests when supported
-  4. run make -n before-all
-  5. run make before-all
-  6. optionally run make -n package
-  7. in --strict-toolchain mode, run make clean package
+  2. run maintainability guard
+  3. run build doctor
+  4. run host unit tests when supported
+  5. run make -n before-all
+  6. run make before-all
+  7. optionally run make -n package
+  8. in --strict-toolchain mode, run make clean then make package
 
 Default behavior is degrade-friendly:
   - repository breakage => fail
@@ -62,7 +65,7 @@ EOF
 bootstrap_gate_common() {
   if [[ ! -f "$COMMON_SCRIPT" ]]; then
     echo "[gate][result] step=bootstrap status=failed detail=reason=missing_gate_common"
-    echo "[gate][summary] overall=failed exit_code=1 strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=unknown generate=not_run doctor=not_run unit_tests=not_run before_all_dry_run=not_run before_all_real=not_run package_preflight=not_requested package_real=not_requested"
+    echo "[gate][summary] overall=failed exit_code=1 strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=unknown generate=not_run maintainability_guard=not_run doctor=not_run unit_tests=not_run before_all_dry_run=not_run before_all_real=not_run package_preflight=not_requested package_real=not_requested"
     exit 1
   fi
 
@@ -72,7 +75,7 @@ bootstrap_gate_common() {
   set -e
   if [[ "$bootstrap_status" -ne 0 ]]; then
     echo "[gate][result] step=bootstrap status=failed detail=reason=invalid_gate_common"
-    echo "[gate][summary] overall=failed exit_code=1 strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=unknown generate=not_run doctor=not_run unit_tests=not_run before_all_dry_run=not_run before_all_real=not_run package_preflight=not_requested package_real=not_requested"
+    echo "[gate][summary] overall=failed exit_code=1 strict=$STRICT_TOOLCHAIN host=$HOST_OS doctor_reported_status=unknown generate=not_run maintainability_guard=not_run doctor=not_run unit_tests=not_run before_all_dry_run=not_run before_all_real=not_run package_preflight=not_requested package_real=not_requested"
     exit 1
   fi
 }
@@ -131,6 +134,11 @@ else
   "$GESTURE_GEN"
   gate_finish_step "passed" "artifacts=message_and_gesture_hooks"
 fi
+
+gate_start_step "maintainability_guard" "check_empty_catch_large_files_and_fat_headers"
+"$MAINTAINABILITY_GUARD_SCRIPT"
+gate_finish_step "passed" "policy=repo_guard"
+
 if [[ "$SKIP_DOCTOR" -eq 1 ]]; then
   gate_set_step_state "doctor" "skipped" "reason=requested"
 else
@@ -282,13 +290,18 @@ else
       echo "[gate] strict toolchain requested but local resign needs ldid" >&2
       exit 2
     fi
-    gate_start_step "package_real" "make_clean_package"
+    gate_start_step "package_real" "make_clean_then_package"
     THEOS="$RESOLVED_THEOS" \
     THEOS_PACKAGE_SCHEME="$SCHEME" \
     TARGET="$TARGET_VALUE" \
     ARCHS="$ARCHS_VALUE" \
-    "$MAKE_BIN" clean package
-    gate_finish_step "passed" "command=make_clean_package"
+    "$MAKE_BIN" clean
+    THEOS="$RESOLVED_THEOS" \
+    THEOS_PACKAGE_SCHEME="$SCHEME" \
+    TARGET="$TARGET_VALUE" \
+    ARCHS="$ARCHS_VALUE" \
+    "$MAKE_BIN" package
+    gate_finish_step "passed" "command=make_clean_then_package"
   else
     gate_set_step_state "package_real" "not_requested" "reason=strict_mode_required"
   fi

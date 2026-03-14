@@ -1,8 +1,9 @@
 #import "WCPLPickerDataProvider.h"
 #import "WCPLPickerItem.h"
 #import "WCPLPureHelpers.h"
-#import "WeChatRedEnvelop.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatContactHeaders.h"
 #import <objc/message.h>
 
 @implementation WCPLPickerDataProvider
@@ -98,7 +99,7 @@
         contacts = nil;
     }
 
-    return [contacts isKindOfClass:[NSArray class]] ? contacts : @[];
+    return WCPLArrayOrNil(contacts) ?: @[];
 }
 
 + (NSString *)wcpl_userNameFromContact:(id)contact {
@@ -109,18 +110,12 @@
     NSString *userName = nil;
     @try {
         id value = [contact valueForKey:@"m_nsUsrName"];
-        if ([value isKindOfClass:[NSString class]]) {
-            userName = value;
-        }
+        userName = WCPLStringOrNil(value);
     } @catch (__unused NSException *exception) {
         userName = nil;
     }
 
-    if (![userName isKindOfClass:[NSString class]]) {
-        return @"";
-    }
-
-    return WCPLTrimText(userName) ?: @"";
+    return WCPLNonEmptyStringOrNil(userName) ?: @"";
 }
 
 + (NSString *)wcpl_displayNameFromContact:(id)contact fallback:(NSString *)fallback {
@@ -132,9 +127,7 @@
     @try {
         if ([contact respondsToSelector:@selector(getContactDisplayName)]) {
             id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(getContactDisplayName));
-            if ([value isKindOfClass:[NSString class]]) {
-                displayName = value;
-            }
+            displayName = WCPLStringOrNil(value);
         }
     } @catch (__unused NSException *exception) {
         displayName = nil;
@@ -144,16 +137,14 @@
         @try {
             if ([contact respondsToSelector:@selector(m_nsNickName)]) {
                 id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsNickName));
-                if ([value isKindOfClass:[NSString class]]) {
-                    displayName = value;
-                }
+                displayName = WCPLStringOrNil(value);
             }
         } @catch (__unused NSException *exception2) {
             displayName = nil;
         }
     }
 
-    return WCPLTrimText(displayName) ?: fallback;
+    return WCPLNonEmptyStringOrNil(displayName) ?: fallback;
 }
 
 @end

@@ -8,49 +8,69 @@
 static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
 static NSString *const kWCPLMarkAllReadTopRightMenuEnable = @"kWCPLMarkAllReadTopRightMenuEnable";
 
+@implementation WCPLConfigCenterComponents
+@end
+
+@interface WCPLConfigCenter ()
+
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
+@end
+
 @implementation WCPLConfigCenter
 
 + (instancetype)shared {
     static WCPLConfigCenter *center = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        center = [[WCPLConfigCenter alloc] init];
+        center = [WCPLConfigCenter centerWithDefaults:[NSUserDefaults standardUserDefaults]
+                                          components:nil];
     });
     return center;
 }
 
 - (instancetype)init {
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults] components:nil];
+}
+
++ (instancetype)centerWithDefaults:(NSUserDefaults *)defaults
+                        components:(WCPLConfigCenterComponents *)components {
+    return [[self alloc] initWithDefaults:defaults components:components];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults
+                      components:(WCPLConfigCenterComponents *)components {
     if (self = [super init]) {
-        _redEnvelop = [WCPLRedEnvelopConfig sharedConfig];
-        _gesture = [WCPLGestureConfig sharedConfig];
-        _location = [WCPLLocationConfig sharedConfig];
-        _ignore = [WCPLIgnoreConfig sharedConfig];
-        _login = [WCPLLoginConfig sharedConfig];
-        _av = [WCPLAVConfig sharedConfig];
-        _revoke = [WCPLRevokeConfig sharedConfig];
-        _timeline = [WCPLTimelineConfig sharedConfig];
-        _push2Chat = [WCPLPush2ChatConfig sharedConfig];
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _redEnvelop = components.redEnvelop ?: [WCPLRedEnvelopConfig configWithDefaults:_defaults];
+        _gesture = components.gesture ?: [WCPLGestureConfig configWithDefaults:_defaults];
+        _location = components.location ?: [WCPLLocationConfig configWithDefaults:_defaults];
+        _ignore = components.ignore ?: [WCPLIgnoreConfig configWithDefaults:_defaults];
+        _login = components.login ?: [WCPLLoginConfig configWithDefaults:_defaults];
+        _av = components.av ?: [WCPLAVConfig configWithDefaults:_defaults];
+        _revoke = components.revoke ?: [WCPLRevokeConfig configWithDefaults:_defaults];
+        _timeline = components.timeline ?: [WCPLTimelineConfig configWithDefaults:_defaults];
+        _push2Chat = components.push2Chat ?: [WCPLPush2ChatConfig configWithDefaults:_defaults];
 
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSNumber *enableObj = [defaults objectForKey:kWCPLDouyinParserEnable];
+        NSNumber *enableObj = [_defaults objectForKey:kWCPLDouyinParserEnable];
         _douyinParserEnable = enableObj ? enableObj.boolValue : YES;
-        [defaults setBool:_douyinParserEnable forKey:kWCPLDouyinParserEnable];
+        [_defaults setBool:_douyinParserEnable forKey:kWCPLDouyinParserEnable];
 
-        NSNumber *markAllReadObj = [defaults objectForKey:kWCPLMarkAllReadTopRightMenuEnable];
+        NSNumber *markAllReadObj = [_defaults objectForKey:kWCPLMarkAllReadTopRightMenuEnable];
         _markAllReadTopRightMenuEnable = markAllReadObj ? markAllReadObj.boolValue : NO;
-        [defaults setBool:_markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
+        [_defaults setBool:_markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
     }
     return self;
 }
 
 - (void)setDouyinParserEnable:(BOOL)douyinParserEnable {
     _douyinParserEnable = douyinParserEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:douyinParserEnable forKey:kWCPLDouyinParserEnable];
+    [self.defaults setBool:douyinParserEnable forKey:kWCPLDouyinParserEnable];
 }
 
 - (void)setMarkAllReadTopRightMenuEnable:(BOOL)markAllReadTopRightMenuEnable {
     _markAllReadTopRightMenuEnable = markAllReadTopRightMenuEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
+    [self.defaults setBool:markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
 }
 
 @end

@@ -251,8 +251,7 @@ static NSString *WCHookStringFieldFromWrap(id messageWrap, SEL selector, NSStrin
         if ([kvcValue isKindOfClass:[NSString class]]) {
             return (NSString *)kvcValue;
         }
-    } @catch (__unused NSException *exceptionKVC) {
-    }
+    } @catch (__unused NSException *exceptionKVC) { WCPLCatchLog(exceptionKVC); }
     return nil;
 }
 
@@ -466,8 +465,7 @@ static id WCHookContactForUserName(NSString *userName) {
             if (contact) {
                 return contact;
             }
-        } @catch (__unused NSException *exceptionLookup) {
-        }
+        } @catch (__unused NSException *exceptionLookup) { WCPLCatchLog(exceptionLookup); }
     }
     return nil;
 }
@@ -517,8 +515,7 @@ static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString 
                                                                            89,
                                                                            NO);
             return YES;
-        } @catch (__unused NSException *exceptionJumpBanner) {
-        }
+        } @catch (__unused NSException *exceptionJumpBanner) { WCPLCatchLog(exceptionJumpBanner); }
     }
 
     SEL jumpBasic = NSSelectorFromString(@"jumpToUserProfile:Displayname:Scence:");
@@ -530,8 +527,7 @@ static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString 
                                                                      targetName,
                                                                      89);
             return YES;
-        } @catch (__unused NSException *exceptionJumpBasic) {
-        }
+        } @catch (__unused NSException *exceptionJumpBasic) { WCPLCatchLog(exceptionJumpBasic); }
     }
 
     id contact = WCHookContactForUserName(targetUser);
@@ -554,8 +550,7 @@ static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString 
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(target, selector, contact);
             return YES;
-        } @catch (__unused NSException *exceptionOpen) {
-        }
+        } @catch (__unused NSException *exceptionOpen) { WCPLCatchLog(exceptionOpen); }
     }
     return NO;
 }
@@ -658,8 +653,7 @@ static BOOL WCHookExecuteJumpFromCell(CommonMessageCellView *cell) {
         @try {
             ((void (*)(id, SEL))objc_msgSend)(cell, returnSelector);
             return YES;
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id targetMessage = WCHookReferMessageFromWrap(messageWrap);

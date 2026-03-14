@@ -2,11 +2,13 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
-#import "WeChatRedEnvelop.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatContactHeaders.h"
+#import "WCPLWeChatUIHeaders.h"
 
 /**
  消息屏蔽 UI 注入（群聊资料页 / 好友资料页 / 好友设置页）
@@ -30,7 +32,7 @@ static NSString *wcpl_ignoreUI_trimString(NSString *text) {
 }
 
 static id wcpl_ignoreUI_safeValueForKey(id obj, NSString *key) {
-    if (!obj || ![key isKindOfClass:[NSString class]] || key.length == 0) return nil;
+    if (!obj || WCPLNonEmptyStringOrNil(key).length == 0) return nil;
     @try {
         return [obj valueForKey:key];
     } @catch (__unused NSException *exception) {
@@ -51,26 +53,23 @@ static id wcpl_ignoreUI_safeObjectIvar(id obj, const char *name) {
 
 static NSString *wcpl_ignoreUI_safeUserNameFromObject(id obj) {
     if (!obj) return nil;
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_ignoreUI_trimString((NSString *)obj);
+    NSString *directUserName = WCPLNonEmptyStringOrNil(obj);
+    if (directUserName.length > 0) {
+        return directUserName;
     }
 
     if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
         @try {
             id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                return wcpl_ignoreUI_trimString((NSString *)value);
+            NSString *userName = WCPLNonEmptyStringOrNil(value);
+            if (userName.length > 0) {
+                return userName;
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id value = wcpl_ignoreUI_safeValueForKey(obj, @"m_nsUsrName");
-    if ([value isKindOfClass:[NSString class]]) {
-        return wcpl_ignoreUI_trimString((NSString *)value);
-    }
-
-    return nil;
+    return WCPLNonEmptyStringOrNil(value);
 }
 
 static NSString *wcpl_ignoreUI_safeCellTitle(id cellManager) {
@@ -86,17 +85,15 @@ static NSArray *wcpl_ignoreUI_sectionsFromTableInfo(id tableInfo) {
     if ([tableInfo respondsToSelector:@selector(getAllSections)]) {
         @try {
             id sections = ((id (*)(id, SEL))objc_msgSend)(tableInfo, @selector(getAllSections));
-            if ([sections isKindOfClass:[NSArray class]]) {
-                return (NSArray *)sections;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+            return WCPLArrayOrNil(sections);
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     for (NSString *key in @[ @"sections", @"_sections", @"m_sections" ]) {
         id value = wcpl_ignoreUI_safeValueForKey(tableInfo, key);
-        if ([value isKindOfClass:[NSArray class]]) {
-            return (NSArray *)value;
+        NSArray *sections = WCPLArrayOrNil(value);
+        if (sections.count > 0) {
+            return sections;
         }
     }
 
@@ -109,15 +106,12 @@ static NSArray *wcpl_ignoreUI_cellsFromSection(id section) {
     if ([section respondsToSelector:@selector(getAllCells)]) {
         @try {
             id cells = ((id (*)(id, SEL))objc_msgSend)(section, @selector(getAllCells));
-            if ([cells isKindOfClass:[NSArray class]]) {
-                return (NSArray *)cells;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+            return WCPLArrayOrNil(cells);
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id value = wcpl_ignoreUI_safeValueForKey(section, @"cells");
-    return [value isKindOfClass:[NSArray class]] ? (NSArray *)value : nil;
+    return WCPLArrayOrNil(value);
 }
 
 static BOOL wcpl_ignoreUI_tableHasCellWithTitle(id tableInfo, NSString *targetTitle) {
@@ -125,13 +119,13 @@ static BOOL wcpl_ignoreUI_tableHasCellWithTitle(id tableInfo, NSString *targetTi
     if (!tableInfo || titleNeedle.length == 0) return NO;
 
     NSArray *sections = wcpl_ignoreUI_sectionsFromTableInfo(tableInfo);
-    if (![sections isKindOfClass:[NSArray class]] || sections.count == 0) {
+    if (sections.count == 0) {
         return NO;
     }
 
     for (id section in sections) {
         NSArray *cells = wcpl_ignoreUI_cellsFromSection(section);
-        if (![cells isKindOfClass:[NSArray class]] || cells.count == 0) {
+        if (cells.count == 0) {
             continue;
         }
         for (id cell in cells) {
@@ -152,7 +146,7 @@ static void wcpl_ignoreUI_insertSection(id tableInfo, id section, NSUInteger pre
     if ([tableInfo respondsToSelector:@selector(insertSection:At:)]) {
         NSUInteger safeIndex = preferIndex;
         NSArray *sections = wcpl_ignoreUI_sectionsFromTableInfo(tableInfo);
-        if ([sections isKindOfClass:[NSArray class]]) {
+        if (sections.count > 0) {
             safeIndex = MIN(preferIndex, sections.count);
         } else {
             // 无法获取 section 数量时，避免越界：统一插到 0。
@@ -173,8 +167,7 @@ static void wcpl_ignoreUI_insertSection(id tableInfo, id section, NSUInteger pre
     if (!inserted && [tableInfo respondsToSelector:@selector(addSection:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(tableInfo, @selector(addSection:), section);
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     id tableView = nil;

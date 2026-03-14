@@ -27,8 +27,7 @@
                     headView = (UIView *)value;
                     break;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -41,8 +40,7 @@
                     headView = (UIView *)value;
                     break;
                 }
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
     }
 
@@ -275,15 +273,15 @@
         [self wchook_hideRepeatButtonByNFQPrinciple];
     }
 
-    // 说明：避免在 didMoveToWindow 同步触发按钮更新（内部会扫描 visibleCells 并做跨视图清理），
-    // 该时机容易与 UIKit 视图迁移/布局递归重入，导致崩溃。
-    // 按钮更新统一由 layoutSubviews 驱动。
+    // 说明：避免在 didMoveToWindow 同步触发消息时间/复读按钮更新。
+    // 这些链路会取 msgWrap、扫描 visibleCells，并做跨视图清理；
+    // 在 cell 迁移阶段同步执行容易与 UIKit 布局递归重入，导致崩溃。
+    // 重计算统一延后到下一轮 layoutSubviews。
 
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
         [self wchook_setupDoubleTapGestureIfNeeded];
-        [self wchook_updateMessageTimeLabel];
-        [self wchook_updateRepeatButtonIfNeeded];
+        [self setNeedsLayout];
     } else {
         [self wchook_hideMessageTimeLabel];
         if (self.wchook_doubleTapGesture) {

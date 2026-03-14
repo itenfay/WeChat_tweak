@@ -33,8 +33,7 @@ static void wcpl_appendProbeRecord(NSString *path, NSString *record) {
             [fileHandle writeData:data];
         }
         [fileHandle closeFile];
-    } @catch (__unused NSException *exception) {
-    }
+    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 }
 
 static void wcpl_appendBootProbe(NSString *line) {

@@ -52,33 +52,47 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
     return action;
 }
 
+@interface WCPLGestureConfig ()
+
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
+@end
+
 @implementation WCPLGestureConfig
 
 + (instancetype)sharedConfig {
     static WCPLGestureConfig *config = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        config = [WCPLGestureConfig new];
+        config = [WCPLGestureConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
     });
     return config;
 }
 
 - (instancetype)init {
-    if (self = [super init]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        _swipeGestureEnable = [defaults boolForKey:kWCPLSwipeGestureEnable];
-        _swipeQuoteEnable = [defaults boolForKey:kWCPLSwipeQuoteEnable];
-        _tapReferJumpEnable = [defaults boolForKey:kWCPLTapReferJumpEnable];
-        NSNumber *swipeQuoteAtUserEnabled = [defaults objectForKey:kWCPLSwipeQuoteAtUserEnable];
-        _swipeQuoteAtUserEnable = swipeQuoteAtUserEnabled ? swipeQuoteAtUserEnabled.boolValue : YES;
-        _repeatButtonEnable = [defaults boolForKey:kWCPLRepeatButtonEnable];
+    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+}
 
-        NSNumber *repeatButtonHapticEnabled = [defaults objectForKey:kWCPLRepeatButtonHapticEnable];
-        NSNumber *repeatButtonSize = [defaults objectForKey:kWCPLRepeatButtonSize];
-        NSNumber *repeatButtonCustomImageEnabled = [defaults objectForKey:kWCPLRepeatButtonCustomImageEnable];
-        NSString *repeatButtonCustomImageRelativePath = [defaults stringForKey:kWCPLRepeatButtonCustomImageRelativePath];
-        NSNumber *repeatButtonCustomImageRevision = [defaults objectForKey:kWCPLRepeatButtonCustomImageRevision];
-        NSNumber *repeatButtonCustomImageSchemaVersion = [defaults objectForKey:kWCPLRepeatButtonCustomImageSchemaVersion];
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
+    return [[self alloc] initWithDefaults:defaults];
+}
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
+    if (self = [super init]) {
+        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
+        _swipeGestureEnable = [_defaults boolForKey:kWCPLSwipeGestureEnable];
+        _swipeQuoteEnable = [_defaults boolForKey:kWCPLSwipeQuoteEnable];
+        _tapReferJumpEnable = [_defaults boolForKey:kWCPLTapReferJumpEnable];
+        NSNumber *swipeQuoteAtUserEnabled = [_defaults objectForKey:kWCPLSwipeQuoteAtUserEnable];
+        _swipeQuoteAtUserEnable = swipeQuoteAtUserEnabled ? swipeQuoteAtUserEnabled.boolValue : YES;
+        _repeatButtonEnable = [_defaults boolForKey:kWCPLRepeatButtonEnable];
+
+        NSNumber *repeatButtonHapticEnabled = [_defaults objectForKey:kWCPLRepeatButtonHapticEnable];
+        NSNumber *repeatButtonSize = [_defaults objectForKey:kWCPLRepeatButtonSize];
+        NSNumber *repeatButtonCustomImageEnabled = [_defaults objectForKey:kWCPLRepeatButtonCustomImageEnable];
+        NSString *repeatButtonCustomImageRelativePath = [_defaults stringForKey:kWCPLRepeatButtonCustomImageRelativePath];
+        NSNumber *repeatButtonCustomImageRevision = [_defaults objectForKey:kWCPLRepeatButtonCustomImageRevision];
+        NSNumber *repeatButtonCustomImageSchemaVersion = [_defaults objectForKey:kWCPLRepeatButtonCustomImageSchemaVersion];
         _repeatButtonHapticEnable = repeatButtonHapticEnabled ? repeatButtonHapticEnabled.boolValue : YES;
         CGFloat configuredButtonSize = repeatButtonSize ? repeatButtonSize.doubleValue : 20.0f;
         if (configuredButtonSize < 16.0f) {
@@ -95,14 +109,14 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
             _repeatButtonCustomImageEnable = NO;
         }
 
-        NSNumber *repeatEmoticonEnabled = [defaults objectForKey:kWCPLRepeatSupportEmoticonEnable];
-        NSNumber *repeatVoiceEnabled = [defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
-        NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
-        NSNumber *repeatVideoEnabled = [defaults objectForKey:kWCPLRepeatSupportVideoEnable];
-        NSNumber *repeatImmediateRenderEnabled = [defaults objectForKey:kWCPLRepeatImmediateRenderEnable];
-        NSNumber *repeatLongPressMenuEnabled = [defaults objectForKey:kWCPLRepeatLongPressMenuEnable];
-        NSNumber *clownFeatureEnabled = [defaults objectForKey:kWCPLClownFeatureEnable];
-        NSNumber *voiceForwardFeatureEnabled = [defaults objectForKey:kWCPLVoiceForwardFeatureEnable];
+        NSNumber *repeatEmoticonEnabled = [_defaults objectForKey:kWCPLRepeatSupportEmoticonEnable];
+        NSNumber *repeatVoiceEnabled = [_defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
+        NSNumber *repeatImageEnabled = [_defaults objectForKey:kWCPLRepeatSupportImageEnable];
+        NSNumber *repeatVideoEnabled = [_defaults objectForKey:kWCPLRepeatSupportVideoEnable];
+        NSNumber *repeatImmediateRenderEnabled = [_defaults objectForKey:kWCPLRepeatImmediateRenderEnable];
+        NSNumber *repeatLongPressMenuEnabled = [_defaults objectForKey:kWCPLRepeatLongPressMenuEnable];
+        NSNumber *clownFeatureEnabled = [_defaults objectForKey:kWCPLClownFeatureEnable];
+        NSNumber *voiceForwardFeatureEnabled = [_defaults objectForKey:kWCPLVoiceForwardFeatureEnable];
 
         _repeatSupportEmoticonEnable = repeatEmoticonEnabled ? repeatEmoticonEnabled.boolValue : YES;
         _repeatSupportVoiceEnable = repeatVoiceEnabled ? repeatVoiceEnabled.boolValue : YES;
@@ -113,73 +127,73 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _clownFeatureEnable = clownFeatureEnabled ? clownFeatureEnabled.boolValue : YES;
         _voiceForwardFeatureEnable = voiceForwardFeatureEnabled ? voiceForwardFeatureEnabled.boolValue : YES;
 
-        NSNumber *sensitivity = [defaults objectForKey:kWCPLSwipeSensitivityLevel];
+        NSNumber *sensitivity = [_defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel = sensitivity ? sensitivity.integerValue : 1;
 
-        _swipeLeftOtherAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeLeftOtherAction], NO);
-        _swipeLeftSelfAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeLeftSelfAction], YES);
-        _swipeRightEnable = [defaults boolForKey:kWCPLSwipeRightEnable];
-        _swipeRightOtherAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeRightOtherAction], NO);
-        _swipeRightSelfAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeRightSelfAction], YES);
-        _doubleTapGestureEnable = [defaults boolForKey:kWCPLDoubleTapGestureEnable];
-        _doubleTapOtherAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLDoubleTapOtherAction], NO);
-        _doubleTapSelfAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLDoubleTapSelfAction], YES);
-        NSNumber *messageTimeEnabled = [defaults objectForKey:kWCPLMessageTimeEnable];
+        _swipeLeftOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeLeftOtherAction], NO);
+        _swipeLeftSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeLeftSelfAction], YES);
+        _swipeRightEnable = [_defaults boolForKey:kWCPLSwipeRightEnable];
+        _swipeRightOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeRightOtherAction], NO);
+        _swipeRightSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeRightSelfAction], YES);
+        _doubleTapGestureEnable = [_defaults boolForKey:kWCPLDoubleTapGestureEnable];
+        _doubleTapOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLDoubleTapOtherAction], NO);
+        _doubleTapSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLDoubleTapSelfAction], YES);
+        NSNumber *messageTimeEnabled = [_defaults objectForKey:kWCPLMessageTimeEnable];
         _messageTimeEnable = messageTimeEnabled ? messageTimeEnabled.boolValue : YES;
 
-        [defaults setInteger:_swipeLeftOtherAction forKey:kWCPLSwipeLeftOtherAction];
-        [defaults setInteger:_swipeLeftSelfAction forKey:kWCPLSwipeLeftSelfAction];
-        [defaults setInteger:_swipeRightOtherAction forKey:kWCPLSwipeRightOtherAction];
-        [defaults setInteger:_swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
-        [defaults setInteger:_doubleTapOtherAction forKey:kWCPLDoubleTapOtherAction];
-        [defaults setInteger:_doubleTapSelfAction forKey:kWCPLDoubleTapSelfAction];
-        [defaults setBool:_messageTimeEnable forKey:kWCPLMessageTimeEnable];
-        [defaults setBool:_repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
-        [defaults setDouble:_repeatButtonSize forKey:kWCPLRepeatButtonSize];
-        [defaults setBool:_repeatButtonCustomImageEnable forKey:kWCPLRepeatButtonCustomImageEnable];
+        [_defaults setInteger:_swipeLeftOtherAction forKey:kWCPLSwipeLeftOtherAction];
+        [_defaults setInteger:_swipeLeftSelfAction forKey:kWCPLSwipeLeftSelfAction];
+        [_defaults setInteger:_swipeRightOtherAction forKey:kWCPLSwipeRightOtherAction];
+        [_defaults setInteger:_swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
+        [_defaults setInteger:_doubleTapOtherAction forKey:kWCPLDoubleTapOtherAction];
+        [_defaults setInteger:_doubleTapSelfAction forKey:kWCPLDoubleTapSelfAction];
+        [_defaults setBool:_messageTimeEnable forKey:kWCPLMessageTimeEnable];
+        [_defaults setBool:_repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
+        [_defaults setDouble:_repeatButtonSize forKey:kWCPLRepeatButtonSize];
+        [_defaults setBool:_repeatButtonCustomImageEnable forKey:kWCPLRepeatButtonCustomImageEnable];
         if (_repeatButtonCustomImageRelativePath.length > 0) {
-            [defaults setObject:_repeatButtonCustomImageRelativePath forKey:kWCPLRepeatButtonCustomImageRelativePath];
+            [_defaults setObject:_repeatButtonCustomImageRelativePath forKey:kWCPLRepeatButtonCustomImageRelativePath];
         } else {
-            [defaults removeObjectForKey:kWCPLRepeatButtonCustomImageRelativePath];
+            [_defaults removeObjectForKey:kWCPLRepeatButtonCustomImageRelativePath];
         }
-        [defaults setInteger:_repeatButtonCustomImageRevision forKey:kWCPLRepeatButtonCustomImageRevision];
-        [defaults setInteger:_repeatButtonCustomImageSchemaVersion forKey:kWCPLRepeatButtonCustomImageSchemaVersion];
-        [defaults setBool:_repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
-        [defaults setBool:_repeatLongPressMenuEnable forKey:kWCPLRepeatLongPressMenuEnable];
-        [defaults setBool:_clownFeatureEnable forKey:kWCPLClownFeatureEnable];
-        [defaults setBool:_voiceForwardFeatureEnable forKey:kWCPLVoiceForwardFeatureEnable];
+        [_defaults setInteger:_repeatButtonCustomImageRevision forKey:kWCPLRepeatButtonCustomImageRevision];
+        [_defaults setInteger:_repeatButtonCustomImageSchemaVersion forKey:kWCPLRepeatButtonCustomImageSchemaVersion];
+        [_defaults setBool:_repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
+        [_defaults setBool:_repeatLongPressMenuEnable forKey:kWCPLRepeatLongPressMenuEnable];
+        [_defaults setBool:_clownFeatureEnable forKey:kWCPLClownFeatureEnable];
+        [_defaults setBool:_voiceForwardFeatureEnable forKey:kWCPLVoiceForwardFeatureEnable];
     }
     return self;
 }
 
 - (void)setSwipeGestureEnable:(BOOL)swipeGestureEnable {
     _swipeGestureEnable = swipeGestureEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:swipeGestureEnable forKey:kWCPLSwipeGestureEnable];
+    [self.defaults setBool:swipeGestureEnable forKey:kWCPLSwipeGestureEnable];
 }
 
 - (void)setSwipeQuoteEnable:(BOOL)swipeQuoteEnable {
     _swipeQuoteEnable = swipeQuoteEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:swipeQuoteEnable forKey:kWCPLSwipeQuoteEnable];
+    [self.defaults setBool:swipeQuoteEnable forKey:kWCPLSwipeQuoteEnable];
 }
 
 - (void)setTapReferJumpEnable:(BOOL)tapReferJumpEnable {
     _tapReferJumpEnable = tapReferJumpEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:tapReferJumpEnable forKey:kWCPLTapReferJumpEnable];
+    [self.defaults setBool:tapReferJumpEnable forKey:kWCPLTapReferJumpEnable];
 }
 
 - (void)setSwipeQuoteAtUserEnable:(BOOL)swipeQuoteAtUserEnable {
     _swipeQuoteAtUserEnable = swipeQuoteAtUserEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:swipeQuoteAtUserEnable forKey:kWCPLSwipeQuoteAtUserEnable];
+    [self.defaults setBool:swipeQuoteAtUserEnable forKey:kWCPLSwipeQuoteAtUserEnable];
 }
 
 - (void)setRepeatButtonEnable:(BOOL)repeatButtonEnable {
     _repeatButtonEnable = repeatButtonEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonEnable forKey:kWCPLRepeatButtonEnable];
+    [self.defaults setBool:repeatButtonEnable forKey:kWCPLRepeatButtonEnable];
 }
 
 - (void)setRepeatButtonHapticEnable:(BOOL)repeatButtonHapticEnable {
     _repeatButtonHapticEnable = repeatButtonHapticEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
+    [self.defaults setBool:repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
 }
 
 - (void)setRepeatButtonSize:(CGFloat)repeatButtonSize {
@@ -190,134 +204,133 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         normalized = 30.0f;
     }
     _repeatButtonSize = normalized;
-    [[NSUserDefaults standardUserDefaults] setDouble:normalized forKey:kWCPLRepeatButtonSize];
+    [self.defaults setDouble:normalized forKey:kWCPLRepeatButtonSize];
 }
 
 - (void)setRepeatButtonCustomImageEnable:(BOOL)repeatButtonCustomImageEnable {
     _repeatButtonCustomImageEnable = repeatButtonCustomImageEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonCustomImageEnable forKey:kWCPLRepeatButtonCustomImageEnable];
+    [self.defaults setBool:repeatButtonCustomImageEnable forKey:kWCPLRepeatButtonCustomImageEnable];
 }
 
 - (void)setRepeatButtonCustomImageRelativePath:(NSString * _Nullable)repeatButtonCustomImageRelativePath {
     NSString *normalized = repeatButtonCustomImageRelativePath.length > 0 ? [repeatButtonCustomImageRelativePath copy] : nil;
     _repeatButtonCustomImageRelativePath = normalized;
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (normalized.length > 0) {
-        [defaults setObject:normalized forKey:kWCPLRepeatButtonCustomImageRelativePath];
+        [self.defaults setObject:normalized forKey:kWCPLRepeatButtonCustomImageRelativePath];
     } else {
-        [defaults removeObjectForKey:kWCPLRepeatButtonCustomImageRelativePath];
+        [self.defaults removeObjectForKey:kWCPLRepeatButtonCustomImageRelativePath];
         _repeatButtonCustomImageEnable = NO;
-        [defaults setBool:NO forKey:kWCPLRepeatButtonCustomImageEnable];
+        [self.defaults setBool:NO forKey:kWCPLRepeatButtonCustomImageEnable];
     }
 }
 
 - (void)setRepeatButtonCustomImageRevision:(NSInteger)repeatButtonCustomImageRevision {
     NSInteger normalized = MAX((NSInteger)0, repeatButtonCustomImageRevision);
     _repeatButtonCustomImageRevision = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLRepeatButtonCustomImageRevision];
+    [self.defaults setInteger:normalized forKey:kWCPLRepeatButtonCustomImageRevision];
 }
 
 - (void)setRepeatButtonCustomImageSchemaVersion:(NSInteger)repeatButtonCustomImageSchemaVersion {
     NSInteger normalized = MAX((NSInteger)0, repeatButtonCustomImageSchemaVersion);
     _repeatButtonCustomImageSchemaVersion = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLRepeatButtonCustomImageSchemaVersion];
+    [self.defaults setInteger:normalized forKey:kWCPLRepeatButtonCustomImageSchemaVersion];
 }
 
 - (void)setRepeatSupportEmoticonEnable:(BOOL)repeatSupportEmoticonEnable {
     _repeatSupportEmoticonEnable = repeatSupportEmoticonEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportEmoticonEnable forKey:kWCPLRepeatSupportEmoticonEnable];
+    [self.defaults setBool:repeatSupportEmoticonEnable forKey:kWCPLRepeatSupportEmoticonEnable];
 }
 
 - (void)setRepeatSupportVoiceEnable:(BOOL)repeatSupportVoiceEnable {
     _repeatSupportVoiceEnable = repeatSupportVoiceEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportVoiceEnable forKey:kWCPLRepeatSupportVoiceEnable];
+    [self.defaults setBool:repeatSupportVoiceEnable forKey:kWCPLRepeatSupportVoiceEnable];
 }
 
 - (void)setRepeatSupportImageEnable:(BOOL)repeatSupportImageEnable {
     _repeatSupportImageEnable = repeatSupportImageEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportImageEnable forKey:kWCPLRepeatSupportImageEnable];
+    [self.defaults setBool:repeatSupportImageEnable forKey:kWCPLRepeatSupportImageEnable];
 }
 
 - (void)setRepeatSupportVideoEnable:(BOOL)repeatSupportVideoEnable {
     _repeatSupportVideoEnable = repeatSupportVideoEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportVideoEnable forKey:kWCPLRepeatSupportVideoEnable];
+    [self.defaults setBool:repeatSupportVideoEnable forKey:kWCPLRepeatSupportVideoEnable];
 }
 
 - (void)setRepeatImmediateRenderEnable:(BOOL)repeatImmediateRenderEnable {
     _repeatImmediateRenderEnable = repeatImmediateRenderEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
+    [self.defaults setBool:repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
 }
 
 - (void)setRepeatLongPressMenuEnable:(BOOL)repeatLongPressMenuEnable {
     _repeatLongPressMenuEnable = repeatLongPressMenuEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatLongPressMenuEnable forKey:kWCPLRepeatLongPressMenuEnable];
+    [self.defaults setBool:repeatLongPressMenuEnable forKey:kWCPLRepeatLongPressMenuEnable];
 }
 
 - (void)setClownFeatureEnable:(BOOL)clownFeatureEnable {
     _clownFeatureEnable = clownFeatureEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:clownFeatureEnable forKey:kWCPLClownFeatureEnable];
+    [self.defaults setBool:clownFeatureEnable forKey:kWCPLClownFeatureEnable];
 }
 
 - (void)setVoiceForwardFeatureEnable:(BOOL)voiceForwardFeatureEnable {
     _voiceForwardFeatureEnable = voiceForwardFeatureEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:voiceForwardFeatureEnable forKey:kWCPLVoiceForwardFeatureEnable];
+    [self.defaults setBool:voiceForwardFeatureEnable forKey:kWCPLVoiceForwardFeatureEnable];
 }
 
 - (void)setSwipeSensitivityLevel:(NSInteger)swipeSensitivityLevel {
     _swipeSensitivityLevel = swipeSensitivityLevel;
-    [[NSUserDefaults standardUserDefaults] setInteger:swipeSensitivityLevel forKey:kWCPLSwipeSensitivityLevel];
+    [self.defaults setInteger:swipeSensitivityLevel forKey:kWCPLSwipeSensitivityLevel];
 }
 
 - (void)setSwipeLeftOtherAction:(NSInteger)swipeLeftOtherAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeLeftOtherAction, NO);
     _swipeLeftOtherAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLSwipeLeftOtherAction];
+    [self.defaults setInteger:normalized forKey:kWCPLSwipeLeftOtherAction];
 }
 
 - (void)setSwipeLeftSelfAction:(NSInteger)swipeLeftSelfAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeLeftSelfAction, YES);
     _swipeLeftSelfAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLSwipeLeftSelfAction];
+    [self.defaults setInteger:normalized forKey:kWCPLSwipeLeftSelfAction];
 }
 
 - (void)setSwipeRightEnable:(BOOL)swipeRightEnable {
     _swipeRightEnable = swipeRightEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:swipeRightEnable forKey:kWCPLSwipeRightEnable];
+    [self.defaults setBool:swipeRightEnable forKey:kWCPLSwipeRightEnable];
 }
 
 - (void)setSwipeRightOtherAction:(NSInteger)swipeRightOtherAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeRightOtherAction, NO);
     _swipeRightOtherAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLSwipeRightOtherAction];
+    [self.defaults setInteger:normalized forKey:kWCPLSwipeRightOtherAction];
 }
 
 - (void)setSwipeRightSelfAction:(NSInteger)swipeRightSelfAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeRightSelfAction, YES);
     _swipeRightSelfAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLSwipeRightSelfAction];
+    [self.defaults setInteger:normalized forKey:kWCPLSwipeRightSelfAction];
 }
 
 - (void)setDoubleTapGestureEnable:(BOOL)doubleTapGestureEnable {
     _doubleTapGestureEnable = doubleTapGestureEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:doubleTapGestureEnable forKey:kWCPLDoubleTapGestureEnable];
+    [self.defaults setBool:doubleTapGestureEnable forKey:kWCPLDoubleTapGestureEnable];
 }
 
 - (void)setDoubleTapOtherAction:(NSInteger)doubleTapOtherAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapOtherAction, NO);
     _doubleTapOtherAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLDoubleTapOtherAction];
+    [self.defaults setInteger:normalized forKey:kWCPLDoubleTapOtherAction];
 }
 
 - (void)setDoubleTapSelfAction:(NSInteger)doubleTapSelfAction {
     NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapSelfAction, YES);
     _doubleTapSelfAction = normalized;
-    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLDoubleTapSelfAction];
+    [self.defaults setInteger:normalized forKey:kWCPLDoubleTapSelfAction];
 }
 
 - (void)setMessageTimeEnable:(BOOL)messageTimeEnable {
     _messageTimeEnable = messageTimeEnable;
-    [[NSUserDefaults standardUserDefaults] setBool:messageTimeEnable forKey:kWCPLMessageTimeEnable];
+    [self.defaults setBool:messageTimeEnable forKey:kWCPLMessageTimeEnable];
 }
 
 - (CGFloat)swipeDistanceScale {

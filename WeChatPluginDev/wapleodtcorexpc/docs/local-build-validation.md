@@ -12,7 +12,8 @@
   4. `make -n before-all`
   5. `make before-all`
   6. 可选 `make -n package`（启用 `--package-preflight` 时）
-  7. `make clean package`
+  7. `make clean`
+  8. `make package`
 - `./scripts/run_unit_tests.sh --auto`
   - Darwin：执行 `--darwin-host` 和 `--cross-platform`
   - Linux / 非 Darwin：只执行 `--cross-platform`
@@ -104,7 +105,7 @@ THEOS=/opt/theos make package
 
 - 要求 `build_doctor.sh --strict-toolchain` 返回 ready。
 - 若不跳过单测，则要求对应宿主单测真的可运行。
-- 会真实执行 `make clean package`，不再停留在静态检查或 `before-all`。
+- 会真实执行 `make clean` 与 `make package`，不再停留在静态检查或 `before-all`。
 
 常用命令：
 

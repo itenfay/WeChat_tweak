@@ -9,6 +9,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WCPLAVConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 // 第三方转发/画中画等功能总开关（原 TPOn）
 @property (assign, nonatomic) BOOL thirdPartyPlaybackEnabled;
@@ -19,4 +22,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-

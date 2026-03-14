@@ -16,6 +16,9 @@ typedef NS_ENUM(NSInteger, WCPLRedEnvelopNotifyTarget) {
 @interface WCPLRedEnvelopConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 @property (assign, nonatomic) BOOL autoReceiveEnable;
 @property (assign, nonatomic) BOOL privateRedEnvelopEnable;

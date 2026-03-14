@@ -145,8 +145,7 @@
             if (logicTargets.count > 0) {
                 [targetCandidates addObjectsFromArray:logicTargets];
             }
-        } @catch (__unused NSException *exceptionForwardLogicsTargets) {
-        }
+        } @catch (__unused NSException *exceptionForwardLogicsTargets) { WCPLCatchLog(exceptionForwardLogicsTargets); }
     }
 
     NSArray *targets = wcpl_voiceForwardExtractTargetsFromPayload(targetCandidates);

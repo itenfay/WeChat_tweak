@@ -133,8 +133,7 @@
                     return;
                 }
             }
-        } @catch (__unused NSException *exception) {
-        }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
     }
 
     [richTextView setContent:displayText];
@@ -154,16 +153,14 @@
         if (viewModel && [viewModel respondsToSelector:@selector(resetLayoutCache)]) {
             @try {
                 [viewModel resetLayoutCache];
-            } @catch (__unused NSException *exception) {
-            }
+            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
         if (!objc_getAssociatedObject(self, kWCPLLocalReplaceLayoutingKey)) {
             objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             if ([self respondsToSelector:@selector(resetLayoutCache)]) {
                 @try {
                     ((void (*)(id, SEL))objc_msgSend)(self, @selector(resetLayoutCache));
-                } @catch (__unused NSException *exception) {
-                }
+                } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             }
             if ([self respondsToSelector:@selector(setNeedsLayout)]) {
                 ((void (*)(id, SEL))objc_msgSend)(self, @selector(setNeedsLayout));
@@ -174,8 +171,7 @@
             if ([self respondsToSelector:@selector(updateContentOffset)]) {
                 @try {
                     [self updateContentOffset];
-                } @catch (__unused NSException *exception) {
-                }
+                } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
             }
             objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, nil, OBJC_ASSOCIATION_ASSIGN);
         }
