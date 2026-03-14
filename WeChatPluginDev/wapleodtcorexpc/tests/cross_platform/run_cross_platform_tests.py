@@ -471,6 +471,134 @@ def alert_tip_display_text_from_content(content: Optional[str]) -> Optional[str]
     return plain_text_from_sysmsg_template_content(trimmed) or trimmed
 
 
+def quit_monitor_is_date_like_text(text: Optional[str]) -> bool:
+    trimmed = trim_text(text)
+    if not trimmed or len(trimmed) < 5 or len(trimmed) > 32:
+        return False
+    allowed = set("0123456789-:/. ")
+    if any(ch not in allowed for ch in trimmed):
+        return False
+    has_date_sep = "-" in trimmed or "/" in trimmed
+    has_time_sep = ":" in trimmed
+    return has_date_sep or has_time_sep
+
+
+def quit_monitor_is_low_signal_system_text(text: Optional[str]) -> bool:
+    trimmed = trim_text(text)
+    if not trimmed:
+        return True
+    lowered = trimmed.lower()
+    if "<msgsource" in lowered:
+        return True
+    if "@chatroom" in lowered:
+        return True
+    if "wxid_" in lowered and len(trimmed) <= 64:
+        return True
+    if quit_monitor_is_date_like_text(trimmed):
+        return True
+    return False
+
+
+def quit_monitor_looks_like_excluded_system_text(text: Optional[str]) -> bool:
+    trimmed = trim_text(text)
+    if not trimmed:
+        return False
+    tokens = (
+        "加入了群聊",
+        "邀请",
+        "群公告",
+        "拍了拍",
+        "修改群名",
+        "群二维码",
+        "撤回",
+        "撤回了一条消息",
+        "禁言",
+        "红包",
+        "转账",
+        "直播",
+        "left a message",
+        "recalled a message",
+    )
+    lowered = trimmed.lower()
+    return any(token.lower() in lowered for token in tokens)
+
+
+def quit_monitor_looks_like_quit_system_text(content: Optional[str]) -> bool:
+    text = trim_text(content)
+    if not text or quit_monitor_looks_like_excluded_system_text(text):
+        return False
+    tokens = (
+        "退群",
+        "退出了群聊",
+        "退出群聊",
+        "已退出群聊",
+        "已退出该群",
+        "离开了群聊",
+        "离开群聊",
+        "离开了该群",
+        "被移出群聊",
+        "被移出了群聊",
+        "被踢出群聊",
+        "left the group chat",
+        "left the group",
+        "removed from the group chat",
+        "removed from the group",
+        "delchatroommember",
+    )
+    lowered = text.lower()
+    return any(token.lower() in lowered for token in tokens)
+
+
+def quit_monitor_system_text_score(text: Optional[str]) -> int:
+    trimmed = trim_text(text)
+    if not trimmed:
+        return -10**9
+    score = 0
+    if quit_monitor_looks_like_quit_system_text(trimmed):
+        score += 1000
+    if "[退群监控]" in trimmed:
+        score -= 1500
+    if quit_monitor_looks_like_excluded_system_text(trimmed):
+        score -= 900
+    if quit_monitor_is_low_signal_system_text(trimmed):
+        score -= 700
+    if "<" in trimmed or ">" in trimmed:
+        score -= 120
+    if 6 <= len(trimmed) <= 220:
+        score += 30
+    elif len(trimmed) > 320:
+        score -= 40
+    return score
+
+
+def quit_monitor_select_best_system_text(candidates: Any) -> Optional[str]:
+    if not isinstance(candidates, list):
+        return None
+    normalized: List[str] = []
+    seen = set()
+    for item in candidates:
+        text = trim_text(item)
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        normalized.append(text)
+    if not normalized:
+        return None
+
+    best = normalized[0]
+    best_score = quit_monitor_system_text_score(best)
+    for candidate in normalized[1:]:
+        score = quit_monitor_system_text_score(candidate)
+        if score > best_score or (score == best_score and len(candidate) > len(best)):
+            best = candidate
+            best_score = score
+    return best
+
+
+def quit_monitor_pending_retry_schedule_seconds() -> List[float]:
+    return [0.8, 2.0, 5.0, 15.0, 60.0, 300.0, 900.0, 1800.0, 7200.0]
+
+
 def decode_basic_xml_entities(text: Optional[str]) -> Optional[str]:
     if not isinstance(text, str) or not text:
         return None
@@ -776,6 +904,26 @@ def test_pure_helper_shared_contracts() -> None:
     assert_contract_group(
         "should_tint_alert_tip_display_text",
         lambda case: should_tint_alert_tip_display_text(case.get("input")),
+    )
+    assert_contract_group(
+        "quit_monitor_is_date_like_text",
+        lambda case: quit_monitor_is_date_like_text(case.get("input")),
+    )
+    assert_contract_group(
+        "quit_monitor_is_low_signal_system_text",
+        lambda case: quit_monitor_is_low_signal_system_text(case.get("input")),
+    )
+    assert_contract_group(
+        "quit_monitor_looks_like_quit_system_text",
+        lambda case: quit_monitor_looks_like_quit_system_text(case.get("input")),
+    )
+    assert_contract_group(
+        "quit_monitor_select_best_system_text",
+        lambda case: quit_monitor_select_best_system_text(case.get("input")),
+    )
+    assert_contract_group(
+        "quit_monitor_pending_retry_schedule_seconds",
+        lambda case: quit_monitor_pending_retry_schedule_seconds(),
     )
 
 

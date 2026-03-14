@@ -4,6 +4,7 @@
 #import "WCPLDispatchUtils.h"
 #import "WCPLHookGovernance.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
 
 #import <objc/runtime.h>
@@ -32,6 +33,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
                                          NSString *oldMemberList,
                                          NSString *newMemberList,
                                          NSString *sourceTag);
+static void wcpl_qm_clearPendingSnapshotEventsForRoom(NSString *roomUserName, NSString *reason);
 
 static NSString *wcpl_qm_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) {
@@ -39,6 +41,71 @@ static NSString *wcpl_qm_trimString(NSString *text) {
     }
     NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *wcpl_qm_objectClassName(id object) {
+    return object ? NSStringFromClass([object class]) : @"(nil)";
+}
+
+static NSString *wcpl_qm_copyStringSelectorValue(id object,
+                                                 SEL selector,
+                                                 NSString *sourceTag,
+                                                 NSString *roomUserName) {
+    if (!object || !selector) {
+        return nil;
+    }
+
+    NSString *selectorName = NSStringFromSelector(selector) ?: @"(null)";
+    NSString *room = wcpl_qm_trimString(roomUserName) ?: @"";
+    if (![object respondsToSelector:selector]) {
+        WCPLLogWarning(@"[退群监控] 字段读取跳过: source=%@ room=%@ class=%@ selector=%@ reason=selector_missing",
+                       sourceTag ?: @"unknown",
+                       room,
+                       wcpl_qm_objectClassName(object),
+                       selectorName);
+        return nil;
+    }
+
+    @try {
+        id value = ((id (*)(id, SEL))objc_msgSend)(object, selector);
+        if (!value) {
+            return nil;
+        }
+        if (![value isKindOfClass:[NSString class]]) {
+            WCPLLogWarning(@"[退群监控] 字段读取失败: source=%@ room=%@ class=%@ selector=%@ valueClass=%@ reason=non_string",
+                           sourceTag ?: @"unknown",
+                           room,
+                           wcpl_qm_objectClassName(object),
+                           selectorName,
+                           wcpl_qm_objectClassName(value));
+            return nil;
+        }
+        return [(NSString *)value copy];
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[退群监控] 字段读取异常: source=%@ room=%@ class=%@ selector=%@ exception=%@",
+                       sourceTag ?: @"unknown",
+                       room,
+                       wcpl_qm_objectClassName(object),
+                       selectorName,
+                       exception);
+        return nil;
+    }
+}
+
+static NSString *wcpl_qm_copyContactUserName(id contact, NSString *sourceTag) {
+    return wcpl_qm_trimString(wcpl_qm_copyStringSelectorValue(contact,
+                                                              @selector(m_nsUsrName),
+                                                              sourceTag,
+                                                              nil));
+}
+
+static NSString *wcpl_qm_copyChatRoomMemberList(id contact,
+                                                NSString *roomUserName,
+                                                NSString *sourceTag) {
+    return wcpl_qm_copyStringSelectorValue(contact,
+                                           @selector(m_nsChatRoomMemList),
+                                           sourceTag,
+                                           roomUserName);
 }
 
 static BOOL wcpl_qm_isChatRoomUserName(NSString *userName) {
@@ -96,15 +163,8 @@ static NSArray<NSString *> *wcpl_qm_memberListFromMemListObject(id memListObj) {
         NSString *member = nil;
         if ([item isKindOfClass:[NSString class]]) {
             member = (NSString *)item;
-        } else if ([item respondsToSelector:@selector(m_nsUsrName)]) {
-            @try {
-                id value = ((id (*)(id, SEL))objc_msgSend)(item, @selector(m_nsUsrName));
-                if ([value isKindOfClass:[NSString class]]) {
-                    member = (NSString *)value;
-                }
-            } @catch (__unused NSException *exceptionGetUsrName) {
-                member = nil;
-            }
+        } else {
+            member = wcpl_qm_copyContactUserName(item, @"memlist_object_item");
         }
 
         NSString *trimmed = wcpl_qm_trimString(member);
@@ -113,6 +173,16 @@ static NSArray<NSString *> *wcpl_qm_memberListFromMemListObject(id memListObj) {
         }
     }
     return normalized.array;
+}
+
+static BOOL wcpl_qm_memberListsContainSameUsers(NSArray<NSString *> *lhs, NSArray<NSString *> *rhs) {
+    if (lhs.count != rhs.count) {
+        return NO;
+    }
+    if (lhs.count == 0) {
+        return YES;
+    }
+    return [[NSSet setWithArray:lhs] isEqualToSet:[NSSet setWithArray:rhs]];
 }
 
 static NSArray<NSString *> *wcpl_qm_memberListFromContactOrRaw(CContact *contact, NSString *rawList) {
@@ -125,8 +195,8 @@ static NSString *wcpl_qm_selfUserName(CContactMgr *contactMgr) {
         return nil;
     }
     @try {
-        CContact *selfContact = [contactMgr getSelfContact];
-        return wcpl_qm_trimString(selfContact.m_nsUsrName);
+        id selfContact = [contactMgr getSelfContact];
+        return wcpl_qm_copyContactUserName(selfContact, @"self_contact");
     } @catch (__unused NSException *exception) {
         return nil;
     }
@@ -961,42 +1031,19 @@ static NSString *wcpl_qm_logSnippet(NSString *text, NSUInteger maxLen) {
     return [[trimmed substringToIndex:maxLen] stringByAppendingString:@"..."];
 }
 
-static BOOL wcpl_qm_isDateLikeText(NSString *text) {
-    NSString *trimmed = wcpl_qm_trimString(text);
-    if (trimmed.length < 5 || trimmed.length > 32) {
-        return NO;
-    }
-
-    // 常见时间格式：2026-02-24 16:09:43 / 16:09:43 / 2026/02/24
-    NSCharacterSet *allowed = [NSCharacterSet characterSetWithCharactersInString:@"0123456789-:/. "];
-    if ([[trimmed stringByTrimmingCharactersInSet:allowed] length] != 0) {
-        return NO;
-    }
-    BOOL hasDateSep = ([trimmed rangeOfString:@"-"].location != NSNotFound ||
-                       [trimmed rangeOfString:@"/"].location != NSNotFound);
-    BOOL hasTimeSep = ([trimmed rangeOfString:@":"].location != NSNotFound);
-    return hasDateSep || hasTimeSep;
-}
-
-static BOOL wcpl_qm_isLowSignalSystemText(NSString *text) {
+static void wcpl_qm_appendSystemTextCandidate(NSMutableArray<NSString *> *candidates, NSString *text) {
     NSString *trimmed = wcpl_qm_trimString(text);
     if (trimmed.length == 0) {
-        return YES;
+        return;
     }
-    // m_nsMsgSource 常为 <msgsource>...</msgsource>，不具备退群语义且会遮蔽真实展示文本。
-    if ([trimmed rangeOfString:@"<msgsource" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        return YES;
+
+    if (wcpl_qm_isSysMsgTemplateContent(trimmed)) {
+        NSString *plain = wcpl_qm_plainTextFromSysMsgTemplateContent(trimmed);
+        if (plain.length > 0) {
+            [candidates addObject:plain];
+        }
     }
-    if ([trimmed rangeOfString:@"@chatroom"].location != NSNotFound) {
-        return YES;
-    }
-    if ([trimmed rangeOfString:@"wxid_"].location != NSNotFound && trimmed.length <= 64) {
-        return YES;
-    }
-    if (wcpl_qm_isDateLikeText(trimmed)) {
-        return YES;
-    }
-    return NO;
+    [candidates addObject:trimmed];
 }
 
 static NSString *wcpl_qm_roomNameFromMessageWrap(CMessageWrap *wrap) {
@@ -1048,6 +1095,7 @@ static NSString *wcpl_qm_systemTextFromMessageWrap(CMessageWrap *wrap, id rawMsg
         return wcpl_qm_systemTextFromRawMessage(rawMsg);
     }
 
+    NSMutableArray<NSString *> *candidates = [NSMutableArray array];
     NSArray<NSString *> *keys = @[
         @"systemMessageWording",
         @"systemMessageActionWording",
@@ -1061,15 +1109,9 @@ static NSString *wcpl_qm_systemTextFromMessageWrap(CMessageWrap *wrap, id rawMsg
         @"m_nsPushBody",
         @"m_nsPushTitle"
     ];
-    NSString *fallbackLowSignal = nil;
     for (NSString *key in keys) {
         NSString *text = wcpl_qm_wrapStringValueForKey(wrap, key);
-        if (text.length > 0 && !wcpl_qm_isLowSignalSystemText(text)) {
-            return text;
-        }
-        if (text.length > 0 && !fallbackLowSignal) {
-            fallbackLowSignal = text;
-        }
+        wcpl_qm_appendSystemTextCandidate(candidates, text);
     }
 
     NSArray<NSString *> *selectorNames = @[
@@ -1080,68 +1122,20 @@ static NSString *wcpl_qm_systemTextFromMessageWrap(CMessageWrap *wrap, id rawMsg
     ];
     for (NSString *selectorName in selectorNames) {
         NSString *text = wcpl_qm_wrapStringValueForSelector(wrap, NSSelectorFromString(selectorName));
-        if (text.length > 0 && !wcpl_qm_isLowSignalSystemText(text)) {
-            return text;
-        }
-        if (text.length > 0 && !fallbackLowSignal) {
-            fallbackLowSignal = text;
-        }
+        wcpl_qm_appendSystemTextCandidate(candidates, text);
     }
     NSString *rawText = wcpl_qm_systemTextFromRawMessage(rawMsg);
-    if (rawText.length > 0 && !wcpl_qm_isLowSignalSystemText(rawText)) {
-        return rawText;
+    wcpl_qm_appendSystemTextCandidate(candidates, rawText);
+
+    NSString *bestText = WCPLQuitMonitorSelectBestSystemTextFromCandidates(candidates);
+    if (bestText.length > 0) {
+        return bestText;
     }
-    return fallbackLowSignal ?: rawText;
+    return candidates.firstObject ?: rawText;
 }
 
 static BOOL wcpl_qm_looksLikeQuitSystemText(NSString *content) {
-    NSString *text = wcpl_qm_trimString(content);
-    if (text.length == 0) {
-        return NO;
-    }
-
-    NSArray<NSString *> *excludeTokens = @[
-        @"加入了群聊",
-        @"邀请",
-        @"群公告",
-        @"拍了拍",
-        @"修改群名",
-        @"群二维码",
-        @"撤回",
-        @"禁言",
-        @"红包",
-        @"转账"
-    ];
-    for (NSString *token in excludeTokens) {
-        if ([text rangeOfString:token options:NSCaseInsensitiveSearch].location != NSNotFound) {
-            return NO;
-        }
-    }
-
-    NSArray<NSString *> *hitTokens = @[
-        @"退群",
-        @"退出了群聊",
-        @"退出群聊",
-        @"已退出群聊",
-        @"已退出该群",
-        @"离开了群聊",
-        @"离开群聊",
-        @"离开了该群",
-        @"被移出群聊",
-        @"被移出了群聊",
-        @"被踢出群聊",
-        @"left the group chat",
-        @"left the group",
-        @"removed from the group chat",
-        @"removed from the group",
-        @"delchatroommember"
-    ];
-    for (NSString *token in hitTokens) {
-        if ([text rangeOfString:token options:NSCaseInsensitiveSearch].location != NSNotFound) {
-            return YES;
-        }
-    }
-    return NO;
+    return WCPLQuitMonitorLooksLikeQuitSystemText(content);
 }
 
 static BOOL wcpl_qm_looksLikeSelfQuitSystemText(NSString *content, NSString *selfUserName) {
@@ -1383,6 +1377,8 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
     }
 
     CContact *roomContact = nil;
+    NSString *rawMemberList = nil;
+    NSString *fallbackRawMemberList = nil;
     NSArray<NSString *> *contactSelectors = @[
         @"getContactByName:",
         @"getContactByNameFromDB:",
@@ -1398,14 +1394,30 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
             id contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, selector, room);
             if ([contact isKindOfClass:%c(CContact)]) {
                 roomContact = (CContact *)contact;
+                rawMemberList = wcpl_qm_copyChatRoomMemberList(contact, room, selectorName);
                 break;
+            }
+            if (!contact) {
+                continue;
+            }
+
+            NSString *candidateRawMemberList = wcpl_qm_copyChatRoomMemberList(contact, room, selectorName);
+            WCPLLogWarning(@"[退群监控] 联系人查询返回异常类型: room=%@ selector=%@ class=%@ hasMemList=%d",
+                           room,
+                           selectorName,
+                           wcpl_qm_objectClassName(contact),
+                           candidateRawMemberList.length > 0 ? 1 : 0);
+            if (fallbackRawMemberList.length == 0) {
+                fallbackRawMemberList = candidateRawMemberList;
             }
         } @catch (__unused NSException *exception) {
         }
     }
 
-    NSString *rawMemberList = [roomContact.m_nsChatRoomMemList copy];
-    NSArray<NSString *> *members = roomContact
+    if (rawMemberList.length == 0) {
+        rawMemberList = fallbackRawMemberList;
+    }
+    NSArray<NSString *> *members = rawMemberList.length > 0
         ? wcpl_qm_memberListFromContactOrRaw(roomContact, rawMemberList)
         : @[];
 
@@ -1418,12 +1430,8 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
                     NSString *member = nil;
                     if ([item isKindOfClass:[NSString class]]) {
                         member = (NSString *)item;
-                    } else if ([item respondsToSelector:@selector(m_nsUsrName)]) {
-                        @try {
-                            member = ((id (*)(id, SEL))objc_msgSend)(item, @selector(m_nsUsrName));
-                        } @catch (__unused NSException *exceptionGetUsrName) {
-                            member = nil;
-                        }
+                    } else {
+                        member = wcpl_qm_copyContactUserName(item, @"group_card_member");
                     }
                     NSString *trimmed = wcpl_qm_trimString(member);
                     if (trimmed.length > 0) {
@@ -1555,19 +1563,152 @@ static void wcpl_qm_refreshRoomSnapshotLater(NSString *roomUserName, NSString *s
                    });
 }
 
-static void wcpl_qm_runSnapshotFallbackDiff(NSString *roomUserName,
-                                            NSArray<NSString *> *oldMembersSnapshot,
-                                            NSString *sourceTag,
-                                            BOOL retry) {
+static NSMutableDictionary<NSString *, NSMutableDictionary *> *wcpl_qm_pendingSnapshotEventStore(void) {
+    static NSMutableDictionary<NSString *, NSMutableDictionary *> *store = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        store = [NSMutableDictionary dictionary];
+    });
+    return store;
+}
+
+static NSString *wcpl_qm_pendingSnapshotEventKey(NSString *roomUserName,
+                                                 unsigned long long msgSvrId,
+                                                 unsigned int createTime,
+                                                 NSString *content) {
     NSString *room = wcpl_qm_trimString(roomUserName);
-    if (room.length == 0 || oldMembersSnapshot.count == 0) {
+    if (room.length == 0) {
+        return nil;
+    }
+    if (msgSvrId > 0 || createTime > 0) {
+        return [NSString stringWithFormat:@"%@|%llu|%u",
+                                          room,
+                                          msgSvrId,
+                                          createTime];
+    }
+    return [NSString stringWithFormat:@"%@|%@",
+                                      room,
+                                      wcpl_qm_logSnippet(content, 80)];
+}
+
+static void wcpl_qm_removePendingSnapshotEvent(NSString *eventKey, NSString *reason) {
+    NSString *trimmedKey = wcpl_qm_trimString(eventKey);
+    if (trimmedKey.length == 0) {
         return;
     }
 
-    NSTimeInterval delay = retry ? 1.2 : 0.8;
+    NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+    NSDictionary *event = nil;
+    @synchronized(store) {
+        event = [[store objectForKey:trimmedKey] copy];
+        [store removeObjectForKey:trimmedKey];
+    }
+    if (![event isKindOfClass:[NSDictionary class]]) {
+        return;
+    }
+
+    NSString *room = wcpl_qm_trimString(event[@"room"]);
+    NSArray<NSString *> *oldMembers = [event[@"oldMembers"] isKindOfClass:[NSArray class]] ? event[@"oldMembers"] : @[];
+    NSUInteger attemptIndex = [event[@"attemptIndex"] respondsToSelector:@selector(unsignedIntegerValue)]
+        ? [event[@"attemptIndex"] unsignedIntegerValue] : 0;
+    NSTimeInterval createdAt = [event[@"createdAt"] respondsToSelector:@selector(doubleValue)]
+        ? [event[@"createdAt"] doubleValue] : 0.0;
+    NSTimeInterval age = createdAt > 0 ? ([[NSDate date] timeIntervalSince1970] - createdAt) : 0.0;
+    WCPLLogDebug(@"[退群监控] pending结束: room=%@ reason=%@ attempts=%lu age=%.1fs old=%lu key=%@",
+                 room ?: @"",
+                 reason ?: @"unknown",
+                 (unsigned long)(attemptIndex + 1),
+                 age,
+                 (unsigned long)oldMembers.count,
+                 trimmedKey);
+}
+
+static void wcpl_qm_schedulePendingSnapshotAttempt(NSString *eventKey, NSUInteger attemptIndex);
+
+static void wcpl_qm_rebasePendingSnapshotEvent(NSString *eventKey,
+                                               NSArray<NSString *> *members,
+                                               NSString *memberList) {
+    NSString *trimmedKey = wcpl_qm_trimString(eventKey);
+    if (trimmedKey.length == 0 || members.count == 0) {
+        return;
+    }
+
+    NSString *resolvedMemberList = wcpl_qm_trimString(memberList);
+    if (resolvedMemberList.length == 0) {
+        resolvedMemberList = [members componentsJoinedByString:@";"];
+    }
+
+    NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+    @synchronized(store) {
+        NSMutableDictionary *event = store[trimmedKey];
+        if (![event isKindOfClass:[NSMutableDictionary class]]) {
+            return;
+        }
+        event[@"oldMembers"] = [members copy];
+        event[@"oldMemberList"] = resolvedMemberList ?: @"";
+    }
+}
+
+static void wcpl_qm_advancePendingSnapshotAttempt(NSString *eventKey, NSUInteger nextAttemptIndex) {
+    NSString *trimmedKey = wcpl_qm_trimString(eventKey);
+    if (trimmedKey.length == 0) {
+        return;
+    }
+
+    NSArray<NSNumber *> *schedule = WCPLQuitMonitorPendingRetryScheduleSeconds();
+    if (nextAttemptIndex >= schedule.count) {
+        wcpl_qm_removePendingSnapshotEvent(trimmedKey, @"expired");
+        return;
+    }
+
+    NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+    @synchronized(store) {
+        NSMutableDictionary *event = store[trimmedKey];
+        if (![event isKindOfClass:[NSMutableDictionary class]]) {
+            return;
+        }
+        event[@"attemptIndex"] = @(nextAttemptIndex);
+    }
+    wcpl_qm_schedulePendingSnapshotAttempt(trimmedKey, nextAttemptIndex);
+}
+
+static void wcpl_qm_schedulePendingSnapshotAttempt(NSString *eventKey, NSUInteger attemptIndex) {
+    NSArray<NSNumber *> *schedule = WCPLQuitMonitorPendingRetryScheduleSeconds();
+    if (attemptIndex >= schedule.count) {
+        wcpl_qm_removePendingSnapshotEvent(eventKey, @"expired");
+        return;
+    }
+
+    NSTimeInterval delay = [schedule[attemptIndex] doubleValue];
+    NSString *keyCopy = [eventKey copy];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)),
                    dispatch_get_main_queue(),
                    ^{
+                       NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+                       NSDictionary *event = nil;
+                       @synchronized(store) {
+                           event = [[store objectForKey:keyCopy] copy];
+                       }
+                       if (![event isKindOfClass:[NSDictionary class]]) {
+                           return;
+                       }
+
+                       NSUInteger currentAttemptIndex = [event[@"attemptIndex"] respondsToSelector:@selector(unsignedIntegerValue)]
+                           ? [event[@"attemptIndex"] unsignedIntegerValue] : 0;
+                       if (currentAttemptIndex != attemptIndex) {
+                           return;
+                       }
+
+                       NSString *room = wcpl_qm_trimString(event[@"room"]);
+                       NSArray<NSString *> *oldMembersSnapshot = [event[@"oldMembers"] isKindOfClass:[NSArray class]]
+                           ? event[@"oldMembers"] : @[];
+                       NSString *oldMemberList = wcpl_qm_trimString(event[@"oldMemberList"]);
+                       NSString *sourceTag = wcpl_qm_trimString(event[@"sourceTag"]);
+                       if (room.length == 0 || oldMembersSnapshot.count == 0) {
+                           wcpl_qm_removePendingSnapshotEvent(keyCopy, @"invalid_event");
+                           return;
+                       }
+
                        CContactMgr *contactMgr = wcpl_qm_contactMgr();
                        CContact *newRoomContact = nil;
                        NSString *newMemberList = nil;
@@ -1576,43 +1717,87 @@ static void wcpl_qm_runSnapshotFallbackDiff(NSString *roomUserName,
                                                                                             &newRoomContact,
                                                                                             &newMemberList);
                        if (newMembers.count == 0) {
-                           WCPLLogDebug(@"[退群监控] 快照兜底无成员数据: room=%@ source=%@ retry=%d",
+                           WCPLLogDebug(@"[退群监控] pending重试无成员数据: room=%@ source=%@ attempt=%lu",
                                         room,
                                         sourceTag ?: @"unknown",
-                                        retry ? 1 : 0);
+                                        (unsigned long)(attemptIndex + 1));
+                           wcpl_qm_advancePendingSnapshotAttempt(keyCopy, attemptIndex + 1);
                            return;
                        }
 
                        if (oldMembersSnapshot.count > newMembers.count) {
-                           NSString *oldMemberList = [oldMembersSnapshot componentsJoinedByString:@";"];
+                           if (oldMemberList.length == 0) {
+                               oldMemberList = [oldMembersSnapshot componentsJoinedByString:@";"];
+                           }
+                           NSString *resolvedSource = [NSString stringWithFormat:@"system_snapshot_pending_%lu",
+                                                       (unsigned long)(attemptIndex + 1)];
                            wcpl_qm_handleMemberListDiff(contactMgr,
                                                         nil,
                                                         newRoomContact,
                                                         oldMemberList,
                                                         newMemberList,
-                                                        (retry ? @"system_snapshot_fallback_retry" : @"system_snapshot_fallback"));
+                                                        resolvedSource);
                            wcpl_qm_updateCachedMembersForRoom(room, newMembers);
+                           wcpl_qm_removePendingSnapshotEvent(keyCopy, @"resolved_delta");
                            return;
                        }
 
-                       if (!retry && oldMembersSnapshot.count == newMembers.count) {
-                           WCPLLogDebug(@"[退群监控] 快照兜底准备重试: room=%@ source=%@ old=%lu new=%lu",
+                       if (oldMembersSnapshot.count == newMembers.count) {
+                           if (!wcpl_qm_memberListsContainSameUsers(oldMembersSnapshot, newMembers)) {
+                               WCPLLogDebug(@"[退群监控] pending重试重置基线: room=%@ source=%@ attempt=%lu members=%lu",
+                                            room,
+                                            sourceTag ?: @"unknown",
+                                            (unsigned long)(attemptIndex + 1),
+                                            (unsigned long)newMembers.count);
+                               wcpl_qm_rebasePendingSnapshotEvent(keyCopy, newMembers, newMemberList);
+                               wcpl_qm_updateCachedMembersForRoom(room, newMembers);
+                               wcpl_qm_advancePendingSnapshotAttempt(keyCopy, attemptIndex + 1);
+                               return;
+                           }
+                           WCPLLogDebug(@"[退群监控] pending重试无差异: room=%@ source=%@ attempt=%lu old=%lu new=%lu",
                                         room,
                                         sourceTag ?: @"unknown",
+                                        (unsigned long)(attemptIndex + 1),
                                         (unsigned long)oldMembersSnapshot.count,
                                         (unsigned long)newMembers.count);
-                           wcpl_qm_runSnapshotFallbackDiff(room, oldMembersSnapshot, sourceTag, YES);
+                           wcpl_qm_updateCachedMembersForRoom(room, newMembers);
+                           wcpl_qm_removePendingSnapshotEvent(keyCopy, @"no_change_snapshot");
                            return;
                        }
 
                        wcpl_qm_updateCachedMembersForRoom(room, newMembers);
-                       WCPLLogDebug(@"[退群监控] 快照兜底无差异: room=%@ source=%@ old=%lu new=%lu retry=%d",
-                                    room,
-                                    sourceTag ?: @"unknown",
-                                    (unsigned long)oldMembersSnapshot.count,
-                                    (unsigned long)newMembers.count,
-                                    retry ? 1 : 0);
+                       wcpl_qm_removePendingSnapshotEvent(keyCopy, @"cancel_newer_snapshot");
                    });
+}
+
+static void wcpl_qm_clearPendingSnapshotEventsForRoom(NSString *roomUserName, NSString *reason) {
+    NSString *room = wcpl_qm_trimString(roomUserName);
+    if (room.length == 0) {
+        return;
+    }
+
+    NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+    NSMutableArray<NSString *> *keysToRemove = [NSMutableArray array];
+    @synchronized(store) {
+        [store enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSMutableDictionary *event, BOOL *stop) {
+            (void)stop;
+            if (![event isKindOfClass:[NSDictionary class]]) {
+                return;
+            }
+            NSString *eventRoom = wcpl_qm_trimString(event[@"room"]);
+            if ([eventRoom isEqualToString:room]) {
+                [keysToRemove addObject:key];
+            }
+        }];
+        [store removeObjectsForKeys:keysToRemove];
+    }
+
+    if (keysToRemove.count > 0) {
+        WCPLLogDebug(@"[退群监控] pending清理: room=%@ reason=%@ count=%lu",
+                     room,
+                     reason ?: @"unknown",
+                     (unsigned long)keysToRemove.count);
+    }
 }
 
 static void wcpl_qm_scheduleSnapshotFallback(CMessageWrap *wrap,
@@ -1647,16 +1832,40 @@ static void wcpl_qm_scheduleSnapshotFallback(CMessageWrap *wrap,
 
     unsigned long long msgSvrId = wrap ? (unsigned long long)wrap.m_n64MesSvrID : 0;
     unsigned int createTime = wrap ? wrap.m_uiCreateTime : 0;
-    NSString *eventKey = [NSString stringWithFormat:@"snapshot_fallback|%@|%llu|%u",
-                          room,
-                          msgSvrId,
-                          createTime];
-    if (!wcpl_qm_shouldEmitForEventKey(eventKey)) {
+    NSString *eventKey = wcpl_qm_pendingSnapshotEventKey(room, msgSvrId, createTime, content);
+    if (eventKey.length == 0) {
         return;
     }
 
-    NSArray<NSString *> *oldMembersSnapshot = [oldMembers copy];
-    wcpl_qm_runSnapshotFallbackDiff(room, oldMembersSnapshot, sourceTag, NO);
+    NSMutableDictionary<NSString *, NSMutableDictionary *> *store = wcpl_qm_pendingSnapshotEventStore();
+    BOOL shouldSchedule = NO;
+    @synchronized(store) {
+        NSMutableDictionary *existing = store[eventKey];
+        if ([existing isKindOfClass:[NSMutableDictionary class]]) {
+            return;
+        }
+        store[eventKey] = [@{
+            @"room": room,
+            @"sourceTag": sourceTag ?: @"unknown",
+            @"content": wcpl_qm_trimString(content) ?: @"",
+            @"oldMembers": [oldMembers copy],
+            @"oldMemberList": [oldMembers componentsJoinedByString:@";"],
+            @"attemptIndex": @0,
+            @"createdAt": @([[NSDate date] timeIntervalSince1970]),
+        } mutableCopy];
+        shouldSchedule = YES;
+    }
+
+    if (!shouldSchedule) {
+        return;
+    }
+
+    WCPLLogDebug(@"[退群监控] pending创建: room=%@ source=%@ members=%lu key=%@",
+                 room,
+                 sourceTag ?: @"unknown",
+                 (unsigned long)oldMembers.count,
+                 eventKey);
+    wcpl_qm_schedulePendingSnapshotAttempt(eventKey, 0);
 }
 
 static void wcpl_qm_handleSystemQuitMessage(CMessageWrap *wrap, id rawMsg, NSString *sourceTag) {
@@ -1778,6 +1987,7 @@ static void wcpl_qm_handleSystemQuitMessage(CMessageWrap *wrap, id rawMsg, NSStr
         return;
     }
     NSString *tip = [NSString stringWithFormat:@"[退群监控] %@", tipContent];
+    wcpl_qm_clearPendingSnapshotEventsForRoom(roomUserName, @"system_token_hit");
     wcpl_qm_refreshRoomSnapshotLater(roomUserName, @"system_token_hit", 0.8);
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL inserted = wcpl_qm_addLocalMonitorTip(roomUserName, fromUser, tip, nil, tip);
@@ -1818,9 +2028,9 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
         return;
     }
 
-    NSString *roomUserName = wcpl_qm_trimString(newRoomContact.m_nsUsrName);
+    NSString *roomUserName = wcpl_qm_copyContactUserName(newRoomContact, @"member_diff_new_room");
     if (roomUserName.length == 0) {
-        roomUserName = wcpl_qm_trimString(oldRoomContact.m_nsUsrName);
+        roomUserName = wcpl_qm_copyContactUserName(oldRoomContact, @"member_diff_old_room");
     }
     if (!wcpl_qm_isChatRoomUserName(roomUserName)) {
         return;
@@ -1859,6 +2069,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
             return;
         }
 
+        wcpl_qm_clearPendingSnapshotEventsForRoom(roomUserName, @"member_diff_large_delta");
         NSString *selfUserName = wcpl_qm_selfUserName(contactMgr);
         NSString *fromUser = selfUserName.length > 0 ? selfUserName : @"weixin";
         NSString *tipContent = [NSString stringWithFormat:@"[退群监控] 群成员列表发生大幅变化：%lu → %lu（减少 %lu）",
@@ -1906,6 +2117,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
         return;
     }
 
+    wcpl_qm_clearPendingSnapshotEventsForRoom(roomUserName, @"member_diff_removed_users");
     NSString *eventKey = [NSString stringWithFormat:@"%@|%@", roomUserName, [removedMembers componentsJoinedByString:@","]];
     if (!wcpl_qm_shouldEmitForEventKey(eventKey)) {
         WCPLLogDebug(@"[退群监控] 事件去重: room=%@ source=%@ key=%@",
@@ -1972,15 +2184,15 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
 
         @try {
             if ([oldContact isKindOfClass:%c(CContact)]) {
-                roomUserName = wcpl_qm_trimString(oldContact.m_nsUsrName);
-                oldList = [oldContact.m_nsChatRoomMemList copy];
+                roomUserName = wcpl_qm_copyContactUserName(oldContact, @"merge_old_room");
+                oldList = wcpl_qm_copyChatRoomMemberList(oldContact, roomUserName, @"merge_old_memlist");
             }
             if ([contact isKindOfClass:%c(CContact)]) {
                 if (roomUserName.length == 0) {
-                    roomUserName = wcpl_qm_trimString(contact.m_nsUsrName);
+                    roomUserName = wcpl_qm_copyContactUserName(contact, @"merge_new_room");
                 }
                 if (oldList.length == 0) {
-                    oldList = [contact.m_nsChatRoomMemList copy];
+                    oldList = wcpl_qm_copyChatRoomMemberList(contact, roomUserName, @"merge_new_memlist");
                 }
             }
         } @catch (__unused NSException *exceptionWarmup) {
@@ -2079,8 +2291,8 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
         @try {
             if ([contact isKindOfClass:%c(CContact)]) {
                 CContact *roomContact = (CContact *)contact;
-                roomUserName = wcpl_qm_trimString(roomContact.m_nsUsrName);
-                oldRawList = [roomContact.m_nsChatRoomMemList copy];
+                roomUserName = wcpl_qm_copyContactUserName(roomContact, @"set_memlist_room");
+                oldRawList = wcpl_qm_copyChatRoomMemberList(roomContact, roomUserName, @"set_memlist_old");
             }
         } @catch (__unused NSException *exceptionWarmup) {
             roomUserName = nil;
@@ -2104,7 +2316,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
         @try {
             if ([contact isKindOfClass:%c(CContact)]) {
                 CContact *roomContact = (CContact *)contact;
-                newRawList = [roomContact.m_nsChatRoomMemList copy];
+                newRawList = wcpl_qm_copyChatRoomMemberList(roomContact, roomUserName, @"set_memlist_new");
                 newMembersFromRaw = wcpl_qm_memberListFromRawString(newRawList);
             }
         } @catch (__unused NSException *exceptionNewRaw) {
@@ -2196,7 +2408,7 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
 
 - (void)updateContact:(id)contact {
     NSString *roomUserName = [contact isKindOfClass:%c(CContact)]
-        ? wcpl_qm_trimString(((CContact *)contact).m_nsUsrName) : nil;
+        ? wcpl_qm_copyContactUserName(contact, @"update_contact_room") : nil;
     BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
     NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
     NSString *oldRawList = nil;
@@ -2230,15 +2442,15 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
 
 - (void)handleNotChatRoomMemberField:(id)contact oldContact:(id)oldContact {
     NSString *roomUserName = [oldContact isKindOfClass:%c(CContact)]
-        ? wcpl_qm_trimString(((CContact *)oldContact).m_nsUsrName) : nil;
+        ? wcpl_qm_copyContactUserName(oldContact, @"handle_not_chat_old_room") : nil;
     if (roomUserName.length == 0 && [contact isKindOfClass:%c(CContact)]) {
-        roomUserName = wcpl_qm_trimString(((CContact *)contact).m_nsUsrName);
+        roomUserName = wcpl_qm_copyContactUserName(contact, @"handle_not_chat_new_room");
     }
 
     BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
     NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
     NSString *oldRawList = [oldContact isKindOfClass:%c(CContact)]
-        ? [((CContact *)oldContact).m_nsChatRoomMemList copy] : nil;
+        ? wcpl_qm_copyChatRoomMemberList(oldContact, roomUserName, @"handle_not_chat_old_memlist") : nil;
     if (shouldTrack && oldRawList.length == 0) {
         (void)wcpl_qm_fetchCurrentMembersForRoom((CContactMgr *)self, roomUserName, nil, &oldRawList);
         if (oldRawList.length == 0 && cachedMembersBefore.count > 0) {
@@ -2269,15 +2481,15 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
 
 - (void)handleLocalField:(id)contact oldContact:(id)oldContact {
     NSString *roomUserName = [oldContact isKindOfClass:%c(CContact)]
-        ? wcpl_qm_trimString(((CContact *)oldContact).m_nsUsrName) : nil;
+        ? wcpl_qm_copyContactUserName(oldContact, @"handle_local_old_room") : nil;
     if (roomUserName.length == 0 && [contact isKindOfClass:%c(CContact)]) {
-        roomUserName = wcpl_qm_trimString(((CContact *)contact).m_nsUsrName);
+        roomUserName = wcpl_qm_copyContactUserName(contact, @"handle_local_new_room");
     }
 
     BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
     NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
     NSString *oldRawList = [oldContact isKindOfClass:%c(CContact)]
-        ? [((CContact *)oldContact).m_nsChatRoomMemList copy] : nil;
+        ? wcpl_qm_copyChatRoomMemberList(oldContact, roomUserName, @"handle_local_old_memlist") : nil;
     if (shouldTrack && oldRawList.length == 0) {
         (void)wcpl_qm_fetchCurrentMembersForRoom((CContactMgr *)self, roomUserName, nil, &oldRawList);
         if (oldRawList.length == 0 && cachedMembersBefore.count > 0) {

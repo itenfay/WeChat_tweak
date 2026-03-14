@@ -155,6 +155,181 @@ BOOL WCPLIsChatRoomName(NSString *name) {
     return ([trimmed rangeOfString:@"@chatroom" options:NSCaseInsensitiveSearch].location != NSNotFound);
 }
 
+BOOL WCPLQuitMonitorIsDateLikeText(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length < 5 || trimmed.length > 32) {
+        return NO;
+    }
+
+    NSCharacterSet *allowed = [NSCharacterSet characterSetWithCharactersInString:@"0123456789-:/. "];
+    if ([[trimmed stringByTrimmingCharactersInSet:allowed] length] != 0) {
+        return NO;
+    }
+
+    BOOL hasDateSep = ([trimmed rangeOfString:@"-"].location != NSNotFound ||
+                       [trimmed rangeOfString:@"/"].location != NSNotFound);
+    BOOL hasTimeSep = ([trimmed rangeOfString:@":"].location != NSNotFound);
+    return hasDateSep || hasTimeSep;
+}
+
+BOOL WCPLQuitMonitorIsLowSignalSystemText(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length == 0) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"<msgsource" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"@chatroom"].location != NSNotFound) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"wxid_"].location != NSNotFound && trimmed.length <= 64) {
+        return YES;
+    }
+    if (WCPLQuitMonitorIsDateLikeText(trimmed)) {
+        return YES;
+    }
+    return NO;
+}
+
+static BOOL wcpl_qm_containsAnyToken(NSString *text, NSArray<NSString *> *tokens) {
+    for (NSString *token in tokens) {
+        if ([text rangeOfString:token options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+static BOOL wcpl_qm_looksLikeExcludedSystemText(NSString *text) {
+    static NSArray<NSString *> *tokens = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tokens = @[
+            @"加入了群聊",
+            @"邀请",
+            @"群公告",
+            @"拍了拍",
+            @"修改群名",
+            @"群二维码",
+            @"撤回",
+            @"撤回了一条消息",
+            @"禁言",
+            @"红包",
+            @"转账",
+            @"直播",
+            @"left a message",
+            @"recalled a message"
+        ];
+    });
+    return wcpl_qm_containsAnyToken(text, tokens);
+}
+
+BOOL WCPLQuitMonitorLooksLikeQuitSystemText(NSString *content) {
+    NSString *text = WCPLTrimText(content);
+    if (text.length == 0) {
+        return NO;
+    }
+    if (wcpl_qm_looksLikeExcludedSystemText(text)) {
+        return NO;
+    }
+
+    static NSArray<NSString *> *tokens = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tokens = @[
+            @"退群",
+            @"退出了群聊",
+            @"退出群聊",
+            @"已退出群聊",
+            @"已退出该群",
+            @"离开了群聊",
+            @"离开群聊",
+            @"离开了该群",
+            @"被移出群聊",
+            @"被移出了群聊",
+            @"被踢出群聊",
+            @"left the group chat",
+            @"left the group",
+            @"removed from the group chat",
+            @"removed from the group",
+            @"delchatroommember"
+        ];
+    });
+    return wcpl_qm_containsAnyToken(text, tokens);
+}
+
+static NSInteger wcpl_qm_systemTextScore(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length == 0) {
+        return NSIntegerMin;
+    }
+
+    NSInteger score = 0;
+    if (WCPLQuitMonitorLooksLikeQuitSystemText(trimmed)) {
+        score += 1000;
+    }
+    if ([trimmed rangeOfString:@"[退群监控]"].location != NSNotFound) {
+        // 本地提示文本只用于展示，不应压过真实系统消息候选。
+        score -= 1500;
+    }
+    if (wcpl_qm_looksLikeExcludedSystemText(trimmed)) {
+        score -= 900;
+    }
+    if (WCPLQuitMonitorIsLowSignalSystemText(trimmed)) {
+        score -= 700;
+    }
+    if ([trimmed rangeOfString:@"<"].location != NSNotFound ||
+        [trimmed rangeOfString:@">"].location != NSNotFound) {
+        score -= 120;
+    }
+    if (trimmed.length >= 6 && trimmed.length <= 220) {
+        score += 30;
+    } else if (trimmed.length > 320) {
+        score -= 40;
+    }
+    return score;
+}
+
+NSString *WCPLQuitMonitorSelectBestSystemTextFromCandidates(id candidates) {
+    if (![candidates isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+
+    NSMutableOrderedSet<NSString *> *normalized = [NSMutableOrderedSet orderedSet];
+    for (id item in (NSArray *)candidates) {
+        NSString *text = WCPLTrimText(item);
+        if (text.length > 0) {
+            [normalized addObject:text];
+        }
+    }
+    if (normalized.count == 0) {
+        return nil;
+    }
+
+    NSString *bestText = nil;
+    NSInteger bestScore = NSIntegerMin;
+    for (NSString *candidate in normalized) {
+        NSInteger score = wcpl_qm_systemTextScore(candidate);
+        if (!bestText ||
+            score > bestScore ||
+            (score == bestScore && candidate.length > bestText.length)) {
+            bestText = candidate;
+            bestScore = score;
+        }
+    }
+    return bestText;
+}
+
+NSArray<NSNumber *> *WCPLQuitMonitorPendingRetryScheduleSeconds(void) {
+    static NSArray<NSNumber *> *schedule = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        schedule = @[@0.8, @2.0, @5.0, @15.0, @60.0, @300.0, @900.0, @1800.0, @7200.0];
+    });
+    return schedule;
+}
+
 NSString *WCPLNormalizeMentionCandidate(NSString *candidate) {
     NSString *value = WCPLTrimText(candidate);
     if (value.length == 0) {

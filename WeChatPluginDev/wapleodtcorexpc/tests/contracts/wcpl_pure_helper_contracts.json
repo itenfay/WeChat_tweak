@@ -509,5 +509,72 @@
       "input": "hello",
       "expected": false
     }
+  ],
+  "quit_monitor_is_date_like_text": [
+    {
+      "name": "timestamp",
+      "input": "2026-02-26 16:51:23",
+      "expected": true
+    },
+    {
+      "name": "normal_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": false
+    }
+  ],
+  "quit_monitor_is_low_signal_system_text": [
+    {
+      "name": "msgsource_xml",
+      "input": "<msgsource><atuserlist><![CDATA[x]]></atuserlist></msgsource>",
+      "expected": true
+    },
+    {
+      "name": "quit_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": false
+    }
+  ],
+  "quit_monitor_looks_like_quit_system_text": [
+    {
+      "name": "quit_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": true
+    },
+    {
+      "name": "revoke_sentence",
+      "input": "\"Alice\"撤回了一条消息",
+      "expected": false
+    }
+  ],
+  "quit_monitor_select_best_system_text": [
+    {
+      "name": "prefer_quit_text_over_revoke_text",
+      "input": [
+        "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息",
+        "Alice 退出了群聊"
+      ],
+      "expected": "Alice 退出了群聊"
+    },
+    {
+      "name": "fallback_to_only_candidate",
+      "input": [
+        "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息"
+      ],
+      "expected": "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息"
+    },
+    {
+      "name": "prefer_raw_quit_text_over_local_tip",
+      "input": [
+        "[退群监控] Alice 退出了群聊",
+        "Alice 退出了群聊"
+      ],
+      "expected": "Alice 退出了群聊"
+    }
+  ],
+  "quit_monitor_pending_retry_schedule_seconds": [
+    {
+      "name": "default_schedule",
+      "expected": [0.8, 2.0, 5.0, 15.0, 60.0, 300.0, 900.0, 1800.0, 7200.0]
+    }
   ]
 }

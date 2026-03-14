@@ -20,6 +20,11 @@ FOUNDATION_EXPORT NSString * _Nullable WCPLExtractXMLValue(NSString * _Nullable 
                                                           NSString *closeTag);
 FOUNDATION_EXPORT NSString * _Nullable WCPLExtractQuoteTitleFromXML(NSString * _Nullable xml);
 FOUNDATION_EXPORT BOOL WCPLIsChatRoomName(NSString * _Nullable name);
+FOUNDATION_EXPORT BOOL WCPLQuitMonitorIsDateLikeText(NSString * _Nullable text);
+FOUNDATION_EXPORT BOOL WCPLQuitMonitorIsLowSignalSystemText(NSString * _Nullable text);
+FOUNDATION_EXPORT BOOL WCPLQuitMonitorLooksLikeQuitSystemText(NSString * _Nullable content);
+FOUNDATION_EXPORT NSString * _Nullable WCPLQuitMonitorSelectBestSystemTextFromCandidates(id _Nullable candidates);
+FOUNDATION_EXPORT NSArray<NSNumber *> *WCPLQuitMonitorPendingRetryScheduleSeconds(void);
 FOUNDATION_EXPORT NSString * _Nullable WCPLNormalizeMentionCandidate(NSString * _Nullable candidate);
 FOUNDATION_EXPORT NSString * _Nullable WCPLExtractMentionCandidateFromXML(NSString * _Nullable xmlText);
 FOUNDATION_EXPORT NSString * _Nullable WCPLExtractMentionCandidateFromGroupContentPrefix(NSString * _Nullable content);

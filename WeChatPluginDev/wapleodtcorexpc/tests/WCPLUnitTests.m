@@ -384,6 +384,39 @@ static BOOL testQuitMonitorScopeMigration(void) {
     return YES;
 }
 
+static BOOL testQuitMonitorPureHelpers(void) {
+    WCPL_ASSERT(WCPLQuitMonitorIsDateLikeText(@"2026-02-26 16:51:23") == YES,
+                "timestamp should be recognized as date-like text");
+    WCPL_ASSERT(WCPLQuitMonitorIsDateLikeText(@"Alice 退出了群聊") == NO,
+                "quit text should not be recognized as date-like text");
+    WCPL_ASSERT(WCPLQuitMonitorIsLowSignalSystemText(@"<msgsource><username><![CDATA[x]]></username></msgsource>") == YES,
+                "msgsource xml should be treated as low-signal");
+    WCPL_ASSERT(WCPLQuitMonitorLooksLikeQuitSystemText(@"Alice 退出了群聊") == YES,
+                "quit text should be recognized");
+    WCPL_ASSERT(WCPLQuitMonitorLooksLikeQuitSystemText(@"\"Alice\"撤回了一条消息") == NO,
+                "revoke text should not be recognized as quit");
+
+    NSString *best = WCPLQuitMonitorSelectBestSystemTextFromCandidates(@[
+        @"2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息",
+        @"Alice 退出了群聊"
+    ]);
+    WCPL_ASSERT([best isEqualToString:@"Alice 退出了群聊"],
+                "quit monitor should prefer quit candidate over revoke candidate");
+
+    NSString *bestAgainstLocalTip = WCPLQuitMonitorSelectBestSystemTextFromCandidates(@[
+        @"[退群监控] Alice 退出了群聊",
+        @"Alice 退出了群聊"
+    ]);
+    WCPL_ASSERT([bestAgainstLocalTip isEqualToString:@"Alice 退出了群聊"],
+                "quit monitor should prefer raw system text over local monitor tip");
+
+    NSArray<NSNumber *> *schedule = WCPLQuitMonitorPendingRetryScheduleSeconds();
+    NSArray<NSNumber *> *expected = @[@0.8, @2.0, @5.0, @15.0, @60.0, @300.0, @900.0, @1800.0, @7200.0];
+    WCPL_ASSERT([schedule isEqualToArray:expected],
+                "quit monitor pending retry schedule mismatch");
+    return YES;
+}
+
 static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
     wcpl_clearDefaultsKeys(@[kWCPLReceiveDonePageSummaryEnableKey]);
 
@@ -471,6 +504,7 @@ int main(void) {
     failed += !runTest("testConfigSanitizerHostFunctions", testConfigSanitizerHostFunctions);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
     failed += !runTest("testQuitMonitorScopeMigration", testQuitMonitorScopeMigration);
+    failed += !runTest("testQuitMonitorPureHelpers", testQuitMonitorPureHelpers);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
     failed += !runTest("testThreadSafeDictionaryConcurrentReadWriteNoDeadlock",
                        testThreadSafeDictionaryConcurrentReadWriteNoDeadlock);
