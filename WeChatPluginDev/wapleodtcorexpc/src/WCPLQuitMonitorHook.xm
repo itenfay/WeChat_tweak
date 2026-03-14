@@ -1760,7 +1760,8 @@ static void wcpl_qm_schedulePendingSnapshotAttempt(NSString *eventKey, NSUIntege
                                         (unsigned long)(attemptIndex + 1),
                                         (unsigned long)oldMembersSnapshot.count,
                                         (unsigned long)newMembers.count);
-                           wcpl_qm_advancePendingSnapshotAttempt(keyCopy, attemptIndex + 1);
+                           wcpl_qm_updateCachedMembersForRoom(room, newMembers);
+                           wcpl_qm_removePendingSnapshotEvent(keyCopy, @"no_change_snapshot");
                            return;
                        }
 
