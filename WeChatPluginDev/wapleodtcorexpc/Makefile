@@ -61,9 +61,12 @@ WCPL_COMPILE_FILES := \
 	src/WCPLPluginEntryHook.xm \
 	src/WCPLPush2ChatConfig.m \
 	src/WCPLPush2ChatHook.xm \
-	src/WCPLPureHelpers.m \
-	src/WCPLQuitMonitorHook.xm \
-	src/WCPLRealtimeLogUploader.m \
+		src/WCPLPureHelpers.m \
+		src/WCPLQuitMonitorHelpers.m \
+		src/WCPLQuitMonitorHook.xm \
+		src/WCPLQuitMonitorMessageAdapter.m \
+		src/WCPLQuitMonitorService.m \
+		src/WCPLRealtimeLogUploader.m \
 	src/WCPLReceiveRedEnvelopOperation.m \
 	src/WCPLRedEnvelopBackgroundTaskTracker.m \
 	src/WCPLRedEnvelopConfig.m \
@@ -77,9 +80,12 @@ WCPL_COMPILE_FILES := \
 	src/WCPLRedEnvelopParamQueue.m \
 	src/WCPLRedEnvelopTaskManager.m \
 	src/WCPLRevokeAnchor.m \
+	src/WCPLRevokeMessageLookupAdapter.m \
+	src/WCPLRevokePersistenceAdapter.m \
 	src/WCPLRepeatCellAdapter.m \
 	src/WCPLRepeatButtonAssetManager.m \
 	src/WCPLRepeatButtonEngine.m \
+	src/WCPLSafariOpenHook.xm \
 	src/WCPLRevokeConfig.m \
 	src/WCPLRevokeHook.xm \
 	src/WCPLSafeStringContact.m \
@@ -99,6 +105,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLTimelineConfig.m \
 	src/WCPLTypeGuard.m \
 	src/WCPLUnifiedMultiSelectViewController.m \
+	src/WCPLWebViewOpenAdapter.m \
 	src/WeChatRedEnvelopParam.m
 $(TWEAK_NAME)_FILES = $(WCPL_COMPILE_FILES)
 
@@ -167,7 +174,7 @@ before-all::
 	@echo "[wcpl] internal include files (must stay blocked): $(WCPL_INTERNAL_INCLUDE_FILES)"
 	@echo "[wcpl] blocked files: $(WCPL_BLOCKED_FILES)"
 
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore UserNotifications
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore SafariServices UserNotifications
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
 
