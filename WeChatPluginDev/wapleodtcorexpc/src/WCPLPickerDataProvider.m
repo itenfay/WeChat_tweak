@@ -1,5 +1,6 @@
 #import "WCPLPickerDataProvider.h"
 #import "WCPLPickerItem.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLTypeGuard.h"
@@ -31,7 +32,7 @@
                 if (!contact) {
                     continue;
                 }
-                NSString *identifier = [self wcpl_userNameFromContact:contact];
+                NSString *identifier = WCPLContactAdapterSafeUserName(contact);
                 if (identifier.length == 0 || [seenContactIdentifier containsObject:identifier]) {
                     continue;
                 }
@@ -45,7 +46,7 @@
     NSMutableArray<WCPLPickerItem *> *results = [NSMutableArray array];
 
     for (id contact in sourceContacts) {
-        NSString *identifier = [self wcpl_userNameFromContact:contact];
+        NSString *identifier = WCPLContactAdapterSafeUserName(contact);
         if (identifier.length == 0 || [seen containsObject:identifier]) {
             continue;
         }
@@ -53,7 +54,7 @@
         WCPLPickerItemType type = WCPLIsChatRoomName(identifier)
                                  ? WCPLPickerItemTypeGroup
                                  : WCPLPickerItemTypeUser;
-        NSString *displayName = [self wcpl_displayNameFromContact:contact fallback:identifier];
+        NSString *displayName = WCPLContactAdapterDisplayNameForContact(contact, identifier) ?: identifier;
         NSString *subtitle = type == WCPLPickerItemTypeGroup ? @"群聊" : @"联系人";
 
         WCPLPickerItem *item = [[WCPLPickerItem alloc] initWithIdentifier:identifier
@@ -100,51 +101,6 @@
     }
 
     return WCPLArrayOrNil(contacts) ?: @[];
-}
-
-+ (NSString *)wcpl_userNameFromContact:(id)contact {
-    if (!contact) {
-        return @"";
-    }
-
-    NSString *userName = nil;
-    @try {
-        id value = [contact valueForKey:@"m_nsUsrName"];
-        userName = WCPLStringOrNil(value);
-    } @catch (__unused NSException *exception) {
-        userName = nil;
-    }
-
-    return WCPLNonEmptyStringOrNil(userName) ?: @"";
-}
-
-+ (NSString *)wcpl_displayNameFromContact:(id)contact fallback:(NSString *)fallback {
-    if (!contact) {
-        return fallback;
-    }
-
-    NSString *displayName = nil;
-    @try {
-        if ([contact respondsToSelector:@selector(getContactDisplayName)]) {
-            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(getContactDisplayName));
-            displayName = WCPLStringOrNil(value);
-        }
-    } @catch (__unused NSException *exception) {
-        displayName = nil;
-    }
-
-    if (displayName.length == 0) {
-        @try {
-            if ([contact respondsToSelector:@selector(m_nsNickName)]) {
-                id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsNickName));
-                displayName = WCPLStringOrNil(value);
-            }
-        } @catch (__unused NSException *exception2) {
-            displayName = nil;
-        }
-    }
-
-    return WCPLNonEmptyStringOrNil(displayName) ?: fallback;
 }
 
 @end

@@ -18,7 +18,9 @@
 #import "WCPLFuncService.h"
 #import "WCPLDispatchUtils.h"
 #import "WCPLHookGovernance.h"
+#import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLMessagePersistenceAdapter.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLServiceCenterAdapter.h"
 #import <UIKit/UIKit.h>
@@ -45,9 +47,6 @@ static NSTimeInterval const kWCPLReceiverQueryMatchRetryDelay = 0.03;
 static NSUInteger const kWCPLReceiverQueryMatchMaxRetryCount = 3;
 static NSString *const kWCPLHookFeatureRedEnvelop = @"red_envelop";
 
-static NSString *wcpl_trimString(NSString *text);
-static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen);
-
 static void wcpl_redEnvelopHookLogCMessageMgr(NSString *selectorName,
                                               NSString *stage,
                                               NSString *decision,
@@ -62,16 +61,10 @@ static void wcpl_redEnvelopHookLogCMessageMgr(NSString *selectorName,
                            detail);
 }
 
-static NSString *wcpl_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
-}
-
 static NSString *wcpl_replyTextForSession(NSString *sessionUserName, BOOL isGroup) {
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSString *rawText = isGroup ? config.groupAutoReplyText : config.privateAutoReplyText;
-    NSString *trimmed = wcpl_trimString(rawText);
+    NSString *trimmed = WCPLTrimText(rawText);
     if (trimmed.length == 0) {
         return nil;
     }
@@ -123,19 +116,6 @@ static NSString *wcpl_redEnvelopNotifyMessage(NSString *sessionUserName, NSInteg
     [message appendFormat:@"\n红包总额：%@", hasTotal ? [NSString stringWithFormat:@"¥%@", totalYuan] : @"未获取"];
     [message appendString:@"\n状态：已自动领取"];
     return message;
-}
-
-static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
-    NSString *value = wcpl_trimString(text);
-    if (value.length == 0) return nil;
-
-    value = [[value stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-                stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-
-    if (maxLen > 0 && value.length > maxLen) {
-        value = [[value substringToIndex:maxLen] stringByAppendingString:@"…"];
-    }
-    return value;
 }
 
 static int wcpl_intFromSelector(id obj, SEL sel) {
@@ -368,7 +348,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
         WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
         if (!config.autoReceiveEnable) { return NO; }
 
-        BOOL isGroupSession = ([mgrParams.sessionUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+        BOOL isGroupSession = WCPLIsChatRoomName(mgrParams.sessionUserName);
         if (isGroupSession) {
             if (!config.groupRedEnvelopEnable) { return NO; }
             if (mgrParams.isGroupSender && !config.receiveSelfRedEnvelop) { return NO; }
@@ -404,7 +384,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
     BOOL allowOpen = shouldReceiveRedEnvelop();
     if (mgrParams) {
         WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-        BOOL isGroupSession = ([mgrParams.sessionUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+        BOOL isGroupSession = WCPLIsChatRoomName(mgrParams.sessionUserName);
         WCPLLogDebug(@"红包回包判定: session=%@ isGroup=%d scope=%ld wl=%lu deny=%lu allow=%d",
                      mgrParams.sessionUserName ?: @"",
                      isGroupSession,
@@ -583,7 +563,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
         return;
     }
 
-    BOOL isGroup = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    BOOL isGroup = WCPLIsChatRoomName(session);
     WCPLLogDebug(@"红包打开回包: cmd=4 成功 isGroup=%d session=%@ source=%@ sendId=%@ signLen=%lu timingLen=%lu receiveStatus=%ld retCode=%ld amount=%ld",
                  isGroup,
                  session,
@@ -614,7 +594,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
     NSString *sessionCopy = [session copy];
     NSString *replyCopy = [replyText copy];
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *replyPreview = wcpl_sanitizeInlineText(replyCopy, 80) ?: @"";
+        NSString *replyPreview = WCPLSanitizeInlineText(replyCopy, 80) ?: @"";
         WCPLLogDebug(@"红包自动回复准备: session=%@ isGroup=%d textLen=%lu preview=%@",
                      sessionCopy,
                      isGroup,
@@ -675,7 +655,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
     }
 
     NSString *sceneDisplay = WCPLRedEnvelopNotifySceneDisplayText(session);
-    NSString *messagePreview = wcpl_sanitizeInlineText(message, 120) ?: @"";
+    NSString *messagePreview = WCPLSanitizeInlineText(message, 120) ?: @"";
     WCPLLogDebug(@"抢包通知准备: sourceSession=%@ scene=%@ target=%ld receiver=%@ msgLen=%lu preview=%@",
                  session,
                  sceneDisplay ?: @"",
@@ -750,7 +730,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
         return sentOnMain;
     }
 
-    NSString *text = wcpl_trimString(content);
+    NSString *text = WCPLTrimText(content);
     NSString *session = WCPLRedEnvelopNormalizeSessionUserName(sessionUserName);
     if (text.length == 0 || session.length == 0) {
         return NO;
@@ -851,7 +831,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
         } @catch (__unused NSException *exceptionStatus) { WCPLCatchLog(exceptionStatus); }
     }
 
-    if ([session rangeOfString:@"@chatroom"].location != NSNotFound) {
+    if (WCPLIsChatRoomName(session)) {
         if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), selfUserName);
         } else {
@@ -880,22 +860,18 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
             } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
         }
 
-        if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-            @try {
-                [msgMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:YES NewMsgArriveNotify:YES];
-                sent = YES;
-                path = @"AddLocalMsgFixTime";
-                return;
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-        }
-
-        if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-            @try {
-                [msgMgr AddLocalMsg:session MsgWrap:msgWrap];
-                sent = YES;
-                path = @"AddLocalMsg";
-                return;
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+        WCPLAddLocalMsgInsertPath insertPath = WCPLAddLocalMsgInsertPathNone;
+        sent = WCPLAddLocalMsgInsert((WCPLAddLocalMsgInsertRequest){
+                                         .messageMgr = msgMgr,
+                                         .sessionUserName = session,
+                                         .msgWrap = msgWrap,
+                                         .fixTime = YES,
+                                         .notify = YES,
+                                         .unique = NO,
+                                     },
+                                     &insertPath);
+        if (sent) {
+            path = WCPLAddLocalMsgInsertPathDescription(insertPath);
         }
     };
 
@@ -1034,7 +1010,7 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
                     WCPLLogDebug(@"红包入口跳过: reason=nativeUrl_empty from=%@ to=%@ msgSnippet=%@",
                                  fromUserName,
                                  toUserName,
-                                 wcpl_sanitizeInlineText(msgText, 120) ?: @"");
+                                 WCPLSanitizeInlineText(msgText, 120) ?: @"");
                 }
                 break;
             }
@@ -1043,14 +1019,14 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
                     WCPLLogDebug(@"红包入口跳过: reason=prefix_mismatch from=%@ to=%@ url=%@",
                                  fromUserName,
                                  toUserName,
-                                 wcpl_sanitizeInlineText(nativeUrl, 180) ?: @"");
+                                 WCPLSanitizeInlineText(nativeUrl, 180) ?: @"");
                 }
                 break;
             }
             WCPLLogDebug(@"红包入口命中: from=%@ to=%@ url=%@",
                          fromUserName,
                          toUserName,
-                         wcpl_sanitizeInlineText(nativeUrl, 180) ?: @"");
+                         WCPLSanitizeInlineText(nativeUrl, 180) ?: @"");
 
             WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
             if (!config.autoReceiveEnable) {
@@ -1063,8 +1039,8 @@ static int wcpl_intFromSelector(id obj, SEL sel) {
             NSString *selfUserName = WCPLContactAdapterCurrentSelfUserName() ?: @"";
 
             BOOL isSender = (selfUserName.length > 0 && [wrap.m_nsFromUsr isEqualToString:selfUserName]);
-            BOOL isGroupReceiver = ([wrap.m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
-            BOOL isGroupSender = (isSender && [wrap.m_nsToUsr rangeOfString:@"@chatroom"].location != NSNotFound);
+            BOOL isGroupReceiver = WCPLIsChatRoomName(wrap.m_nsFromUsr);
+            BOOL isGroupSender = (isSender && WCPLIsChatRoomName(wrap.m_nsToUsr));
             BOOL isGroup = (isGroupReceiver || isGroupSender);
 
             if (isGroup) {

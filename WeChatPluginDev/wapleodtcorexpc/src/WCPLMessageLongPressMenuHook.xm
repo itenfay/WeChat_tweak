@@ -2,16 +2,29 @@
 
 // 保持特殊消息 Cell 的滑动手势初始化
 
+static void wcpl_messageLongPressCellDidMoveToWindow(id cell) {
+    UIView *view = [cell isKindOfClass:[UIView class]] ? (UIView *)cell : nil;
+    if (!view) {
+        return;
+    }
+
+    if (view.window) {
+        [cell wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [cell wchook_resetSwipeAnimated:NO];
+    }
+}
+
+static inline BOOL wcpl_messageLongPressIsRepeatAction(SEL action) {
+    return (action == @selector(wcpl_handleRepeatMenuItem:));
+}
+
 %hook AppEmoticonMessageCellView
 
 - (void)didMoveToWindow {
     %orig;
 
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
+    wcpl_messageLongPressCellDidMoveToWindow(self);
 }
 
 - (id)operationMenuItems {
@@ -20,7 +33,7 @@
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
-    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+    if (wcpl_messageLongPressIsRepeatAction(arg1)) {
         return wcpl_isRepeatSupportedForCell(self);
     }
     return %orig;
@@ -39,11 +52,7 @@
 - (void)didMoveToWindow {
     %orig;
 
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
+    wcpl_messageLongPressCellDidMoveToWindow(self);
 }
 
 - (id)operationMenuItems {
@@ -52,7 +61,7 @@
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
-    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+    if (wcpl_messageLongPressIsRepeatAction(arg1)) {
         return wcpl_isRepeatSupportedForCell(self);
     }
     return %orig;
@@ -72,11 +81,7 @@
 - (void)didMoveToWindow {
     %orig;
 
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
+    wcpl_messageLongPressCellDidMoveToWindow(self);
 }
 
 - (id)operationMenuItems {
@@ -85,7 +90,7 @@
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
-    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+    if (wcpl_messageLongPressIsRepeatAction(arg1)) {
         return wcpl_isRepeatSupportedForCell(self);
     }
     return %orig;
@@ -104,11 +109,7 @@
 - (void)didMoveToWindow {
     %orig;
 
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
+    wcpl_messageLongPressCellDidMoveToWindow(self);
 }
 
 - (id)operationMenuItems {
@@ -117,7 +118,7 @@
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
-    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+    if (wcpl_messageLongPressIsRepeatAction(arg1)) {
         return wcpl_isRepeatSupportedForCell(self);
     }
     return %orig;

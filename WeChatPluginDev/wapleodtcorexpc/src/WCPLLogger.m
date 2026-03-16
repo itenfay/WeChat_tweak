@@ -5,7 +5,10 @@
 //
 
 #import "WCPLLogger.h"
+#import "WCPLAppContextInfo.h"
 #import "WCPLConstants.h"
+#import "WCPLDispatchUtils.h"
+#import "WCPLFileHelpers.h"
 #import <UIKit/UIKit.h>
 
 @interface WCPLLogger ()
@@ -298,8 +301,7 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
             return @"日志文件为空";
         }
 
-        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
-        unsigned long long fileSize = [attributes fileSize];
+        unsigned long long fileSize = WCPLFileSizeAtPath(path);
         if (fileSize == 0) {
             return @"日志文件为空";
         }
@@ -369,18 +371,9 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
         return;
     }
 
-    if (dispatch_get_specific(kWCPLLoggerQueueSpecificKey)) {
-        @autoreleasepool {
-            @try {
-                [self writeToFileLocked:message forceSync:YES];
-            } @catch (NSException *exception) {
-                NSLog(@"[WCPL] Failed to write urgent log(inline): %@", exception.reason);
-            }
-        }
-        return;
-    }
-
-    dispatch_sync(_logQueue, ^{
+    WCPLDispatchQueueSpecific specific =
+        WCPLDispatchQueueSpecificMake(kWCPLLoggerQueueSpecificKey, kWCPLLoggerQueueSpecificKey);
+    WCPLDispatchSyncSafe(_logQueue, specific, ^{
         @autoreleasepool {
             @try {
                 [self writeToFileLocked:message forceSync:YES];
@@ -427,8 +420,7 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
 
 - (void)checkAndRotateLogFile {
     @try {
-        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:_logFilePath error:nil];
-        unsigned long long fileSize = [attributes fileSize];
+        unsigned long long fileSize = WCPLFileSizeAtPath(_logFilePath);
 
         // 超过 5MB，保留最后 2MB 的日志
         if (fileSize > 5 * 1024 * 1024) {
@@ -492,26 +484,7 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
 }
 
 - (NSString *)startupContextInfo {
-    UIDevice *device = [UIDevice currentDevice];
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSDictionary *info = [bundle infoDictionary] ?: @{};
-
-    NSString *bundleId = [bundle bundleIdentifier] ?: @"";
-    NSString *version = info[@"CFBundleShortVersionString"] ?: @"";
-    NSString *build = info[@"CFBundleVersion"] ?: @"";
-    NSString *process = [NSProcessInfo processInfo].processName ?: @"";
-    NSString *systemName = device.systemName ?: @"iOS";
-    NSString *systemVersion = device.systemVersion ?: @"";
-
-    return [NSString stringWithFormat:@"进程: %@\n设备: %@ (%@)\n系统: %@ %@\nApp: %@ %@(%@)",
-            process,
-            device.model ?: @"",
-            device.name ?: @"",
-            systemName,
-            systemVersion,
-            bundleId,
-            version,
-            build];
+    return WCPLBuildAppContextInfoString();
 }
 
 @end

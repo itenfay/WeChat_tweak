@@ -1,3 +1,9 @@
+// Internal include-only module.
+// Stitched into src/WCPLMessageHook.xm by scripts/generate_wcpl_message_hook.sh.
+// Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLUserNameHelpers.h"
+
 static BOOL wcpl_isTargetChatForSearchButton(id viewController) {
     if (!viewController) {
         return NO;
@@ -88,7 +94,7 @@ static BOOL wcpl_shouldSkipChatSearchButtonInjection(id viewController,
         *reasonOut = nil;
     }
 
-    if (userName.length > 0 && [userName caseInsensitiveCompare:@"filehelper"] == NSOrderedSame) {
+    if (WCPLIsFileHelperUserName(userName)) {
         if (reasonOut) {
             *reasonOut = @"filehelper_skip";
         }
@@ -1047,4 +1053,3 @@ static void wcpl_scheduleChatSearchButtonRepair(id controller, NSString *stage) 
         dispatch_async(dispatch_get_main_queue(), scheduleOnMain);
     }
 }
-

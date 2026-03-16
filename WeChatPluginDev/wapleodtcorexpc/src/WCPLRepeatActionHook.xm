@@ -1,3 +1,5 @@
+#import "WCPLPureHelpers.h"
+
 static void wcpl_repeatHandleQuoteMessage(CMessageWrap *msgWrap,
                                           NSString *chatName,
                                           BaseMsgContentViewController *chatVC,
@@ -86,7 +88,7 @@ static BOOL wcpl_repeatSendEmoticonViaMessageMgr(CMessageWrap *msgWrap,
             newWrap.m_nsFromUsr = fromUser;
         }
 
-        if ([chatName rangeOfString:@"@chatroom"].location != NSNotFound &&
+        if (WCPLIsChatRoomName(chatName) &&
             selfUserName.length > 0 &&
             [newWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
             @try {

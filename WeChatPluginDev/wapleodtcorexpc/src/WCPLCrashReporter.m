@@ -5,6 +5,10 @@
 //
 
 #import "WCPLCrashReporter.h"
+#import "WCPLAppContextInfo.h"
+#import "WCPLAlertTextHelpers.h"
+#import "WCPLFileHelpers.h"
+#import "WCPLUIKitHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 
@@ -44,12 +48,7 @@ static volatile uint32_t wcpl_diagnostic_seq = 0;
 static char wcpl_diagnostic_ring[kWCPLCrashDiagnosticRingSize][kWCPLCrashDiagnosticMaxLen] = {{0}};
 
 static NSString *WCPLNormalizeCrashText(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
-        return @"";
-    }
-    NSString *normalized = [text stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-    normalized = [normalized stringByReplacingOccurrencesOfString:@"\r" withString:@" "];
-    return normalized;
+    return WCPLSanitizeInlineText(text, 0) ?: @"";
 }
 
 static void WCPLStoreRingEntry(volatile uint32_t *seqStorage,
@@ -351,61 +350,6 @@ static void WCPLInstallSignalHandler(int sig) {
     sigaction(sig, &action, NULL);
 }
 
-static NSString *WCPLApplicationStateDescription(UIApplicationState state) {
-    switch (state) {
-        case UIApplicationStateActive: return @"active";
-        case UIApplicationStateInactive: return @"inactive";
-        case UIApplicationStateBackground: return @"background";
-    }
-    return [NSString stringWithFormat:@"unknown(%ld)", (long)state];
-}
-
-static UIViewController *WCPLTopVisibleViewController(void) {
-    UIApplication *application = [UIApplication sharedApplication];
-    UIWindow *keyWindow = nil;
-    if ([application respondsToSelector:@selector(connectedScenes)]) {
-        for (id scene in application.connectedScenes) {
-            if (![scene isKindOfClass:[UIWindowScene class]]) {
-                continue;
-            }
-            for (UIWindow *window in ((UIWindowScene *)scene).windows) {
-                if ([window isKindOfClass:[UIWindow class]] && window.isKeyWindow) {
-                    keyWindow = window;
-                    break;
-                }
-            }
-            if (keyWindow) {
-                break;
-            }
-        }
-    }
-    if (!keyWindow) {
-        for (UIWindow *window in application.windows) {
-            if (![window isKindOfClass:[UIWindow class]]) {
-                continue;
-            }
-            if (window.isKeyWindow) {
-                keyWindow = window;
-                break;
-            }
-            if (!keyWindow && !window.hidden && window.alpha > 0.01) {
-                keyWindow = window;
-            }
-        }
-    }
-
-    UIViewController *controller = keyWindow.rootViewController;
-    while (controller.presentedViewController) {
-        controller = controller.presentedViewController;
-    }
-    if ([controller isKindOfClass:[UINavigationController class]]) {
-        controller = ((UINavigationController *)controller).topViewController;
-    } else if ([controller isKindOfClass:[UITabBarController class]]) {
-        controller = ((UITabBarController *)controller).selectedViewController;
-    }
-    return controller;
-}
-
 @interface WCPLCrashReporter (Private)
 - (void)handleException:(NSException *)exception;
 - (void)recordLifecycleDiagnostic:(NSString *)event;
@@ -627,8 +571,7 @@ static void WCPLHandleException(NSException *exception) {
     if (logPath.length == 0) {
         return;
     }
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
-    if (!attributes || [attributes fileSize] == 0) {
+    if (WCPLFileSizeAtPath(logPath) == 0) {
         [self clearCrashMarker];
         return;
     }
@@ -728,26 +671,7 @@ static void WCPLHandleException(NSException *exception) {
 }
 
 - (NSString *)appContextInfo {
-    UIDevice *device = [UIDevice currentDevice];
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSDictionary *info = [bundle infoDictionary] ?: @{};
-
-    NSString *bundleId = [bundle bundleIdentifier] ?: @"";
-    NSString *version = info[@"CFBundleShortVersionString"] ?: @"";
-    NSString *build = info[@"CFBundleVersion"] ?: @"";
-    NSString *process = [NSProcessInfo processInfo].processName ?: @"";
-    NSString *systemName = device.systemName ?: @"iOS";
-    NSString *systemVersion = device.systemVersion ?: @"";
-
-    return [NSString stringWithFormat:@"进程: %@\n设备: %@ (%@)\n系统: %@ %@\nApp: %@ %@(%@)",
-            process,
-            device.model ?: @"",
-            device.name ?: @"",
-            systemName,
-            systemVersion,
-            bundleId,
-            version,
-            build];
+    return WCPLBuildAppContextInfoString();
 }
 
 - (BOOL)hasPendingCrashMarker {

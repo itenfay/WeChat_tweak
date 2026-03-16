@@ -2,8 +2,11 @@
 #import <UserNotifications/UserNotifications.h>
 
 #import "WCPLConfigCenter.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLHookGovernance.h"
+#import "WCPLUIKitHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
 
 #import <dispatch/dispatch.h>
@@ -43,15 +46,6 @@ static void wcpl_push2chat_hookLog(NSString *className,
 
 static NSString *wcpl_push2chat_contextDescription(WCPLPush2ChatContext context) {
     return (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg";
-}
-
-static NSString *wcpl_push2chat_applicationStateDescription(UIApplicationState state) {
-    switch (state) {
-        case UIApplicationStateActive: return @"active";
-        case UIApplicationStateInactive: return @"inactive";
-        case UIApplicationStateBackground: return @"background";
-    }
-    return [NSString stringWithFormat:@"unknown(%ld)", (long)state];
 }
 
 static dispatch_queue_t wcpl_push2chat_traceQueue(void) {
@@ -114,45 +108,12 @@ static void wcpl_push2chat_trace(NSString *format, ...) {
     });
 }
 
-static NSString *wcpl_trimString(NSString *text);
 static BOOL wcpl_push2chat_pageSheetIsVisible(void);
 static BOOL wcpl_push2chat_hasForegroundHostUI(void);
 static NSString *wcpl_push2chat_actionIdentifierFromResponse(id response);
 
 static UIWindow *wcpl_push2chat_activeKeyWindow(void) {
-    UIApplication *application = [UIApplication sharedApplication];
-    UIWindow *keyWindow = nil;
-
-    if ([application respondsToSelector:@selector(connectedScenes)]) {
-        for (id scene in application.connectedScenes) {
-            if (![scene isKindOfClass:[UIWindowScene class]]) continue;
-            UIWindowScene *windowScene = (UIWindowScene *)scene;
-            if (windowScene.activationState != UISceneActivationStateForegroundActive &&
-                windowScene.activationState != UISceneActivationStateForegroundInactive) {
-                continue;
-            }
-            for (UIWindow *window in windowScene.windows) {
-                if (![window isKindOfClass:[UIWindow class]]) continue;
-                if (window.isKeyWindow) return window;
-                if (!keyWindow && !window.hidden && window.alpha > 0.01) {
-                    keyWindow = window;
-                }
-            }
-            if (keyWindow) return keyWindow;
-        }
-    }
-
-    if (!keyWindow && [application respondsToSelector:@selector(windows)]) {
-        for (UIWindow *window in application.windows) {
-            if (![window isKindOfClass:[UIWindow class]]) continue;
-            if (window.isKeyWindow) return window;
-            if (!keyWindow && !window.hidden && window.alpha > 0.01) {
-                keyWindow = window;
-            }
-        }
-    }
-
-    return keyWindow;
+    return WCPLKeyWindow();
 }
 
 static NSString *wcpl_push2chat_pendingUserName = nil;
@@ -184,7 +145,7 @@ static const CFTimeInterval kWCPLPush2ChatTransitionCoverMaxAge = 3.0;
 static void wcpl_push2chat_setPendingUserName(NSString *userName,
                                               WCPLPush2ChatContext context,
                                               NSString *source) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
 
     wcpl_push2chat_pendingUserName = [trimmed copy];
@@ -197,7 +158,7 @@ static void wcpl_push2chat_setPendingUserName(NSString *userName,
 }
 
 static void wcpl_push2chat_markColdStartUserName(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
 
     wcpl_push2chat_coldStartUserName = [trimmed copy];
@@ -219,7 +180,7 @@ static BOOL wcpl_push2chat_hasFreshColdStartUserName(NSString *userName, CFTimeI
         return NO;
     }
 
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return YES;
     return [wcpl_push2chat_coldStartUserName isEqualToString:trimmed];
 }
@@ -227,7 +188,7 @@ static BOOL wcpl_push2chat_hasFreshColdStartUserName(NSString *userName, CFTimeI
 static void wcpl_push2chat_clearColdStartUserNameIfMatch(NSString *userName, NSString *reason) {
     if (![wcpl_push2chat_coldStartUserName isKindOfClass:[NSString class]]) return;
 
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length > 0 && ![wcpl_push2chat_coldStartUserName isEqualToString:trimmed]) {
         return;
     }
@@ -265,7 +226,7 @@ static NSString *wcpl_push2chat_takePendingUserNameIfFresh(CFTimeInterval maxAge
 }
 
 static void wcpl_push2chat_clearPendingUserNameIfMatch(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
     if (![wcpl_push2chat_pendingUserName isKindOfClass:[NSString class]]) return;
     if (![wcpl_push2chat_pendingUserName isEqualToString:trimmed]) return;
@@ -277,7 +238,7 @@ static void wcpl_push2chat_clearPendingUserNameIfMatch(NSString *userName, NSStr
 }
 
 static void wcpl_push2chat_recordPageSheetUserName(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
     wcpl_push2chat_lastPageSheetUserName = [trimmed copy];
     wcpl_push2chat_lastPageSheetSetTime = CFAbsoluteTimeGetCurrent();
@@ -285,7 +246,7 @@ static void wcpl_push2chat_recordPageSheetUserName(NSString *userName, NSString 
 }
 
 static BOOL wcpl_push2chat_recentPageSheetUserMatches(NSString *userName, CFTimeInterval maxAge) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return NO;
     if (![wcpl_push2chat_lastPageSheetUserName isKindOfClass:[NSString class]]) return NO;
     if (![wcpl_push2chat_lastPageSheetUserName isEqualToString:trimmed]) return NO;
@@ -301,7 +262,7 @@ static BOOL wcpl_push2chat_hasRecentPageSheet(CFTimeInterval maxAge) {
 }
 
 static void wcpl_push2chat_markPreparedPageSheetUserName(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
 
     wcpl_push2chat_preparedPageSheetUserName = [trimmed copy];
@@ -332,7 +293,7 @@ static void wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(NSString *userN
     NSString *prepared = wcpl_push2chat_preparedPageSheetUserNameIfFresh(kWCPLPush2ChatPreparedPageSheetMaxAge);
     if (prepared.length == 0) return;
 
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length > 0 && ![prepared isEqualToString:trimmed]) {
         return;
     }
@@ -345,7 +306,7 @@ static void wcpl_push2chat_clearPreparedPageSheetUserNameIfMatch(NSString *userN
 }
 
 static void wcpl_push2chat_recordAppearedChatUserName(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
 
     wcpl_push2chat_lastAppearedChatUserName = [trimmed copy];
@@ -356,7 +317,7 @@ static void wcpl_push2chat_recordAppearedChatUserName(NSString *userName, NSStri
 }
 
 static BOOL wcpl_push2chat_chatDidAppearRecently(NSString *userName, CFTimeInterval maxAge) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return NO;
     if (![wcpl_push2chat_lastAppearedChatUserName isKindOfClass:[NSString class]]) return NO;
     if (![wcpl_push2chat_lastAppearedChatUserName isEqualToString:trimmed]) return NO;
@@ -381,7 +342,7 @@ static void wcpl_push2chat_hideTransitionCover(NSString *reason) {
 }
 
 static void wcpl_push2chat_showTransitionCover(NSString *userName, NSString *reason) {
-    NSString *trimmed = wcpl_trimString(userName);
+    NSString *trimmed = WCPLTrimText(userName);
     if (trimmed.length == 0) return;
 
     UIWindow *window = wcpl_push2chat_activeKeyWindow();
@@ -441,7 +402,7 @@ static WCPLPush2ChatContext wcpl_push2chat_resolveContextOnMainQueue(WCPLPush2Ch
         context = WCPLPush2ChatContextForeground;
         wcpl_push2chat_trace(@"context promote -> fg: source=%@ state=%@ user=%@ reason=process_alive",
                              source ?: @"(nil)",
-                             wcpl_push2chat_applicationStateDescription(state),
+                             WCPLApplicationStateDescription(state),
                              userName ?: @"(nil)");
     }
 
@@ -459,7 +420,7 @@ static WCPLPush2ChatContext wcpl_push2chat_resolveContextOnMainQueue(WCPLPush2Ch
         if (context != WCPLPush2ChatContextForeground) {
             wcpl_push2chat_trace(@"context resolve -> fg: source=%@ state=%@ pageSheet=%@ recent=%@ hostUI=%@",
                                  source ?: @"(nil)",
-                                 wcpl_push2chat_applicationStateDescription(state),
+                                 WCPLApplicationStateDescription(state),
                                  pageSheetVisible ? @"YES" : @"NO",
                                  hasRecentPageSheet ? @"YES" : @"NO",
                                  hasForegroundHostUI ? @"YES" : @"NO");
@@ -496,21 +457,13 @@ static void wcpl_push2chat_installDidBecomeActiveObserverOnce(void) {
                                                                                          pending);
                 wcpl_push2chat_trace(@"becomeActive: pending open ctx=%@ state=%@ user=%@",
                                      wcpl_push2chat_contextDescription(context),
-                                     wcpl_push2chat_applicationStateDescription(state),
+                                     WCPLApplicationStateDescription(state),
                                      pending);
                 wcpl_push2chat_clearColdStartUserNameIfMatch(pending, @"becomeActive_open");
                 wcpl_push2chat_openWithUserNameOnMainQueue(pending, context);
             });
         }];
     });
-}
-
-static NSString *wcpl_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
-        return nil;
-    }
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
 }
 
 static NSDictionary *wcpl_safeUserInfoFromNotificationResponse(id response) {
@@ -568,7 +521,7 @@ static NSString *wcpl_push2chat_actionIdentifierFromResponse(id response) {
         actionIdentifier = nil;
     }
     if (![actionIdentifier isKindOfClass:[NSString class]]) return nil;
-    return wcpl_trimString((NSString *)actionIdentifier);
+    return WCPLTrimText((NSString *)actionIdentifier);
 }
 
 static NSString *wcpl_push2chat_requestIdentifierFromResponse(id response) {
@@ -603,11 +556,11 @@ static NSString *wcpl_push2chat_requestIdentifierFromResponse(id response) {
         identifier = nil;
     }
 
-    return [identifier isKindOfClass:[NSString class]] ? wcpl_trimString((NSString *)identifier) : nil;
+    return [identifier isKindOfClass:[NSString class]] ? WCPLTrimText((NSString *)identifier) : nil;
 }
 
 static BOOL wcpl_push2chat_shouldDropDuplicateTap(NSString *tapKey, CFTimeInterval window) {
-    NSString *key = wcpl_trimString(tapKey);
+    NSString *key = WCPLTrimText(tapKey);
     if (key.length == 0) return NO;
 
     static NSString *lastTapKey = nil;
@@ -644,7 +597,7 @@ static NSString *wcpl_push2chat_targetUserNameFromUserInfo(NSDictionary *userInf
     for (NSString *key in candidateKeys) {
         id value = userInfo[key];
         if ([value isKindOfClass:[NSString class]]) {
-            NSString *trimmed = wcpl_trimString((NSString *)value);
+            NSString *trimmed = WCPLTrimText((NSString *)value);
             if (trimmed.length > 0) {
                 return trimmed;
             }
@@ -655,76 +608,11 @@ static NSString *wcpl_push2chat_targetUserNameFromUserInfo(NSDictionary *userInf
 }
 
 static id wcpl_push2chat_contactForUserName(NSString *userName) {
-    NSString *target = wcpl_trimString(userName);
-    if (target.length == 0) return nil;
-
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr) return nil;
-
-    id contact = nil;
-    @try {
-        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), target);
-        }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromDB:), target);
-        }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), target);
-        }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactForSearchByName:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactForSearchByName:), target);
-        }
-    } @catch (__unused NSException *exception) {
-        contact = nil;
-    }
-
-    Class contactClass = objc_getClass("CContact");
-    if (contactClass && contact && ![contact isKindOfClass:contactClass]) {
-        return nil;
-    }
-
-    return contact;
+    return WCPLContactAdapterFindContactByUserName(userName);
 }
 
 static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
-    UIWindow *keyWindow = wcpl_push2chat_activeKeyWindow();
-    if (![keyWindow isKindOfClass:[UIWindow class]]) {
-        return nil;
-    }
-
-    UIViewController *root = keyWindow.rootViewController;
-    if (![root isKindOfClass:[UIViewController class]]) {
-        return nil;
-    }
-
-    UIViewController *vc = root;
-    while ([vc presentedViewController]) {
-        UIViewController *presented = vc.presentedViewController;
-        if (![presented isKindOfClass:[UIViewController class]]) break;
-        vc = presented;
-    }
-
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        UIViewController *visible = ((UINavigationController *)vc).visibleViewController;
-        if ([visible isKindOfClass:[UIViewController class]]) {
-            vc = visible;
-        }
-    } else if ([vc isKindOfClass:[UITabBarController class]]) {
-        UIViewController *selected = ((UITabBarController *)vc).selectedViewController;
-        if ([selected isKindOfClass:[UINavigationController class]]) {
-            UIViewController *visible = ((UINavigationController *)selected).visibleViewController;
-            if ([visible isKindOfClass:[UIViewController class]]) {
-                vc = visible;
-            } else {
-                vc = (UIViewController *)selected;
-            }
-        } else if ([selected isKindOfClass:[UIViewController class]]) {
-            vc = selected;
-        }
-    }
-
-    return vc;
+    return WCPLTopVisibleViewController();
 }
 
 static UIViewController *wcpl_push2chat_findTopViewController(void) {
@@ -813,29 +701,7 @@ static BOOL wcpl_push2chat_hasForegroundHostUI(void) {
 }
 
 static NSString *wcpl_push2chat_userNameFromContact(id chatContact) {
-    if (!chatContact) return nil;
-
-    if ([chatContact isKindOfClass:objc_getClass("CContact")]) {
-        return wcpl_trimString(((CContact *)chatContact).m_nsUsrName);
-    }
-
-    if ([chatContact respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id userName = ((id (*)(id, SEL))objc_msgSend)(chatContact, @selector(m_nsUsrName));
-            if ([userName isKindOfClass:[NSString class]]) {
-                return wcpl_trimString((NSString *)userName);
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    @try {
-        id value = [chatContact valueForKey:@"m_nsUsrName"];
-        if ([value isKindOfClass:[NSString class]]) {
-            return wcpl_trimString((NSString *)value);
-        }
-    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-
-    return nil;
+    return WCPLContactAdapterSafeUserName(chatContact);
 }
 
 static NSString *wcpl_push2chat_extractSessionUserNameFromViewController(UIViewController *viewController,
@@ -950,7 +816,7 @@ static NSString *wcpl_push2chat_currentSessionUserName(void) {
 }
 
 static UIViewController *wcpl_push2chat_visibleChatViewControllerForUserName(NSString *userName) {
-    NSString *target = wcpl_trimString(userName);
+    NSString *target = WCPLTrimText(userName);
     if (target.length == 0) return nil;
 
     Class baseMsgClass = objc_getClass("BaseMsgContentViewController");
@@ -1022,7 +888,7 @@ static UIViewController *wcpl_push2chat_pageSheetHostViewControllerForChatViewCo
 }
 
 static void wcpl_push2chat_recoverPreparedPageSheetIfNeeded(NSString *userName, NSString *reason) {
-    NSString *target = wcpl_trimString(userName);
+    NSString *target = WCPLTrimText(userName);
     if (target.length == 0) return;
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -1088,7 +954,7 @@ static void wcpl_push2chat_recoverPreparedPageSheetIfNeeded(NSString *userName, 
 }
 
 static BOOL wcpl_push2chat_promoteVisibleChatToPageSheet(NSString *userName, NSString *reason) {
-    NSString *target = wcpl_trimString(userName);
+    NSString *target = WCPLTrimText(userName);
     if (target.length == 0) return NO;
 
     UIViewController *chatVC = wcpl_push2chat_visibleChatViewControllerForUserName(target);
@@ -1305,7 +1171,7 @@ static BOOL wcpl_push2chat_showDirectPageSheetForContact(id contact,
                                                          NSString *userName,
                                                          UIViewController *host,
                                                          NSString *reason) {
-    NSString *target = wcpl_trimString(userName);
+    NSString *target = WCPLTrimText(userName);
     if (!contact || target.length == 0) return NO;
     if (![host isKindOfClass:[UIViewController class]]) return NO;
 
@@ -1702,7 +1568,7 @@ static BOOL wcpl_push2chat_handleNotificationResponse(id response, WCPLPush2Chat
                              source ?: @"(nil)",
                              wcpl_push2chat_contextDescription(preferredContext),
                              wcpl_push2chat_contextDescription(openContext),
-                             wcpl_push2chat_applicationStateDescription(currentState),
+                             WCPLApplicationStateDescription(currentState),
                              (long)mode,
                              suppressOrig ? @"YES" : @"NO",
                              isDuplicate ? @"YES" : @"NO",

@@ -1132,6 +1132,12 @@ def test_injectable_config_and_infra_contracts() -> None:
         "WCPLTimelineConfig",
     ]
 
+    base_impl = read_source_file("WCPLUserDefaultsBackedConfig.m")
+    assert_true(
+        "return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];" in base_impl,
+        "WCPLUserDefaultsBackedConfig should preserve default init compatibility",
+    )
+
     for config_name in config_names:
         header = read_source_file(f"{config_name}.h")
         implementation = read_source_file(f"{config_name}.m")
@@ -1144,12 +1150,8 @@ def test_injectable_config_and_infra_contracts() -> None:
             f"{config_name} header should expose initWithDefaults",
         )
         assert_true(
-            "@property (nonatomic, strong) NSUserDefaults *defaults;" in implementation,
-            f"{config_name} implementation should retain injected defaults",
-        )
-        assert_true(
-            "return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];" in implementation,
-            f"{config_name} should preserve default init compatibility",
+            "self.defaults" in implementation,
+            f"{config_name} implementation should use injected defaults",
         )
 
     center_header = read_source_file("WCPLConfigCenter.h")

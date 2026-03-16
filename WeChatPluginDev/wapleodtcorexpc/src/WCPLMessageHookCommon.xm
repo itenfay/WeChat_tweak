@@ -3,9 +3,16 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
+#import "WCPLAppMessageHelpers.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLContactLookup.h"
 #import "WCPLHookGovernance.h"
+#import "WCPLIconImageHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLMenuItemIconHelpers.h"
+#import "WCPLObjcSafeCall.h"
+#import "WCPLPerfClock.h"
+#import "WCPLPureHelpers.h"
 #import "WCHookMessageNavigator.h"
 #import "RichTextView.h"
 #import <dispatch/dispatch.h>
@@ -24,7 +31,6 @@
 
 static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon);
 static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shouldTint);
-static id wcpl_serviceByClass(Class serviceClass);
 static void wcpl_messageHookLog(NSString *className,
                                 NSString *selectorName,
                                 NSString *stage,
@@ -35,11 +41,7 @@ static void wcpl_messageHookLog(NSString *className,
 static NSString *const kWCPLHookFeatureMessage = @"message";
 
 static uint64_t wcpl_message_perf_uptimeMillis(void) {
-    NSTimeInterval uptime = [[NSProcessInfo processInfo] systemUptime];
-    if (uptime < 0) {
-        return 0;
-    }
-    return (uint64_t)(uptime * 1000.0);
+    return WCPLUptimeMillis();
 }
 
 @interface MMMenuItem : NSObject
@@ -50,12 +52,6 @@ static uint64_t wcpl_message_perf_uptimeMillis(void) {
 - (void)setIconImage:(UIImage *)iconImage;
 @property(retain, nonatomic) UIImage *iconImage;
 @end
-
-static NSString *wcpl_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
-}
 
 static void wcpl_messageHookLog(NSString *className,
                                 NSString *selectorName,
@@ -73,46 +69,11 @@ static void wcpl_messageHookLog(NSString *className,
 }
 
 static NSString *wcpl_safeUserNameFromObject(id obj) {
-    if (!obj) return nil;
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_trimString((NSString *)obj);
-    }
-
-    Class contactClass = objc_getClass("CContact");
-    if (contactClass && [obj isKindOfClass:contactClass]) {
-        @try {
-            return wcpl_trimString(((CContact *)obj).m_nsUsrName);
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                return wcpl_trimString((NSString *)value);
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    @try {
-        id value = [obj valueForKey:@"m_nsUsrName"];
-        if ([value isKindOfClass:[NSString class]]) {
-            return wcpl_trimString((NSString *)value);
-        }
-    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-
-    return nil;
+    return WCPLContactAdapterSafeUserName(obj);
 }
 
 static id wcpl_safeObjectIvar(id obj, const char *name) {
-    if (!obj || !name) return nil;
-    Class cls = object_getClass(obj);
-    if (!cls) return nil;
-    Ivar ivar = class_getInstanceVariable(cls, name);
-    if (!ivar) return nil;
-    const char *typeEncoding = ivar_getTypeEncoding(ivar);
-    if (!typeEncoding || typeEncoding[0] != '@') return nil;
-    return object_getIvar(obj, ivar);
+    return WCPLSafeObjectIvar(obj, name);
 }
 
 // ==================== 本地文本替换（仅显示） ====================
@@ -132,50 +93,9 @@ static UIImage *wcpl_clownMenuIconImage(void) {
             "<circle cx='12' cy='14' r='1.5' fill='#FFFFFF'/>"
             "<path d='M7 16.5C9 18.5 15 18.5 17 16.5' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round'/>"
             "</svg>";
-        NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
-        id image = nil;
-        Class themeProxyClass = objc_getClass("WAThemeProxy");
-        SEL svgFromDataSel = @selector(svgImageFromData:);
-        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
-            @try {
-                image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-        }
-        if ([image isKindOfClass:[UIImage class]]) {
-            icon = (UIImage *)image;
-        }
-
-        if (!icon && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            UIImage *symbol = nil;
-            if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
-                UIImageSymbolConfiguration *config =
-                    [UIImageSymbolConfiguration configurationWithPointSize:16
-                                                                    weight:UIImageSymbolWeightRegular
-                                                                     scale:UIImageSymbolScaleMedium];
-                symbol = [UIImage systemImageNamed:@"theatermasks" withConfiguration:config];
-                if (!symbol) {
-                    symbol = [UIImage systemImageNamed:@"theatermasks.fill" withConfiguration:config];
-                }
-                if (!symbol) {
-                    symbol = [UIImage systemImageNamed:@"face.smiling" withConfiguration:config];
-                }
-            }
-            if (!symbol) {
-                symbol = [UIImage systemImageNamed:@"theatermasks"];
-            }
-            if (!symbol) {
-                symbol = [UIImage systemImageNamed:@"theatermasks.fill"];
-            }
-            if (!symbol) {
-                symbol = [UIImage systemImageNamed:@"face.smiling"];
-            }
-            if (symbol) {
-                icon = symbol;
-            }
-        }
-        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        }
+        icon = WCPLIconImageFromSVGOrSystemSymbols(svg,
+                                                   @[@"theatermasks", @"theatermasks.fill", @"face.smiling"],
+                                                   16);
     });
     return icon;
 }
@@ -566,31 +486,7 @@ static UIImage *wcpl_repeatMenuIconImage(void) {
             "<path d='M4 17H15C17.2091 17 19 15.2091 19 13V13' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
             "<path d='M16 20L19 17L16 14' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
             "</svg>";
-        NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
-        id image = nil;
-        Class themeProxyClass = objc_getClass("WAThemeProxy");
-        SEL svgFromDataSel = @selector(svgImageFromData:);
-        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
-            @try {
-                image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-        }
-        if ([image isKindOfClass:[UIImage class]]) {
-            icon = (UIImage *)image;
-        }
-
-        if (!icon && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            UIImage *symbol = nil;
-            if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
-                UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:16 weight:UIImageSymbolWeightRegular scale:UIImageSymbolScaleMedium];
-                symbol = [UIImage systemImageNamed:@"arrow.2.squarepath" withConfiguration:config];
-            }
-            if (!symbol) symbol = [UIImage systemImageNamed:@"arrow.2.squarepath"];
-            if (symbol) icon = symbol;
-        }
-        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        }
+        icon = WCPLIconImageFromSVGOrSystemSymbols(svg, @[@"arrow.2.squarepath"], 16);
     });
     return icon;
 }
@@ -681,23 +577,7 @@ static BOOL wcpl_isPlainTextMessage(CMessageWrap *msgWrap) {
 }
 
 static BOOL wcpl_isQuoteReplyMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        return NO;
-    }
-    if ([content rangeOfString:@"<refermsg>"].location != NSNotFound) {
-        return YES;
-    }
-    if ([content rangeOfString:@"<type>57</type>"].location != NSNotFound) {
-        return YES;
-    }
-    if ([content rangeOfString:@"<type><![CDATA[57]]></type>"].location != NSNotFound) {
-        return YES;
-    }
-    return NO;
+    return WCPLIsQuoteReplyAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isTransferMessage(CMessageWrap *msgWrap) {
@@ -790,7 +670,7 @@ static NSString *wcpl_extractTransferAmountFromXML(NSString *content) {
             continue;
         }
         NSString *value = [content substringWithRange:[result rangeAtIndex:1]];
-        NSString *trimmed = wcpl_trimString(value);
+        NSString *trimmed = WCPLTrimText(value);
         if (trimmed.length > 0) {
             return trimmed;
         }
@@ -800,7 +680,7 @@ static NSString *wcpl_extractTransferAmountFromXML(NSString *content) {
 }
 
 static NSString *wcpl_normalizeTransferAmountText(NSString *text) {
-    NSString *trimmed = wcpl_trimString(text);
+    NSString *trimmed = WCPLTrimText(text);
     if (trimmed.length == 0) {
         return nil;
     }
@@ -924,7 +804,7 @@ static NSString *wcpl_extractQuoteTitleFromXML(NSString *content) {
             continue;
         }
         NSString *title = [content substringWithRange:[result rangeAtIndex:1]];
-        NSString *trimmed = wcpl_trimString(title);
+        NSString *trimmed = WCPLTrimText(title);
         if (trimmed.length > 0) {
             return trimmed;
         }
@@ -938,7 +818,7 @@ static NSString *wcpl_quoteXMLByReplacingTitle(NSString *content, NSString *titl
         return nil;
     }
 
-    NSString *trimmed = wcpl_trimString(title);
+    NSString *trimmed = WCPLTrimText(title);
     if (trimmed.length == 0) {
         return nil;
     }
@@ -996,7 +876,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
             if (payInfo && [payInfo respondsToSelector:@selector(m_nsFeeDesc)]) {
                 id feeDesc = ((id (*)(id, SEL))objc_msgSend)(payInfo, @selector(m_nsFeeDesc));
                 if ([feeDesc isKindOfClass:[NSString class]]) {
-                    NSString *trimmed = wcpl_trimString((NSString *)feeDesc);
+                    NSString *trimmed = WCPLTrimText(feeDesc);
                     if (trimmed.length > 0) {
                         return trimmed;
                     }
@@ -1004,7 +884,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
             }
         } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
 
-        return wcpl_trimString(msgWrap.m_nsContent);
+        return WCPLTrimText(msgWrap.m_nsContent);
     }
 
     if (!wcpl_isQuoteReplyMessage(msgWrap)) {
@@ -1017,7 +897,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
             if (viewModel && [viewModel respondsToSelector:@selector(contentText)]) {
                 id text = ((id (*)(id, SEL))objc_msgSend)(viewModel, @selector(contentText));
                 if ([text isKindOfClass:[NSString class]]) {
-                    NSString *trimmed = wcpl_trimString((NSString *)text);
+                    NSString *trimmed = WCPLTrimText(text);
                     if (trimmed.length > 0) {
                         return trimmed;
                     }
@@ -1031,7 +911,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
         return title;
     }
 
-    return wcpl_trimString(msgWrap.m_nsContent);
+    return WCPLTrimText(msgWrap.m_nsContent);
 }
 
 static UIColor *wcpl_menuIconTintColor(void) {
@@ -1043,30 +923,7 @@ static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon) {
 }
 
 static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shouldTint) {
-    if (!menuItem || !icon) {
-        return;
-    }
-
-    UIImage *finalIcon = icon;
-    if (shouldTint && [finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
-        @try {
-            finalIcon = [finalIcon imageWithTintColor:wcpl_menuIconTintColor()];
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-    if ([finalIcon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-        finalIcon = [finalIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
-
-    if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), finalIcon);
-            return;
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    @try {
-        [menuItem setValue:finalIcon forKey:@"iconImage"];
-    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    WCPLApplyMenuItemIcon(menuItem, icon, shouldTint ? wcpl_menuIconTintColor() : nil);
 }
 
 static CMessageWrap *wcpl_messageWrapFromCell(id cell) {

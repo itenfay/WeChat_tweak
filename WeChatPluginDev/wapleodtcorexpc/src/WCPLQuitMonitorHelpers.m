@@ -2,31 +2,20 @@
 
 #import "WCPLPureHelpers.h"
 
-static NSArray<NSString *> *wcpl_qm_normalizedMembersFromArray(NSArray<NSString *> *members) {
-    NSMutableOrderedSet<NSString *> *normalized = [NSMutableOrderedSet orderedSet];
-    for (NSString *member in members) {
-        NSString *trimmed = WCPLTrimText(member);
-        if (trimmed.length > 0) {
-            [normalized addObject:trimmed];
-        }
-    }
-    return normalized.array;
-}
-
 NSArray<NSString *> *WCPLQuitMonitorMembersFromRawList(NSString *rawList) {
     NSString *trimmed = WCPLTrimText(rawList);
     if (trimmed.length == 0) {
         return @[];
     }
 
-    return wcpl_qm_normalizedMembersFromArray([trimmed componentsSeparatedByString:@";"]);
+    return WCPLSanitizeIdentifierArray([trimmed componentsSeparatedByString:@";"]);
 }
 
 NSArray<NSString *> *WCPLQuitMonitorRemovedMembers(NSArray<NSString *> *oldMembers,
                                                    NSArray<NSString *> *newMembers,
                                                    NSString *selfUserName) {
-    NSArray<NSString *> *normalizedOldMembers = wcpl_qm_normalizedMembersFromArray(oldMembers ?: @[]);
-    NSArray<NSString *> *normalizedNewMembers = wcpl_qm_normalizedMembersFromArray(newMembers ?: @[]);
+    NSArray<NSString *> *normalizedOldMembers = WCPLSanitizeIdentifierArray(oldMembers);
+    NSArray<NSString *> *normalizedNewMembers = WCPLSanitizeIdentifierArray(newMembers);
     if (normalizedOldMembers.count == 0 || normalizedNewMembers.count == 0) {
         return @[];
     }
@@ -49,7 +38,7 @@ NSArray<NSString *> *WCPLQuitMonitorRemovedMembers(NSArray<NSString *> *oldMembe
 NSString *WCPLQuitMonitorBuildEventKey(NSString *roomUserName,
                                        NSArray<NSString *> *removedMembers) {
     NSString *trimmedRoomUserName = WCPLTrimText(roomUserName);
-    NSArray<NSString *> *normalizedRemovedMembers = wcpl_qm_normalizedMembersFromArray(removedMembers ?: @[]);
+    NSArray<NSString *> *normalizedRemovedMembers = WCPLSanitizeIdentifierArray(removedMembers);
     if (trimmedRoomUserName.length == 0 || normalizedRemovedMembers.count == 0) {
         return nil;
     }

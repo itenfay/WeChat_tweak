@@ -1,3 +1,6 @@
+#import "WCPLUIKitHelpers.h"
+#import "WCPLServiceCenterAdapter.h"
+
 static id wcpl_miyouSearcherFromController(id controller) {
     if (!controller) {
         return nil;
@@ -66,61 +69,7 @@ static UIView *wcpl_miyouSearchBarContainer(id searcher) {
 }
 
 static __attribute__((unused)) CGFloat wcpl_miyouStatusBarHeight(void) {
-    CGFloat statusBarHeight = 0.0f;
-
-    Class mmUtilityClass = objc_getClass("MMUICommonUtility");
-    SEL normalStatusBarHeightSel = @selector(normalStatusBarHeight);
-    if (mmUtilityClass && [mmUtilityClass respondsToSelector:normalStatusBarHeightSel]) {
-        @try {
-            statusBarHeight = ((CGFloat (*)(id, SEL))objc_msgSend)(mmUtilityClass, normalStatusBarHeightSel);
-        } @catch (__unused NSException *exception) {
-            statusBarHeight = 0.0f;
-        }
-    }
-
-    if (statusBarHeight <= 0.0f) {
-        UIWindow *window = nil;
-        if (@available(iOS 13.0, *)) {
-            NSSet<UIScene *> *scenes = UIApplication.sharedApplication.connectedScenes;
-            for (UIScene *scene in scenes) {
-                if (![scene isKindOfClass:[UIWindowScene class]]) {
-                    continue;
-                }
-                UIWindowScene *windowScene = (UIWindowScene *)scene;
-                for (UIWindow *candidate in windowScene.windows) {
-                    if (candidate.isKeyWindow) {
-                        window = candidate;
-                        break;
-                    }
-                }
-                if (window) {
-                    break;
-                }
-            }
-        } else {
-            NSArray<UIWindow *> *windows = UIApplication.sharedApplication.windows;
-            for (UIWindow *candidate in windows) {
-                if (candidate.isKeyWindow) {
-                    window = candidate;
-                    break;
-                }
-            }
-            if (!window && windows.count > 0) {
-                window = windows.firstObject;
-            }
-        }
-
-        if ([window isKindOfClass:[UIWindow class]]) {
-            if (@available(iOS 11.0, *)) {
-                statusBarHeight = window.safeAreaInsets.top;
-            }
-        }
-    }
-
-    if (statusBarHeight <= 0.0f) {
-        statusBarHeight = 20.0f;
-    }
-    return statusBarHeight;
+    return WCPLStatusBarHeight();
 }
 
 static __attribute__((unused)) UIView *wcpl_miyouHideSearchBarContainer(id controller, NSString *stage) {
@@ -356,15 +305,13 @@ static __attribute__((unused)) BOOL wcpl_pushSearchSceneFallback(id contact, UIN
         return NO;
     }
 
-    Class serviceCenterClass = objc_getClass("MMServiceCenter");
     Class msgLogicManagerClass = objc_getClass("MMMsgLogicManager");
-    if (!serviceCenterClass || !msgLogicManagerClass) {
-        WCPLLogInfo(@"[搜索] 回退失败：MMServiceCenter 或 MMMsgLogicManager 缺失");
+    if (!msgLogicManagerClass) {
+        WCPLLogInfo(@"[搜索] 回退失败：MMMsgLogicManager 缺失");
         return NO;
     }
 
-    id serviceCenter = ((id (*)(id, SEL))objc_msgSend)(serviceCenterClass, @selector(defaultCenter));
-    id msgLogicManager = serviceCenter ? ((id (*)(id, SEL, Class))objc_msgSend)(serviceCenter, @selector(getService:), msgLogicManagerClass) : nil;
+    id msgLogicManager = WCPLServiceCenterAdapterGetService(msgLogicManagerClass);
     if (!msgLogicManager) {
         WCPLLogInfo(@"[搜索] 回退失败：MMMsgLogicManager 获取失败");
         return NO;
@@ -992,4 +939,3 @@ static __attribute__((unused)) BOOL wcpl_activateInPageSearchState(id controller
 
     return activated;
 }
-

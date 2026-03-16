@@ -1,5 +1,6 @@
 #import "WCPLQuitMonitorMessageAdapter.h"
 
+#import "WCPLMessagePersistenceAdapter.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLServiceCenterAdapter.h"
@@ -28,20 +29,6 @@ static CMessageWrap *wcpl_qm_createMessageWrap(NSString *session, NSString *cont
     return messageWrap;
 }
 
-static BOOL wcpl_qm_insertViaPreferredPath(id messageManager,
-                                           NSString *session,
-                                           CMessageWrap *messageWrap) {
-    if ([messageManager respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-        [messageManager AddLocalMsg:session MsgWrap:messageWrap fixTime:YES NewMsgArriveNotify:NO];
-        return YES;
-    }
-    if ([messageManager respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-        [messageManager AddLocalMsg:session MsgWrap:messageWrap];
-        return YES;
-    }
-    return NO;
-}
-
 BOOL WCPLQuitMonitorInsertLocalSystemTip(NSString *session, NSString *content) {
     NSString *trimmedSession = WCPLTrimText(session);
     NSString *trimmedContent = WCPLTrimText(content);
@@ -55,12 +42,20 @@ BOOL WCPLQuitMonitorInsertLocalSystemTip(NSString *session, NSString *content) {
         return NO;
     }
 
-    @try {
-        return wcpl_qm_insertViaPreferredPath(messageManager, trimmedSession, messageWrap);
-    } @catch (NSException *exception) {
-        WCPLLogWarning(@"[退群监控] 本地提示入库异常: room=%@ reason=%@",
+    WCPLAddLocalMsgInsertPath insertPath = WCPLAddLocalMsgInsertPathNone;
+    BOOL inserted = WCPLAddLocalMsgInsert((WCPLAddLocalMsgInsertRequest){
+                                              .messageMgr = messageManager,
+                                              .sessionUserName = trimmedSession,
+                                              .msgWrap = messageWrap,
+                                              .fixTime = YES,
+                                              .notify = NO,
+                                              .unique = NO,
+                                          },
+                                          &insertPath);
+    if (!inserted) {
+        WCPLLogWarning(@"[退群监控] 本地提示入库失败: session=%@ path=%@",
                        trimmedSession,
-                       exception.reason ?: exception);
-        return NO;
+                       WCPLAddLocalMsgInsertPathDescription(insertPath));
     }
+    return inserted;
 }

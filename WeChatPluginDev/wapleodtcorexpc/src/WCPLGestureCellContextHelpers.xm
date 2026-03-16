@@ -2,6 +2,11 @@
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLGestureCellInferenceMinRectSide = 8.0f;
+static const CGFloat kWCPLGestureCellInferenceMinBoundsWidth = 16.0f;
+
 static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return NO;
@@ -249,7 +254,7 @@ static __attribute__((unused)) BOOL wcpl_resolveIsSelfByGeometry(UIView *cellVie
     }
 
     CGRect cellBounds = cellView.bounds;
-    if (CGRectIsEmpty(cellBounds) || CGRectIsNull(cellBounds) || CGRectIsInfinite(cellBounds) || CGRectGetWidth(cellBounds) <= 16.0f) {
+    if (!WCPLCGRectIsValid(cellBounds) || CGRectGetWidth(cellBounds) <= kWCPLGestureCellInferenceMinBoundsWidth) {
         return fallbackIsSelf;
     }
 
@@ -258,9 +263,7 @@ static __attribute__((unused)) BOOL wcpl_resolveIsSelfByGeometry(UIView *cellVie
             *didInfer = NO;
         }
 
-        BOOL rectValid = !CGRectIsEmpty(rect) && !CGRectIsNull(rect) && !CGRectIsInfinite(rect) &&
-                         CGRectGetWidth(rect) > 8.0f && CGRectGetHeight(rect) > 8.0f &&
-                         CGRectIntersectsRect(rect, cellBounds);
+        BOOL rectValid = WCPLCGRectIsUsableInBounds(rect, cellBounds, kWCPLGestureCellInferenceMinRectSide);
         if (!rectValid) {
             return fallbackIsSelf;
         }
@@ -414,4 +417,3 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
     }
     return nil;
 }
-

@@ -2,248 +2,22 @@
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLAppMessageHelpers.h"
+
 static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    BOOL (^containsQuoteMarkers)(NSString *) = ^BOOL(NSString *xml) {
-        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
-            return NO;
-        }
-
-        NSArray<NSString *> *markers = @[
-            @"<refermsg",
-            @"<refer_msg",
-            @"<type>57</type>",
-            @"<type><![CDATA[57]]></type>",
-            @"<referfromscene",
-            @"<referfromusername",
-            @"<refermsgsvrid"
-        ];
-
-        for (NSString *marker in markers) {
-            if ([xml rangeOfString:marker options:NSCaseInsensitiveSearch].location != NSNotFound) {
-                return YES;
-            }
-        }
-        return NO;
-    };
-
-    if (containsQuoteMarkers(content)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *decodedContent = wcpl_decodeBasicXMLEntities(content);
-    if (decodedContent.length > 0 && ![decodedContent isEqualToString:content] && containsQuoteMarkers(decodedContent)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    BOOL isQuote = (wcpl_quoteReferServerIDFromContent(content) > 0);
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(isQuote), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return isQuote;
+    return WCPLIsQuoteReplyAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isFileAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    BOOL (^looksLikeFileType)(NSString *) = ^BOOL(NSString *xml) {
-        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
-            return NO;
-        }
-
-        BOOL hasFileTypeMarker =
-            [xml rangeOfString:@"<type>6</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-            [xml rangeOfString:@"<type><![CDATA[6]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
-        if (!hasFileTypeMarker) {
-            return NO;
-        }
-
-        return [xml rangeOfString:@"<appattach" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-               [xml rangeOfString:@"<fileext" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-               [xml rangeOfString:@"<totallen" options:NSCaseInsensitiveSearch].location != NSNotFound;
-    };
-
-    if (looksLikeFileType(content)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *decoded = wcpl_decodeBasicXMLEntities(content);
-    if (decoded.length > 0 && ![decoded isEqualToString:content] && looksLikeFileType(decoded)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return NO;
+    return WCPLIsFileAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-    if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    NSString *md5 = nil;
-    if ([msgWrap.m_nsEmoticonMD5 isKindOfClass:[NSString class]]) {
-        md5 = [msgWrap.m_nsEmoticonMD5 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    }
-    if (md5.length == 32) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    if ([content rangeOfString:@"<emoji" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-    if ([content rangeOfString:@"<emoticon" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return NO;
-}
-
-static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return 0;
-    }
-
-    SEL selectors[] = {
-        NSSelectorFromString(@"appMsgInnerType"),
-        NSSelectorFromString(@"uiAppMsgInnerType"),
-        NSSelectorFromString(@"m_uiAppMsgInnerType"),
-        NSSelectorFromString(@"appMsgType"),
-        NSSelectorFromString(@"uiAppMsgType"),
-        NSSelectorFromString(@"m_uiAppMsgType")
-    };
-    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
-        SEL sel = selectors[idx];
-        if (![msgWrap respondsToSelector:sel]) {
-            continue;
-        }
-        @try {
-            NSUInteger value = ((NSUInteger (*)(id, SEL))objc_msgSend)(msgWrap, sel);
-            if (value > 0 && value < 10000) {
-                return (NSInteger)value;
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    NSArray<NSString *> *kvcKeys = @[
-        @"m_uiAppMsgInnerType",
-        @"uiAppMsgInnerType",
-        @"appMsgInnerType",
-        @"m_uiAppMsgType",
-        @"uiAppMsgType",
-        @"appMsgType"
-    ];
-    for (NSString *key in kvcKeys) {
-        @try {
-            id value = [msgWrap valueForKey:key];
-            NSInteger innerType = 0;
-            if ([value isKindOfClass:[NSNumber class]]) {
-                innerType = [(NSNumber *)value integerValue];
-            } else if ([value isKindOfClass:[NSString class]]) {
-                innerType = [(NSString *)value integerValue];
-            }
-            if (innerType > 0 && innerType < 10000) {
-                return innerType;
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    return 0;
+    return WCPLIsAppEmoticonMessage(msgWrap);
 }
 
 static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-
-    BOOL mergedForward = NO;
-    NSInteger innerType = wcpl_appMessageInnerTypeFast(msgWrap);
-    if (innerType == 19) {
-        mergedForward = YES;
-    }
-
-    if (!mergedForward) {
-        NSString *content = msgWrap.m_nsContent;
-        if ([content isKindOfClass:[NSString class]] && content.length > 0) {
-            NSString *prefix = content;
-            if (prefix.length > 4096) {
-                prefix = [prefix substringToIndex:4096];
-            }
-
-            BOOL hasRecordMarkers =
-                [prefix rangeOfString:@"<recorditem" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<datalist" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<recordxml" options:NSCaseInsensitiveSearch].location != NSNotFound;
-            BOOL hasType19 =
-                [prefix rangeOfString:@"<type>19</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<type><![CDATA[19]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
-            mergedForward = hasRecordMarkers || hasType19;
-        }
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey, @(mergedForward), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return mergedForward;
+    return WCPLIsMergedForwardAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isMediaBubbleRepeatMessage(CMessageWrap *msgWrap) {
@@ -352,4 +126,3 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
             return NO;
     }
 }
-

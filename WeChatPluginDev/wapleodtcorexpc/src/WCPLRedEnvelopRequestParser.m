@@ -4,22 +4,12 @@
 #import "HongBaoRes.h"
 #import "SKBuiltinBuffer_t.h"
 #import "WCBizUtil.h"
+#import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLWeChatCompatibilityHeaders.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
-
-static NSString *wcpl_redEnvelopParserSanitizeInlineText(id text, NSUInteger maxLen) {
-    NSString *value = WCPLTrimText(text);
-    if (value.length == 0) return nil;
-    value = [[value stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-             stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-    if (maxLen > 0 && value.length > maxLen) {
-        value = [[value substringToIndex:maxLen] stringByAppendingString:@"…"];
-    }
-    return value;
-}
 
 static int wcpl_redEnvelopParserIntFromSelector(id obj, SEL sel) {
     if (!(obj && sel && [obj respondsToSelector:sel])) return 0;
@@ -251,8 +241,8 @@ void WCPLLogRedEnvelopCommonErrorResponse(NSString *tag, id resObj, id reqObj) {
                  timingIdentifier ?: @"",
                  errorType,
                  platRet,
-                 wcpl_redEnvelopParserSanitizeInlineText(errorMsg, 120) ?: @"",
-                 wcpl_redEnvelopParserSanitizeInlineText(platMsg, 120) ?: @"",
+                 WCPLSanitizeInlineText(errorMsg, 120) ?: @"",
+                 WCPLSanitizeInlineText(platMsg, 120) ?: @"",
                  resObj ? NSStringFromClass([resObj class]) : @"",
                  reqObj ? NSStringFromClass([reqObj class]) : @"");
 }

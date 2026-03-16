@@ -2,6 +2,8 @@
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLUserNameHelpers.h"
+
 static NSString *wcpl_emoticonMD5FromMessageWrap(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return nil;
@@ -73,7 +75,7 @@ static BOOL wcpl_shouldSkipCellGestureEnhancements(BaseMsgContentViewController 
         *reasonOut = nil;
     }
 
-    if (chatName.length > 0 && [chatName caseInsensitiveCompare:@"filehelper"] == NSOrderedSame) {
+    if (WCPLIsFileHelperUserName(chatName)) {
         if (reasonOut) {
             *reasonOut = @"filehelper_skip";
         }

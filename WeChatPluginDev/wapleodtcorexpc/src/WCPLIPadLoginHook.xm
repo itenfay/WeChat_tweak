@@ -1,4 +1,5 @@
 #import "WCPLConfigCenter.h"
+#import "WCPLUIKitHelpers.h"
 #import "WCPLLogger.h"
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
@@ -33,35 +34,6 @@ static BOOL wcpl_cachedLoginState(void) {
     return sCachedState;
 }
 
-static UIViewController *wcpl_topViewController(void) {
-    UIWindow *keyWindow = nil;
-    for (UIWindow *window in UIApplication.sharedApplication.windows) {
-        if (window.isKeyWindow) {
-            keyWindow = window;
-            break;
-        }
-    }
-    if (!keyWindow) {
-        keyWindow = UIApplication.sharedApplication.windows.firstObject;
-    }
-    UIViewController *vc = keyWindow.rootViewController;
-    while (vc.presentedViewController) {
-        vc = vc.presentedViewController;
-    }
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        UIViewController *top = ((UINavigationController *)vc).topViewController;
-        if (top) {
-            vc = top;
-        }
-    } else if ([vc isKindOfClass:[UITabBarController class]]) {
-        UIViewController *selected = ((UITabBarController *)vc).selectedViewController;
-        if (selected) {
-            vc = selected;
-        }
-    }
-    return vc;
-}
-
 static BOOL wcpl_stringContainsAnyKeyword(NSString *text, NSArray<NSString *> *keywords) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) {
         return NO;
@@ -82,7 +54,7 @@ static BOOL wcpl_isLoginSceneNow(void) {
         loginKeywords = @[ @"login", @"qrlogin", @"chatlist", @"chatsview" ];
     });
 
-    UIViewController *vc = wcpl_topViewController();
+    UIViewController *vc = WCPLTopVisibleViewController();
     if (!vc) {
         return NO;
     }

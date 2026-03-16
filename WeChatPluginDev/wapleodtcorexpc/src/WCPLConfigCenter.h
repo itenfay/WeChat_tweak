@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) WCPLPush2ChatConfig *push2Chat;
 @property (assign, nonatomic) BOOL douyinParserEnable;
 @property (assign, nonatomic) BOOL markAllReadTopRightMenuEnable;
+@property (assign, nonatomic) BOOL safariOpenLinkEnable;
 
 @end
 

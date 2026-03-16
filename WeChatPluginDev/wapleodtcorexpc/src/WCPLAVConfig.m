@@ -3,41 +3,25 @@
 //
 
 #import "WCPLAVConfig.h"
-#import <dispatch/dispatch.h>
 
 static NSString *const kWCPLAVTPOn = @"kWCPLAVTPOn";
-
-@interface WCPLAVConfig ()
-
-@property (nonatomic, strong) NSUserDefaults *defaults;
-
-@end
 
 @implementation WCPLAVConfig
 
 + (instancetype)sharedConfig {
-    static WCPLAVConfig *config = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        config = [WCPLAVConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
-    });
-    return config;
-}
-
-- (instancetype)init {
-    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+    return [super sharedConfig];
 }
 
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
-    return [[self alloc] initWithDefaults:defaults];
+    return [super configWithDefaults:defaults];
 }
 
 - (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
-    if (self = [super init]) {
-        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
-        _thirdPartyPlaybackEnabled = [_defaults boolForKey:kWCPLAVTPOn];
-    }
-    return self;
+    return [super initWithDefaults:defaults];
+}
+
+- (void)wcpl_loadFromDefaults {
+    _thirdPartyPlaybackEnabled = [self.defaults boolForKey:kWCPLAVTPOn];
 }
 
 - (void)setThirdPartyPlaybackEnabled:(BOOL)thirdPartyPlaybackEnabled {

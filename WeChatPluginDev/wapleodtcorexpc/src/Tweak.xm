@@ -1,9 +1,9 @@
 #import "WCPLCrashReporter.h"
 #import "WCPLRealtimeLogUploader.h"
 #import "WCPLLogger.h"
+#import "WCPLPerfClock.h"
 #import <objc/runtime.h>
 #import <dispatch/dispatch.h>
-#import <mach/mach.h>
 
 /*
  入口主链 Stage-1（启动层）:
@@ -60,35 +60,14 @@ static void wcpl_appendBootProbe(NSString *line) {
 
 static dispatch_source_t g_wcpl_bootPerfTimer = nil;
 
-static uint64_t wcpl_perf_uptimeMillis(void) {
-    NSTimeInterval uptime = [[NSProcessInfo processInfo] systemUptime];
-    if (uptime < 0) {
-        return 0;
-    }
-    return (uint64_t)(uptime * 1000.0);
-}
-
-static unsigned long long wcpl_perf_residentKB(void) {
-    mach_task_basic_info_data_t info;
-    mach_msg_type_number_t count = MACH_TASK_BASIC_INFO_COUNT;
-    kern_return_t kr = task_info(mach_task_self_,
-                                 MACH_TASK_BASIC_INFO,
-                                 (task_info_t)&info,
-                                 &count);
-    if (kr != KERN_SUCCESS) {
-        return 0;
-    }
-    return (unsigned long long)(info.resident_size / 1024ull);
-}
-
 static void wcpl_perf_logBootPhase(NSString *phase, uint64_t bootStartMs) {
-    uint64_t nowMs = wcpl_perf_uptimeMillis();
+    uint64_t nowMs = WCPLUptimeMillis();
     uint64_t elapsedMs = nowMs >= bootStartMs ? (nowMs - bootStartMs) : 0;
     WCPLLogInfo(@"[PERF][BOOT] phase=%@ elapsed_ms=%llu uptime_ms=%llu rss_kb=%llu",
                 phase ?: @"unknown",
                 (unsigned long long)elapsedMs,
                 (unsigned long long)nowMs,
-                wcpl_perf_residentKB());
+                WCPLResidentKB());
 }
 
 static void wcpl_perf_startBootMemorySampling(uint64_t bootStartMs) {
@@ -113,12 +92,12 @@ static void wcpl_perf_startBootMemorySampling(uint64_t bootStartMs) {
                               (uint64_t)(200 * NSEC_PER_MSEC));
     dispatch_source_set_event_handler(timer, ^{
         sampleIndex += 1;
-        uint64_t nowMs = wcpl_perf_uptimeMillis();
+        uint64_t nowMs = WCPLUptimeMillis();
         uint64_t elapsedMs = nowMs >= bootStartMs ? (nowMs - bootStartMs) : 0;
         WCPLLogInfo(@"[PERF][MEM] stage=boot sample=%lu elapsed_ms=%llu rss_kb=%llu",
                     (unsigned long)sampleIndex,
                     (unsigned long long)elapsedMs,
-                    wcpl_perf_residentKB());
+                    WCPLResidentKB());
         if (sampleIndex >= 12) {
             dispatch_source_cancel(timer);
         }
@@ -161,7 +140,7 @@ static void wcpl_logRuntimeDiagnostics(void) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {
-            uint64_t bootStartMs = wcpl_perf_uptimeMillis();
+            uint64_t bootStartMs = WCPLUptimeMillis();
             wcpl_appendBootProbe(@"ctor-enter");
             wcpl_perf_logBootPhase(@"ctor_enter", bootStartMs);
             wcpl_perf_startBootMemorySampling(bootStartMs);

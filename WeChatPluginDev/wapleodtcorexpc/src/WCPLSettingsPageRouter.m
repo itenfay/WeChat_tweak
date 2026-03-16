@@ -2,6 +2,7 @@
 
 #import "WCPLLogSettingsViewController.h"
 #import "WCPLSettingsPageContext.h"
+#import "WCHookTableViewFactory.h"
 #import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
@@ -12,16 +13,16 @@
 
 @end
 
-static WCTableViewNormalCellManager *wcpl_topLevelEntryCell(id target,
-                                                            NSString *title,
-                                                            NSString *detail,
-                                                            SEL selector) {
+static id wcpl_topLevelEntryCell(id target,
+                                 NSString *title,
+                                 NSString *detail,
+                                 SEL selector) {
     NSString *rightValue = [detail isKindOfClass:[NSString class]] ? detail : @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:selector
-                                                                    target:target
-                                                                     title:title
-                                                                rightValue:rightValue
-                                                             accessoryType:1];
+    return [WCHookTableViewFactory navigationCellWithTitle:title
+                                                    detail:rightValue
+                                                    target:target
+                                                    action:selector
+                                             accessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 static void wcpl_pushSettingsPage(WCPLSettingViewController *controller, WCPLSettingPageType pageType) {
@@ -44,12 +45,13 @@ static void wcpl_pushSettingsPage(WCPLSettingViewController *controller, WCPLSet
         @{@"title": @"日志设置", @"detail": @"调试日志与上传", @"selector": NSStringFromSelector(@selector(openDebugSettings))},
     ];
 
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能分类"];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"功能分类" footer:nil];
     for (NSDictionary<NSString *, NSString *> *item in items) {
         SEL selector = NSSelectorFromString(item[@"selector"]);
-        [section addCell:wcpl_topLevelEntryCell(self, item[@"title"], item[@"detail"], selector)];
+        id cell = wcpl_topLevelEntryCell(self, item[@"title"], item[@"detail"], selector);
+        [WCHookTableViewFactory addCell:cell toSection:section];
     }
-    [[self tableViewMgr] addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:[self tableViewMgr]];
 }
 
 - (void)openRedEnvelopSettingsEntry {

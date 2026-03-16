@@ -13,17 +13,6 @@
 static NSTimeInterval const kWCPLQuitMonitorDedupeTTL = 2.0;
 static NSUInteger const kWCPLQuitMonitorDedupeMaxCount = 128;
 
-static NSArray<NSString *> *wcpl_qm_uniqueMembersFromArray(NSArray<NSString *> *members) {
-    NSMutableOrderedSet<NSString *> *normalized = [NSMutableOrderedSet orderedSet];
-    for (NSString *member in members) {
-        NSString *trimmedMember = WCPLTrimText(member);
-        if (trimmedMember.length > 0) {
-            [normalized addObject:trimmedMember];
-        }
-    }
-    return normalized.array;
-}
-
 static NSArray<NSString *> *wcpl_qm_membersFromListObject(id value) {
     if (!value) {
         return @[];
@@ -46,7 +35,7 @@ static NSArray<NSString *> *wcpl_qm_membersFromListObject(id value) {
             [members addObject:userName];
         }
     }
-    return wcpl_qm_uniqueMembersFromArray(members);
+    return WCPLSanitizeIdentifierArray(members);
 }
 
 static NSString *wcpl_qm_roomUserName(id roomContact, id newContact) {

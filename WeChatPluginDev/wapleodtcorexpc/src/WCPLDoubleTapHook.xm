@@ -1,3 +1,9 @@
+// Internal include-only module.
+// Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
+// Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLObjcSafeCall.h"
+
 %hook CommonMessageCellView
 
 - (void)handleTapForReferMsg:(id)sender {
@@ -401,19 +407,8 @@
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionTextTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"TextMessageCellView.touchesEnded.triple")) {
         return;
@@ -477,19 +472,8 @@
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionPayBaseTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayBaseMessageCellView.touchesEnded.triple")) {
         return;
@@ -707,19 +691,8 @@
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
     UIView *cellView = wcpl_findMessageCellAncestorView((UIView *)self);
-    if (cellView && [cellView respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(cellView,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionTripleFromImageView) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(cellView, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     %orig(touches, event);
 }
@@ -749,19 +722,8 @@
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionImageTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.touchesEnded.triple")) {
         return;

@@ -1,4 +1,8 @@
 
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLRepeatButtonMinAnchorSide = 8.0f;
+
 %hook CommonMessageCellView
 
 + (void)load {
@@ -51,48 +55,33 @@
     BOOL mediaMessage = wcpl_isMediaBubbleRepeatMessage(buttonWrap);
     NSValue *cachedFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
     CGRect cachedFrame = cachedFrameValue ? cachedFrameValue.CGRectValue : CGRectZero;
-    BOOL cachedFrameValid = !CGRectIsEmpty(cachedFrame) &&
-                            !CGRectIsNull(cachedFrame) &&
-                            !CGRectIsInfinite(cachedFrame) &&
-                            CGRectGetWidth(cachedFrame) > 8.0f &&
-                            CGRectGetHeight(cachedFrame) > 8.0f &&
-                            CGRectIntersectsRect(cachedFrame, self.bounds);
+    BOOL cachedFrameValid =
+        WCPLCGRectIsUsableInBounds(cachedFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
 
     CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
     CGRect bubbleFrameFromSuperview = CGRectZero;
     BOOL bubbleFrameFromSuperviewValid = NO;
     if ([bubbleView.superview isKindOfClass:[UIView class]]) {
         bubbleFrameFromSuperview = [self convertRect:bubbleView.frame fromView:bubbleView.superview];
-        bubbleFrameFromSuperviewValid = !CGRectIsEmpty(bubbleFrameFromSuperview) &&
-                                        !CGRectIsNull(bubbleFrameFromSuperview) &&
-                                        !CGRectIsInfinite(bubbleFrameFromSuperview) &&
-                                        CGRectGetWidth(bubbleFrameFromSuperview) > 8.0f &&
-                                        CGRectGetHeight(bubbleFrameFromSuperview) > 8.0f;
+        bubbleFrameFromSuperviewValid =
+            WCPLCGRectHasMinSide(bubbleFrameFromSuperview, kWCPLRepeatButtonMinAnchorSide);
     }
 
-    if (CGRectIsEmpty(bubbleFrame) || CGRectGetWidth(bubbleFrame) <= 0.0f || CGRectGetHeight(bubbleFrame) <= 0.0f) {
+    if (!WCPLCGRectIsValid(bubbleFrame)) {
         bubbleFrame = bubbleFrameFromSuperviewValid ? bubbleFrameFromSuperview : [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
     CGRect menuRect = CGRectZero;
     BOOL menuRectValid = NO;
     menuRect = WCPLRepeatCellAdapterMenuRect(self);
-    menuRectValid = !CGRectIsEmpty(menuRect) &&
-                    !CGRectIsNull(menuRect) &&
-                    !CGRectIsInfinite(menuRect) &&
-                    CGRectGetWidth(menuRect) > 8.0f &&
-                    CGRectGetHeight(menuRect) > 8.0f &&
-                    CGRectIntersectsRect(menuRect, self.bounds);
+    menuRectValid =
+        WCPLCGRectIsUsableInBounds(menuRect, self.bounds, kWCPLRepeatButtonMinAnchorSide);
 
-    BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) &&
-                           !CGRectIsNull(bubbleFrame) &&
-                           !CGRectIsInfinite(bubbleFrame) &&
-                           CGRectGetWidth(bubbleFrame) > 8.0f &&
-                           CGRectGetHeight(bubbleFrame) > 8.0f &&
-                           CGRectIntersectsRect(bubbleFrame, self.bounds);
+    BOOL bubbleRectValid =
+        WCPLCGRectIsUsableInBounds(bubbleFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
     if (!bubbleRectValid && bubbleFrameFromSuperviewValid) {
         bubbleFrame = bubbleFrameFromSuperview;
-        bubbleRectValid = CGRectIntersectsRect(bubbleFrame, self.bounds);
+        bubbleRectValid = WCPLCGRectIsUsableInBounds(bubbleFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
     }
     if (!bubbleRectValid && mediaMessage && menuRectValid) {
         bubbleFrame = menuRect;

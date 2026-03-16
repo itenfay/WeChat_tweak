@@ -3,6 +3,8 @@
 //
 
 #import "WCPLGestureConfig.h"
+
+#import "WCPLGestureActionHelpers.h"
 #import <dispatch/dispatch.h>
 
 static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable";
@@ -34,23 +36,6 @@ static NSString *const kWCPLDoubleTapGestureEnable  = @"kWCPLDoubleTapGestureEna
 static NSString *const kWCPLDoubleTapOtherAction    = @"kWCPLDoubleTapOtherAction";
 static NSString *const kWCPLDoubleTapSelfAction     = @"kWCPLDoubleTapSelfAction";
 static NSString *const kWCPLMessageTimeEnable       = @"kWCPLMessageTimeEnable";
-
-// 统一归一化：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读，5=转发
-static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAction) {
-    if (action < 0) {
-        return 0;
-    }
-
-    if (action == 3 && !isSelfAction) {
-        return 0;
-    }
-
-    if (action > 5) {
-        return 0;
-    }
-
-    return action;
-}
 
 @interface WCPLGestureConfig ()
 
@@ -130,14 +115,14 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         NSNumber *sensitivity = [_defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel = sensitivity ? sensitivity.integerValue : 1;
 
-        _swipeLeftOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeLeftOtherAction], NO);
-        _swipeLeftSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeLeftSelfAction], YES);
+        _swipeLeftOtherAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLSwipeLeftOtherAction], NO);
+        _swipeLeftSelfAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLSwipeLeftSelfAction], YES);
         _swipeRightEnable = [_defaults boolForKey:kWCPLSwipeRightEnable];
-        _swipeRightOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeRightOtherAction], NO);
-        _swipeRightSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLSwipeRightSelfAction], YES);
+        _swipeRightOtherAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLSwipeRightOtherAction], NO);
+        _swipeRightSelfAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLSwipeRightSelfAction], YES);
         _doubleTapGestureEnable = [_defaults boolForKey:kWCPLDoubleTapGestureEnable];
-        _doubleTapOtherAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLDoubleTapOtherAction], NO);
-        _doubleTapSelfAction = wcpl_normalizeSwipeActionValue([_defaults integerForKey:kWCPLDoubleTapSelfAction], YES);
+        _doubleTapOtherAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLDoubleTapOtherAction], NO);
+        _doubleTapSelfAction = WCPLNormalizeGestureActionValue([_defaults integerForKey:kWCPLDoubleTapSelfAction], YES);
         NSNumber *messageTimeEnabled = [_defaults objectForKey:kWCPLMessageTimeEnable];
         _messageTimeEnable = messageTimeEnabled ? messageTimeEnabled.boolValue : YES;
 
@@ -283,13 +268,13 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 }
 
 - (void)setSwipeLeftOtherAction:(NSInteger)swipeLeftOtherAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeLeftOtherAction, NO);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(swipeLeftOtherAction, NO);
     _swipeLeftOtherAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLSwipeLeftOtherAction];
 }
 
 - (void)setSwipeLeftSelfAction:(NSInteger)swipeLeftSelfAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeLeftSelfAction, YES);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(swipeLeftSelfAction, YES);
     _swipeLeftSelfAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLSwipeLeftSelfAction];
 }
@@ -300,13 +285,13 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 }
 
 - (void)setSwipeRightOtherAction:(NSInteger)swipeRightOtherAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeRightOtherAction, NO);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(swipeRightOtherAction, NO);
     _swipeRightOtherAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLSwipeRightOtherAction];
 }
 
 - (void)setSwipeRightSelfAction:(NSInteger)swipeRightSelfAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeRightSelfAction, YES);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(swipeRightSelfAction, YES);
     _swipeRightSelfAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLSwipeRightSelfAction];
 }
@@ -317,13 +302,13 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 }
 
 - (void)setDoubleTapOtherAction:(NSInteger)doubleTapOtherAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapOtherAction, NO);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(doubleTapOtherAction, NO);
     _doubleTapOtherAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLDoubleTapOtherAction];
 }
 
 - (void)setDoubleTapSelfAction:(NSInteger)doubleTapSelfAction {
-    NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapSelfAction, YES);
+    NSInteger normalized = WCPLNormalizeGestureActionValue(doubleTapSelfAction, YES);
     _doubleTapSelfAction = normalized;
     [self.defaults setInteger:normalized forKey:kWCPLDoubleTapSelfAction];
 }

@@ -29,6 +29,7 @@
 #import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLContactAdapter.h"
+#import "WCPLGestureActionHelpers.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 #import "WCPLMessageActionAdapter.h"
@@ -88,24 +89,8 @@ static NSString *wcpl_swipeStateName(UIGestureRecognizerState state) {
     }
 }
 
-static NSString *wcpl_decodeBasicXMLEntities(NSString *text) {
-    return WCPLDecodeBasicXMLEntities(text);
-}
-
 static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOOL isSelfAction) {
-    if (action < 0) {
-        return 0;
-    }
-
-    if (action == 3 && !isSelfAction) {
-        return 0;
-    }
-
-    if (action > 5) {
-        return 0;
-    }
-
-    return action;
+    return WCPLNormalizeGestureActionValue(action, isSelfAction);
 }
 
 static NSString *wcpl_trimTextForRepeat(NSString *text) {
@@ -224,10 +209,6 @@ static NSString *wcpl_buildMinimalVoiceContent(unsigned int voiceLengthMs, unsig
     return WCPLBuildMinimalVoiceContent(voiceLengthMs, voiceFormat);
 }
 
-static long long wcpl_quoteReferServerIDFromContent(NSString *content) {
-    return WCPLQuoteReferServerIDFromContent(content);
-}
-
 
 // ===== WCPLGestureDebugHelpers.xm =====
 
@@ -235,6 +216,8 @@ static long long wcpl_quoteReferServerIDFromContent(NSString *content) {
 // Internal include-only module.
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLUserNameHelpers.h"
 
 static NSString *wcpl_emoticonMD5FromMessageWrap(CMessageWrap *msgWrap) {
     if (!msgWrap) {
@@ -307,7 +290,7 @@ static BOOL wcpl_shouldSkipCellGestureEnhancements(BaseMsgContentViewController 
         *reasonOut = nil;
     }
 
-    if (chatName.length > 0 && [chatName caseInsensitiveCompare:@"filehelper"] == NSOrderedSame) {
+    if (WCPLIsFileHelperUserName(chatName)) {
         if (reasonOut) {
             *reasonOut = @"filehelper_skip";
         }
@@ -424,9 +407,11 @@ static void wcpl_logLongPressCompatDecision(id cell,
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLDispatchUtils.h"
+#import "WCPLMessagePersistenceAdapter.h"
 #import "WCPLLogger.h"
 #import "WCPLRepeatButtonEngine.h"
 #import "WCPLRepeatButtonAssetManager.h"
+#import "WCPLViewTraversalHelpers.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #include <stdint.h>
@@ -505,7 +490,6 @@ static CGFloat wcpl_repeatAlignToPixel(CGFloat value);
 static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right);
 static CGFloat wcpl_repeatButtonSizeFromConfig(void);
 static void wcpl_setupRepeatLifecycleObserver(void);
-static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap);
 static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap);
 static id wcpl_viewModelForCellView(id cellView);
 static BOOL wcpl_resolveRepeatButtonEligibleBySubViewModel(id viewModel);
@@ -3046,49 +3030,27 @@ static BOOL wcpl_addLocalVoiceMsg(id messageMgr, NSString *chatName, CMessageWra
         return NO;
     }
 
-    @try {
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                          @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:),
-                                                                          chatName,
-                                                                          sendWrap,
-                                                                          YES,
-                                                                          NO,
-                                                                          YES);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                   @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:),
-                                                                   chatName,
-                                                                   sendWrap,
-                                                                   YES,
-                                                                   NO);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
-                                                       @selector(AddLocalMsg:MsgWrap:),
-                                                       chatName,
-                                                       sendWrap);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-    } @catch (NSException *exception) {
-        WCPLLogWarning(@"Repeat voice add-local exception: scene=%@ reason=%@",
+    WCPLAddLocalMsgInsertPath insertPath = WCPLAddLocalMsgInsertPathNone;
+    BOOL inserted = WCPLAddLocalMsgInsert((WCPLAddLocalMsgInsertRequest){
+                                              .messageMgr = messageMgr,
+                                              .sessionUserName = chatName,
+                                              .msgWrap = sendWrap,
+                                              .fixTime = YES,
+                                              .notify = NO,
+                                              .unique = YES,
+                                          },
+                                          &insertPath);
+    if (inserted) {
+        WCPLLogDebug(@"Repeat voice add-local: scene=%@ path=%@ localID=%u",
+                     sceneTag ?: @"voice_local",
+                     WCPLAddLocalMsgInsertPathDescription(insertPath),
+                     sendWrap.m_uiMesLocalID);
+    } else {
+        WCPLLogWarning(@"Repeat voice add-local failed: scene=%@ path=%@",
                        sceneTag ?: @"voice_local",
-                       exception.reason ?: exception);
+                       WCPLAddLocalMsgInsertPathDescription(insertPath));
     }
-
-    return NO;
+    return inserted;
 }
 
 static BOOL wcpl_tryInvokeResendVoiceTarget(id target,
@@ -3341,18 +3303,11 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap,
 @end
 
 static UITableView *wcpl_findContainingTableView(UIView *view) {
-    UIView *current = view;
-    while (current) {
-        if ([current isKindOfClass:[UITableView class]]) {
-            return (UITableView *)current;
-        }
-        current = current.superview;
-    }
-    return nil;
+    return WCPLFindContainingTableView(view);
 }
 
 static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIView *> *storage) {
-    if (!root || !storage) {
+    if (![root isKindOfClass:[UIView class]] || ![storage isKindOfClass:[NSMutableArray class]]) {
         return;
     }
 
@@ -3361,14 +3316,7 @@ static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIVi
     dispatch_once(&onceToken, ^{
         commonMessageCellViewClass = NSClassFromString(@"CommonMessageCellView");
     });
-
-    if (commonMessageCellViewClass && [root isKindOfClass:commonMessageCellViewClass]) {
-        [storage addObject:root];
-    }
-
-    for (UIView *subview in root.subviews) {
-        wcpl_collectMessageCellViewsInView(subview, storage);
-    }
+    WCPLCollectViewsOfClassOrAllIfNil(root, commonMessageCellViewClass, storage);
 }
 
 static BOOL wcpl_measureViewGeometryInTable(UIView *candidate,
@@ -3531,248 +3479,22 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLAppMessageHelpers.h"
+
 static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    BOOL (^containsQuoteMarkers)(NSString *) = ^BOOL(NSString *xml) {
-        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
-            return NO;
-        }
-
-        NSArray<NSString *> *markers = @[
-            @"<refermsg",
-            @"<refer_msg",
-            @"<type>57</type>",
-            @"<type><![CDATA[57]]></type>",
-            @"<referfromscene",
-            @"<referfromusername",
-            @"<refermsgsvrid"
-        ];
-
-        for (NSString *marker in markers) {
-            if ([xml rangeOfString:marker options:NSCaseInsensitiveSearch].location != NSNotFound) {
-                return YES;
-            }
-        }
-        return NO;
-    };
-
-    if (containsQuoteMarkers(content)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *decodedContent = wcpl_decodeBasicXMLEntities(content);
-    if (decodedContent.length > 0 && ![decodedContent isEqualToString:content] && containsQuoteMarkers(decodedContent)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    BOOL isQuote = (wcpl_quoteReferServerIDFromContent(content) > 0);
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(isQuote), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return isQuote;
+    return WCPLIsQuoteReplyAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isFileAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    BOOL (^looksLikeFileType)(NSString *) = ^BOOL(NSString *xml) {
-        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
-            return NO;
-        }
-
-        BOOL hasFileTypeMarker =
-            [xml rangeOfString:@"<type>6</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-            [xml rangeOfString:@"<type><![CDATA[6]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
-        if (!hasFileTypeMarker) {
-            return NO;
-        }
-
-        return [xml rangeOfString:@"<appattach" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-               [xml rangeOfString:@"<fileext" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-               [xml rangeOfString:@"<totallen" options:NSCaseInsensitiveSearch].location != NSNotFound;
-    };
-
-    if (looksLikeFileType(content)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *decoded = wcpl_decodeBasicXMLEntities(content);
-    if (decoded.length > 0 && ![decoded isEqualToString:content] && looksLikeFileType(decoded)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return NO;
+    return WCPLIsFileAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-    if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    NSString *md5 = nil;
-    if ([msgWrap.m_nsEmoticonMD5 isKindOfClass:[NSString class]]) {
-        md5 = [msgWrap.m_nsEmoticonMD5 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    }
-    if (md5.length == 32) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    NSString *content = msgWrap.m_nsContent;
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return NO;
-    }
-
-    if ([content rangeOfString:@"<emoji" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-    if ([content rangeOfString:@"<emoticon" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return YES;
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return NO;
-}
-
-static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return 0;
-    }
-
-    SEL selectors[] = {
-        NSSelectorFromString(@"appMsgInnerType"),
-        NSSelectorFromString(@"uiAppMsgInnerType"),
-        NSSelectorFromString(@"m_uiAppMsgInnerType"),
-        NSSelectorFromString(@"appMsgType"),
-        NSSelectorFromString(@"uiAppMsgType"),
-        NSSelectorFromString(@"m_uiAppMsgType")
-    };
-    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
-        SEL sel = selectors[idx];
-        if (![msgWrap respondsToSelector:sel]) {
-            continue;
-        }
-        @try {
-            NSUInteger value = ((NSUInteger (*)(id, SEL))objc_msgSend)(msgWrap, sel);
-            if (value > 0 && value < 10000) {
-                return (NSInteger)value;
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    NSArray<NSString *> *kvcKeys = @[
-        @"m_uiAppMsgInnerType",
-        @"uiAppMsgInnerType",
-        @"appMsgInnerType",
-        @"m_uiAppMsgType",
-        @"uiAppMsgType",
-        @"appMsgType"
-    ];
-    for (NSString *key in kvcKeys) {
-        @try {
-            id value = [msgWrap valueForKey:key];
-            NSInteger innerType = 0;
-            if ([value isKindOfClass:[NSNumber class]]) {
-                innerType = [(NSNumber *)value integerValue];
-            } else if ([value isKindOfClass:[NSString class]]) {
-                innerType = [(NSString *)value integerValue];
-            }
-            if (innerType > 0 && innerType < 10000) {
-                return innerType;
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    return 0;
+    return WCPLIsAppEmoticonMessage(msgWrap);
 }
 
 static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap) {
-    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
-        return NO;
-    }
-
-    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey);
-    if ([cached isKindOfClass:[NSNumber class]]) {
-        return cached.boolValue;
-    }
-
-    BOOL mergedForward = NO;
-    NSInteger innerType = wcpl_appMessageInnerTypeFast(msgWrap);
-    if (innerType == 19) {
-        mergedForward = YES;
-    }
-
-    if (!mergedForward) {
-        NSString *content = msgWrap.m_nsContent;
-        if ([content isKindOfClass:[NSString class]] && content.length > 0) {
-            NSString *prefix = content;
-            if (prefix.length > 4096) {
-                prefix = [prefix substringToIndex:4096];
-            }
-
-            BOOL hasRecordMarkers =
-                [prefix rangeOfString:@"<recorditem" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<datalist" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<recordxml" options:NSCaseInsensitiveSearch].location != NSNotFound;
-            BOOL hasType19 =
-                [prefix rangeOfString:@"<type>19</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [prefix rangeOfString:@"<type><![CDATA[19]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
-            mergedForward = hasRecordMarkers || hasType19;
-        }
-    }
-
-    objc_setAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey, @(mergedForward), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return mergedForward;
+    return WCPLIsMergedForwardAppMessage(msgWrap);
 }
 
 static BOOL wcpl_isMediaBubbleRepeatMessage(CMessageWrap *msgWrap) {
@@ -3883,13 +3605,17 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
 }
 
 
-
 // ===== WCPLGestureCellContextHelpers.xm =====
 
 #line 1 "src/WCPLGestureCellContextHelpers.xm"
 // Internal include-only module.
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLGestureCellInferenceMinRectSide = 8.0f;
+static const CGFloat kWCPLGestureCellInferenceMinBoundsWidth = 16.0f;
 
 static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
     if (!msgWrap) {
@@ -4138,7 +3864,7 @@ static __attribute__((unused)) BOOL wcpl_resolveIsSelfByGeometry(UIView *cellVie
     }
 
     CGRect cellBounds = cellView.bounds;
-    if (CGRectIsEmpty(cellBounds) || CGRectIsNull(cellBounds) || CGRectIsInfinite(cellBounds) || CGRectGetWidth(cellBounds) <= 16.0f) {
+    if (!WCPLCGRectIsValid(cellBounds) || CGRectGetWidth(cellBounds) <= kWCPLGestureCellInferenceMinBoundsWidth) {
         return fallbackIsSelf;
     }
 
@@ -4147,9 +3873,7 @@ static __attribute__((unused)) BOOL wcpl_resolveIsSelfByGeometry(UIView *cellVie
             *didInfer = NO;
         }
 
-        BOOL rectValid = !CGRectIsEmpty(rect) && !CGRectIsNull(rect) && !CGRectIsInfinite(rect) &&
-                         CGRectGetWidth(rect) > 8.0f && CGRectGetHeight(rect) > 8.0f &&
-                         CGRectIntersectsRect(rect, cellBounds);
+        BOOL rectValid = WCPLCGRectIsUsableInBounds(rect, cellBounds, kWCPLGestureCellInferenceMinRectSide);
         if (!rectValid) {
             return fallbackIsSelf;
         }
@@ -4305,13 +4029,17 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
 }
 
 
-
 // ===== WCPLGestureLayoutHelpers.xm =====
 
 #line 1 "src/WCPLGestureLayoutHelpers.xm"
 // Internal include-only module.
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLRepeatLayoutBubbleMinSide = 0.5f;
+static const CGFloat kWCPLRepeatLayoutAnchorMinSide = 8.0f;
 
 static CGFloat wcpl_repeatAlignToPixel(CGFloat value) {
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -4338,7 +4066,7 @@ static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *m
     BOOL bubbleRectValid = NO;
     if ([bubbleView isKindOfClass:[UIView class]]) {
         bubbleRect = [cellView convertRect:bubbleView.bounds fromView:bubbleView];
-        if (CGRectIsEmpty(bubbleRect) || CGRectGetWidth(bubbleRect) <= 0.0f || CGRectGetHeight(bubbleRect) <= 0.0f) {
+        if (!WCPLCGRectIsValid(bubbleRect)) {
             UIView *sourceSuperview = bubbleView.superview;
             if (sourceSuperview) {
                 bubbleRect = [cellView convertRect:bubbleView.frame fromView:sourceSuperview];
@@ -4346,19 +4074,18 @@ static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *m
                 bubbleRect = cellView.bounds;
             }
         }
-        bubbleRectValid = !CGRectIsNull(bubbleRect) && !CGRectIsInfinite(bubbleRect) && CGRectGetWidth(bubbleRect) > 0.5f && CGRectGetHeight(bubbleRect) > 0.5f;
+        bubbleRectValid = WCPLCGRectHasMinSide(bubbleRect, kWCPLRepeatLayoutBubbleMinSide);
     }
 
     CGRect bubbleRectForAnchor = bubbleRect;
-    BOOL bubbleRectForAnchorValid = !CGRectIsEmpty(bubbleRectForAnchor) && !CGRectIsNull(bubbleRectForAnchor) && !CGRectIsInfinite(bubbleRectForAnchor) && CGRectGetWidth(bubbleRectForAnchor) > 8.0f && CGRectGetHeight(bubbleRectForAnchor) > 8.0f;
+    BOOL bubbleRectForAnchorValid = WCPLCGRectHasMinSide(bubbleRectForAnchor, kWCPLRepeatLayoutAnchorMinSide);
 
     if (!bubbleRectValid) {
         bubbleRect = cellView.bounds;
     }
 
     CGRect menuRect = WCPLRepeatCellAdapterMenuRect(cellView);
-
-    BOOL menuRectValid = !CGRectIsEmpty(menuRect) && !CGRectIsNull(menuRect) && !CGRectIsInfinite(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, cellView.bounds);
+    BOOL menuRectValid = WCPLCGRectIsUsableInBounds(menuRect, cellView.bounds, kWCPLRepeatLayoutAnchorMinSide);
 
     CGRect baseRect = CGRectZero;
     if (bubbleRectForAnchorValid) {
@@ -4551,6 +4278,8 @@ static NSArray<UIWindow *> *wcpl_applicationWindows(void) {
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLGeometryHelpers.h"
+
 static const CGFloat kWCPLTapPolicyMinRectSide = 8.0f;
 static const CGFloat kWCPLTapPolicyBubbleHitInset = 1.0f;
 static const CGFloat kWCPLTapPolicyBlankBandTextExtraTop = 14.0f;
@@ -4561,12 +4290,7 @@ static BOOL wcpl_tapPolicyRectUsable(CGRect rect, UIView *containerView) {
     if (![containerView isKindOfClass:[UIView class]]) {
         return NO;
     }
-    return !CGRectIsEmpty(rect) &&
-           !CGRectIsNull(rect) &&
-           !CGRectIsInfinite(rect) &&
-           CGRectGetWidth(rect) > kWCPLTapPolicyMinRectSide &&
-           CGRectGetHeight(rect) > kWCPLTapPolicyMinRectSide &&
-           CGRectIntersectsRect(rect, containerView.bounds);
+    return WCPLCGRectIsUsableInBounds(rect, containerView.bounds, kWCPLTapPolicyMinRectSide);
 }
 
 static BOOL wcpl_tapPolicyRectLooksRowWide(CGRect rect, UIView *containerView) {
@@ -4867,11 +4591,7 @@ static CGRect wcpl_tapPolicyResolvedBodyRect(id cell,
         return CGRectZero;
     }
     CGRect bodyRect = wcpl_tapPolicyFallbackBodyRect(bubbleRect);
-    BOOL bodyRectValid = !CGRectIsEmpty(bodyRect) &&
-                         !CGRectIsNull(bodyRect) &&
-                         !CGRectIsInfinite(bodyRect) &&
-                         CGRectGetWidth(bodyRect) > kWCPLTapPolicyMinRectSide &&
-                         CGRectGetHeight(bodyRect) > kWCPLTapPolicyMinRectSide;
+    BOOL bodyRectValid = WCPLCGRectHasMinSide(bodyRect, kWCPLTapPolicyMinRectSide);
 
     if (validOut) {
         *validOut = bodyRectValid;
@@ -5082,6 +4802,10 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
 
 #line 1 "src/WCPLRepeatButtonHook.xm"
 
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLRepeatButtonMinAnchorSide = 8.0f;
+
 %hook CommonMessageCellView
 
 + (void)load {
@@ -5134,48 +4858,33 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
     BOOL mediaMessage = wcpl_isMediaBubbleRepeatMessage(buttonWrap);
     NSValue *cachedFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
     CGRect cachedFrame = cachedFrameValue ? cachedFrameValue.CGRectValue : CGRectZero;
-    BOOL cachedFrameValid = !CGRectIsEmpty(cachedFrame) &&
-                            !CGRectIsNull(cachedFrame) &&
-                            !CGRectIsInfinite(cachedFrame) &&
-                            CGRectGetWidth(cachedFrame) > 8.0f &&
-                            CGRectGetHeight(cachedFrame) > 8.0f &&
-                            CGRectIntersectsRect(cachedFrame, self.bounds);
+    BOOL cachedFrameValid =
+        WCPLCGRectIsUsableInBounds(cachedFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
 
     CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
     CGRect bubbleFrameFromSuperview = CGRectZero;
     BOOL bubbleFrameFromSuperviewValid = NO;
     if ([bubbleView.superview isKindOfClass:[UIView class]]) {
         bubbleFrameFromSuperview = [self convertRect:bubbleView.frame fromView:bubbleView.superview];
-        bubbleFrameFromSuperviewValid = !CGRectIsEmpty(bubbleFrameFromSuperview) &&
-                                        !CGRectIsNull(bubbleFrameFromSuperview) &&
-                                        !CGRectIsInfinite(bubbleFrameFromSuperview) &&
-                                        CGRectGetWidth(bubbleFrameFromSuperview) > 8.0f &&
-                                        CGRectGetHeight(bubbleFrameFromSuperview) > 8.0f;
+        bubbleFrameFromSuperviewValid =
+            WCPLCGRectHasMinSide(bubbleFrameFromSuperview, kWCPLRepeatButtonMinAnchorSide);
     }
 
-    if (CGRectIsEmpty(bubbleFrame) || CGRectGetWidth(bubbleFrame) <= 0.0f || CGRectGetHeight(bubbleFrame) <= 0.0f) {
+    if (!WCPLCGRectIsValid(bubbleFrame)) {
         bubbleFrame = bubbleFrameFromSuperviewValid ? bubbleFrameFromSuperview : [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
     CGRect menuRect = CGRectZero;
     BOOL menuRectValid = NO;
     menuRect = WCPLRepeatCellAdapterMenuRect(self);
-    menuRectValid = !CGRectIsEmpty(menuRect) &&
-                    !CGRectIsNull(menuRect) &&
-                    !CGRectIsInfinite(menuRect) &&
-                    CGRectGetWidth(menuRect) > 8.0f &&
-                    CGRectGetHeight(menuRect) > 8.0f &&
-                    CGRectIntersectsRect(menuRect, self.bounds);
+    menuRectValid =
+        WCPLCGRectIsUsableInBounds(menuRect, self.bounds, kWCPLRepeatButtonMinAnchorSide);
 
-    BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) &&
-                           !CGRectIsNull(bubbleFrame) &&
-                           !CGRectIsInfinite(bubbleFrame) &&
-                           CGRectGetWidth(bubbleFrame) > 8.0f &&
-                           CGRectGetHeight(bubbleFrame) > 8.0f &&
-                           CGRectIntersectsRect(bubbleFrame, self.bounds);
+    BOOL bubbleRectValid =
+        WCPLCGRectIsUsableInBounds(bubbleFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
     if (!bubbleRectValid && bubbleFrameFromSuperviewValid) {
         bubbleFrame = bubbleFrameFromSuperview;
-        bubbleRectValid = CGRectIntersectsRect(bubbleFrame, self.bounds);
+        bubbleRectValid = WCPLCGRectIsUsableInBounds(bubbleFrame, self.bounds, kWCPLRepeatButtonMinAnchorSide);
     }
     if (!bubbleRectValid && mediaMessage && menuRectValid) {
         bubbleFrame = menuRect;
@@ -5837,6 +5546,14 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
 // ===== WCPLMessageTimeHook.xm =====
 
 #line 1 "src/WCPLMessageTimeHook.xm"
+// Internal include-only module.
+// Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
+// Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLMessageTimeHeadMinSide = 16.0f;
+
 %hook CommonMessageCellView
 
 %new
@@ -5983,18 +5700,16 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
     } else {
         headRect = [self convertRect:headView.bounds fromView:headView];
     }
-    if (CGRectIsEmpty(headRect) || CGRectGetWidth(headRect) <= 0.0f || CGRectGetHeight(headRect) <= 0.0f) {
+    if (!WCPLCGRectIsValid(headRect)) {
         UIView *container = headView.superview;
         if (container) {
             headRect = [self convertRect:headView.frame fromView:container];
         }
     }
 
-    if (CGRectIsEmpty(headRect) ||
-        CGRectIsNull(headRect) ||
-        CGRectIsInfinite(headRect) ||
-        CGRectGetWidth(headRect) < 16.0f ||
-        CGRectGetHeight(headRect) < 16.0f) {
+    if (!WCPLCGRectIsValid(headRect) ||
+        CGRectGetWidth(headRect) < kWCPLMessageTimeHeadMinSide ||
+        CGRectGetHeight(headRect) < kWCPLMessageTimeHeadMinSide) {
         [self wchook_hideMessageTimeLabel];
         return;
     }
@@ -6140,6 +5855,10 @@ static BOOL wcpl_shouldBlockNativeDoubleTapForResolvedZone(id cell,
 // 说明：滑动过程中 relatedMessageViews 可能因 cell 复用/布局抖动而变化，
 // 导致部分 view 没被 reset，表现为头像/气泡残留偏移。
 // 这里缓存「本次滑动实际影响的 view 列表」，reset 时优先清理同一批 view。
+
+#import "WCPLGestureActionHelpers.h"
+#import "WCPLObjcSafeCall.h"
+
 static const void *kWCPLSwipeQuoteAffectedViewsKey = &kWCPLSwipeQuoteAffectedViewsKey;
 static const void *kWCPLSwipeGestureSkipLoggedKey = &kWCPLSwipeGestureSkipLoggedKey;
 static const void *kWCPLDoubleTapGestureSkipLoggedKey = &kWCPLDoubleTapGestureSkipLoggedKey;
@@ -6727,13 +6446,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
     }
 
     UITouch *touch = nil;
-    if ([touches respondsToSelector:@selector(anyObject)]) {
-        @try {
-            touch = ((id (*)(id, SEL))objc_msgSend)(touches, @selector(anyObject));
-        } @catch (__unused NSException *exceptionTouch) {
-            touch = nil;
-        }
-    }
+    touch = WCPLObjcCallId0(touches, @selector(anyObject));
 
     if (![touch isKindOfClass:[UITouch class]]) {
         return NO;
@@ -6866,24 +6579,6 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 }
 
 %new
-- (NSString *)wchook_actionNameForAction:(NSInteger)action {
-    switch (action) {
-        case 1:
-            return @"关闭";
-        case 2:
-            return @"删除";
-        case 3:
-            return @"撤回";
-        case 4:
-            return @"复读";
-        case 5:
-            return @"转发";
-        default:
-            return @"引用";
-    }
-}
-
-%new
 - (void)wchook_performConfiguredAction:(NSInteger)action
                            messageWrap:(CMessageWrap *)msgWrap
                                 isSelf:(BOOL)isSelf
@@ -6893,7 +6588,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
     }
 
     NSString *resolvedScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
-    NSString *actionName = [self wchook_actionNameForAction:action];
+    NSString *actionName = WCPLGestureActionName(action, isSelf);
     WCPLCrashBreadcrumb(@"%@动作: %@ msgType=%u from=%@ to=%@",
                         resolvedScene,
                         actionName,
@@ -6903,26 +6598,26 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 
     // 0=引用, 1=关闭, 2=删除, 3=撤回(仅己方消息), 4=复读, 5=转发
     switch (action) {
-        case 0: // 引用
+        case WCPLGestureActionQuote: // 引用
             [self wchook_performQuoteReply];
             break;
-        case 1: // 关闭
+        case WCPLGestureActionDisabled: // 关闭
             WCPLLogDebug(@"%@ action close: no-op", resolvedScene);
             break;
-        case 2: // 删除
+        case WCPLGestureActionDelete: // 删除
             [self wchook_performDeleteMessage:msgWrap];
             break;
-        case 3: // 撤回（仅己方消息有效）
+        case WCPLGestureActionRevoke: // 撤回（仅己方消息有效）
             if (isSelf) {
                 [self wchook_performRevokeMessage:msgWrap];
             } else {
                 [self wchook_performQuoteReply];
             }
             break;
-        case 4: // 复读
+        case WCPLGestureActionRepeat: // 复读
             wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, resolvedScene);
             break;
-        case 5: // 转发
+        case WCPLGestureActionForward: // 转发
             [self wchook_performForwardMessage:msgWrap sceneTag:resolvedScene];
             break;
         default:
@@ -6948,13 +6643,9 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 
         wcpl_armQuoteLongPressSuppression(msgWrap, self, @"performQuoteReply");
 
-        @try {
-            id menuController = [UIMenuController sharedMenuController];
-            SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
-            if (menuController && [menuController respondsToSelector:hideMenuSelector]) {
-                ((void (*)(id, SEL, id))objc_msgSend)(menuController, hideMenuSelector, self);
-            }
-        } @catch (__unused NSException *exceptionMenu) { WCPLCatchLog(exceptionMenu); }
+        id menuController = [UIMenuController sharedMenuController];
+        SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
+        WCPLObjcCallVoid1(menuController, hideMenuSelector, self);
 
         // 优先走 VC 引用入口，避免触发长按菜单链路
         if ([chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
@@ -6965,14 +6656,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
         }
 
         // 次选：输入 presenter 引用接口
-        id inputPresenter = nil;
-        if ([chatVC respondsToSelector:@selector(inputPresenter)]) {
-            @try {
-                inputPresenter = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(inputPresenter));
-            } @catch (__unused NSException *exceptionInputPresenter) {
-                inputPresenter = nil;
-            }
-        }
+        id inputPresenter = WCPLObjcCallId0(chatVC, @selector(inputPresenter));
 
         SEL replySelector = @selector(replyMessage:becomeFirstResponder:showDisplayName:);
         if (inputPresenter && [inputPresenter respondsToSelector:replySelector]) {
@@ -7010,6 +6694,8 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 // ===== WCPLRepeatActionHook.xm =====
 
 #line 1 "src/WCPLRepeatActionHook.xm"
+#import "WCPLPureHelpers.h"
+
 static void wcpl_repeatHandleQuoteMessage(CMessageWrap *msgWrap,
                                           NSString *chatName,
                                           BaseMsgContentViewController *chatVC,
@@ -7098,7 +6784,7 @@ static BOOL wcpl_repeatSendEmoticonViaMessageMgr(CMessageWrap *msgWrap,
             newWrap.m_nsFromUsr = fromUser;
         }
 
-        if ([chatName rangeOfString:@"@chatroom"].location != NSNotFound &&
+        if (WCPLIsChatRoomName(chatName) &&
             selfUserName.length > 0 &&
             [newWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
             @try {
@@ -7849,6 +7535,12 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 // ===== WCPLDoubleTapHook.xm =====
 
 #line 1 "src/WCPLDoubleTapHook.xm"
+// Internal include-only module.
+// Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
+// Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLObjcSafeCall.h"
+
 %hook CommonMessageCellView
 
 - (void)handleTapForReferMsg:(id)sender {
@@ -8252,19 +7944,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionTextTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"TextMessageCellView.touchesEnded.triple")) {
         return;
@@ -8328,19 +8009,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionPayBaseTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayBaseMessageCellView.touchesEnded.triple")) {
         return;
@@ -8558,19 +8228,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
     UIView *cellView = wcpl_findMessageCellAncestorView((UIView *)self);
-    if (cellView && [cellView respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(cellView,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionTripleFromImageView) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(cellView, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     %orig(touches, event);
 }
@@ -8600,19 +8259,8 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
-        BOOL handled = NO;
-        @try {
-            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(self,
-                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
-                                                                  touches,
-                                                                  event);
-        } @catch (__unused NSException *exceptionImageTriple) {
-            handled = NO;
-        }
-        if (handled) {
-            return;
-        }
+    if (WCPLObjcCallBool2(self, @selector(wchook_tryHandleDoubleTapFromTouches:event:), touches, event)) {
+        return;
     }
     if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.touchesEnded.triple")) {
         return;

@@ -1,14 +1,9 @@
 #import "WCPLCrashReporter.h"
 #import "WCPLMessageAdapter.h"
+#import "WCPLUIKitHelpers.h"
 
 static NSString *wcpl_messageSearchAppStateDescription(void) {
-    UIApplicationState state = [UIApplication sharedApplication].applicationState;
-    switch (state) {
-        case UIApplicationStateActive: return @"active";
-        case UIApplicationStateInactive: return @"inactive";
-        case UIApplicationStateBackground: return @"background";
-    }
-    return [NSString stringWithFormat:@"unknown(%ld)", (long)state];
+    return WCPLApplicationStateDescription([UIApplication sharedApplication].applicationState);
 }
 
 static void wcpl_messageSearchRecordChatLifecycle(BaseMsgContentViewController *viewController, NSString *stage) {

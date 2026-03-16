@@ -2,6 +2,11 @@
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLRepeatLayoutBubbleMinSide = 0.5f;
+static const CGFloat kWCPLRepeatLayoutAnchorMinSide = 8.0f;
+
 static CGFloat wcpl_repeatAlignToPixel(CGFloat value) {
     CGFloat scale = [UIScreen mainScreen].scale;
     if (scale <= 0.0f) {
@@ -27,7 +32,7 @@ static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *m
     BOOL bubbleRectValid = NO;
     if ([bubbleView isKindOfClass:[UIView class]]) {
         bubbleRect = [cellView convertRect:bubbleView.bounds fromView:bubbleView];
-        if (CGRectIsEmpty(bubbleRect) || CGRectGetWidth(bubbleRect) <= 0.0f || CGRectGetHeight(bubbleRect) <= 0.0f) {
+        if (!WCPLCGRectIsValid(bubbleRect)) {
             UIView *sourceSuperview = bubbleView.superview;
             if (sourceSuperview) {
                 bubbleRect = [cellView convertRect:bubbleView.frame fromView:sourceSuperview];
@@ -35,19 +40,18 @@ static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *m
                 bubbleRect = cellView.bounds;
             }
         }
-        bubbleRectValid = !CGRectIsNull(bubbleRect) && !CGRectIsInfinite(bubbleRect) && CGRectGetWidth(bubbleRect) > 0.5f && CGRectGetHeight(bubbleRect) > 0.5f;
+        bubbleRectValid = WCPLCGRectHasMinSide(bubbleRect, kWCPLRepeatLayoutBubbleMinSide);
     }
 
     CGRect bubbleRectForAnchor = bubbleRect;
-    BOOL bubbleRectForAnchorValid = !CGRectIsEmpty(bubbleRectForAnchor) && !CGRectIsNull(bubbleRectForAnchor) && !CGRectIsInfinite(bubbleRectForAnchor) && CGRectGetWidth(bubbleRectForAnchor) > 8.0f && CGRectGetHeight(bubbleRectForAnchor) > 8.0f;
+    BOOL bubbleRectForAnchorValid = WCPLCGRectHasMinSide(bubbleRectForAnchor, kWCPLRepeatLayoutAnchorMinSide);
 
     if (!bubbleRectValid) {
         bubbleRect = cellView.bounds;
     }
 
     CGRect menuRect = WCPLRepeatCellAdapterMenuRect(cellView);
-
-    BOOL menuRectValid = !CGRectIsEmpty(menuRect) && !CGRectIsNull(menuRect) && !CGRectIsInfinite(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, cellView.bounds);
+    BOOL menuRectValid = WCPLCGRectIsUsableInBounds(menuRect, cellView.bounds, kWCPLRepeatLayoutAnchorMinSide);
 
     CGRect baseRect = CGRectZero;
     if (bubbleRectForAnchorValid) {

@@ -11,6 +11,8 @@ FOUNDATION_EXPORT NSString * _Nullable WCPLBestRedEnvelopSessionCandidate(NSStri
                                                                           NSDictionary * _Nullable requestNativeUrlDict,
                                                                           HongBaoReq * _Nullable req,
                                                                           NSString * _Nullable * _Nullable sourceOut);
+FOUNDATION_EXPORT NSString * _Nullable WCPLRedEnvelopTrackToken(NSString * _Nullable sendId,
+                                                                NSString * _Nullable sign);
 FOUNDATION_EXPORT NSString * _Nullable WCPLRedEnvelopNormalizeSessionUserName(id _Nullable text);
 FOUNDATION_EXPORT NSString * _Nullable WCPLRedEnvelopSafeUserNameFromObject(id _Nullable obj);
 FOUNDATION_EXPORT BOOL WCPLRedEnvelopUserNameInList(NSString * _Nullable userName,

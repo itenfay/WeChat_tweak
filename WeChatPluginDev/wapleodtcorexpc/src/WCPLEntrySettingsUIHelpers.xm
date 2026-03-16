@@ -6,7 +6,10 @@ static NSString *const kWCPLEntryPluginTitle = @"微信辣椒";
 static NSString *const kWCPLEntryPluginLegacyTitle = @"微信辣椒设置";
 static NSString *const kWCPLEntryPluginsHubTitle = @"插件";
 static NSString *const kWCPLEntryPluginsManagerTitle = @"插件管理";
-static NSString *const kWCPLEntryPluginVersion = @"1.8.36";
+#ifndef WCPL_PACKAGE_VERSION
+#error WCPL_PACKAGE_VERSION not defined
+#endif
+static NSString *const kWCPLEntryPluginVersion = @WCPL_PACKAGE_VERSION;
 static NSString *const kWCPLEntryControllerClassName = @"WCPLSettingViewController";
 static const long long kWCPLEntryInsertSectionIndex = 0;
 

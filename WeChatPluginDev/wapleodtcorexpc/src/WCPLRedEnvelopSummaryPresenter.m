@@ -3,6 +3,7 @@
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLRedEnvelopConfig.h"
+#import "WCPLUIKitHelpers.h"
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
 #import <objc/runtime.h>
@@ -134,23 +135,7 @@ static UILabel *wcpl_redEnvelopSummaryLabelForView(UIView *container, BOOL creat
 }
 
 static CGFloat wcpl_redEnvelopSummaryStatusBarHeight(void) {
-    UIApplication *app = [UIApplication sharedApplication];
-    if (!app) {
-        return 0.0;
-    }
-    if (@available(iOS 13.0, *)) {
-        for (UIScene *scene in app.connectedScenes) {
-            if (![scene isKindOfClass:[UIWindowScene class]]) {
-                continue;
-            }
-            UIStatusBarManager *manager = ((UIWindowScene *)scene).statusBarManager;
-            CGFloat height = CGRectGetHeight(manager.statusBarFrame);
-            if (height > 0.0) {
-                return height;
-            }
-        }
-    }
-    return 0.0;
+    return WCPLStatusBarHeight();
 }
 
 static void wcpl_redEnvelopSummaryLayoutLabel(UIView *container, UILabel *label) {

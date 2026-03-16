@@ -7,6 +7,7 @@
 
 static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
 static NSString *const kWCPLMarkAllReadTopRightMenuEnable = @"kWCPLMarkAllReadTopRightMenuEnable";
+static NSString *const kWCPLSafariOpenLinkEnable = @"kWCPLSafariOpenLinkEnable";
 
 @implementation WCPLConfigCenterComponents
 @end
@@ -59,6 +60,10 @@ static NSString *const kWCPLMarkAllReadTopRightMenuEnable = @"kWCPLMarkAllReadTo
         NSNumber *markAllReadObj = [_defaults objectForKey:kWCPLMarkAllReadTopRightMenuEnable];
         _markAllReadTopRightMenuEnable = markAllReadObj ? markAllReadObj.boolValue : NO;
         [_defaults setBool:_markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
+
+        NSNumber *safariOpenObj = [_defaults objectForKey:kWCPLSafariOpenLinkEnable];
+        _safariOpenLinkEnable = safariOpenObj ? safariOpenObj.boolValue : NO;
+        [_defaults setBool:_safariOpenLinkEnable forKey:kWCPLSafariOpenLinkEnable];
     }
     return self;
 }
@@ -71,6 +76,11 @@ static NSString *const kWCPLMarkAllReadTopRightMenuEnable = @"kWCPLMarkAllReadTo
 - (void)setMarkAllReadTopRightMenuEnable:(BOOL)markAllReadTopRightMenuEnable {
     _markAllReadTopRightMenuEnable = markAllReadTopRightMenuEnable;
     [self.defaults setBool:markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
+}
+
+- (void)setSafariOpenLinkEnable:(BOOL)safariOpenLinkEnable {
+    _safariOpenLinkEnable = safariOpenLinkEnable;
+    [self.defaults setBool:safariOpenLinkEnable forKey:kWCPLSafariOpenLinkEnable];
 }
 
 @end

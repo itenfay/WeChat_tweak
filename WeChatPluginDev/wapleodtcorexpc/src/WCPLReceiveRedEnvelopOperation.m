@@ -8,6 +8,7 @@
 #import "WCPLReceiveRedEnvelopOperation.h"
 #import "WeChatRedEnvelopParam.h"
 #import "WCPLDispatchUtils.h"
+#import "WCPLOnceFlag.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLConstants.h"
@@ -21,10 +22,12 @@ static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
 static NSUInteger const kWCPLHotPathLogSampleMask = 0x0F; // 约 1/16 采样
 
 @interface WCPLReceiveRedEnvelopOperation ()
+{
+    WCPLOnceFlag _notifyResultOnce;
+}
 
 @property (assign, nonatomic, getter=isExecuting) BOOL executing;
 @property (assign, nonatomic, getter=isFinished ) BOOL finished;
-@property (assign, nonatomic) BOOL didNotifyResult;
 
 @property (strong, nonatomic) WeChatRedEnvelopParam *redEnvelopParam;
 @property (assign, nonatomic) unsigned int delaySeconds;
@@ -45,6 +48,7 @@ static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
 
 - (instancetype)initWithRedEnvelopParam:(WeChatRedEnvelopParam *)param delay:(unsigned int)delaySeconds {
     if (self = [super init]) {
+        WCPLOnceFlagReset(&_notifyResultOnce);
         _redEnvelopParam = param;
         _delaySeconds = delaySeconds;
         _maxRetryCount = 3;
@@ -234,15 +238,11 @@ static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
 }
 
 - (void)wcpl_notifyResultSuccess:(BOOL)success error:(NSError *)error {
-    WCPLRedEnvelopResultBlock block = nil;
-    @synchronized (self) {
-        if (self.didNotifyResult) {
-            return;
-        }
-        self.didNotifyResult = YES;
-        block = self.resultBlock;
+    if (!WCPLOnceFlagTryFire(&_notifyResultOnce)) {
+        return;
     }
 
+    WCPLRedEnvelopResultBlock block = self.resultBlock;
     if (!block) {
         return;
     }

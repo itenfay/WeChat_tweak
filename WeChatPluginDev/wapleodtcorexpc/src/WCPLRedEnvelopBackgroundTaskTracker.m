@@ -1,35 +1,17 @@
 #import "WCPLRedEnvelopBackgroundTaskTracker.h"
 
+#import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLRedEnvelopSessionResolver.h"
 #import <UIKit/UIKit.h>
 
 static NSString *const kWCPLHongbaoBackgroundTaskName = @"com.wcpl.hongbao.receive";
 static const void *kWCPLHongbaoBackgroundTaskQueueSpecificKey = &kWCPLHongbaoBackgroundTaskQueueSpecificKey;
 
-static inline void wcpl_bg_dispatch_sync_safe(dispatch_queue_t queue, dispatch_block_t block) {
-    if (!block) {
-        return;
-    }
-    if (dispatch_get_specific(kWCPLHongbaoBackgroundTaskQueueSpecificKey)) {
-        block();
-        return;
-    }
-    dispatch_sync(queue, block);
-}
-
-static NSString *wcpl_backgroundTaskTrackToken(NSString *sendId, NSString *sign) {
-    NSString *normalizedSendId = WCPLTrimText(sendId);
-    if (normalizedSendId.length > 0) {
-        return [NSString stringWithFormat:@"sendId:%@", normalizedSendId];
-    }
-
-    NSString *normalizedSign = WCPLTrimText(sign);
-    if (normalizedSign.length > 0) {
-        return [NSString stringWithFormat:@"sign:%@", normalizedSign];
-    }
-
-    return nil;
+static inline WCPLDispatchQueueSpecific wcpl_hongbaoBackgroundTaskQueueSpecific(void) {
+    return WCPLDispatchQueueSpecificMake(kWCPLHongbaoBackgroundTaskQueueSpecificKey,
+                                         kWCPLHongbaoBackgroundTaskQueueSpecificKey);
 }
 
 static dispatch_queue_t wcpl_hongbaoBackgroundTaskQueue(void) {
@@ -55,7 +37,7 @@ static NSMutableDictionary<NSString *, NSNumber *> *wcpl_hongbaoBackgroundTaskMa
 }
 
 void WCPLBeginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
-    NSString *token = wcpl_backgroundTaskTrackToken(sendId, sign);
+    NSString *token = WCPLRedEnvelopTrackToken(sendId, sign);
     if (token.length == 0) {
         return;
     }
@@ -75,7 +57,7 @@ void WCPLBeginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
     }
 
     __block BOOL alreadyTracked = NO;
-    wcpl_bg_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_hongbaoBackgroundTaskQueue(), wcpl_hongbaoBackgroundTaskQueueSpecific(), ^{
         NSNumber *existing = wcpl_hongbaoBackgroundTaskMap()[token];
         alreadyTracked = (existing != nil && existing.unsignedIntegerValue != UIBackgroundTaskInvalid);
     });
@@ -88,7 +70,7 @@ void WCPLBeginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
     taskId = [app beginBackgroundTaskWithName:kWCPLHongbaoBackgroundTaskName expirationHandler:^{
         UIApplication *innerApp = [UIApplication sharedApplication];
         __block BOOL shouldEnd = NO;
-        wcpl_bg_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), ^{
+        WCPLDispatchSyncSafe(wcpl_hongbaoBackgroundTaskQueue(), wcpl_hongbaoBackgroundTaskQueueSpecific(), ^{
             NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_hongbaoBackgroundTaskMap();
             NSNumber *stored = tracker[tokenCopy];
             if (stored && stored.unsignedIntegerValue == taskId) {
@@ -108,7 +90,7 @@ void WCPLBeginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
         return;
     }
 
-    wcpl_bg_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_hongbaoBackgroundTaskQueue(), wcpl_hongbaoBackgroundTaskQueueSpecific(), ^{
         wcpl_hongbaoBackgroundTaskMap()[tokenCopy] = @(taskId);
     });
 
@@ -119,7 +101,7 @@ void WCPLBeginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
 }
 
 void WCPLEndHongbaoBackgroundTask(NSString *sendId, NSString *sign, NSString *reason) {
-    NSString *token = wcpl_backgroundTaskTrackToken(sendId, sign);
+    NSString *token = WCPLRedEnvelopTrackToken(sendId, sign);
     if (token.length == 0) {
         return;
     }
@@ -140,7 +122,7 @@ void WCPLEndHongbaoBackgroundTask(NSString *sendId, NSString *sign, NSString *re
     }
 
     __block UIBackgroundTaskIdentifier taskId = UIBackgroundTaskInvalid;
-    wcpl_bg_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_hongbaoBackgroundTaskQueue(), wcpl_hongbaoBackgroundTaskQueueSpecific(), ^{
         NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_hongbaoBackgroundTaskMap();
         NSNumber *stored = tracker[token];
         if (stored) {

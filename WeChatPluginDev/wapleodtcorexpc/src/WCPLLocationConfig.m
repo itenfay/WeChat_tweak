@@ -3,45 +3,29 @@
 //
 
 #import "WCPLLocationConfig.h"
-#import <dispatch/dispatch.h>
 
 static NSString *const kWCPLFakeLocLat              = @"kWCPLFakeLocLat";
 static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
 
-@interface WCPLLocationConfig ()
-
-@property (nonatomic, strong) NSUserDefaults *defaults;
-
-@end
-
 @implementation WCPLLocationConfig
 
 + (instancetype)sharedConfig {
-    static WCPLLocationConfig *config = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        config = [WCPLLocationConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
-    });
-    return config;
-}
-
-- (instancetype)init {
-    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+    return [super sharedConfig];
 }
 
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
-    return [[self alloc] initWithDefaults:defaults];
+    return [super configWithDefaults:defaults];
 }
 
 - (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
-    if (self = [super init]) {
-        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
-        _fakeLatitude = [_defaults doubleForKey:kWCPLFakeLocLat];
-        _fakeLongitude = [_defaults doubleForKey:kWCPLFakeLocLng];
-        _fakeLocEnable = [_defaults boolForKey:kWCPLFakeLocEnable];
-    }
-    return self;
+    return [super initWithDefaults:defaults];
+}
+
+- (void)wcpl_loadFromDefaults {
+    _fakeLatitude = [self.defaults doubleForKey:kWCPLFakeLocLat];
+    _fakeLongitude = [self.defaults doubleForKey:kWCPLFakeLocLng];
+    _fakeLocEnable = [self.defaults boolForKey:kWCPLFakeLocEnable];
 }
 
 - (void)setFakeLatitude:(double)fakeLatitude {

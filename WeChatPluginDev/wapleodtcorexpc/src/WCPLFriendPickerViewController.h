@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import "WCPLPickerPresenterBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -9,12 +9,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface WCPLFriendPickerViewController : UIViewController
-
-- (instancetype)initWithSelectedIdentifiers:(NSArray<NSString *> *)selectedIdentifiers;
+@interface WCPLFriendPickerViewController : WCPLPickerPresenterBaseViewController
 
 @property (nonatomic, weak) id<WCPLFriendPickerViewControllerDelegate> delegate;
-@property (nonatomic, copy) NSString *titleText;
 
 @end
 

@@ -7,6 +7,7 @@
 #import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLContactAdapter.h"
+#import "WCPLGestureActionHelpers.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 #import "WCPLMessageActionAdapter.h"
@@ -66,24 +67,8 @@ static NSString *wcpl_swipeStateName(UIGestureRecognizerState state) {
     }
 }
 
-static NSString *wcpl_decodeBasicXMLEntities(NSString *text) {
-    return WCPLDecodeBasicXMLEntities(text);
-}
-
 static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOOL isSelfAction) {
-    if (action < 0) {
-        return 0;
-    }
-
-    if (action == 3 && !isSelfAction) {
-        return 0;
-    }
-
-    if (action > 5) {
-        return 0;
-    }
-
-    return action;
+    return WCPLNormalizeGestureActionValue(action, isSelfAction);
 }
 
 static NSString *wcpl_trimTextForRepeat(NSString *text) {
@@ -200,8 +185,4 @@ static unsigned int wcpl_extractVoiceAttrUInt(NSString *xml, NSString *attrName)
 
 static NSString *wcpl_buildMinimalVoiceContent(unsigned int voiceLengthMs, unsigned int voiceFormat) {
     return WCPLBuildMinimalVoiceContent(voiceLengthMs, voiceFormat);
-}
-
-static long long wcpl_quoteReferServerIDFromContent(NSString *content) {
-    return WCPLQuoteReferServerIDFromContent(content);
 }

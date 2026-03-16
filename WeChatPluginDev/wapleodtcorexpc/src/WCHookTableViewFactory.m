@@ -56,7 +56,10 @@
                                 on:(BOOL)isOn
                             target:(id)target
                             action:(SEL)selector {
-    Class cellClass = [self wchook_classNamed:@"WCTableViewCellManager"];
+    Class cellClass = [self wchook_classNamed:@"WCTableViewNormalCellManager"];
+    if (!cellClass) {
+        cellClass = [self wchook_classNamed:@"WCTableViewCellManager"];
+    }
     if (!cellClass) {
         return nil;
     }

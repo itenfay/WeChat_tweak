@@ -4,7 +4,12 @@
 #import "WCPLWeChatContactHeaders.h"
 #import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLContactAdapter.h"
+#import "WCPLIconImageHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLMenuItemIconHelpers.h"
+#import "WCPLObjcSafeCall.h"
+#import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
 
 #import <dispatch/dispatch.h>
@@ -35,11 +40,7 @@ static NSMutableDictionary<NSString *, NSMutableArray<NSURLSessionTask *> *> *g_
 static unsigned long long g_wcpl_douyinSessionSeq = 0;
 
 static NSString *wcpl_douyin_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
-        return nil;
-    }
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
+    return WCPLTrimText(text);
 }
 
 static NSString *wcpl_douyin_redactedString(NSString *text) {
@@ -214,41 +215,11 @@ static NSString *wcpl_douyin_sanitizeCandidate(NSString *candidate) {
 }
 
 static id wcpl_douyin_safeValueForKey(id obj, NSString *key) {
-    if (!obj || ![key isKindOfClass:[NSString class]] || key.length == 0) {
-        return nil;
-    }
-    @try {
-        return [obj valueForKey:key];
-    } @catch (__unused NSException *exception) {
-        return nil;
-    }
+    return WCPLSafeValueForKey(obj, key);
 }
 
 static NSString *wcpl_douyin_safeUserNameFromObject(id obj) {
-    if (!obj) {
-        return nil;
-    }
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_douyin_trimString((NSString *)obj);
-    }
-
-    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                return wcpl_douyin_trimString((NSString *)value);
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    @try {
-        id value = [obj valueForKey:@"m_nsUsrName"];
-        if ([value isKindOfClass:[NSString class]]) {
-            return wcpl_douyin_trimString((NSString *)value);
-        }
-    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-
-    return nil;
+    return WCPLContactAdapterSafeUserName(obj);
 }
 
 static BOOL wcpl_douyin_isSenderFromMsgWrap(CMessageWrap *msgWrap) {
@@ -1660,80 +1631,15 @@ static UIImage *wcpl_douyin_menuIconImage(void) {
             "<circle cx='18' cy='16' r='4' stroke='#FFFFFF' stroke-width='1.5'/>"
             "<path d='M18 14V18M18 18L16.5 16.5M18 18L19.5 16.5' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
             "</svg>";
-        NSData *svgData = [svg dataUsingEncoding:NSUTF8StringEncoding];
-        id svgImage = nil;
-        Class themeProxyClass = objc_getClass("WAThemeProxy");
-        SEL svgFromDataSel = @selector(svgImageFromData:);
-        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
-            @try {
-                svgImage = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, svgData);
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-        }
-        if ([svgImage isKindOfClass:[UIImage class]]) {
-            icon = (UIImage *)svgImage;
-        }
-
-        UIImage *symbol = nil;
-        if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
-            UIImageSymbolConfiguration *config =
-                [UIImageSymbolConfiguration configurationWithPointSize:16
-                                                                weight:UIImageSymbolWeightRegular
-                                                                 scale:UIImageSymbolScaleMedium];
-            symbol = [UIImage systemImageNamed:@"link.badge.plus" withConfiguration:config];
-            if (!symbol) {
-                symbol = [UIImage systemImageNamed:@"play.square.stack" withConfiguration:config];
-            }
-            if (!symbol) {
-                symbol = [UIImage systemImageNamed:@"link" withConfiguration:config];
-            }
-        }
-        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            symbol = [UIImage systemImageNamed:@"link.badge.plus"];
-        }
-        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            symbol = [UIImage systemImageNamed:@"play.square.stack"];
-        }
-        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            symbol = [UIImage systemImageNamed:@"link"];
-        }
-        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            symbol = [UIImage systemImageNamed:@"play.rectangle"];
-        }
-        if (!icon && [symbol isKindOfClass:[UIImage class]]) {
-            icon = symbol;
-        }
-        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        }
+        icon = WCPLIconImageFromSVGOrSystemSymbols(svg,
+                                                   @[@"link.badge.plus", @"play.square.stack", @"link", @"play.rectangle"],
+                                                   16);
     });
     return icon;
 }
 
 static void wcpl_douyin_applyMenuItemIcon(id menuItem, UIImage *icon) {
-    if (!menuItem || !icon) {
-        return;
-    }
-
-    UIImage *finalIcon = icon;
-    if ([finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
-        @try {
-            finalIcon = [finalIcon imageWithTintColor:wcpl_douyin_menuIconTintColor()];
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-    if ([finalIcon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-        finalIcon = [finalIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
-
-    if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), finalIcon);
-            return;
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-
-    @try {
-        [menuItem setValue:finalIcon forKey:@"iconImage"];
-    } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    WCPLApplyMenuItemIcon(menuItem, icon, wcpl_douyin_menuIconTintColor());
 }
 
 static id wcpl_douyin_createMenuItemIfNeeded(Class menuItemClass, id cell, SEL action) {

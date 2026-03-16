@@ -2,6 +2,7 @@
 
 #import "WCPLConfigCenter.h"
 #import "WCPLRepeatButtonAssetManager.h"
+#import "WCHookTableViewFactory.h"
 #import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
@@ -68,34 +69,40 @@
 @implementation WCPLSettingViewController (WCPLSettingsSectionFactory)
 
 - (void)addBasicSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包功能"];
-    [section addCell:[self createAutoReceiveRedEnvelopCell]];
-    [section addCell:[self createReceiveDonePageSummaryCell]];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"红包功能" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createAutoReceiveRedEnvelopCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createReceiveDonePageSummaryCell] toSection:section];
 
     if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
-        [section addCell:[self createPrivateRedEnvelopCell]];
+        [WCHookTableViewFactory addCell:[self createPrivateRedEnvelopCell] toSection:section];
         if ([WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable) {
-            [section addCell:[self createPrivateAutoReplyCell]];
+            [WCHookTableViewFactory addCell:[self createPrivateAutoReplyCell] toSection:section];
         }
 
-        [section addCell:[self createGroupRedEnvelopCell]];
+        [WCHookTableViewFactory addCell:[self createGroupRedEnvelopCell] toSection:section];
         if ([WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable) {
-            [section addCell:[self createGroupAutoReplyCell]];
-            [section addCell:[self createGroupScopeCell]];
-            [section addCell:[self createReceiveSelfRedEnvelopCell]];
+            [WCHookTableViewFactory addCell:[self createGroupAutoReplyCell] toSection:section];
+            [WCHookTableViewFactory addCell:[self createGroupScopeCell] toSection:section];
+            [WCHookTableViewFactory addCell:[self createReceiveSelfRedEnvelopCell] toSection:section];
         }
 
-        [section addCell:[self createDelaySettingCell]];
-        [section addCell:[self createRedEnvelopNotifyTargetCell]];
+        [WCHookTableViewFactory addCell:[self createDelaySettingCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRedEnvelopNotifyTargetCell] toSection:section];
     }
 
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addAdvanceSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包高级功能"];
-    [section addCell:[self createQueueCell]];
-    [self.tableViewMgr addSection:section];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"红包高级功能" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createQueueCell] toSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addPush2ChatSettingSection {
@@ -104,137 +111,167 @@
         return;
     }
 
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能设置"];
-    section.footerTitle = @"注意：\n直达功能需要重启微信后生效";
+    id section = [WCHookTableViewFactory sectionWithHeader:@"功能设置" footer:nil];
+    if (!section) {
+        return;
+    }
+    if ([section respondsToSelector:@selector(setFooterTitle:)]) {
+        ((WCTableViewSectionManager *)section).footerTitle = @"注意：\n直达功能需要重启微信后生效";
+    }
 
-    [section addCell:[objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEnableForegroundPush2Chat:)
-                                                                            target:self
-                                                                             title:@"开启前台直达"
-                                                                                on:config.enableForegroundPush]];
+    [WCHookTableViewFactory addCell:[WCHookTableViewFactory switchCellWithTitle:@"开启前台直达"
+                                                                     descriptor:nil
+                                                                             on:config.enableForegroundPush
+                                                                         target:self
+                                                                         action:@selector(settingEnableForegroundPush2Chat:)]
+                          toSection:section];
     if (config.enableForegroundPush) {
         UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"全屏", @"半屏"]];
         seg.selectedSegmentIndex = config.foregroundPushMode;
         [seg addTarget:self action:@selector(settingForegroundPush2ChatModeChanged:) forControlEvents:UIControlEventValueChanged];
         id cell = [objc_getClass("WCTableViewCellManager") normalCellForSel:nil target:self title:@"↳ 前台直达模式" rightView:seg];
-        [section addCell:cell];
+        [WCHookTableViewFactory addCell:cell toSection:section];
     }
 
-    [section addCell:[objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEnableBackgroundPush2Chat:)
-                                                                            target:self
-                                                                             title:@"开启后台直达"
-                                                                                on:config.enableBackgroundPush]];
+    [WCHookTableViewFactory addCell:[WCHookTableViewFactory switchCellWithTitle:@"开启后台直达"
+                                                                     descriptor:nil
+                                                                             on:config.enableBackgroundPush
+                                                                         target:self
+                                                                         action:@selector(settingEnableBackgroundPush2Chat:)]
+                          toSection:section];
     if (config.enableBackgroundPush) {
         UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"全屏", @"半屏"]];
         seg.selectedSegmentIndex = config.backgroundPushMode;
         [seg addTarget:self action:@selector(settingBackgroundPush2ChatModeChanged:) forControlEvents:UIControlEventValueChanged];
         id cell = [objc_getClass("WCTableViewCellManager") normalCellForSel:nil target:self title:@"↳ 后台直达模式" rightView:seg];
-        [section addCell:cell];
+        [WCHookTableViewFactory addCell:cell toSection:section];
     }
 
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addOtherSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
-    [section addCell:[self createTimelineAdBlockCell]];
-    [section addCell:[self createEmulateIPadLoginCell]];
-    [section addCell:[self createAbortRemokeMessageCell]];
-    [section addCell:[self createMessageTimeSwitchCell]];
-    [section addCell:[self createMarkAllReadTopRightMenuEnableCell]];
-    [self.tableViewMgr addSection:section];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"其他" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createTimelineAdBlockCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createEmulateIPadLoginCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createAbortRemokeMessageCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createMessageTimeSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createMarkAllReadTopRightMenuEnableCell] toSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addLogEntrySection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"日志与调试"];
-    [section addCell:[self createLogEntryCell]];
-    [self.tableViewMgr addSection:section];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"日志与调试" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createLogEntryCell] toSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addMessageIgnoreSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息屏蔽"
-                                                                                                Footer:@"开启后可在用户资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
-    [section addCell:[self createUserIgnoreEnableCell]];
-    [section addCell:[self createIgnoredChatroomCountCell]];
-    [section addCell:[self createIgnoredUserCountCell]];
-    [section addCell:[self createIgnoreResetCell]];
-    [self.tableViewMgr addSection:section];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"消息屏蔽"
+                                                   footer:@"开启后可在用户资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createUserIgnoreEnableCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createIgnoredChatroomCountCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createIgnoredUserCountCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createIgnoreResetCell] toSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addGroupMonitorSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"群聊监控"
-                                                                                                Footer:@"开启后，当检测到群成员退出时，会在对应群会话插入本地提示消息。\n可设置生效范围：全部群聊 / 白名单。"];
-    [section addCell:[self createQuitMonitorEnableCell]];
-    [section addCell:[self createQuitMonitorScopeCell]];
-    if ([WCPLConfigCenter shared].ignore.quitMonitorScope == WCPLQuitMonitorScopeWhitelist) {
-        [section addCell:[self createQuitMonitorWhitelistCell]];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"群聊监控"
+                                                   footer:@"开启后，当检测到群成员退出时，会在对应群会话插入本地提示消息。\n可设置生效范围：全部群聊 / 白名单。"];
+    if (!section) {
+        return;
     }
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addCell:[self createQuitMonitorEnableCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createQuitMonitorScopeCell] toSection:section];
+    if ([WCPLConfigCenter shared].ignore.quitMonitorScope == WCPLQuitMonitorScopeWhitelist) {
+        [WCHookTableViewFactory addCell:[self createQuitMonitorWhitelistCell] toSection:section];
+    }
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addLongPressPanelSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"长按面板"
-                                                                                                Footer:@"控制消息长按菜单中的复读、小丑、语音转发与抖音解析。"];
-    [section addCell:[self createRepeatLongPressMenuSwitchCell]];
-    [section addCell:[self createClownFeatureSwitchCell]];
-    [section addCell:[self createVoiceForwardFeatureSwitchCell]];
-    [section addCell:[self createDouyinParserCell]];
-    [self.tableViewMgr addSection:section];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"长按面板"
+                                                   footer:@"控制消息长按菜单中的复读、小丑、语音转发与抖音解析。"];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createRepeatLongPressMenuSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createClownFeatureSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createVoiceForwardFeatureSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createDouyinParserCell] toSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addSwipeQuoteSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势"];
-    [section addCell:[self createSwipeGestureSwitchCell]];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"消息手势" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createSwipeGestureSwitchCell] toSection:section];
 
     if ([WCPLConfigCenter shared].gesture.swipeGestureEnable) {
-        [section addCell:[self createSwipeSensitivityCell]];
-        [section addCell:[self createSwipeQuoteAtUserCell]];
-        [section addCell:[self createSwipeQuoteSwitchCell]];
+        [WCHookTableViewFactory addCell:[self createSwipeSensitivityCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createSwipeQuoteAtUserCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createSwipeQuoteSwitchCell] toSection:section];
 
         if ([WCPLConfigCenter shared].gesture.swipeQuoteEnable) {
-            [section addCell:[self createSwipeLeftOtherActionCell]];
-            [section addCell:[self createSwipeLeftSelfActionCell]];
+            [WCHookTableViewFactory addCell:[self createSwipeLeftOtherActionCell] toSection:section];
+            [WCHookTableViewFactory addCell:[self createSwipeLeftSelfActionCell] toSection:section];
         }
 
-        [section addCell:[self createSwipeRightSwitchCell]];
+        [WCHookTableViewFactory addCell:[self createSwipeRightSwitchCell] toSection:section];
         if ([WCPLConfigCenter shared].gesture.swipeRightEnable) {
-            [section addCell:[self createSwipeRightOtherActionCell]];
-            [section addCell:[self createSwipeRightSelfActionCell]];
+            [WCHookTableViewFactory addCell:[self createSwipeRightOtherActionCell] toSection:section];
+            [WCHookTableViewFactory addCell:[self createSwipeRightSelfActionCell] toSection:section];
         }
 
-        [section addCell:[self createTapReferJumpSwitchCell]];
+        [WCHookTableViewFactory addCell:[self createTapReferJumpSwitchCell] toSection:section];
     }
 
-    [section addCell:[self createDoubleTapGestureSwitchCell]];
+    [WCHookTableViewFactory addCell:[self createDoubleTapGestureSwitchCell] toSection:section];
     if ([WCPLConfigCenter shared].gesture.doubleTapGestureEnable) {
-        [section addCell:[self createDoubleTapOtherActionCell]];
-        [section addCell:[self createDoubleTapSelfActionCell]];
+        [WCHookTableViewFactory addCell:[self createDoubleTapOtherActionCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createDoubleTapSelfActionCell] toSection:section];
     }
 
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 - (void)addRepeatBubbleSettingSection {
     WCPLGestureConfig *gestureConfig = [WCPLConfigCenter shared].gesture;
     [[WCPLRepeatButtonAssetManager sharedManager] migrateIfNeededForConfig:gestureConfig];
 
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"复读气泡"];
-    [section addCell:[self createRepeatButtonSwitchCell]];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"复读气泡" footer:nil];
+    if (!section) {
+        return;
+    }
+    [WCHookTableViewFactory addCell:[self createRepeatButtonSwitchCell] toSection:section];
 
     if (gestureConfig.repeatButtonEnable) {
-        [section addCell:[self createRepeatButtonHapticCell]];
-        [section addCell:[self createRepeatButtonSizeCell]];
-        [section addCell:[self createRepeatCustomImageSwitchCell]];
-        [section addCell:[self createRepeatCustomImagePickerCell]];
+        [WCHookTableViewFactory addCell:[self createRepeatButtonHapticCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatButtonSizeCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatCustomImageSwitchCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatCustomImagePickerCell] toSection:section];
         if (gestureConfig.repeatButtonCustomImageRelativePath.length > 0) {
-            [section addCell:[self createRepeatCustomImageResetCell]];
+            [WCHookTableViewFactory addCell:[self createRepeatCustomImageResetCell] toSection:section];
         }
-        [section addCell:[self createRepeatSupportEmoticonCell]];
-        [section addCell:[self createRepeatSupportVoiceCell]];
-        [section addCell:[self createRepeatSupportImageCell]];
-        [section addCell:[self createRepeatSupportVideoCell]];
+        [WCHookTableViewFactory addCell:[self createRepeatSupportEmoticonCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatSupportVoiceCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatSupportImageCell] toSection:section];
+        [WCHookTableViewFactory addCell:[self createRepeatSupportVideoCell] toSection:section];
     }
 
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 }
 
 @end

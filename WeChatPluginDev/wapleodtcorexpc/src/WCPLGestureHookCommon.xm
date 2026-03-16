@@ -8,9 +8,11 @@
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLDispatchUtils.h"
+#import "WCPLMessagePersistenceAdapter.h"
 #import "WCPLLogger.h"
 #import "WCPLRepeatButtonEngine.h"
 #import "WCPLRepeatButtonAssetManager.h"
+#import "WCPLViewTraversalHelpers.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #include <stdint.h>
@@ -89,7 +91,6 @@ static CGFloat wcpl_repeatAlignToPixel(CGFloat value);
 static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right);
 static CGFloat wcpl_repeatButtonSizeFromConfig(void);
 static void wcpl_setupRepeatLifecycleObserver(void);
-static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap);
 static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap);
 static id wcpl_viewModelForCellView(id cellView);
 static BOOL wcpl_resolveRepeatButtonEligibleBySubViewModel(id viewModel);
@@ -2630,49 +2631,27 @@ static BOOL wcpl_addLocalVoiceMsg(id messageMgr, NSString *chatName, CMessageWra
         return NO;
     }
 
-    @try {
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                          @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:),
-                                                                          chatName,
-                                                                          sendWrap,
-                                                                          YES,
-                                                                          NO,
-                                                                          YES);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                   @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:),
-                                                                   chatName,
-                                                                   sendWrap,
-                                                                   YES,
-                                                                   NO);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
-                                                       @selector(AddLocalMsg:MsgWrap:),
-                                                       chatName,
-                                                       sendWrap);
-            WCPLLogDebug(@"Repeat voice add-local: scene=%@ localID=%u",
-                         sceneTag ?: @"voice_local",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-    } @catch (NSException *exception) {
-        WCPLLogWarning(@"Repeat voice add-local exception: scene=%@ reason=%@",
+    WCPLAddLocalMsgInsertPath insertPath = WCPLAddLocalMsgInsertPathNone;
+    BOOL inserted = WCPLAddLocalMsgInsert((WCPLAddLocalMsgInsertRequest){
+                                              .messageMgr = messageMgr,
+                                              .sessionUserName = chatName,
+                                              .msgWrap = sendWrap,
+                                              .fixTime = YES,
+                                              .notify = NO,
+                                              .unique = YES,
+                                          },
+                                          &insertPath);
+    if (inserted) {
+        WCPLLogDebug(@"Repeat voice add-local: scene=%@ path=%@ localID=%u",
+                     sceneTag ?: @"voice_local",
+                     WCPLAddLocalMsgInsertPathDescription(insertPath),
+                     sendWrap.m_uiMesLocalID);
+    } else {
+        WCPLLogWarning(@"Repeat voice add-local failed: scene=%@ path=%@",
                        sceneTag ?: @"voice_local",
-                       exception.reason ?: exception);
+                       WCPLAddLocalMsgInsertPathDescription(insertPath));
     }
-
-    return NO;
+    return inserted;
 }
 
 static BOOL wcpl_tryInvokeResendVoiceTarget(id target,
@@ -2925,18 +2904,11 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap,
 @end
 
 static UITableView *wcpl_findContainingTableView(UIView *view) {
-    UIView *current = view;
-    while (current) {
-        if ([current isKindOfClass:[UITableView class]]) {
-            return (UITableView *)current;
-        }
-        current = current.superview;
-    }
-    return nil;
+    return WCPLFindContainingTableView(view);
 }
 
 static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIView *> *storage) {
-    if (!root || !storage) {
+    if (![root isKindOfClass:[UIView class]] || ![storage isKindOfClass:[NSMutableArray class]]) {
         return;
     }
 
@@ -2945,14 +2917,7 @@ static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIVi
     dispatch_once(&onceToken, ^{
         commonMessageCellViewClass = NSClassFromString(@"CommonMessageCellView");
     });
-
-    if (commonMessageCellViewClass && [root isKindOfClass:commonMessageCellViewClass]) {
-        [storage addObject:root];
-    }
-
-    for (UIView *subview in root.subviews) {
-        wcpl_collectMessageCellViewsInView(subview, storage);
-    }
+    WCPLCollectViewsOfClassOrAllIfNil(root, commonMessageCellViewClass, storage);
 }
 
 static BOOL wcpl_measureViewGeometryInTable(UIView *candidate,

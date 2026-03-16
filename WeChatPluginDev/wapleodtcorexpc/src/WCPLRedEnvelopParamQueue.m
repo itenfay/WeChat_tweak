@@ -8,6 +8,7 @@
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WeChatRedEnvelopParam.h"
 #import "WCPLConstants.h"
+#import "WCPLDispatchUtils.h"
 #import <dispatch/dispatch.h>
 
 @interface WCPLRedEnvelopParamQueue ()
@@ -17,7 +18,6 @@
 @property (strong, nonatomic) NSMutableDictionary<NSString *, NSMutableArray<WeChatRedEnvelopParam *> *> *queueBySign;
 @property (nonatomic) dispatch_queue_t syncQueue;
 
-- (BOOL)wcpl_isOnSyncQueue;
 - (void)wcpl_sync:(dispatch_block_t)block;
 
 @end
@@ -58,17 +58,10 @@ static NSString *wcpl_trimQueueKey(NSString *value) {
     return self;
 }
 
-- (BOOL)wcpl_isOnSyncQueue {
-    return dispatch_get_specific(kWCPLRedEnvelopParamQueueSpecificKey) == (__bridge void *)self;
-}
-
 - (void)wcpl_sync:(dispatch_block_t)block {
-    if (!block) return;
-    if ([self wcpl_isOnSyncQueue]) {
-        block();
-        return;
-    }
-    dispatch_sync(self.syncQueue, block);
+    WCPLDispatchQueueSpecific specific = WCPLDispatchQueueSpecificMake(kWCPLRedEnvelopParamQueueSpecificKey,
+                                                                      (__bridge void *)self);
+    WCPLDispatchSyncSafe(self.syncQueue, specific, block);
 }
 
 - (void)enqueue:(WeChatRedEnvelopParam *)param {
