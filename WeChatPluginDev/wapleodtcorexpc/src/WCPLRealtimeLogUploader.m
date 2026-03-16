@@ -5,6 +5,7 @@
 //
 
 #import "WCPLRealtimeLogUploader.h"
+#import "WCPLFileHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 
@@ -168,14 +169,7 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 
     WCPLLogger *logger = [WCPLLogger sharedLogger];
     NSString *logPath = [logger logFilePath];
-
-    unsigned long long fileSize = 0;
-    if (logPath.length > 0) {
-        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
-        if (attributes) {
-            fileSize = [attributes fileSize];
-        }
-    }
+    unsigned long long fileSize = WCPLFileSizeAtPath(logPath);
 
     self.lastUploadedOffset = fileSize;
     self.sessionLogName = [self newTimestampLogNameLocked];
@@ -204,12 +198,7 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
         return;
     }
 
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
-    if (!attributes) {
-        return;
-    }
-
-    unsigned long long fileSize = [attributes fileSize];
+    unsigned long long fileSize = WCPLFileSizeAtPath(logPath);
     if (fileSize == 0) {
         return;
     }

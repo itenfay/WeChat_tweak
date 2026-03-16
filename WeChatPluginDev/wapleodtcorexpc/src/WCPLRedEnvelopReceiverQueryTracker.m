@@ -1,7 +1,8 @@
 #import "WCPLRedEnvelopReceiverQueryTracker.h"
 
+#import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
-#import "WCPLPureHelpers.h"
+#import "WCPLRedEnvelopSessionResolver.h"
 #import "WCPLServiceCenter.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
@@ -9,29 +10,9 @@
 static NSTimeInterval const kWCPLReceiverQueryHedgeDelays[] = {0.20, 0.55};
 static const void *kWCPLReceiverQueryTrackQueueSpecificKey = &kWCPLReceiverQueryTrackQueueSpecificKey;
 
-static inline void wcpl_receiverDispatchSyncSafe(dispatch_queue_t queue, dispatch_block_t block) {
-    if (!block) {
-        return;
-    }
-    if (dispatch_get_specific(kWCPLReceiverQueryTrackQueueSpecificKey)) {
-        block();
-        return;
-    }
-    dispatch_sync(queue, block);
-}
-
-static NSString *wcpl_receiverQueryTrackToken(NSString *sendId, NSString *sign) {
-    NSString *normalizedSendId = WCPLTrimText(sendId);
-    if (normalizedSendId.length > 0) {
-        return [NSString stringWithFormat:@"sendId:%@", normalizedSendId];
-    }
-
-    NSString *normalizedSign = WCPLTrimText(sign);
-    if (normalizedSign.length > 0) {
-        return [NSString stringWithFormat:@"sign:%@", normalizedSign];
-    }
-
-    return nil;
+static inline WCPLDispatchQueueSpecific wcpl_receiverQueryTrackQueueSpecific(void) {
+    return WCPLDispatchQueueSpecificMake(kWCPLReceiverQueryTrackQueueSpecificKey,
+                                         kWCPLReceiverQueryTrackQueueSpecificKey);
 }
 
 static dispatch_queue_t wcpl_receiverQueryTrackQueue(void) {
@@ -57,39 +38,39 @@ static NSMutableDictionary<NSString *, NSNumber *> *wcpl_receiverQueryTrackMap(v
 }
 
 void WCPLMarkReceiverQueryPending(NSString *sendId, NSString *sign) {
-    NSString *token = wcpl_receiverQueryTrackToken(sendId, sign);
+    NSString *token = WCPLRedEnvelopTrackToken(sendId, sign);
     if (token.length == 0) {
         return;
     }
 
     NSTimeInterval now = CFAbsoluteTimeGetCurrent();
-    wcpl_receiverDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), wcpl_receiverQueryTrackQueueSpecific(), ^{
         wcpl_receiverQueryTrackMap()[token] = @(now);
     });
 }
 
 BOOL WCPLIsReceiverQueryPending(NSString *sendId, NSString *sign) {
-    NSString *token = wcpl_receiverQueryTrackToken(sendId, sign);
+    NSString *token = WCPLRedEnvelopTrackToken(sendId, sign);
     if (token.length == 0) {
         return NO;
     }
 
     __block BOOL pending = NO;
-    wcpl_receiverDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), wcpl_receiverQueryTrackQueueSpecific(), ^{
         pending = (wcpl_receiverQueryTrackMap()[token] != nil);
     });
     return pending;
 }
 
 NSTimeInterval WCPLMarkReceiverQueryFinished(NSString *sendId, NSString *sign) {
-    NSString *token = wcpl_receiverQueryTrackToken(sendId, sign);
+    NSString *token = WCPLRedEnvelopTrackToken(sendId, sign);
     if (token.length == 0) {
         return -1;
     }
 
     __block NSTimeInterval elapsed = -1;
     NSTimeInterval now = CFAbsoluteTimeGetCurrent();
-    wcpl_receiverDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_receiverQueryTrackQueue(), wcpl_receiverQueryTrackQueueSpecific(), ^{
         NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_receiverQueryTrackMap();
         NSNumber *start = tracker[token];
         if (start) {

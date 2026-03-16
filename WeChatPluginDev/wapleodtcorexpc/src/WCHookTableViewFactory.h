@@ -8,6 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WCHookTableViewFactory : NSObject
 
++ (Class _Nullable)wchook_classNamed:(NSString *)className;
 + (nullable WCTableViewManager *)tableManagerWithFrame:(CGRect)frame style:(UITableViewStyle)style;
 + (nullable id)sectionWithHeader:(nullable NSString *)header footer:(nullable NSString *)footer;
 + (nullable id)defaultSection;

@@ -2,11 +2,11 @@
 // WCPLLoginConfig.h
 //
 
-#import <Foundation/Foundation.h>
+#import "WCPLUserDefaultsBackedConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WCPLLoginConfig : NSObject
+@interface WCPLLoginConfig : WCPLUserDefaultsBackedConfig
 
 + (instancetype)sharedConfig;
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults;

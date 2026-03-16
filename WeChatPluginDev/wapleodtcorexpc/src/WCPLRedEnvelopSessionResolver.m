@@ -5,6 +5,7 @@
 #import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLUserNameHelpers.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
 
@@ -42,6 +43,20 @@ NSString *WCPLRedEnvelopNormalizeSessionUserName(id text) {
     }
 
     return session;
+}
+
+NSString *WCPLRedEnvelopTrackToken(NSString *sendId, NSString *sign) {
+    NSString *normalizedSendId = WCPLTrimText(sendId);
+    if (normalizedSendId.length > 0) {
+        return [NSString stringWithFormat:@"sendId:%@", normalizedSendId];
+    }
+
+    NSString *normalizedSign = WCPLTrimText(sign);
+    if (normalizedSign.length > 0) {
+        return [NSString stringWithFormat:@"sign:%@", normalizedSign];
+    }
+
+    return nil;
 }
 
 static NSString *wcpl_redEnvelopStringForKeysInDictionary(NSDictionary *dict,
@@ -315,37 +330,7 @@ static NSString *wcpl_redEnvelopContactDisplayName(id contact) {
 
     NSString *rawUserName = WCPLRedEnvelopSafeUserNameFromObject(contact);
     BOOL isGroupContact = WCPLIsChatRoomName(rawUserName);
-    NSArray<NSString *> *selectors = @[@"getContactDisplayName", @"m_nsNickName"];
-    NSArray<NSString *> *keys = @[@"m_nsRemark"];
-    NSString *displayName = nil;
-
-    for (NSString *selectorName in selectors) {
-        SEL selector = NSSelectorFromString(selectorName);
-        if (!(selector && [contact respondsToSelector:selector])) {
-            continue;
-        }
-        @try {
-            displayName = wcpl_redEnvelopNonEmptyDisplayNameValue(((id (*)(id, SEL))objc_msgSend)(contact, selector));
-        } @catch (__unused NSException *exception) {
-            displayName = nil;
-        }
-        if (displayName.length > 0) {
-            break;
-        }
-    }
-
-    if (displayName.length == 0) {
-        for (NSString *key in keys) {
-            @try {
-                displayName = wcpl_redEnvelopNonEmptyDisplayNameValue([contact valueForKey:key]);
-            } @catch (__unused NSException *exception) {
-                displayName = nil;
-            }
-            if (displayName.length > 0) {
-                break;
-            }
-        }
-    }
+    NSString *displayName = WCPLContactAdapterDisplayNameForContact(contact, rawUserName);
 
     if (isGroupContact && wcpl_redEnvelopIsRawGroupSessionName(displayName, rawUserName)) {
         displayName = nil;
@@ -361,7 +346,7 @@ static NSString *wcpl_redEnvelopDisplayNameForUserName(NSString *userName) {
     if (target.length == 0) {
         return nil;
     }
-    if ([target isEqualToString:@"filehelper"]) {
+    if (WCPLIsFileHelperUserName(target)) {
         return @"文件传输助手";
     }
 

@@ -3,41 +3,25 @@
 //
 
 #import "WCPLTimelineConfig.h"
-#import <dispatch/dispatch.h>
 
 static NSString *const kWCPLBlockTimelineBrandAdsEnable = @"kWCPLBlockTimelineBrandAdsEnable";
-
-@interface WCPLTimelineConfig ()
-
-@property (nonatomic, strong) NSUserDefaults *defaults;
-
-@end
 
 @implementation WCPLTimelineConfig
 
 + (instancetype)sharedConfig {
-    static WCPLTimelineConfig *config = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        config = [WCPLTimelineConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
-    });
-    return config;
-}
-
-- (instancetype)init {
-    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+    return [super sharedConfig];
 }
 
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
-    return [[self alloc] initWithDefaults:defaults];
+    return [super configWithDefaults:defaults];
 }
 
 - (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
-    if (self = [super init]) {
-        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
-        _blockTimelineBrandAdsEnable = [_defaults boolForKey:kWCPLBlockTimelineBrandAdsEnable];
-    }
-    return self;
+    return [super initWithDefaults:defaults];
+}
+
+- (void)wcpl_loadFromDefaults {
+    _blockTimelineBrandAdsEnable = [self.defaults boolForKey:kWCPLBlockTimelineBrandAdsEnable];
 }
 
 - (void)setBlockTimelineBrandAdsEnable:(BOOL)blockTimelineBrandAdsEnable {

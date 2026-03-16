@@ -71,6 +71,17 @@ static BOOL wcpl_isBridgePending(id controller);
 static void wcpl_markBridgeAutoPop(id controller, BOOL enable);
 static BOOL wcpl_isBridgeAutoPop(id controller);
 
+static UIView *wcpl_safeViewIfLoaded(UIViewController *viewController) {
+    if (![viewController isKindOfClass:[UIViewController class]]) {
+        return nil;
+    }
+    if (![viewController isViewLoaded]) {
+        return nil;
+    }
+    UIView *view = viewController.view;
+    return [view isKindOfClass:[UIView class]] ? view : nil;
+}
+
 static CGFloat wcpl_viewOriginY(UIView *view) {
     if (![view isKindOfClass:[UIView class]]) {
         return 0.0f;

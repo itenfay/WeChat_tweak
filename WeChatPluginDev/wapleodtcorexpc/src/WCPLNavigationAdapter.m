@@ -4,7 +4,11 @@
 
 #import "WCPLNavigationAdapter.h"
 
+#import "WCPLUIKitHelpers.h"
+#import "WCPLLogger.h"
+
 #import <objc/message.h>
+#import <objc/runtime.h>
 
 UIView *WCPLNavigationAdapterLoadedView(id viewController) {
     if (![viewController isKindOfClass:[UIViewController class]]) {
@@ -49,4 +53,18 @@ BOOL WCPLNavigationAdapterIsOnNavigationStack(id viewController) {
     }
 
     return [navigationController.viewControllers containsObject:(UIViewController *)viewController];
+}
+
+UIViewController *WCPLNavigationAdapterTopVisibleViewController(void) {
+    Class mgrClass = objc_getClass("CAppViewControllerManager");
+    if (mgrClass && [mgrClass respondsToSelector:@selector(topMostController)]) {
+        @try {
+            id vc = ((id (*)(id, SEL))objc_msgSend)(mgrClass, @selector(topMostController));
+            if ([vc isKindOfClass:[UIViewController class]]) {
+                return (UIViewController *)vc;
+            }
+        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
+    }
+
+    return WCPLTopVisibleViewController();
 }

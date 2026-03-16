@@ -34,9 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 // Judge iPhone X series.
 #define WCPLIsPhoneXAll   ({BOOL isPhoneXAll = NO; if (@available(iOS 11.0, *)) { isPhoneXAll = UIApplication.sharedApplication.delegate.window.safeAreaInsets.bottom > 0.0; } isPhoneXAll;})
 
-// Status bar height.
-#define WCPLStatusBarHeight                 (WCPLIsPhoneXAll ? 44.f : 20.f)
-
 // Navigation bar height.
 #define WCPLNavigationBarHeight              44.f
 

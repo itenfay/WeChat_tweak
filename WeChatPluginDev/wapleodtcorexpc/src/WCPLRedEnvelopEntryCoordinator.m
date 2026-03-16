@@ -1,6 +1,7 @@
 #import "WCPLRedEnvelopEntryCoordinator.h"
 
 #import "WeChatRedEnvelopParam.h"
+#import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLRedEnvelopBackgroundTaskTracker.h"
@@ -17,19 +18,6 @@
 static NSString *wcpl_redEnvelopEntryTrimText(id text) {
     NSString *trimmed = WCPLTrimText(text);
     return trimmed.length > 0 ? trimmed : nil;
-}
-
-static NSString *wcpl_redEnvelopEntrySanitizeInlineText(id text, NSUInteger maxLen) {
-    NSString *value = wcpl_redEnvelopEntryTrimText(text);
-    if (value.length == 0) {
-        return nil;
-    }
-    value = [[value stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-             stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-    if (maxLen > 0 && value.length > maxLen) {
-        value = [[value substringToIndex:maxLen] stringByAppendingString:@"…"];
-    }
-    return value;
 }
 
 static NSString *wcpl_redEnvelopEntryContactValue(id contact, SEL selector) {
@@ -68,7 +56,7 @@ static WeChatRedEnvelopParam *wcpl_redEnvelopBuildEntryParam(WCPLRedEnvelopEntry
     NSDictionary *nativeUrlDict = WCPLRedEnvelopDictionaryFromNativeUrlString(nativeUrl);
     if (nativeUrlDict.count == 0) {
         WCPLLogDebug(@"红包解析失败: nativeUrlDict 为空 url=%@",
-                     wcpl_redEnvelopEntrySanitizeInlineText(nativeUrl, 160));
+                     WCPLSanitizeInlineText(nativeUrl, 160));
         return nil;
     }
 
@@ -81,7 +69,7 @@ static WeChatRedEnvelopParam *wcpl_redEnvelopBuildEntryParam(WCPLRedEnvelopEntry
                      msgType ?: @"",
                      sendId ?: @"",
                      channelId ?: @"",
-                     wcpl_redEnvelopEntrySanitizeInlineText(nativeUrl, 160));
+                     WCPLSanitizeInlineText(nativeUrl, 160));
         return nil;
     }
 

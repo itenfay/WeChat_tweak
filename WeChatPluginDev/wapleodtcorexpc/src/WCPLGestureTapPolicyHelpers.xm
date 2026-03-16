@@ -2,6 +2,8 @@
 // Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
+#import "WCPLGeometryHelpers.h"
+
 static const CGFloat kWCPLTapPolicyMinRectSide = 8.0f;
 static const CGFloat kWCPLTapPolicyBubbleHitInset = 1.0f;
 static const CGFloat kWCPLTapPolicyBlankBandTextExtraTop = 14.0f;
@@ -12,12 +14,7 @@ static BOOL wcpl_tapPolicyRectUsable(CGRect rect, UIView *containerView) {
     if (![containerView isKindOfClass:[UIView class]]) {
         return NO;
     }
-    return !CGRectIsEmpty(rect) &&
-           !CGRectIsNull(rect) &&
-           !CGRectIsInfinite(rect) &&
-           CGRectGetWidth(rect) > kWCPLTapPolicyMinRectSide &&
-           CGRectGetHeight(rect) > kWCPLTapPolicyMinRectSide &&
-           CGRectIntersectsRect(rect, containerView.bounds);
+    return WCPLCGRectIsUsableInBounds(rect, containerView.bounds, kWCPLTapPolicyMinRectSide);
 }
 
 static BOOL wcpl_tapPolicyRectLooksRowWide(CGRect rect, UIView *containerView) {
@@ -318,11 +315,7 @@ static CGRect wcpl_tapPolicyResolvedBodyRect(id cell,
         return CGRectZero;
     }
     CGRect bodyRect = wcpl_tapPolicyFallbackBodyRect(bubbleRect);
-    BOOL bodyRectValid = !CGRectIsEmpty(bodyRect) &&
-                         !CGRectIsNull(bodyRect) &&
-                         !CGRectIsInfinite(bodyRect) &&
-                         CGRectGetWidth(bodyRect) > kWCPLTapPolicyMinRectSide &&
-                         CGRectGetHeight(bodyRect) > kWCPLTapPolicyMinRectSide;
+    BOOL bodyRectValid = WCPLCGRectHasMinSide(bodyRect, kWCPLTapPolicyMinRectSide);
 
     if (validOut) {
         *validOut = bodyRectValid;

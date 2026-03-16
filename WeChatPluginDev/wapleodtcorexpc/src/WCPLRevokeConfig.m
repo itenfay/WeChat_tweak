@@ -3,41 +3,25 @@
 //
 
 #import "WCPLRevokeConfig.h"
-#import <dispatch/dispatch.h>
 
 static NSString *const kWCPLRevokeEnable = @"kWCPLRevokeEnable";
-
-@interface WCPLRevokeConfig ()
-
-@property (nonatomic, strong) NSUserDefaults *defaults;
-
-@end
 
 @implementation WCPLRevokeConfig
 
 + (instancetype)sharedConfig {
-    static WCPLRevokeConfig *config = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        config = [WCPLRevokeConfig configWithDefaults:[NSUserDefaults standardUserDefaults]];
-    });
-    return config;
-}
-
-- (instancetype)init {
-    return [self initWithDefaults:[NSUserDefaults standardUserDefaults]];
+    return [super sharedConfig];
 }
 
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults {
-    return [[self alloc] initWithDefaults:defaults];
+    return [super configWithDefaults:defaults];
 }
 
 - (instancetype)initWithDefaults:(NSUserDefaults *)defaults {
-    if (self = [super init]) {
-        _defaults = defaults ?: [NSUserDefaults standardUserDefaults];
-        _revokeEnable = [_defaults boolForKey:kWCPLRevokeEnable];
-    }
-    return self;
+    return [super initWithDefaults:defaults];
+}
+
+- (void)wcpl_loadFromDefaults {
+    _revokeEnable = [self.defaults boolForKey:kWCPLRevokeEnable];
 }
 
 - (void)setRevokeEnable:(BOOL)revokeEnable {

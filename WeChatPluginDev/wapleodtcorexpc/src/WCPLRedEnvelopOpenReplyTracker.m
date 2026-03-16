@@ -1,5 +1,6 @@
 #import "WCPLRedEnvelopOpenReplyTracker.h"
 
+#import "WCPLDispatchUtils.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLRedEnvelopRequestParser.h"
 #import "WCPLRedEnvelopSessionResolver.h"
@@ -9,41 +10,14 @@ static NSTimeInterval const kWCPLAutoReplyTrackFallbackAge = 12.0;
 static NSUInteger const kWCPLAutoReplyTrackHardLimit = 512;
 static const void *kWCPLOpenReplyTrackQueueSpecificKey = &kWCPLOpenReplyTrackQueueSpecificKey;
 
-static inline void wcpl_openReplyDispatchSyncSafe(dispatch_queue_t queue, dispatch_block_t block) {
-    if (!block) {
-        return;
-    }
-    if (dispatch_get_specific(kWCPLOpenReplyTrackQueueSpecificKey)) {
-        block();
-        return;
-    }
-    dispatch_sync(queue, block);
+static inline WCPLDispatchQueueSpecific wcpl_openReplyTrackQueueSpecific(void) {
+    return WCPLDispatchQueueSpecificMake(kWCPLOpenReplyTrackQueueSpecificKey,
+                                         kWCPLOpenReplyTrackQueueSpecificKey);
 }
 
 static NSString *wcpl_openReplyTrimText(NSString *text) {
     NSString *trimmed = WCPLTrimText(text);
     return trimmed.length > 0 ? trimmed : nil;
-}
-
-static NSString *wcpl_openReplyNormalizeSessionUserName(NSString *text) {
-    NSString *session = wcpl_openReplyTrimText(text);
-    if (session.length == 0) {
-        return nil;
-    }
-
-    for (NSInteger i = 0; i < 2; i++) {
-        if ([session rangeOfString:@"%"].location == NSNotFound) {
-            break;
-        }
-        NSString *decoded = [session stringByRemovingPercentEncoding];
-        NSString *normalized = wcpl_openReplyTrimText(decoded);
-        if (normalized.length == 0 || [normalized isEqualToString:session]) {
-            break;
-        }
-        session = normalized;
-    }
-
-    return session;
 }
 
 static dispatch_queue_t wcpl_openReplyTrackQueue(void) {
@@ -102,12 +76,12 @@ void WCPLTrackOpenReplySession(NSString *sendId,
                                NSString *sign,
                                NSString *timingIdentifier,
                                NSString *sessionUserName) {
-    NSString *session = wcpl_openReplyNormalizeSessionUserName(sessionUserName);
+    NSString *session = WCPLRedEnvelopNormalizeSessionUserName(sessionUserName);
     if (session.length == 0) {
         return;
     }
 
-    wcpl_openReplyDispatchSyncSafe(wcpl_openReplyTrackQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_openReplyTrackQueue(), wcpl_openReplyTrackQueueSpecific(), ^{
         NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         wcpl_openReplyTrackCleanupLocked(tracker, now);
@@ -155,7 +129,7 @@ NSString *WCPLLookupTrackedOpenSession(NSString *sendId,
     __block NSString *session = nil;
     __block NSString *source = nil;
 
-    wcpl_openReplyDispatchSyncSafe(wcpl_openReplyTrackQueue(), ^{
+    WCPLDispatchSyncSafe(wcpl_openReplyTrackQueue(), wcpl_openReplyTrackQueueSpecific(), ^{
         NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         wcpl_openReplyTrackCleanupLocked(tracker, now);
@@ -165,7 +139,7 @@ NSString *WCPLLookupTrackedOpenSession(NSString *sendId,
                 return nil;
             }
             NSDictionary *entry = [tracker[key] isKindOfClass:[NSDictionary class]] ? tracker[key] : nil;
-            NSString *trackedSession = wcpl_openReplyNormalizeSessionUserName(entry[@"session"]);
+            NSString *trackedSession = WCPLRedEnvelopNormalizeSessionUserName(entry[@"session"]);
             if (trackedSession.length == 0) {
                 return nil;
             }
@@ -199,7 +173,7 @@ NSString *WCPLLookupTrackedOpenSession(NSString *sendId,
         }
 
         NSDictionary *lastEntry = [tracker[@"__last__"] isKindOfClass:[NSDictionary class]] ? tracker[@"__last__"] : nil;
-        NSString *lastSession = wcpl_openReplyNormalizeSessionUserName(lastEntry[@"session"]);
+        NSString *lastSession = WCPLRedEnvelopNormalizeSessionUserName(lastEntry[@"session"]);
         NSNumber *lastTs = [lastEntry[@"ts"] isKindOfClass:[NSNumber class]] ? lastEntry[@"ts"] : nil;
         if (lastSession.length > 0 && lastTs && (now - lastTs.doubleValue <= kWCPLAutoReplyTrackFallbackAge)) {
             session = lastSession;

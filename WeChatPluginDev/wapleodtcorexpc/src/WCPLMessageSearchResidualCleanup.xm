@@ -1,3 +1,5 @@
+#import "WCPLNavigationAdapter.h"
+
 static BOOL wcpl_classNameContainsSearchToken(NSString *className) {
     if (![className isKindOfClass:[NSString class]] || className.length == 0) {
         return NO;
@@ -413,20 +415,6 @@ static NSUInteger wcpl_navRightItemsCount(id viewController) {
     return [navigationItem.rightBarButtonItem isKindOfClass:[UIBarButtonItem class]] ? 1 : 0;
 }
 
-static UIView *wcpl_safeViewIfLoaded(UIViewController *viewController) {
-    if (![viewController isKindOfClass:[UIViewController class]]) {
-        return nil;
-    }
-
-    if ([viewController respondsToSelector:@selector(isViewLoaded)] &&
-        !((BOOL (*)(id, SEL))objc_msgSend)(viewController, @selector(isViewLoaded))) {
-        return nil;
-    }
-
-    UIView *view = viewController.view;
-    return [view isKindOfClass:[UIView class]] ? view : nil;
-}
-
 static NSUInteger wcpl_controllerRootSearchResidualNodeCount(id viewController) {
     if (![viewController isKindOfClass:[UIViewController class]]) {
         return 0;
@@ -436,14 +424,14 @@ static NSUInteger wcpl_controllerRootSearchResidualNodeCount(id viewController) 
     NSUInteger count = 0;
     UINavigationBar *navBar = wcpl_navigationBarFromController(viewController);
 
-    UIView *controllerView = wcpl_safeViewIfLoaded(controller);
+    UIView *controllerView = WCPLNavigationAdapterLoadedView(controller);
     if (controllerView) {
         count += wcpl_rootSearchResidualNodeCountInTree(controllerView, navBar, 0);
     }
 
     UINavigationController *navigationController = controller.navigationController;
     if ([navigationController isKindOfClass:[UINavigationController class]]) {
-        UIView *navRootView = wcpl_safeViewIfLoaded(navigationController);
+        UIView *navRootView = WCPLNavigationAdapterLoadedView(navigationController);
         if (navRootView) {
             count += wcpl_rootSearchResidualNodeCountInTree(navRootView, navBar, 0);
         }
@@ -478,14 +466,14 @@ static void wcpl_logRootResidualNodeDetails(id viewController, NSString *stage, 
     UINavigationBar *navBar = wcpl_navigationBarFromController(viewController);
     NSMutableArray<UIView *> *nodes = [NSMutableArray arrayWithCapacity:maxNodes];
 
-    UIView *controllerView = wcpl_safeViewIfLoaded(controller);
+    UIView *controllerView = WCPLNavigationAdapterLoadedView(controller);
     if (controllerView) {
         wcpl_collectRootSearchResidualNodesInTree(controllerView, navBar, 0, nodes, maxNodes);
     }
 
     UINavigationController *navigationController = controller.navigationController;
     if ([navigationController isKindOfClass:[UINavigationController class]] && nodes.count < maxNodes) {
-        UIView *navRootView = wcpl_safeViewIfLoaded(navigationController);
+        UIView *navRootView = WCPLNavigationAdapterLoadedView(navigationController);
         if (navRootView) {
             wcpl_collectRootSearchResidualNodesInTree(navRootView, navBar, 0, nodes, maxNodes);
         }
@@ -536,14 +524,14 @@ static BOOL wcpl_shouldLogSearchTouchProbe(NSString *stage) {
 static UIWindow *wcpl_bestWindowForController(id viewController) {
     if ([viewController isKindOfClass:[UIViewController class]]) {
         UIViewController *controller = (UIViewController *)viewController;
-        UIView *controllerView = wcpl_safeViewIfLoaded(controller);
+        UIView *controllerView = WCPLNavigationAdapterLoadedView(controller);
         if ([controllerView isKindOfClass:[UIView class]] && [controllerView.window isKindOfClass:[UIWindow class]]) {
             return controllerView.window;
         }
 
         UINavigationController *navigationController = controller.navigationController;
         if ([navigationController isKindOfClass:[UINavigationController class]]) {
-            UIView *navView = wcpl_safeViewIfLoaded(navigationController);
+            UIView *navView = WCPLNavigationAdapterLoadedView(navigationController);
             if ([navView isKindOfClass:[UIView class]] && [navView.window isKindOfClass:[UIWindow class]]) {
                 return navView.window;
             }
@@ -877,7 +865,7 @@ static BOOL wcpl_forceClearRootSearchResidual(id controller, NSString *stage) {
     NSUInteger hiddenCount = 0;
     BOOL changed = NO;
 
-    UIView *controllerView = wcpl_safeViewIfLoaded(viewController);
+    UIView *controllerView = WCPLNavigationAdapterLoadedView(viewController);
     if (controllerView) {
         changed |= wcpl_softHideRootSearchResidualNodesFromTree(controllerView, navBar, 0, &hiddenCount);
         [controllerView setNeedsLayout];
@@ -886,7 +874,7 @@ static BOOL wcpl_forceClearRootSearchResidual(id controller, NSString *stage) {
 
     UINavigationController *navigationController = viewController.navigationController;
     if ([navigationController isKindOfClass:[UINavigationController class]]) {
-        UIView *navRootView = wcpl_safeViewIfLoaded(navigationController);
+        UIView *navRootView = WCPLNavigationAdapterLoadedView(navigationController);
         if (navRootView) {
             changed |= wcpl_softHideRootSearchResidualNodesFromTree(navRootView, navBar, 0, &hiddenCount);
             [navRootView setNeedsLayout];
@@ -943,7 +931,7 @@ static BOOL wcpl_preHideSearchPresentationOnCancel(id controller, NSString *stag
     UIViewController *presentedBySelf = viewController.presentedViewController;
     if ([presentedBySelf isKindOfClass:[UIViewController class]] &&
         wcpl_viewControllerLooksSearchPresentation(presentedBySelf)) {
-        UIView *presentedView = wcpl_safeViewIfLoaded(presentedBySelf);
+        UIView *presentedView = WCPLNavigationAdapterLoadedView(presentedBySelf);
         if ([presentedView isKindOfClass:[UIView class]]) {
             if (!presentedView.hidden) {
                 presentedView.hidden = YES;
@@ -964,7 +952,7 @@ static BOOL wcpl_preHideSearchPresentationOnCancel(id controller, NSString *stag
     UIViewController *presentedByNav = [navigationController isKindOfClass:[UINavigationController class]] ? navigationController.presentedViewController : nil;
     if ([presentedByNav isKindOfClass:[UIViewController class]] &&
         wcpl_viewControllerLooksSearchPresentation(presentedByNav)) {
-        UIView *presentedView = wcpl_safeViewIfLoaded(presentedByNav);
+        UIView *presentedView = WCPLNavigationAdapterLoadedView(presentedByNav);
         if ([presentedView isKindOfClass:[UIView class]]) {
             if (!presentedView.hidden) {
                 presentedView.hidden = YES;
@@ -983,13 +971,15 @@ static BOOL wcpl_preHideSearchPresentationOnCancel(id controller, NSString *stag
 
     UINavigationBar *navigationBar = wcpl_navigationBarFromController(controller);
     NSUInteger disabledCount = 0;
-    UIView *controllerView = wcpl_safeViewIfLoaded(viewController);
+    UIView *controllerView = WCPLNavigationAdapterLoadedView(viewController);
     if ([controllerView isKindOfClass:[UIView class]]) {
         if (wcpl_softDisableSearchOverlayInTree(controllerView, navigationBar, controllerView, stage, 0, &disabledCount)) {
             changed = YES;
         }
     }
-    UIView *navView = [navigationController isKindOfClass:[UINavigationController class]] ? wcpl_safeViewIfLoaded(navigationController) : nil;
+    UIView *navView = [navigationController isKindOfClass:[UINavigationController class]]
+        ? WCPLNavigationAdapterLoadedView(navigationController)
+        : nil;
     if ([navView isKindOfClass:[UIView class]] && navView != controllerView) {
         if (wcpl_softDisableSearchOverlayInTree(navView, navigationBar, navView, stage, 0, &disabledCount)) {
             changed = YES;
@@ -1107,7 +1097,7 @@ static BOOL wcpl_restoreSearchPresentationOnActivation(id controller, NSString *
     UIViewController *presentedBySelf = viewController.presentedViewController;
     if ([presentedBySelf isKindOfClass:[UIViewController class]] &&
         wcpl_viewControllerLooksSearchPresentation(presentedBySelf)) {
-        UIView *presentedView = wcpl_safeViewIfLoaded(presentedBySelf);
+        UIView *presentedView = WCPLNavigationAdapterLoadedView(presentedBySelf);
         if ([presentedView isKindOfClass:[UIView class]]) {
             BOOL nodeChanged = NO;
             if (presentedView.hidden) {
@@ -1135,7 +1125,7 @@ static BOOL wcpl_restoreSearchPresentationOnActivation(id controller, NSString *
     UIViewController *presentedByNav = [navigationController isKindOfClass:[UINavigationController class]] ? navigationController.presentedViewController : nil;
     if ([presentedByNav isKindOfClass:[UIViewController class]] &&
         wcpl_viewControllerLooksSearchPresentation(presentedByNav)) {
-        UIView *presentedView = wcpl_safeViewIfLoaded(presentedByNav);
+        UIView *presentedView = WCPLNavigationAdapterLoadedView(presentedByNav);
         if ([presentedView isKindOfClass:[UIView class]]) {
             BOOL nodeChanged = NO;
             if (presentedView.hidden) {
@@ -1233,13 +1223,15 @@ static __attribute__((unused)) BOOL wcpl_immediateHardCleanupAfterCancel(id cont
     BOOL changed = preHidden || dismissed || clearedTitle || clearedNav || clearedRoot;
 
     if (changed) {
-        UIView *controllerView = wcpl_safeViewIfLoaded((UIViewController *)controller);
+        UIView *controllerView = WCPLNavigationAdapterLoadedView((UIViewController *)controller);
         if ([controllerView isKindOfClass:[UIView class]]) {
             [controllerView setNeedsLayout];
             [controllerView layoutIfNeeded];
         }
         UINavigationController *navigationController = ((UIViewController *)controller).navigationController;
-        UIView *navView = [navigationController isKindOfClass:[UINavigationController class]] ? wcpl_safeViewIfLoaded(navigationController) : nil;
+        UIView *navView = [navigationController isKindOfClass:[UINavigationController class]]
+            ? WCPLNavigationAdapterLoadedView(navigationController)
+            : nil;
         if ([navView isKindOfClass:[UIView class]]) {
             [navView setNeedsLayout];
             [navView layoutIfNeeded];
@@ -1359,9 +1351,11 @@ static BOOL wcpl_forceDisableSearchPresentationOverlay(id controller, NSString *
     // 触控稳定性优先的 fail-safe：
     // 不再主动禁用任何 overlay 交互，只做可见容器交互恢复，避免“二次点击后页面失去触控”。
     UIViewController *viewController = (UIViewController *)controller;
-    UIView *controllerView = wcpl_safeViewIfLoaded(viewController);
+    UIView *controllerView = WCPLNavigationAdapterLoadedView(viewController);
     UINavigationController *navigationController = viewController.navigationController;
-    UIView *navView = [navigationController isKindOfClass:[UINavigationController class]] ? wcpl_safeViewIfLoaded(navigationController) : nil;
+    UIView *navView = [navigationController isKindOfClass:[UINavigationController class]]
+        ? WCPLNavigationAdapterLoadedView(navigationController)
+        : nil;
     UIWindow *window = [controllerView isKindOfClass:[UIView class]] ? controllerView.window : nil;
     if (![window isKindOfClass:[UIWindow class]] && [navView isKindOfClass:[UIView class]]) {
         window = navView.window;
@@ -1525,4 +1519,3 @@ static void wcpl_repairExitSearchNavState(id controller, NSString *stage, BOOL a
     wcpl_logSearchNavSnapshot(controller, stage ?: @"repair");
     wcpl_scheduleChatSearchButtonRepair(controller, [NSString stringWithFormat:@"%@/afterRepair", stage ?: @"repair"]);
 }
-

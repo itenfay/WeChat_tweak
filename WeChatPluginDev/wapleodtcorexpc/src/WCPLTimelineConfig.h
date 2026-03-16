@@ -2,11 +2,11 @@
 // WCPLTimelineConfig.h
 //
 
-#import <Foundation/Foundation.h>
+#import "WCPLUserDefaultsBackedConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WCPLTimelineConfig : NSObject
+@interface WCPLTimelineConfig : WCPLUserDefaultsBackedConfig
 
 + (instancetype)sharedConfig;
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults;

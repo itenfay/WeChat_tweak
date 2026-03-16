@@ -2,11 +2,11 @@
 // WCPLAVConfig.h
 //
 
-#import <Foundation/Foundation.h>
+#import "WCPLUserDefaultsBackedConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WCPLAVConfig : NSObject
+@interface WCPLAVConfig : WCPLUserDefaultsBackedConfig
 
 + (instancetype)sharedConfig;
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults;

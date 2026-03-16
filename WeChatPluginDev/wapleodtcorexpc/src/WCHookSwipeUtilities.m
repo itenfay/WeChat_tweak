@@ -1,5 +1,6 @@
 #import "WCHookSwipeUtilities.h"
 
+#import "WCPLViewTraversalHelpers.h"
 #import <objc/message.h>
 
 // Forward declaration - CommonMessageCellView is a UIView subclass
@@ -212,25 +213,11 @@ static void WCHookCollectMessageCellViewsFromView(UIView *root, NSMutableArray<U
 @end
 
 static UITableViewCell *WCHookFindContainingTableViewCell(UIView *view) {
-    UIView *current = view;
-    while (current) {
-        if ([current isKindOfClass:[UITableViewCell class]]) {
-            return (UITableViewCell *)current;
-        }
-        current = current.superview;
-    }
-    return nil;
+    return WCPLFindContainingTableViewCell(view);
 }
 
 static UITableView *WCHookFindContainingTableView(UIView *view) {
-    UIView *current = view;
-    while (current) {
-        if ([current isKindOfClass:[UITableView class]]) {
-            return (UITableView *)current;
-        }
-        current = current.superview;
-    }
-    return nil;
+    return WCPLFindContainingTableView(view);
 }
 
 static id WCHookMessageIdentifierForView(UIView *view) {
@@ -261,7 +248,7 @@ static id WCHookMessageIdentifierForView(UIView *view) {
 }
 
 static void WCHookCollectMessageCellViewsFromView(UIView *root, NSMutableArray<UIView *> *storage) {
-    if (!root) {
+    if (![root isKindOfClass:[UIView class]] || ![storage isKindOfClass:[NSMutableArray class]]) {
         return;
     }
 
@@ -270,20 +257,5 @@ static void WCHookCollectMessageCellViewsFromView(UIView *root, NSMutableArray<U
     dispatch_once(&onceToken, ^{
         baseClass = NSClassFromString(@"BaseMessageCellView");
     });
-
-    if (baseClass && [root isKindOfClass:baseClass]) {
-        UIView *messageView = root;
-        if (messageView && ![storage containsObject:messageView]) {
-            [storage addObject:messageView];
-        }
-    } else if (!baseClass && [root isKindOfClass:[UIView class]]) {
-        UIView *messageView = root;
-        if (messageView && ![storage containsObject:messageView]) {
-            [storage addObject:messageView];
-        }
-    }
-
-    for (UIView *subview in root.subviews) {
-        WCHookCollectMessageCellViewsFromView(subview, storage);
-    }
+    WCPLCollectViewsOfClassOrAllIfNil(root, baseClass, storage);
 }

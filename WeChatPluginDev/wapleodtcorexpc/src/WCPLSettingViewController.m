@@ -19,6 +19,8 @@
 #import "WCPLSettingsSelectionCoordinator.h"
 #import "WCPLSettingsSelectionStore.h"
 #import "WCPLSettingsSectionFactory.h"
+#import "WCPLSettingsTableViewManagerFactory.h"
+#import "WCHookTableViewFactory.h"
 #import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
@@ -35,6 +37,31 @@
 @end
 
 @implementation WCPLSettingViewController
+
+static WCTableViewNormalCellManager *wcpl_settingsSwitchCell(WCPLSettingViewController *target,
+                                                             SEL action,
+                                                             NSString *title,
+                                                             NSString *descriptor,
+                                                             BOOL on) {
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory switchCellWithTitle:title
+                                                                            descriptor:descriptor
+                                                                                    on:on
+                                                                                target:target
+                                                                                action:action];
+}
+
+static WCTableViewNormalCellManager *wcpl_settingsNavigationCell(WCPLSettingViewController *target,
+                                                                 SEL action,
+                                                                 NSString *title,
+                                                                 NSString *detail,
+                                                                 UITableViewCellAccessoryType accessoryType) {
+    NSString *rightValue = [detail isKindOfClass:[NSString class]] ? detail : @"";
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory navigationCellWithTitle:title
+                                                                                    detail:rightValue
+                                                                                    target:target
+                                                                                    action:action
+                                                                            accessoryType:accessoryType];
+}
 
 - (instancetype)init {
     return [self initWithPageType:WCPLSettingPageTypeRoot];
@@ -53,10 +80,7 @@
         return;
     }
 
-    CGFloat tabY = WCPLStatusBarAndNavigationBarHeight;
-    CGFloat tabW = WCPLScreenWidth;
-    CGFloat tabH = WCPLScreenHeight - WCPLStatusBarAndNavigationBarHeight - WCPLViewSafeBottomMargin;
-    _tableViewMgr = [[objc_getClass("WCTableViewManager") alloc] initWithFrame:CGRectMake(0, tabY, tabW, tabH) style:UITableViewStyleGrouped];
+    _tableViewMgr = WCPLCreateSettingsTableViewManager(UITableViewStyleGrouped);
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -164,7 +188,11 @@
 #pragma mark - BasicSetting
 
 - (WCTableViewNormalCellManager *)createAutoReceiveRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(switchRedEnvelop:) target:self title:@"自动领取红包" on:[WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(switchRedEnvelop:),
+                                   @"自动领取红包",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable);
 }
 
 - (void)switchRedEnvelop:(UISwitch *)envelopSwitch {
@@ -173,7 +201,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createReceiveSelfRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveSelfRedEnvelop:) target:self title:@"领取自己的群红包" on:[WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingReceiveSelfRedEnvelop:),
+                                   @"领取自己的群红包",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop);
 }
 
 - (void)settingReceiveSelfRedEnvelop:(UISwitch *)receiveSwitch {
@@ -184,7 +216,11 @@
     NSInteger delaySeconds = [WCPLRedEnvelopConfig sharedConfig].delaySeconds;
     NSString *delayString  = delaySeconds == 0 ? @"不延迟" : [NSString stringWithFormat:@"%ld 秒", (long)delaySeconds];
     
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingDelay) target:self title:@"延迟抢红包" rightValue:delayString accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(settingDelay),
+                                       @"延迟抢红包",
+                                       delayString,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (NSString *)wcpl_redEnvelopNotifyTargetDisplayText {
@@ -200,11 +236,19 @@
 }
 
 - (WCTableViewNormalCellManager *)createRedEnvelopNotifyTargetCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRedEnvelopNotifyTargetPicker) target:self title:@"抢包通知" rightValue:[self wcpl_redEnvelopNotifyTargetDisplayText] accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showRedEnvelopNotifyTargetPicker),
+                                       @"抢包通知",
+                                       [self wcpl_redEnvelopNotifyTargetDisplayText],
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createReceiveDonePageSummaryCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveDonePageSummary:) target:self title:@"红包详情始终显示" on:[WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingReceiveDonePageSummary:),
+                                   @"红包详情始终显示",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable);
 }
 
 - (void)settingReceiveDonePageSummary:(UISwitch *)sender {
@@ -214,7 +258,11 @@
 #pragma mark - Red Envelop Advanced (Private/Group)
 
 - (WCTableViewNormalCellManager *)createPrivateRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingPrivateRedEnvelop:) target:self title:@"私聊红包" on:[WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingPrivateRedEnvelop:),
+                                   @"私聊红包",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable);
 }
 
 - (NSString *)wcpl_autoReplyPreviewText:(NSString *)text {
@@ -233,7 +281,11 @@
 
 - (WCTableViewNormalCellManager *)createPrivateAutoReplyCell {
     NSString *preview = [self wcpl_autoReplyPreviewText:[WCPLRedEnvelopConfig sharedConfig].privateAutoReplyText];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showPrivateAutoReplyInput) target:self title:@"私聊自动回复" rightValue:preview accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showPrivateAutoReplyInput),
+                                       @"私聊自动回复",
+                                       preview,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (void)settingPrivateRedEnvelop:(UISwitch *)sender {
@@ -251,12 +303,20 @@
 }
 
 - (WCTableViewNormalCellManager *)createGroupRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingGroupRedEnvelop:) target:self title:@"群聊红包" on:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingGroupRedEnvelop:),
+                                   @"群聊红包",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable);
 }
 
 - (WCTableViewNormalCellManager *)createGroupAutoReplyCell {
     NSString *preview = [self wcpl_autoReplyPreviewText:[WCPLRedEnvelopConfig sharedConfig].groupAutoReplyText];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showGroupAutoReplyInput) target:self title:@"群聊自动回复" rightValue:preview accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showGroupAutoReplyInput),
+                                       @"群聊自动回复",
+                                       preview,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (void)settingGroupRedEnvelop:(UISwitch *)sender {
@@ -291,13 +351,21 @@
 }
 
 - (WCTableViewNormalCellManager *)createGroupScopeCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showGroupScopePicker) target:self title:@"生效范围" rightValue:[self wcpl_groupScopeDisplayText] accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showGroupScopePicker),
+                                       @"生效范围",
+                                       [self wcpl_groupScopeDisplayText],
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 #pragma mark - Advanced Setting
 
 - (WCTableViewNormalCellManager *)createQueueCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveByQueue:) target:self title:@"防止同时抢多个红包" on:[WCPLRedEnvelopConfig sharedConfig].serialReceive];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingReceiveByQueue:),
+                                   @"防止同时抢多个红包",
+                                   nil,
+                                   [WCPLRedEnvelopConfig sharedConfig].serialReceive);
 }
 
 - (void)settingReceiveByQueue:(UISwitch *)queueSwitch {
@@ -307,10 +375,11 @@
 #pragma mark - Other
 
 - (WCTableViewNormalCellManager *)createMarkAllReadTopRightMenuEnableCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMarkAllReadTopRightMenuEnable:)
-                                                                     target:self
-                                                                      title:@"右上角+ 一键已读"
-                                                                         on:[WCPLConfigCenter shared].markAllReadTopRightMenuEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingMarkAllReadTopRightMenuEnable:),
+                                   @"右上角+ 一键已读",
+                                   nil,
+                                   [WCPLConfigCenter shared].markAllReadTopRightMenuEnable);
 }
 
 - (void)settingMarkAllReadTopRightMenuEnable:(UISwitch *)sender {
@@ -318,11 +387,19 @@
 }
 
 - (WCTableViewNormalCellManager *)createLogEntryCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(openDebugSettings) target:self title:@"日志设置" rightValue:@"" accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(openDebugSettings),
+                                       @"日志设置",
+                                       @"",
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createAbortRemokeMessageCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageRevoke:) target:self title:@"消息防撤回" on:[WCPLConfigCenter shared].revoke.revokeEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingMessageRevoke:),
+                                   @"消息防撤回",
+                                   nil,
+                                   [WCPLConfigCenter shared].revoke.revokeEnable);
 }
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
@@ -330,7 +407,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createEmulateIPadLoginCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEmulateIPadLogin:) target:self title:@"模拟 iPad 登录" on:[WCPLConfigCenter shared].login.emulateIPadLoginEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingEmulateIPadLogin:),
+                                   @"模拟 iPad 登录",
+                                   nil,
+                                   [WCPLConfigCenter shared].login.emulateIPadLoginEnable);
 }
 
 - (void)settingEmulateIPadLogin:(UISwitch *)sender {
@@ -338,7 +419,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createTimelineAdBlockCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTimelineAdBlock:) target:self title:@"屏蔽朋友圈广告" on:[WCPLConfigCenter shared].timeline.blockTimelineBrandAdsEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingTimelineAdBlock:),
+                                   @"屏蔽朋友圈广告",
+                                   nil,
+                                   [WCPLConfigCenter shared].timeline.blockTimelineBrandAdsEnable);
 }
 
 - (void)settingTimelineAdBlock:(UISwitch *)sender {
@@ -346,10 +431,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createDouyinParserCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDouyinParserEnable:)
-                                                                     target:self
-                                                                      title:@"启用抖音链接解析"
-                                                                         on:[WCPLConfigCenter shared].douyinParserEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingDouyinParserEnable:),
+                                   @"启用抖音链接解析",
+                                   nil,
+                                   [WCPLConfigCenter shared].douyinParserEnable);
 }
 
 - (void)settingDouyinParserEnable:(UISwitch *)sender {
@@ -357,7 +443,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createUserIgnoreEnableCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingUserIgnoreEnable:) target:self title:@"启用消息屏蔽" on:[WCPLConfigCenter shared].ignore.userIgnoreEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingUserIgnoreEnable:),
+                                   @"启用消息屏蔽",
+                                   nil,
+                                   [WCPLConfigCenter shared].ignore.userIgnoreEnable);
 }
 
 - (void)settingUserIgnoreEnable:(UISwitch *)sender {
@@ -365,10 +455,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createQuitMonitorEnableCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingQuitMonitorEnable:)
-                                                                     target:self
-                                                                      title:@"退群监控提示"
-                                                                         on:[WCPLConfigCenter shared].ignore.quitMonitorEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingQuitMonitorEnable:),
+                                   @"退群监控提示",
+                                   nil,
+                                   [WCPLConfigCenter shared].ignore.quitMonitorEnable);
 }
 
 - (void)settingQuitMonitorEnable:(UISwitch *)sender {
@@ -386,35 +477,47 @@
 }
 
 - (WCTableViewNormalCellManager *)createQuitMonitorScopeCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showQuitMonitorScopePicker)
-                                                                     target:self
-                                                                      title:@"生效范围"
-                                                                 rightValue:[self wcpl_quitMonitorScopeDisplayText]
-                                                              accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showQuitMonitorScopePicker),
+                                       @"生效范围",
+                                       [self wcpl_quitMonitorScopeDisplayText],
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createQuitMonitorWhitelistCell {
     NSArray<NSString *> *chatrooms = [self quitMonitorWhitelistedChatrooms];
     NSString *countText = [NSString stringWithFormat:@"%lu", (unsigned long)chatrooms.count];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showQuitMonitorWhitelistSelector)
-                                                                     target:self
-                                                                      title:@"退群监控白名单"
-                                                                 rightValue:countText
-                                                              accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showQuitMonitorWhitelistSelector),
+                                       @"退群监控白名单",
+                                       countText,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredChatroomCountCell {
     NSArray *chatrooms = [self ignoredChatroomUserNames];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredChatroomList) target:self title:@"已屏蔽群聊" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)chatrooms.count] accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showIgnoredChatroomList),
+                                       @"已屏蔽群聊",
+                                       [NSString stringWithFormat:@"%lu", (unsigned long)chatrooms.count],
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredUserCountCell {
     NSArray *users = [self ignoredUserNames];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredUserList) target:self title:@"已屏蔽用户" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)users.count] accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showIgnoredUserList),
+                                       @"已屏蔽用户",
+                                       [NSString stringWithFormat:@"%lu", (unsigned long)users.count],
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createIgnoreResetCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(resetAllIgnoredUsers) target:self title:@"重置所有屏蔽" rightValue:@"" accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(resetAllIgnoredUsers),
+                                       @"重置所有屏蔽",
+                                       @"",
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 #pragma mark - Swipe Quote Setting
@@ -429,42 +532,61 @@
 }
 
 - (WCTableViewNormalCellManager *)createSwipeGestureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用滑动手势" on:[WCPLConfigCenter shared].gesture.swipeGestureEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingSwipeGesture:),
+                                   @"启用滑动手势",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.swipeGestureEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"启用气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatButton:),
+                                   @"启用气泡复读按钮",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatButtonEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatLongPressMenuSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatLongPressMenuEnable:)
-                                                                     target:self
-                                                                      title:@"启用长按面板复读"
-                                                                         on:[WCPLConfigCenter shared].gesture.repeatLongPressMenuEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatLongPressMenuEnable:),
+                                   @"启用长按面板复读",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatLongPressMenuEnable);
 }
 
 - (WCTableViewNormalCellManager *)createClownFeatureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingClownFeatureEnable:)
-                                                                     target:self
-                                                                      title:@"启用小丑功能"
-                                                                         on:[WCPLConfigCenter shared].gesture.clownFeatureEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingClownFeatureEnable:),
+                                   @"启用小丑功能",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.clownFeatureEnable);
 }
 
 - (WCTableViewNormalCellManager *)createVoiceForwardFeatureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingVoiceForwardFeatureEnable:)
-                                                                     target:self
-                                                                      title:@"启用语音转发"
-                                                                         on:[WCPLConfigCenter shared].gesture.voiceForwardFeatureEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingVoiceForwardFeatureEnable:),
+                                   @"启用语音转发",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.voiceForwardFeatureEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"  点击震动反馈" on:[WCPLConfigCenter shared].gesture.repeatButtonHapticEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatButtonHaptic:),
+                                   @"  点击震动反馈",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatButtonHapticEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSizeCell {
     CGFloat size = [WCPLConfigCenter shared].gesture.repeatButtonSize;
     NSString *sizeValue = [NSString stringWithFormat:@"%.0f", size];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonSizePicker) target:self title:@"  按钮大小" rightValue:sizeValue accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showRepeatButtonSizePicker),
+                                       @"  按钮大小",
+                                       sizeValue,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (NSString *)wcpl_repeatCustomImageStatusText {
@@ -478,65 +600,118 @@
 - (WCTableViewNormalCellManager *)createRepeatCustomImageSwitchCell {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     BOOL on = config.repeatButtonCustomImageEnable && config.repeatButtonCustomImageRelativePath.length > 0;
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatCustomImageEnable:) target:self title:@"  使用自定义图片按钮" on:on];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatCustomImageEnable:),
+                                   @"  使用自定义图片按钮",
+                                   nil,
+                                   on);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatCustomImagePickerCell {
     NSString *status = [self wcpl_repeatCustomImageStatusText];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatCustomImageActionSheet) target:self title:@"  上传按钮图片" rightValue:status accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showRepeatCustomImageActionSheet),
+                                       @"  上传按钮图片",
+                                       status,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatCustomImageResetCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(confirmResetRepeatCustomImage) target:self title:@"  恢复默认 +1 按钮" rightValue:@"" accessoryType:0];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(confirmResetRepeatCustomImage),
+                                       @"  恢复默认 +1 按钮",
+                                       @"",
+                                       UITableViewCellAccessoryNone);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportEmoticon:) target:self title:@"  支持表情包消息" on:[WCPLConfigCenter shared].gesture.repeatSupportEmoticonEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatSupportEmoticon:),
+                                   @"  支持表情包消息",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatSupportEmoticonEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportVoiceCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportVoice:) target:self title:@"  支持语音消息" on:[WCPLConfigCenter shared].gesture.repeatSupportVoiceEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatSupportVoice:),
+                                   @"  支持语音消息",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatSupportVoiceEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportImageCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportImage:) target:self title:@"  支持图片消息" on:[WCPLConfigCenter shared].gesture.repeatSupportImageEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatSupportImage:),
+                                   @"  支持图片消息",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatSupportImageEnable);
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportVideoCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportVideo:) target:self title:@"  支持视频消息" on:[WCPLConfigCenter shared].gesture.repeatSupportVideoEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingRepeatSupportVideo:),
+                                   @"  支持视频消息",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.repeatSupportVideoEnable);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeSensitivityCell {
     NSInteger level = [WCPLConfigCenter shared].gesture.swipeSensitivityLevel;
     NSString *name = [self swipeSensitivityNameForLevel:level];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeSensitivityPicker) target:self title:@"  手势灵敏度" rightValue:name accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showSwipeSensitivityPicker),
+                                       @"  手势灵敏度",
+                                       name,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"  消息左滑功能" on:[WCPLConfigCenter shared].gesture.swipeQuoteEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingSwipeQuote:),
+                                   @"  消息左滑功能",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.swipeQuoteEnable);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeQuoteAtUserCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuoteAtUser:) target:self title:@"  引用时自动@发送者" on:[WCPLConfigCenter shared].gesture.swipeQuoteAtUserEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingSwipeQuoteAtUser:),
+                                   @"  引用时自动@发送者",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.swipeQuoteAtUserEnable);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeRight:) target:self title:@"  消息右滑功能" on:[WCPLConfigCenter shared].gesture.swipeRightEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingSwipeRight:),
+                                   @"  消息右滑功能",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.swipeRightEnable);
 }
 
 - (WCTableViewNormalCellManager *)createTapReferJumpSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLConfigCenter shared].gesture.tapReferJumpEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingTapReferJump:),
+                                   @"  引用消息点击跳转",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.tapReferJumpEnable);
 }
 
 - (WCTableViewNormalCellManager *)createDoubleTapGestureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDoubleTapGesture:) target:self title:@"  消息双击功能" on:[WCPLConfigCenter shared].gesture.doubleTapGestureEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingDoubleTapGesture:),
+                                   @"  消息双击功能",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.doubleTapGestureEnable);
 }
 
 - (WCTableViewNormalCellManager *)createMessageTimeSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageTimeDisplay:)
-                                                                     target:self
-                                                                      title:@"头像下方显示时间(HH:mm:ss)"
-                                                                         on:[WCPLConfigCenter shared].gesture.messageTimeEnable];
+    return wcpl_settingsSwitchCell(self,
+                                   @selector(settingMessageTimeDisplay:),
+                                   @"头像下方显示时间(HH:mm:ss)",
+                                   nil,
+                                   [WCPLConfigCenter shared].gesture.messageTimeEnable);
 }
 
 // 获取对方消息操作名称（引用、关闭、删除、复读、转发）
@@ -567,37 +742,61 @@
 - (WCTableViewNormalCellManager *)createSwipeLeftOtherActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.swipeLeftOtherAction;
     NSString *actionName = [self actionNameForOtherMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftOtherActionPicker) target:self title:@"      左滑对方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showSwipeLeftOtherActionPicker),
+                                       @"      左滑对方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeLeftSelfActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.swipeLeftSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftSelfActionPicker) target:self title:@"      左滑己方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showSwipeLeftSelfActionPicker),
+                                       @"      左滑己方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightOtherActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.swipeRightOtherAction;
     NSString *actionName = [self actionNameForOtherMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightOtherActionPicker) target:self title:@"      右滑对方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showSwipeRightOtherActionPicker),
+                                       @"      右滑对方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightSelfActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.swipeRightSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightSelfActionPicker) target:self title:@"      右滑己方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showSwipeRightSelfActionPicker),
+                                       @"      右滑己方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createDoubleTapOtherActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.doubleTapOtherAction;
     NSString *actionName = [self actionNameForOtherMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDoubleTapOtherActionPicker) target:self title:@"      双击对方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showDoubleTapOtherActionPicker),
+                                       @"      双击对方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (WCTableViewNormalCellManager *)createDoubleTapSelfActionCell {
     NSInteger action = [WCPLConfigCenter shared].gesture.doubleTapSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDoubleTapSelfActionPicker) target:self title:@"      双击己方消息" rightValue:actionName accessoryType:1];
+    return wcpl_settingsNavigationCell(self,
+                                       @selector(showDoubleTapSelfActionPicker),
+                                       @"      双击己方消息",
+                                       actionName,
+                                       UITableViewCellAccessoryDisclosureIndicator);
 }
 
 - (void)settingSwipeGesture:(UISwitch *)sender {

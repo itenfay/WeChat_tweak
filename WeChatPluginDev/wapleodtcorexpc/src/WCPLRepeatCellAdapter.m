@@ -5,6 +5,7 @@
 #import "WCPLRepeatCellAdapter.h"
 
 #import "WCPLLogger.h"
+#import "WCPLObjcSafeCall.h"
 #import <objc/message.h>
 
 static BOOL wcpl_repeatCellAdapterIsUsableAnchorView(id candidate, CGFloat minWidth, CGFloat minHeight) {
@@ -28,13 +29,9 @@ static UIView *wcpl_repeatCellAdapterViewFromSelectors(id cell,
             continue;
         }
 
-        @try {
-            id candidate = ((id (*)(id, SEL))objc_msgSend)(cell, selector);
-            if (wcpl_repeatCellAdapterIsUsableAnchorView(candidate, minWidth, minHeight)) {
-                return (UIView *)candidate;
-            }
-        } @catch (NSException *exception) {
-            WCPLCatchLog(exception);
+        id candidate = WCPLObjcCallId0(cell, selector);
+        if (wcpl_repeatCellAdapterIsUsableAnchorView(candidate, minWidth, minHeight)) {
+            return (UIView *)candidate;
         }
     }
     return nil;
@@ -45,13 +42,9 @@ static UIView *wcpl_repeatCellAdapterViewFromKVC(id cell,
                                                  CGFloat minWidth,
                                                  CGFloat minHeight) {
     for (NSString *key in keys) {
-        @try {
-            id candidate = [cell valueForKey:key];
-            if (wcpl_repeatCellAdapterIsUsableAnchorView(candidate, minWidth, minHeight)) {
-                return (UIView *)candidate;
-            }
-        } @catch (NSException *exception) {
-            WCPLCatchLog(exception);
+        id candidate = WCPLSafeValueForKey(cell, key);
+        if (wcpl_repeatCellAdapterIsUsableAnchorView(candidate, minWidth, minHeight)) {
+            return (UIView *)candidate;
         }
     }
     return nil;

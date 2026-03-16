@@ -2,11 +2,11 @@
 // WCPLLocationConfig.h
 //
 
-#import <Foundation/Foundation.h>
+#import "WCPLUserDefaultsBackedConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WCPLLocationConfig : NSObject
+@interface WCPLLocationConfig : WCPLUserDefaultsBackedConfig
 
 + (instancetype)sharedConfig;
 + (instancetype)configWithDefaults:(NSUserDefaults *)defaults;

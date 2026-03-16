@@ -5,6 +5,8 @@
 //
 
 #import "WCPLLogUploader.h"
+#import "WCPLAlertTextHelpers.h"
+#import "WCPLFileHelpers.h"
 
 static NSString *const kWCPLLogUploadURLKey = @"kWCPLLogUploadURL";
 static const NSInteger kWCPLUploadRetryLimit = 2;
@@ -59,13 +61,7 @@ static NSString *WCPLResponseTextSnippet(NSData *data) {
     if (text.length == 0) {
         return @"";
     }
-
-    text = [[text stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-            stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-    if (text.length > 200) {
-        text = [[text substringToIndex:200] stringByAppendingString:@"…"];
-    }
-    return text;
+    return WCPLSanitizeInlineText(text, 200) ?: @"";
 }
 
 static NSError *WCPLBuildUploadNSError(NSInteger statusCode, NSString *urlString, NSData *respData, NSError *originError) {
@@ -295,10 +291,7 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
         return;
     }
 
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-    NSString *fileType = [attributes fileType];
-    unsigned long long fileSize = [attributes fileSize];
-    if (![fileType isEqualToString:NSFileTypeRegular] || fileSize == 0) {
+    if (!WCPLFileIsRegularNonEmptyAtPath(filePath, NULL)) {
         if (completion) {
             NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
                                                  code:-2

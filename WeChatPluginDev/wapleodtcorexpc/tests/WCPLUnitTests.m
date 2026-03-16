@@ -12,6 +12,7 @@
 #import "WCPLAlertTextHelpers.h"
 #import "WCPLConfigSanitizer.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLQuitMonitorHelpers.h"
 #import "WCPLRevokeAnchor.h"
 #import "WCPLSharedConfigHelpers.h"
 #import "WCPLTypeGuard.h"
@@ -443,6 +444,23 @@ static BOOL testQuitMonitorPureHelpers(void) {
     return YES;
 }
 
+static BOOL testQuitMonitorDiffHelpers(void) {
+    NSArray<NSString *> *members = WCPLQuitMonitorMembersFromRawList(@" alice ; bob ; alice ; carol ");
+    WCPL_ASSERT([members isEqualToArray:@[@"alice", @"bob", @"carol"]],
+                "member parser should trim and de-duplicate");
+
+    NSArray<NSString *> *removed = WCPLQuitMonitorRemovedMembers(@[@"alice", @"bob", @"self", @"carol"],
+                                                                 @[@"alice", @"carol"],
+                                                                 @"self");
+    WCPL_ASSERT([removed isEqualToArray:@[@"bob"]],
+                "removed members should exclude retained users and self user");
+
+    NSString *eventKey = WCPLQuitMonitorBuildEventKey(@"room@chatroom", @[@"bob", @"carol"]);
+    WCPL_ASSERT([eventKey isEqualToString:@"room@chatroom|bob,carol"],
+                "event key should remain stable");
+    return YES;
+}
+
 static BOOL testRevokeAnchorPureHelpers(void) {
     WCPLRevokeAnchorSource source = WCPLRevokeAnchorSourceRevokeEvent;
     WCPLRevokeAnchorFields fields = WCPLResolveRevokeAnchorFields(300,
@@ -580,6 +598,7 @@ int main(void) {
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
     failed += !runTest("testQuitMonitorScopeMigration", testQuitMonitorScopeMigration);
     failed += !runTest("testQuitMonitorPureHelpers", testQuitMonitorPureHelpers);
+    failed += !runTest("testQuitMonitorDiffHelpers", testQuitMonitorDiffHelpers);
     failed += !runTest("testRevokeAnchorPureHelpers", testRevokeAnchorPureHelpers);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
     failed += !runTest("testThreadSafeDictionaryConcurrentReadWriteNoDeadlock",

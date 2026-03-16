@@ -1,7 +1,12 @@
 #import "WCPLSettingsPickerCoordinator.h"
 
 #import "WCPLConfigCenter.h"
+#import "WCPLContactGroupPickerViewController.h"
+#import "WCPLGestureActionHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLPickerDataProvider.h"
+#import "WCPLPickerItem.h"
+#import "WCPLPureHelpers.h"
 #import "WCPLRepeatButtonAssetManager.h"
 #import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
@@ -37,28 +42,37 @@ static UIAlertAction *wcpl_settingsPickerAction(NSString *title,
                                       title:(NSString *)title
                                    selected:(NSArray<NSString *> *)selected
                                      onDone:(void (^)(NSArray<NSString *> *userNames))onDone {
-    WCPLUnifiedMultiSelectViewController *controller = [[WCPLUnifiedMultiSelectViewController alloc] initWithSelectType:selectType
-                                                                                                        initialUserNames:selected];
-    controller.titleText = title;
+    NSArray<WCPLPickerItem *> *allItems = [WCPLPickerDataProvider allPickerItems];
+    NSSet<NSString *> *selectedSet = [NSSet setWithArray:WCPLSanitizeIdentifierArray(selected)];
+
+    WCPLContactGroupPickerViewController *picker = [[WCPLContactGroupPickerViewController alloc] initWithItems:allItems
+                                                                                                     pickerMode:WCPLContactGroupPickerModeMulti
+                                                                                         preselectedIdentifiers:selectedSet];
+    picker.titleText = title;
+    picker.enableTypeSegment = NO;
+    picker.enableSectionByType = NO;
+    picker.itemFilter = ^BOOL(WCPLPickerItem *item) {
+        if (![item isKindOfClass:[WCPLPickerItem class]]) {
+            return NO;
+        }
+        return (selectType == WCPLUnifiedMultiSelectTypeChatroom)
+            ? item.type == WCPLPickerItemTypeGroup
+            : item.type == WCPLPickerItemTypeUser;
+    };
 
     __weak typeof(self) weakSelf = self;
-    controller.onCancelBlock = ^{
-        typeof(self) strongSelf = weakSelf;
-        [strongSelf dismissViewControllerAnimated:YES completion:nil];
-    };
-    controller.onDoneBlock = ^(NSArray<NSString *> *userNames) {
-        typeof(self) strongSelf = weakSelf;
+    picker.onFinish = ^(__unused NSArray<WCPLPickerItem *> *selectedItems, NSArray<NSString *> *selectedIdentifiers) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         if (!strongSelf) {
             return;
         }
         if (onDone) {
-            onDone(userNames);
+            onDone(selectedIdentifiers ?: @[]);
         }
         [strongSelf reloadTableData];
-        [strongSelf dismissViewControllerAnimated:YES completion:nil];
     };
 
-    MMUINavigationController *navigationController = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:controller];
+    MMUINavigationController *navigationController = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:picker];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
@@ -330,25 +344,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
 
-    [alert addAction:wcpl_settingsPickerAction(@"引用", UIAlertActionStyleDefault, ^{
-        if (completion) completion(0);
+    [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionQuote, isSelf),
+                                              UIAlertActionStyleDefault, ^{
+        if (completion) completion(WCPLGestureActionQuote);
     })];
-    [alert addAction:wcpl_settingsPickerAction(@"复读", UIAlertActionStyleDefault, ^{
-        if (completion) completion(4);
+    [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionRepeat, isSelf),
+                                              UIAlertActionStyleDefault, ^{
+        if (completion) completion(WCPLGestureActionRepeat);
     })];
-    [alert addAction:wcpl_settingsPickerAction(@"转发", UIAlertActionStyleDefault, ^{
-        if (completion) completion(5);
+    [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionForward, isSelf),
+                                              UIAlertActionStyleDefault, ^{
+        if (completion) completion(WCPLGestureActionForward);
     })];
-    [alert addAction:wcpl_settingsPickerAction(@"关闭", UIAlertActionStyleDefault, ^{
-        if (completion) completion(1);
+    [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionDisabled, isSelf),
+                                              UIAlertActionStyleDefault, ^{
+        if (completion) completion(WCPLGestureActionDisabled);
     })];
-    [alert addAction:wcpl_settingsPickerAction(@"删除", UIAlertActionStyleDestructive, ^{
-        if (completion) completion(2);
+    [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionDelete, isSelf),
+                                              UIAlertActionStyleDestructive, ^{
+        if (completion) completion(WCPLGestureActionDelete);
     })];
 
     if (isSelf) {
-        [alert addAction:wcpl_settingsPickerAction(@"撤回", UIAlertActionStyleDestructive, ^{
-            if (completion) completion(3);
+        [alert addAction:wcpl_settingsPickerAction(WCPLGestureActionName(WCPLGestureActionRevoke, isSelf),
+                                                  UIAlertActionStyleDestructive, ^{
+            if (completion) completion(WCPLGestureActionRevoke);
         })];
     }
 

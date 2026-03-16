@@ -1,8 +1,17 @@
-// Internal include-only module.
-// Right-top-menu hook glue for mark-all-read in WCPLPluginEntryHook.xm.
-// Do not add this file to $(TWEAK_NAME)_FILES directly.
+//
+// WCPLMarkAllReadMenuHooks.xm
+//
+// 右上角菜单 Hook glue：一键已读入口。
+//
 
-static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
+#import <UIKit/UIKit.h>
+#import <dispatch/dispatch.h>
+#import <objc/message.h>
+#import <objc/runtime.h>
+
+#import "WCPLLogger.h"
+#import "WCPLMarkAllReadService.h"
+#import "WCPLObjcSafeCall.h"
 
 %hook RightTopMenuItemBtn
 
@@ -12,13 +21,13 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
         return itemBtn;
     }
 
-    NSString *itemID = wcpl_entry_safeValueForKey(btnData, @"m_nsID");
+    NSString *itemID = WCPLSafeValueForKey(btnData, @"m_nsID");
     if (![itemID isKindOfClass:[NSString class]] ||
-        ![(NSString *)itemID isEqualToString:@"wcpl_mark_all_read"]) {
+        ![(NSString *)itemID isEqualToString:kWCPLTopRightMenuMarkAllReadID]) {
         return itemBtn;
     }
 
-    UIImage *icon = wcpl_topRightMenu_markAllReadIconImage();
+    UIImage *icon = WCPLTopRightMenuMarkAllReadIconImage();
     if (icon && [itemBtn respondsToSelector:@selector(setImage:forState:)]) {
         @try {
             ((void (*)(id, SEL, id, unsigned long long))objc_msgSend)(itemBtn,
@@ -53,7 +62,7 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
 %hook CAppViewControllerManager
 
 + (BOOL)shouldTopRightMenuShowID:(id)arg1 {
-    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
+    return WCPLTopRightMenuResolveShowIDResult(arg1, %orig(arg1));
 }
 
 %end
@@ -61,7 +70,7 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
 %hook NewMainFrameViewController
 
 - (BOOL)isTopRightMenuShowID:(id)arg1 {
-    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
+    return WCPLTopRightMenuResolveShowIDResult(arg1, %orig(arg1));
 }
 
 %end
@@ -70,27 +79,27 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
 
 - (void)reloadAllItems {
     %orig;
-    wcpl_topRightMenu_syncMarkAllReadMenuItem(self);
+    WCPLTopRightMenuSyncMarkAllReadMenuItem(self);
 }
 
 - (void)reloadMenuItems {
     %orig;
-    wcpl_topRightMenu_syncMarkAllReadMenuItem(self);
+    WCPLTopRightMenuSyncMarkAllReadMenuItem(self);
 }
 
 - (BOOL)isTopRightMenuShowID:(id)arg1 {
-    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
+    return WCPLTopRightMenuResolveShowIDResult(arg1, %orig(arg1));
 }
 
 - (void)onItemAction:(id)sender {
-    NSString *itemID = wcpl_topRightMenu_safeItemIDFromSender(sender);
+    NSString *itemID = WCPLTopRightMenuSafeItemIDFromSender(sender);
     if (itemID.length > 0 &&
         [itemID isEqualToString:kWCPLTopRightMenuMarkAllReadID] &&
-        wcpl_markAllRead_isTopRightMenuEnabled()) {
+        WCPLMarkAllReadTopRightMenuEnabled()) {
         // 先走原链路，确保菜单收起；再弹确认框。
         %orig(sender);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            wcpl_markAllRead_presentConfirmAlert();
+            WCPLMarkAllReadPresentConfirmAlert();
         });
         return;
     }

@@ -1,3 +1,11 @@
+// Internal include-only module.
+// Stitched into src/WCPLGestureHook.xm by scripts/generate_wcpl_gesture_hook.sh.
+// Do not add this file to $(TWEAK_NAME)_FILES directly.
+
+#import "WCPLGeometryHelpers.h"
+
+static const CGFloat kWCPLMessageTimeHeadMinSide = 16.0f;
+
 %hook CommonMessageCellView
 
 %new
@@ -144,18 +152,16 @@
     } else {
         headRect = [self convertRect:headView.bounds fromView:headView];
     }
-    if (CGRectIsEmpty(headRect) || CGRectGetWidth(headRect) <= 0.0f || CGRectGetHeight(headRect) <= 0.0f) {
+    if (!WCPLCGRectIsValid(headRect)) {
         UIView *container = headView.superview;
         if (container) {
             headRect = [self convertRect:headView.frame fromView:container];
         }
     }
 
-    if (CGRectIsEmpty(headRect) ||
-        CGRectIsNull(headRect) ||
-        CGRectIsInfinite(headRect) ||
-        CGRectGetWidth(headRect) < 16.0f ||
-        CGRectGetHeight(headRect) < 16.0f) {
+    if (!WCPLCGRectIsValid(headRect) ||
+        CGRectGetWidth(headRect) < kWCPLMessageTimeHeadMinSide ||
+        CGRectGetHeight(headRect) < kWCPLMessageTimeHeadMinSide) {
         [self wchook_hideMessageTimeLabel];
         return;
     }

@@ -7,6 +7,7 @@
 
 #import "WCPLFuncService.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
@@ -81,32 +82,7 @@ static BOOL wcpl_isRedEnvelopMessageWrap(id msgWrap, Ivar nsContentIvar) {
 }
 
 static id wcpl_contactForUserName(NSString *userName) {
-    NSString *target = wcpl_safeUserNameString(userName);
-    if (target.length == 0) {
-        return nil;
-    }
-
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr) {
-        return nil;
-    }
-
-    id contact = nil;
-    @try {
-        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), target);
-        }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromDB:), target);
-        }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), target);
-        }
-    } @catch (__unused NSException *exception) {
-        contact = nil;
-    }
-
-    return contact;
+    return WCPLContactAdapterFindContactByUserName(userName);
 }
 
 static NSSet<NSString *> *wcpl_normalizedFriendUserSet(NSArray<NSString *> *userNames) {

@@ -4,6 +4,7 @@
 
 #import "WCPLThreadSafeMutableDictionary.h"
 #import "WCPLConstants.h"
+#import "WCPLDispatchUtils.h"
 #import <dispatch/dispatch.h>
 
 static const void *kWCPLThreadSafeDictionaryQueueSpecificKey = &kWCPLThreadSafeDictionaryQueueSpecificKey;
@@ -25,35 +26,22 @@ static const void *kWCPLThreadSafeDictionaryQueueSpecificKey = &kWCPLThreadSafeD
                                 NULL);
 }
 
-- (BOOL)wcpl_isOnOwnQueue {
-    return dispatch_get_specific(kWCPLThreadSafeDictionaryQueueSpecificKey) == (__bridge void *)self;
-}
-
 - (void)wcpl_readSync:(dispatch_block_t)block {
-    if (!block) return;
-    if ([self wcpl_isOnOwnQueue]) {
-        block();
-        return;
-    }
-    dispatch_sync(self.queue, block);
+    WCPLDispatchQueueSpecific specific = WCPLDispatchQueueSpecificMake(kWCPLThreadSafeDictionaryQueueSpecificKey,
+                                                                      (__bridge void *)self);
+    WCPLDispatchSyncSafe(self.queue, specific, block);
 }
 
 - (void)wcpl_writeSync:(dispatch_block_t)block {
-    if (!block) return;
-    if ([self wcpl_isOnOwnQueue]) {
-        block();
-        return;
-    }
-    dispatch_barrier_sync(self.queue, block);
+    WCPLDispatchQueueSpecific specific = WCPLDispatchQueueSpecificMake(kWCPLThreadSafeDictionaryQueueSpecificKey,
+                                                                      (__bridge void *)self);
+    WCPLDispatchBarrierSyncSafe(self.queue, specific, block);
 }
 
 - (void)wcpl_writeAsync:(dispatch_block_t)block {
-    if (!block) return;
-    if ([self wcpl_isOnOwnQueue]) {
-        block();
-        return;
-    }
-    dispatch_barrier_async(self.queue, block);
+    WCPLDispatchQueueSpecific specific = WCPLDispatchQueueSpecificMake(kWCPLThreadSafeDictionaryQueueSpecificKey,
+                                                                      (__bridge void *)self);
+    WCPLDispatchBarrierAsyncSafe(self.queue, specific, block);
 }
 
 - (instancetype)init {

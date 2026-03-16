@@ -9,10 +9,24 @@
 #import "WCPLServiceCenterAdapter.h"
 #import "WCPLWeChatContactHeaders.h"
 #import <objc/message.h>
+#import <objc/runtime.h>
 
 static NSString *wcpl_contactAdapterTrimUserName(id value) {
     NSString *userName = WCPLTrimText(value);
     return userName.length > 0 ? userName : nil;
+}
+
+static NSString *wcpl_contactAdapterReadUserNameFromSelector(id obj, SEL selector) {
+    if (!(obj && selector) || ![obj respondsToSelector:selector]) {
+        return nil;
+    }
+
+    @try {
+        id value = ((id (*)(id, SEL))objc_msgSend)(obj, selector);
+        return wcpl_contactAdapterTrimUserName(value);
+    } @catch (__unused NSException *exception) {
+        return nil;
+    }
 }
 
 static id wcpl_contactAdapterInvokeMessageContactLookup(id target, id messageWrap) {
@@ -32,6 +46,18 @@ static id wcpl_contactAdapterInvokeMessageContactLookup(id target, id messageWra
     }
 }
 
+static NSString *wcpl_contactAdapterReadStringField(id target, SEL selector) {
+    if (!(target && selector) || ![target respondsToSelector:selector]) {
+        return nil;
+    }
+
+    @try {
+        return wcpl_contactAdapterTrimUserName(((id (*)(id, SEL))objc_msgSend)(target, selector));
+    } @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
 NSString *WCPLContactAdapterSafeUserName(id obj) {
     if (!obj) {
         return nil;
@@ -42,24 +68,43 @@ NSString *WCPLContactAdapterSafeUserName(id obj) {
         return directUserName;
     }
 
-    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
+    SEL selectors[] = {
+        @selector(m_nsUsrName),
+        @selector(m_nsUserName),
+        @selector(userName),
+        @selector(username),
+        @selector(m_nsChatRoomName),
+    };
+    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
+        NSString *userName = wcpl_contactAdapterReadUserNameFromSelector(obj, selectors[idx]);
+        if (userName.length > 0) {
+            return userName;
+        }
+    }
+
+    NSArray<NSString *> *kvcKeys = @[
+        @"m_nsUsrName",
+        @"m_nsUserName",
+        @"userName",
+        @"username",
+        @"m_nsChatRoomName",
+    ];
+    for (NSString *key in kvcKeys) {
         @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-            NSString *userName = wcpl_contactAdapterTrimUserName(value);
+            NSString *userName = wcpl_contactAdapterTrimUserName([obj valueForKey:key]);
             if (userName.length > 0) {
                 return userName;
             }
         } @catch (__unused NSException *exception) {
-            return nil;
+            continue;
         }
     }
 
-    @try {
-        id value = [obj valueForKey:@"m_nsUsrName"];
-        return wcpl_contactAdapterTrimUserName(value);
-    } @catch (__unused NSException *exception) {
-        return nil;
-    }
+    return nil;
+}
+
+NSString *WCPLContactAdapterChatRoomMemberList(id contact) {
+    return wcpl_contactAdapterReadStringField(contact, @selector(m_nsChatRoomMemList));
 }
 
 CContact *WCPLContactAdapterFindContactByUserName(NSString *userName) {
@@ -70,8 +115,39 @@ CContact *WCPLContactAdapterFindContactByUserName(NSString *userName) {
     return WCPLFindContactByUserName(targetUserName, nil, nil);
 }
 
+NSString *WCPLContactAdapterDisplayNameForContact(id contact, NSString *fallbackUserName) {
+    NSString *fallback = wcpl_contactAdapterTrimUserName(fallbackUserName);
+    if (fallback.length == 0) {
+        fallback = WCPLContactAdapterSafeUserName(contact);
+    }
+
+    if (!contact) {
+        return fallback;
+    }
+
+    NSArray<NSString *> *selectors = @[@"m_nsRemark", @"m_nsNickName", @"m_nsAliasName", @"m_nsUsrName"];
+    for (NSString *selectorName in selectors) {
+        NSString *displayName = wcpl_contactAdapterReadStringField(contact, NSSelectorFromString(selectorName));
+        if (displayName.length > 0) {
+            return displayName;
+        }
+    }
+
+    return fallback;
+}
+
+NSString *WCPLContactAdapterDisplayNameForUserName(NSString *userName) {
+    NSString *target = wcpl_contactAdapterTrimUserName(userName);
+    if (target.length == 0) {
+        return nil;
+    }
+
+    CContact *contact = WCPLContactAdapterFindContactByUserName(target);
+    return WCPLContactAdapterDisplayNameForContact(contact, target);
+}
+
 id WCPLContactAdapterMessageChatContact(id messageWrap) {
-    id contactManager = WCPLServiceCenterAdapterGetService(objc_getClass("CContactMgr"));
+    id contactManager = WCPLServiceCenterAdapterGetService(objc_lookUpClass("CContactMgr"));
     return wcpl_contactAdapterInvokeMessageContactLookup(contactManager, messageWrap);
 }
 
@@ -97,8 +173,28 @@ BOOL WCPLContactAdapterContactMatchesUserName(id contact, NSString *expectedUser
     return (contactUserName.length > 0 && [contactUserName isEqualToString:targetUserName]);
 }
 
+BOOL WCPLContactAdapterIsChatRoomUserName(NSString *userName) {
+    NSString *trimmedUserName = wcpl_contactAdapterTrimUserName(userName);
+    if (trimmedUserName.length == 0) {
+        return NO;
+    }
+
+    Class contactClass = objc_lookUpClass("CContact");
+    if (contactClass && [contactClass respondsToSelector:@selector(IsChatRoomContact:)]) {
+        @try {
+            return ((BOOL (*)(id, SEL, id))objc_msgSend)(contactClass,
+                                                         @selector(IsChatRoomContact:),
+                                                         trimmedUserName);
+        } @catch (__unused NSException *exception) {
+            return NO;
+        }
+    }
+
+    return WCPLIsChatRoomName(trimmedUserName);
+}
+
 id WCPLContactAdapterCurrentSelfContact(void) {
-    id contactManager = WCPLServiceCenterAdapterGetService(objc_getClass("CContactMgr"));
+    id contactManager = WCPLServiceCenterAdapterGetService(objc_lookUpClass("CContactMgr"));
     if (!(contactManager && [contactManager respondsToSelector:@selector(getSelfContact)])) {
         return nil;
     }

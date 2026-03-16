@@ -1,4 +1,5 @@
 #import "WCHookMessageNavigator.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
@@ -430,44 +431,7 @@ static NSString *WCHookExtractQuitMonitorDisplayNameFromContent(NSString *conten
 }
 
 static id WCHookContactForUserName(NSString *userName) {
-    NSString *target = WCHookTrimString(userName);
-    if (target.length == 0) {
-        return nil;
-    }
-
-    Class serviceCenterClass = NSClassFromString(@"MMServiceCenter");
-    Class contactMgrClass = NSClassFromString(@"CContactMgr");
-    if (!serviceCenterClass || !contactMgrClass ||
-        ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
-        return nil;
-    }
-    id serviceCenter = ((id (*)(id, SEL))objc_msgSend)(serviceCenterClass, @selector(defaultCenter));
-    if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) {
-        return nil;
-    }
-    id contactMgr = ((id (*)(id, SEL, id))objc_msgSend)(serviceCenter, @selector(getService:), contactMgrClass);
-    if (!contactMgr) {
-        return nil;
-    }
-
-    SEL selectors[] = {
-        NSSelectorFromString(@"getContactByName:"),
-        NSSelectorFromString(@"getContactByNameFromDB:"),
-        NSSelectorFromString(@"getContactByNameFromCache:")
-    };
-    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
-        SEL selector = selectors[idx];
-        if (![contactMgr respondsToSelector:selector]) {
-            continue;
-        }
-        @try {
-            id contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, selector, target);
-            if (contact) {
-                return contact;
-            }
-        } @catch (__unused NSException *exceptionLookup) { WCPLCatchLog(exceptionLookup); }
-    }
-    return nil;
+    return WCPLContactAdapterFindContactByUserName(userName);
 }
 
 static id WCHookResolveProfileOpenTargetFromCell(CommonMessageCellView *cell) {

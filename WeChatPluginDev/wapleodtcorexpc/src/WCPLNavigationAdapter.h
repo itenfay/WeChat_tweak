@@ -12,5 +12,6 @@ FOUNDATION_EXPORT UIView * _Nullable WCPLNavigationAdapterLoadedView(id _Nullabl
 FOUNDATION_EXPORT UINavigationController * _Nullable WCPLNavigationAdapterNavigationController(id _Nullable viewController);
 FOUNDATION_EXPORT NSUInteger WCPLNavigationAdapterNavigationDepth(id _Nullable viewController);
 FOUNDATION_EXPORT BOOL WCPLNavigationAdapterIsOnNavigationStack(id _Nullable viewController);
+FOUNDATION_EXPORT UIViewController * _Nullable WCPLNavigationAdapterTopVisibleViewController(void);
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,6 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLLogger.h"
+#import "WCPLObjcSafeCall.h"
 
 #import <objc/message.h>
 
@@ -9,31 +10,19 @@ static BOOL wcpl_timeline_shouldBlockAds(void) {
 
 static void wcpl_timeline_logBlockResult(NSString *scene, NSUInteger removedDatas, NSUInteger removedAds);
 
-static id wcpl_timeline_safeGetProperty(id obj, SEL selector) {
-    if (!obj || !selector || ![obj respondsToSelector:selector]) {
-        return nil;
-    }
-
-    @try {
-        return ((id (*)(id, SEL))objc_msgSend)(obj, selector);
-    } @catch (__unused NSException *exception) {
-        return nil;
-    }
-}
-
 static BOOL wcpl_timeline_isAdItem(id item) {
     if (!item) return NO;
 
-    id adInfo = wcpl_timeline_safeGetProperty(item, @selector(advertiseInfo));
+    id adInfo = WCPLObjcCallId0(item, @selector(advertiseInfo));
     if (adInfo && adInfo != [NSNull null]) return YES;
 
-    id atFriendAdInfo = wcpl_timeline_safeGetProperty(item, @selector(atFriendAdvertiseInfo));
+    id atFriendAdInfo = WCPLObjcCallId0(item, @selector(atFriendAdvertiseInfo));
     if (atFriendAdInfo && atFriendAdInfo != [NSNull null]) return YES;
 
-    id adCoding = wcpl_timeline_safeGetProperty(item, @selector(advertiseInfoNSCodingData));
+    id adCoding = WCPLObjcCallId0(item, @selector(advertiseInfoNSCodingData));
     if ([adCoding respondsToSelector:@selector(length)] && ((NSUInteger)[adCoding length] > 0)) return YES;
 
-    id atFriendAdCoding = wcpl_timeline_safeGetProperty(item, @selector(atFriendAdvertiseInfoNSCodingData));
+    id atFriendAdCoding = WCPLObjcCallId0(item, @selector(atFriendAdvertiseInfoNSCodingData));
     if ([atFriendAdCoding respondsToSelector:@selector(length)] && ((NSUInteger)[atFriendAdCoding length] > 0)) return YES;
 
     return NO;
@@ -90,17 +79,17 @@ static NSUInteger wcpl_timeline_cleanupManagerCache(id manager) {
     NSUInteger removedDatas = 0;
     NSUInteger removedAds = 0;
 
-    id timelineDataList = wcpl_timeline_safeGetProperty(manager, @selector(timelineDataList));
+    id timelineDataList = WCPLObjcCallId0(manager, @selector(timelineDataList));
     if ([timelineDataList isKindOfClass:[NSMutableArray class]]) {
         removedDatas += wcpl_timeline_removeAdItemsInMutableArray((NSMutableArray *)timelineDataList);
     }
 
-    id timelineBackupList = wcpl_timeline_safeGetProperty(manager, @selector(timelineDataListBeforeJumpToMissRead));
+    id timelineBackupList = WCPLObjcCallId0(manager, @selector(timelineDataListBeforeJumpToMissRead));
     if ([timelineBackupList isKindOfClass:[NSMutableArray class]]) {
         removedDatas += wcpl_timeline_removeAdItemsInMutableArray((NSMutableArray *)timelineBackupList);
     }
 
-    id advertiseDataList = wcpl_timeline_safeGetProperty(manager, @selector(advertiseDataList));
+    id advertiseDataList = WCPLObjcCallId0(manager, @selector(advertiseDataList));
     if ([advertiseDataList isKindOfClass:[NSMutableArray class]]) {
         removedAds = ((NSMutableArray *)advertiseDataList).count;
         [(NSMutableArray *)advertiseDataList removeAllObjects];

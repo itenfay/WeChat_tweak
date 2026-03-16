@@ -1,11 +1,14 @@
 #import "WCPLLogSettingsViewController.h"
 
+#import "WCPLFileHelpers.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLRealtimeLogUploader.h"
+#import "WCPLSettingsTableViewManagerFactory.h"
 #import "WCPLTypeGuard.h"
+#import "WCHookTableViewFactory.h"
 #import "WCPLWeChatUIHeaders.h"
 #import <objc/runtime.h>
 
@@ -19,10 +22,7 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        CGFloat tabY = WCPLStatusBarAndNavigationBarHeight;
-        CGFloat tabW = WCPLScreenWidth;
-        CGFloat tabH = WCPLScreenHeight - WCPLStatusBarAndNavigationBarHeight - WCPLViewSafeBottomMargin;
-        _tableViewMgr = [[objc_getClass("WCTableViewManager") alloc] initWithFrame:CGRectMake(0, tabY, tabW, tabH) style:UITableViewStyleGrouped];
+        _tableViewMgr = WCPLCreateSettingsTableViewManager(UITableViewStyleGrouped);
     }
     return self;
 }
@@ -52,18 +52,21 @@
 - (void)reloadTableData {
     [self.tableViewMgr clearAllSection];
 
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"日志与调试"];
-    [section addCell:[self createDebugLogSwitchCell]];
-    if ([WCPLLogger sharedLogger].enabled) {
-        [section addCell:[self createLogLevelCell]];
+    id section = [WCHookTableViewFactory sectionWithHeader:@"日志与调试" footer:nil];
+    if (!section) {
+        return;
     }
-    [section addCell:[self createDebugLogCell]];
-    [section addCell:[self createRealtimeDebugLogUploadSwitchCell]];
-    [section addCell:[self createCrashLogSwitchCell]];
-    [section addCell:[self createCrashAutoUploadSwitchCell]];
-    [section addCell:[self createLogUploadURLCell]];
+    [WCHookTableViewFactory addCell:[self createDebugLogSwitchCell] toSection:section];
+    if ([WCPLLogger sharedLogger].enabled) {
+        [WCHookTableViewFactory addCell:[self createLogLevelCell] toSection:section];
+    }
+    [WCHookTableViewFactory addCell:[self createDebugLogCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createRealtimeDebugLogUploadSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createCrashLogSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createCrashAutoUploadSwitchCell] toSection:section];
+    [WCHookTableViewFactory addCell:[self createLogUploadURLCell] toSection:section];
 
-    [self.tableViewMgr addSection:section];
+    [WCHookTableViewFactory addSection:section toManager:self.tableViewMgr];
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
     [tableView reloadData];
@@ -81,7 +84,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createDebugLogSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDebugLog:) target:self title:@"启用调试日志" on:[WCPLLogger sharedLogger].enabled];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory switchCellWithTitle:@"启用调试日志"
+                                                                            descriptor:nil
+                                                                                    on:[WCPLLogger sharedLogger].enabled
+                                                                                target:self
+                                                                                action:@selector(settingDebugLog:)];
 }
 
 - (void)settingDebugLog:(UISwitch *)sender {
@@ -105,7 +112,11 @@
 - (WCTableViewNormalCellManager *)createLogLevelCell {
     WCPLLogLevel level = [WCPLLogger currentLevel];
     NSString *name = [self wcpl_logLevelName:level];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogLevelPicker) target:self title:@"日志等级" rightValue:name accessoryType:1];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory navigationCellWithTitle:@"日志等级"
+                                                                                    detail:name
+                                                                                    target:self
+                                                                                    action:@selector(showLogLevelPicker)
+                                                                            accessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 - (void)showLogLevelPicker {
@@ -152,11 +163,19 @@
 }
 
 - (WCTableViewNormalCellManager *)createDebugLogCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDebugLog) target:self title:@"查看调试日志" rightValue:@"" accessoryType:1];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory navigationCellWithTitle:@"查看调试日志"
+                                                                                    detail:@""
+                                                                                    target:self
+                                                                                    action:@selector(showDebugLog)
+                                                                            accessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 - (WCTableViewNormalCellManager *)createRealtimeDebugLogUploadSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRealtimeDebugLogUpload:) target:self title:@"实时上传调试日志" on:[WCPLRealtimeLogUploader sharedUploader].enabled];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory switchCellWithTitle:@"实时上传调试日志"
+                                                                            descriptor:nil
+                                                                                    on:[WCPLRealtimeLogUploader sharedUploader].enabled
+                                                                                target:self
+                                                                                action:@selector(settingRealtimeDebugLogUpload:)];
 }
 
 - (void)settingRealtimeDebugLogUpload:(UISwitch *)sender {
@@ -179,7 +198,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createCrashLogSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashLog:) target:self title:@"启用崩溃日志" on:[WCPLCrashReporter sharedReporter].enabled];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory switchCellWithTitle:@"启用崩溃日志"
+                                                                            descriptor:nil
+                                                                                    on:[WCPLCrashReporter sharedReporter].enabled
+                                                                                target:self
+                                                                                action:@selector(settingCrashLog:)];
 }
 
 - (void)settingCrashLog:(UISwitch *)sender {
@@ -191,7 +214,11 @@
 }
 
 - (WCTableViewNormalCellManager *)createCrashAutoUploadSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashAutoUpload:) target:self title:@"崩溃后自动上传" on:[WCPLCrashReporter sharedReporter].autoUploadEnabled];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory switchCellWithTitle:@"崩溃后自动上传"
+                                                                            descriptor:nil
+                                                                                    on:[WCPLCrashReporter sharedReporter].autoUploadEnabled
+                                                                                target:self
+                                                                                action:@selector(settingCrashAutoUpload:)];
 }
 
 - (void)settingCrashAutoUpload:(UISwitch *)sender {
@@ -204,7 +231,11 @@
 
 - (WCTableViewNormalCellManager *)createLogUploadURLCell {
     NSString *urlString = [WCPLLogUploader currentUploadURLString] ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogUploadURLInput) target:self title:@"日志上传地址" rightValue:urlString accessoryType:1];
+    return (WCTableViewNormalCellManager *)[WCHookTableViewFactory navigationCellWithTitle:@"日志上传地址"
+                                                                                    detail:urlString
+                                                                                    target:self
+                                                                                    action:@selector(showLogUploadURLInput)
+                                                                            accessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 - (void)showDebugLog {
@@ -283,8 +314,7 @@
     }
 
     NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
-    unsigned long long logSize = [attributes fileSize];
+    unsigned long long logSize = WCPLFileSizeAtPath(logPath);
     if (logSize == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志为空"
                                                                        message:@"没有可上传的日志内容"

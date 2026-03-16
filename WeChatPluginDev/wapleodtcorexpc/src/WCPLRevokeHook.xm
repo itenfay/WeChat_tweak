@@ -1,22 +1,21 @@
 #import "WCPLWeChatContactHeaders.h"
 #import "WCPLWeChatMessageHeaders.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLAppMessageHelpers.h"
+#import "WCPLContactAdapter.h"
 #import "WCPLHookGovernance.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 #import "WCPLRevokeAnchor.h"
+#import "WCPLRevokePersistenceAdapter.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
 static void wcpl_applyRevokeTimeColorToMessageCell(id cell);
 static BOOL wcpl_revokeWasHandledRecently(NSString *dedupKey);
 static void wcpl_revokeRememberHandled(NSString *dedupKey);
-
-static NSString *wcpl_trimString(NSString *text) {
-    return WCPLTrimText(text);
-}
 
 static NSString *wcpl_extractBetweenTokens(NSString *text, NSString *startToken, NSString *endToken) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -35,7 +34,7 @@ static NSString *wcpl_extractBetweenTokens(NSString *text, NSString *startToken,
     NSRange valueRange = NSMakeRange(searchStart, endRange.location - searchStart);
     if (NSMaxRange(valueRange) > text.length) return nil;
 
-    return wcpl_trimString([text substringWithRange:valueRange]);
+    return WCPLTrimText([text substringWithRange:valueRange]);
 }
 
 static NSString *wcpl_extractXmlTagValue(NSString *xml, NSString *tagName) {
@@ -59,7 +58,7 @@ static long long wcpl_extractLongLongFromXmlTag(NSString *xml, NSString *tagName
 
 static NSString *wcpl_stripCDATAIfNeeded(NSString *text) {
     NSString *cdata = wcpl_extractBetweenTokens(text, @"<![CDATA[", @"]]>");
-    return cdata ?: wcpl_trimString(text);
+    return cdata ?: WCPLTrimText(text);
 }
 
 static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
@@ -81,7 +80,7 @@ static NSString *wcpl_revokeTimeTextFromTimestamp(unsigned int timestamp) {
 }
 
 static NSString *wcpl_stripWrappedQuotes(NSString *text) {
-    NSString *value = wcpl_trimString(text);
+    NSString *value = WCPLTrimText(text);
     if (value.length < 2) return value;
 
     NSArray<NSArray<NSString *> *> *quotePairs = @[
@@ -109,33 +108,12 @@ static NSString *wcpl_extractRevokedContentFromReplaceText(NSString *replaceText
 }
 
 static NSString *wcpl_displayNameForUserName(NSString *userName) {
-    NSString *trimmedUser = wcpl_trimString(userName);
+    NSString *trimmedUser = WCPLTrimText(userName);
     if (trimmedUser.length == 0) return nil;
 
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    id contact = nil;
-    if (contactMgr && [contactMgr respondsToSelector:@selector(getContactByName:)]) {
-        @try {
-            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), trimmedUser);
-        } @catch (__unused NSException *exceptionGetContact) {
-            contact = nil;
-        }
-    }
-    if (!contact) return trimmedUser;
-
-    NSArray<NSString *> *selectors = @[@"m_nsRemark", @"m_nsNickName", @"m_nsUsrName"];
-    for (NSString *selectorName in selectors) {
-        SEL selector = NSSelectorFromString(selectorName);
-        if (![contact respondsToSelector:selector]) continue;
-
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(contact, selector);
-            NSString *name = wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(value), 40);
-            if (name.length > 0) return name;
-        } @catch (__unused NSException *exceptionName) { WCPLCatchLog(exceptionName); }
-    }
-
-    return trimmedUser;
+    NSString *displayName = WCPLContactAdapterDisplayNameForUserName(trimmedUser);
+    NSString *name = wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(displayName), 40);
+    return name.length > 0 ? name : trimmedUser;
 }
 
 static NSString *wcpl_revokeActorUserNameFromMessageWrap(CMessageWrap *msgWrap, NSString *session) {
@@ -144,10 +122,10 @@ static NSString *wcpl_revokeActorUserNameFromMessageWrap(CMessageWrap *msgWrap, 
     BOOL isChatroom = WCPLIsChatRoomName(session);
     NSString *candidate = nil;
     if (isChatroom) {
-        candidate = wcpl_trimString(msgWrap.m_nsRealChatUsr);
+        candidate = WCPLTrimText(msgWrap.m_nsRealChatUsr);
     }
     if (candidate.length == 0) {
-        candidate = wcpl_trimString(msgWrap.m_nsFromUsr);
+        candidate = WCPLTrimText(msgWrap.m_nsFromUsr);
     }
     if (candidate.length == 0 || WCPLIsChatRoomName(candidate)) return nil;
 
@@ -181,7 +159,7 @@ static NSString *wcpl_revokeChatNameFromObject(id obj) {
         @try {
             id chatName = [obj performSelector:@selector(nsChatName)];
             if ([chatName isKindOfClass:[NSString class]]) {
-                return wcpl_trimString(chatName);
+                return WCPLTrimText(chatName);
             }
         } @catch (__unused NSException *exceptionChatName) { WCPLCatchLog(exceptionChatName); }
     }
@@ -189,41 +167,8 @@ static NSString *wcpl_revokeChatNameFromObject(id obj) {
     return nil;
 }
 
-static NSString *wcpl_selfUserName(void) {
-    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!(contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)])) {
-        return nil;
-    }
-
-    id selfContact = nil;
-    @try {
-        selfContact = ((id (*)(id, SEL))objc_msgSend)(contactMgr, @selector(getSelfContact));
-    } @catch (__unused NSException *exceptionSelfContact) {
-        selfContact = nil;
-    }
-    if (!selfContact) {
-        return nil;
-    }
-
-    if ([selfContact respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id userName = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsUsrName));
-            NSString *trimmed = wcpl_trimString(userName);
-            if (trimmed.length > 0) return trimmed;
-        } @catch (__unused NSException *exceptionUserName) { WCPLCatchLog(exceptionUserName); }
-    }
-
-    @try {
-        id userName = [selfContact valueForKey:@"m_nsUsrName"];
-        NSString *trimmed = wcpl_trimString(userName);
-        if (trimmed.length > 0) return trimmed;
-    } @catch (__unused NSException *exceptionUserNameKVC) { WCPLCatchLog(exceptionUserNameKVC); }
-
-    return nil;
-}
-
 static BOOL wcpl_revokeReplaceTextLooksSelf(NSString *replaceText) {
-    NSString *text = wcpl_trimString(replaceText);
+    NSString *text = WCPLTrimText(replaceText);
     if (text.length == 0) return NO;
 
     NSArray<NSString *> *selfTokens = @[
@@ -249,7 +194,7 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
         }
     } @catch (__unused NSException *exceptionSender) { WCPLCatchLog(exceptionSender); }
 
-    NSString *xml = wcpl_trimString(msgWrap.m_nsContent);
+    NSString *xml = WCPLTrimText(msgWrap.m_nsContent);
     if (xml.length > 0) {
         NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
         NSString *replaceText = wcpl_stripCDATAIfNeeded(replaceRaw);
@@ -257,12 +202,12 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
             return YES;
         }
 
-        NSString *selfUserName = wcpl_selfUserName();
+        NSString *selfUserName = WCPLContactAdapterCurrentSelfUserName();
         if (selfUserName.length > 0) {
-            NSString *actorFromXml = wcpl_trimString(wcpl_extractXmlTagValue(xml, @"fromusr"));
-            NSString *actorFromWrap = wcpl_trimString(msgWrap.m_nsRealChatUsr);
+            NSString *actorFromXml = WCPLTrimText(wcpl_extractXmlTagValue(xml, @"fromusr"));
+            NSString *actorFromWrap = WCPLTrimText(msgWrap.m_nsRealChatUsr);
             if (actorFromWrap.length == 0) {
-                actorFromWrap = wcpl_trimString(msgWrap.m_nsFromUsr);
+                actorFromWrap = WCPLTrimText(msgWrap.m_nsFromUsr);
             }
 
             if ((actorFromXml.length > 0 && [actorFromXml isEqualToString:selfUserName]) ||
@@ -294,11 +239,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             // 引用回复在微信底层通常也是 49(AppMsg) + <type>57</type> + <refermsg>。
             // 撤回提示仅需要展示“本次回复的文本”，不需要带引用内容。
             NSString *content = msgWrap.m_nsContent;
-            NSString *trimmed = wcpl_trimString(content);
-            if (trimmed.length > 0 &&
-                ([trimmed rangeOfString:@"<refermsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                 [trimmed rangeOfString:@"<type>57</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                 [trimmed rangeOfString:@"<type><![CDATA[57]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound)) {
+            NSString *trimmed = WCPLTrimText(content);
+            if (trimmed.length > 0 && WCPLIsQuoteReplyAppMessage(msgWrap)) {
 
                 // 只在 <refermsg> 之前提取 <title>/<des>，避免误取到被引用消息里嵌套的 AppMsg 标题。
                 NSString *header = trimmed;
@@ -802,7 +744,7 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     NSString *session = wcpl_extractXmlTagValue(xml, @"session");
     NSMutableArray<NSString *> *sessionCandidates = [NSMutableArray array];
     void (^appendSession)(NSString *) = ^(NSString *value) {
-        NSString *trimmed = wcpl_trimString(value);
+        NSString *trimmed = WCPLTrimText(value);
         if (trimmed.length == 0) return;
         for (NSString *existing in sessionCandidates) {
             if ([existing isEqualToString:trimmed]) return;
@@ -883,15 +825,6 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
                          actorName,
                          revokedContent];
 
-    CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
-    [msgWrap setM_uiStatus:0x4];
-    [msgWrap setM_nsContent:tipText];
-    [msgWrap setM_uiCreateTime:anchorFields.createTime];
-    [msgWrap setM_uiSvrCreateTime:anchorFields.svrCreateTime];
-    [msgWrap setM_sequenceId:anchorFields.sequenceId];
-    [msgWrap setM_nsToUsr:session];
-    [msgWrap setM_nsFromUsr:session];
-
     WCPLLogInfo(@"[防撤回] 本地提示锚点: session=%@ source=%@ revokedLocal=%u revokedSvr=%llu create=%u svrCreate=%u seq=%u -> tipCreate=%u tipSvrCreate=%u tipSeq=%u",
                 session ?: @"",
                 WCPLRevokeAnchorSourceDescription(anchorSource),
@@ -904,47 +837,11 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
                 anchorFields.svrCreateTime,
                 anchorFields.sequenceId);
 
-    if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), nil);
-        } @catch (__unused NSException *exceptionRealUsr) { WCPLCatchLog(exceptionRealUsr); }
-    }
-
-    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
-        [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
+    BOOL inserted = WCPLInsertAnchoredRevokeTipMessage(messageMgr, session, tipText, anchorFields);
+    if (inserted) {
         wcpl_revokeRememberHandled(dedupKey);
-        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg_fixTime_unique local=%u svr=%llu create=%u svrCreate=%u seq=%u",
-                    msgWrap.m_uiMesLocalID,
-                    (unsigned long long)msgWrap.m_n64MesSvrID,
-                    msgWrap.m_uiCreateTime,
-                    msgWrap.m_uiSvrCreateTime,
-                    msgWrap.m_sequenceId);
-        return YES;
     }
-    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-        [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
-        wcpl_revokeRememberHandled(dedupKey);
-        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg_fixTime local=%u svr=%llu create=%u svrCreate=%u seq=%u",
-                    msgWrap.m_uiMesLocalID,
-                    (unsigned long long)msgWrap.m_n64MesSvrID,
-                    msgWrap.m_uiCreateTime,
-                    msgWrap.m_uiSvrCreateTime,
-                    msgWrap.m_sequenceId);
-        return YES;
-    }
-    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-        [messageMgr AddLocalMsg:session MsgWrap:msgWrap];
-        wcpl_revokeRememberHandled(dedupKey);
-        WCPLLogInfo(@"[防撤回] 本地提示入库成功: path=AddLocalMsg local=%u svr=%llu create=%u svrCreate=%u seq=%u",
-                    msgWrap.m_uiMesLocalID,
-                    (unsigned long long)msgWrap.m_n64MesSvrID,
-                    msgWrap.m_uiCreateTime,
-                    msgWrap.m_uiSvrCreateTime,
-                    msgWrap.m_sequenceId);
-        return YES;
-    }
-
-    return NO;
+    return inserted;
 }
 
 static NSString *const kWCPLHookFeatureRevoke = @"revoke";

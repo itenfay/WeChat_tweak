@@ -1,6 +1,10 @@
 // 说明：滑动过程中 relatedMessageViews 可能因 cell 复用/布局抖动而变化，
 // 导致部分 view 没被 reset，表现为头像/气泡残留偏移。
 // 这里缓存「本次滑动实际影响的 view 列表」，reset 时优先清理同一批 view。
+
+#import "WCPLGestureActionHelpers.h"
+#import "WCPLObjcSafeCall.h"
+
 static const void *kWCPLSwipeQuoteAffectedViewsKey = &kWCPLSwipeQuoteAffectedViewsKey;
 static const void *kWCPLSwipeGestureSkipLoggedKey = &kWCPLSwipeGestureSkipLoggedKey;
 static const void *kWCPLDoubleTapGestureSkipLoggedKey = &kWCPLDoubleTapGestureSkipLoggedKey;
@@ -588,13 +592,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
     }
 
     UITouch *touch = nil;
-    if ([touches respondsToSelector:@selector(anyObject)]) {
-        @try {
-            touch = ((id (*)(id, SEL))objc_msgSend)(touches, @selector(anyObject));
-        } @catch (__unused NSException *exceptionTouch) {
-            touch = nil;
-        }
-    }
+    touch = WCPLObjcCallId0(touches, @selector(anyObject));
 
     if (![touch isKindOfClass:[UITouch class]]) {
         return NO;
@@ -727,24 +725,6 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 }
 
 %new
-- (NSString *)wchook_actionNameForAction:(NSInteger)action {
-    switch (action) {
-        case 1:
-            return @"关闭";
-        case 2:
-            return @"删除";
-        case 3:
-            return @"撤回";
-        case 4:
-            return @"复读";
-        case 5:
-            return @"转发";
-        default:
-            return @"引用";
-    }
-}
-
-%new
 - (void)wchook_performConfiguredAction:(NSInteger)action
                            messageWrap:(CMessageWrap *)msgWrap
                                 isSelf:(BOOL)isSelf
@@ -754,7 +734,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
     }
 
     NSString *resolvedScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
-    NSString *actionName = [self wchook_actionNameForAction:action];
+    NSString *actionName = WCPLGestureActionName(action, isSelf);
     WCPLCrashBreadcrumb(@"%@动作: %@ msgType=%u from=%@ to=%@",
                         resolvedScene,
                         actionName,
@@ -764,26 +744,26 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 
     // 0=引用, 1=关闭, 2=删除, 3=撤回(仅己方消息), 4=复读, 5=转发
     switch (action) {
-        case 0: // 引用
+        case WCPLGestureActionQuote: // 引用
             [self wchook_performQuoteReply];
             break;
-        case 1: // 关闭
+        case WCPLGestureActionDisabled: // 关闭
             WCPLLogDebug(@"%@ action close: no-op", resolvedScene);
             break;
-        case 2: // 删除
+        case WCPLGestureActionDelete: // 删除
             [self wchook_performDeleteMessage:msgWrap];
             break;
-        case 3: // 撤回（仅己方消息有效）
+        case WCPLGestureActionRevoke: // 撤回（仅己方消息有效）
             if (isSelf) {
                 [self wchook_performRevokeMessage:msgWrap];
             } else {
                 [self wchook_performQuoteReply];
             }
             break;
-        case 4: // 复读
+        case WCPLGestureActionRepeat: // 复读
             wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, resolvedScene);
             break;
-        case 5: // 转发
+        case WCPLGestureActionForward: // 转发
             [self wchook_performForwardMessage:msgWrap sceneTag:resolvedScene];
             break;
         default:
@@ -809,13 +789,9 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
 
         wcpl_armQuoteLongPressSuppression(msgWrap, self, @"performQuoteReply");
 
-        @try {
-            id menuController = [UIMenuController sharedMenuController];
-            SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
-            if (menuController && [menuController respondsToSelector:hideMenuSelector]) {
-                ((void (*)(id, SEL, id))objc_msgSend)(menuController, hideMenuSelector, self);
-            }
-        } @catch (__unused NSException *exceptionMenu) { WCPLCatchLog(exceptionMenu); }
+        id menuController = [UIMenuController sharedMenuController];
+        SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
+        WCPLObjcCallVoid1(menuController, hideMenuSelector, self);
 
         // 优先走 VC 引用入口，避免触发长按菜单链路
         if ([chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
@@ -826,14 +802,7 @@ static void wcpl_logCellGestureEnhancementSkipIfNeeded(id cell,
         }
 
         // 次选：输入 presenter 引用接口
-        id inputPresenter = nil;
-        if ([chatVC respondsToSelector:@selector(inputPresenter)]) {
-            @try {
-                inputPresenter = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(inputPresenter));
-            } @catch (__unused NSException *exceptionInputPresenter) {
-                inputPresenter = nil;
-            }
-        }
+        id inputPresenter = WCPLObjcCallId0(chatVC, @selector(inputPresenter));
 
         SEL replySelector = @selector(replyMessage:becomeFirstResponder:showDisplayName:);
         if (inputPresenter && [inputPresenter respondsToSelector:replySelector]) {

@@ -5,13 +5,31 @@
 #import "WCPLLogger.h"
 #import "WCPLPureHelpers.h"
 
+@interface WCPLSettingsUserNameFilterSpec : NSObject
+@property (nonatomic, copy, readonly) NSString *scene;
+@property (nonatomic, assign, readonly) BOOL wantChatrooms;
+- (instancetype)initWithScene:(NSString *)scene wantChatrooms:(BOOL)wantChatrooms;
+@end
+
+@implementation WCPLSettingsUserNameFilterSpec
+
+- (instancetype)initWithScene:(NSString *)scene wantChatrooms:(BOOL)wantChatrooms {
+    if (self = [super init]) {
+        _scene = [scene copy] ?: @"";
+        _wantChatrooms = wantChatrooms;
+    }
+    return self;
+}
+
+@end
+
 @implementation WCPLSettingViewController (WCPLSettingsSelectionStore)
 
 - (NSArray<NSString *> *)quitMonitorWhitelistedChatrooms {
     WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableArray<NSString *> *results = [NSMutableArray array];
     [config.quitMonitorWhitelistInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
+        if (obj.boolValue && WCPLIsChatRoomName(key)) {
             [results addObject:key];
         }
     }];
@@ -22,7 +40,7 @@
     WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableArray<NSString *> *results = [NSMutableArray array];
     [config.chatIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
+        if (obj.boolValue && WCPLIsChatRoomName(key)) {
             [results addObject:key];
         }
     }];
@@ -33,7 +51,7 @@
     WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableArray<NSString *> *results = [NSMutableArray array];
     [config.userIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location == NSNotFound) {
+        if (obj.boolValue && !WCPLIsChatRoomName(key)) {
             [results addObject:key];
         }
     }];
@@ -44,56 +62,47 @@
     return WCPLSanitizeIdentifierArray(names);
 }
 
-- (NSArray<NSString *> *)wcpl_chatroomUserNamesFromArray:(NSArray<NSString *> *)userNames
-                                                   scene:(NSString *)scene {
+- (NSArray<NSString *> *)wcpl_filteredUserNamesFromArray:(NSArray<NSString *> *)userNames
+                                                    spec:(WCPLSettingsUserNameFilterSpec *)spec {
     NSArray<NSString *> *sanitized = [self wcpl_sanitizedUserNamesFromArray:userNames];
     if (sanitized.count == 0) {
         return @[];
     }
 
-    NSMutableArray<NSString *> *chatrooms = [NSMutableArray array];
+    NSMutableArray<NSString *> *results = [NSMutableArray array];
     NSUInteger dropped = 0;
     for (NSString *userName in sanitized) {
-        if (WCPLIsChatRoomName(userName)) {
-            [chatrooms addObject:userName];
+        BOOL isChatroom = WCPLIsChatRoomName(userName);
+        if (spec.wantChatrooms ? isChatroom : !isChatroom) {
+            [results addObject:userName];
         } else {
             dropped += 1;
         }
     }
 
     if (dropped > 0) {
-        WCPLLogWarning(@"[设置] 过滤非群聊项: scene=%@ dropped=%lu kept=%lu",
-                       scene ?: @"",
+        NSString *droppedType = spec.wantChatrooms ? @"非群聊项" : @"群聊项";
+        WCPLLogWarning(@"[设置] 过滤%@: scene=%@ dropped=%lu kept=%lu",
+                       droppedType,
+                       spec.scene,
                        (unsigned long)dropped,
-                       (unsigned long)chatrooms.count);
+                       (unsigned long)results.count);
     }
-    return chatrooms;
+    return results;
+}
+
+- (NSArray<NSString *> *)wcpl_chatroomUserNamesFromArray:(NSArray<NSString *> *)userNames
+                                                   scene:(NSString *)scene {
+    WCPLSettingsUserNameFilterSpec *spec = [[WCPLSettingsUserNameFilterSpec alloc] initWithScene:scene
+                                                                                   wantChatrooms:YES];
+    return [self wcpl_filteredUserNamesFromArray:userNames spec:spec];
 }
 
 - (NSArray<NSString *> *)wcpl_friendUserNamesFromArray:(NSArray<NSString *> *)userNames
                                                  scene:(NSString *)scene {
-    NSArray<NSString *> *sanitized = [self wcpl_sanitizedUserNamesFromArray:userNames];
-    if (sanitized.count == 0) {
-        return @[];
-    }
-
-    NSMutableArray<NSString *> *friends = [NSMutableArray array];
-    NSUInteger dropped = 0;
-    for (NSString *userName in sanitized) {
-        if (!WCPLIsChatRoomName(userName)) {
-            [friends addObject:userName];
-        } else {
-            dropped += 1;
-        }
-    }
-
-    if (dropped > 0) {
-        WCPLLogWarning(@"[设置] 过滤群聊项: scene=%@ dropped=%lu kept=%lu",
-                       scene ?: @"",
-                       (unsigned long)dropped,
-                       (unsigned long)friends.count);
-    }
-    return friends;
+    WCPLSettingsUserNameFilterSpec *spec = [[WCPLSettingsUserNameFilterSpec alloc] initWithScene:scene
+                                                                                   wantChatrooms:NO];
+    return [self wcpl_filteredUserNamesFromArray:userNames spec:spec];
 }
 
 - (void)updateChatIgnoreInfoWithChatrooms:(NSArray *)chatrooms {

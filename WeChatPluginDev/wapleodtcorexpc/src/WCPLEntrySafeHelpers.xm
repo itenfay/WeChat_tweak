@@ -3,35 +3,14 @@
 // Do not add this file to $(TWEAK_NAME)_FILES directly.
 
 #import "WCPLPureHelpers.h"
+#import "WCPLObjcSafeCall.h"
 
 static id wcpl_entry_safeValueForKey(id obj, NSString *key) {
-    if (!obj || ![key isKindOfClass:[NSString class]] || key.length == 0) {
-        return nil;
-    }
-    @try {
-        return [obj valueForKey:key];
-    } @catch (__unused NSException *exception) {
-        return nil;
-    }
+    return WCPLSafeValueForKey(obj, key);
 }
 
 static id wcpl_entry_safeObjectIvar(id obj, const char *name) {
-    if (!obj || !name) {
-        return nil;
-    }
-    Class cls = object_getClass(obj);
-    if (!cls) {
-        return nil;
-    }
-    Ivar ivar = class_getInstanceVariable(cls, name);
-    if (!ivar) {
-        return nil;
-    }
-    const char *encoding = ivar_getTypeEncoding(ivar);
-    if (!encoding || encoding[0] != '@') {
-        return nil;
-    }
-    return object_getIvar(obj, ivar);
+    return WCPLSafeObjectIvar(obj, name);
 }
 
 static NSString *wcpl_entry_safeCellTitle(id cellManager) {

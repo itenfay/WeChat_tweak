@@ -1,6 +1,10 @@
 // Merged from: WCPLVoiceForwardCoreA.xm + CoreB.xm
 
+#import "WCPLFileHelpers.h"
+#import "WCPLIconImageHelpers.h"
+#import "WCPLMessagePersistenceAdapter.h"
 #import "WCPLPureHelpers.h"
+#import "WCPLServiceCenterAdapter.h"
 
 %group WCPLVoiceForwardCoreHookGroup
 
@@ -16,30 +20,7 @@ static UIImage *wcpl_voiceForwardMenuIconImage(void) {
             "<path d='M14 12C14 9.5 16 7.5 18.5 7.5H20.5' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round'/>"
             "<path d='M18 5L21 7.5L18 10' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
             "</svg>";
-        NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
-        id image = nil;
-        Class themeProxyClass = objc_getClass("WAThemeProxy");
-        SEL svgFromDataSel = @selector(svgImageFromData:);
-        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
-            @try {
-                image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
-            } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-        }
-        if ([image isKindOfClass:[UIImage class]]) {
-            icon = (UIImage *)image;
-        }
-        if (!icon && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-            UIImage *symbol = nil;
-            if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
-                UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:16 weight:UIImageSymbolWeightRegular scale:UIImageSymbolScaleMedium];
-                symbol = [UIImage systemImageNamed:@"arrowshape.turn.up.right" withConfiguration:config];
-            }
-            if (!symbol) symbol = [UIImage systemImageNamed:@"arrowshape.turn.up.right"];
-            if (symbol) icon = symbol;
-        }
-        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        }
+        icon = WCPLIconImageFromSVGOrSystemSymbols(svg, @[ @"arrowshape.turn.up.right" ], 16);
     });
     return icon;
 }
@@ -71,25 +52,13 @@ static NSString *wcpl_voiceAudioPathFromWrap(CMessageWrap *msgWrap) {
     return nil;
 }
 
-static unsigned long long wcpl_fileSizeAtPath(NSString *path) {
-    if (![path isKindOfClass:[NSString class]] || path.length == 0) {
-        return 0;
-    }
-    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
-    if (![attrs isKindOfClass:[NSDictionary class]]) {
-        return 0;
-    }
-    NSNumber *fileSize = attrs[NSFileSize];
-    return [fileSize isKindOfClass:[NSNumber class]] ? fileSize.unsignedLongLongValue : 0;
-}
-
 static void wcpl_startDownloadVoiceIfNeeded(CMessageWrap *msgWrap, NSString *sceneTag) {
     if (!wcpl_isVoiceMessage(msgWrap)) {
         return;
     }
 
     NSString *audioPath = wcpl_voiceAudioPathFromWrap(msgWrap);
-    unsigned long long audioSize = wcpl_fileSizeAtPath(audioPath);
+    unsigned long long audioSize = WCPLFileSizeAtPath(audioPath);
     if (audioSize > 0) {
         return;
     }
@@ -118,32 +87,7 @@ static void wcpl_startDownloadVoiceIfNeeded(CMessageWrap *msgWrap, NSString *sce
 }
 
 static id wcpl_serviceByClass(Class serviceClass) {
-    if (!serviceClass) {
-        return nil;
-    }
-
-    Class serviceCenterClass = objc_getClass("MMServiceCenter");
-    if (!serviceCenterClass || ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
-        return nil;
-    }
-
-    id serviceCenter = nil;
-    @try {
-        serviceCenter = ((id (*)(id, SEL))objc_msgSend)(serviceCenterClass, @selector(defaultCenter));
-    } @catch (__unused NSException *exception) {
-        WCPLCatchLog(exception);
-        serviceCenter = nil;
-    }
-    if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) {
-        return nil;
-    }
-
-    @try {
-        return ((id (*)(id, SEL, Class))objc_msgSend)(serviceCenter, @selector(getService:), serviceClass);
-    } @catch (__unused NSException *exception) {
-        WCPLCatchLog(exception);
-        return nil;
-    }
+    return WCPLServiceCenterAdapterGetService(serviceClass);
 }
 
 static id wcpl_createVoiceForwardMenuItem(Class menuItemClass, id cell, SEL action) {
@@ -401,7 +345,7 @@ static NSString *wcpl_vmiyou_currentSelfUserName(void) {
 }
 
 static NSString *wcpl_vmiyou_generateClientMsgID(NSString *selfUserName) {
-    NSString *sender = wcpl_trimString(selfUserName);
+    NSString *sender = WCPLTrimText(selfUserName);
     if (sender.length == 0) {
         sender = wcpl_vmiyou_currentSelfUserName();
     }
@@ -769,7 +713,7 @@ static NSString *wcpl_voiceForwardTraceTarget(id targetContact) {
         return userName;
     }
     if ([targetContact isKindOfClass:[NSString class]]) {
-        NSString *text = wcpl_trimString((NSString *)targetContact);
+        NSString *text = WCPLTrimText((NSString *)targetContact);
         if (text.length > 0) {
             return text;
         }
@@ -898,7 +842,7 @@ static void wcpl_voiceForwardCollectTargetsFromPayload(id payload,
 
     NSString *userName = wcpl_safeUserNameFromObject(payload);
     if (userName.length == 0 && [payload isKindOfClass:[NSString class]]) {
-        userName = wcpl_trimString((NSString *)payload);
+        userName = WCPLTrimText((NSString *)payload);
     }
     if (userName.length > 0) {
         if (!targetMap[userName]) {
@@ -1305,7 +1249,7 @@ static void wcpl_patchGeneratedNativeForwardVoiceWrap(CMessageWrap *sourceWrap,
 
     NSString *targetUserName = wcpl_safeUserNameFromObject(targetContact);
     if (targetUserName.length == 0 && [targetContact isKindOfClass:[NSString class]]) {
-        targetUserName = wcpl_trimString((NSString *)targetContact);
+        targetUserName = WCPLTrimText((NSString *)targetContact);
     }
 
     NSString *audioPath = nil;
@@ -1341,7 +1285,7 @@ static NSArray<NSString *> *wcpl_sanitizedForwardIdentifiers(NSArray<NSString *>
 }
 
 static CContact *wcpl_forwardContactForIdentifier(NSString *identifier, UIViewController *viewController) {
-    NSString *userName = wcpl_trimString(identifier);
+    NSString *userName = WCPLTrimText(identifier);
     if (userName.length == 0) {
         return nil;
     }
@@ -1408,49 +1352,27 @@ static BOOL wcpl_forwardAddLocalVoiceMsg(id messageMgr,
     if (!(messageMgr && chatName.length > 0 && sendWrap)) {
         return NO;
     }
-    @try {
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                          @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:),
-                                                                          chatName,
-                                                                          sendWrap,
-                                                                          YES,
-                                                                          NO,
-                                                                          YES);
-            WCPLLogDebug(@"[语音转发] AddLocalMsg(unq) target=%@ localID=%u",
-                         targetTag ?: @"(unknown)",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-            ((void (*)(id, SEL, id, id, BOOL, BOOL))objc_msgSend)(messageMgr,
-                                                                   @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:),
-                                                                   chatName,
-                                                                   sendWrap,
-                                                                   YES,
-                                                                   NO);
-            WCPLLogDebug(@"[语音转发] AddLocalMsg target=%@ localID=%u",
-                         targetTag ?: @"(unknown)",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
-                                                       @selector(AddLocalMsg:MsgWrap:),
-                                                       chatName,
-                                                       sendWrap);
-            WCPLLogDebug(@"[语音转发] AddLocalMsg(simple) target=%@ localID=%u",
-                         targetTag ?: @"(unknown)",
-                         sendWrap.m_uiMesLocalID);
-            return YES;
-        }
-    } @catch (NSException *exception) {
-        WCPLCatchLog(exception);
-        WCPLLogWarning(@"[语音转发] AddLocalMsg 异常: target=%@ reason=%@",
+    WCPLAddLocalMsgInsertPath insertPath = WCPLAddLocalMsgInsertPathNone;
+    BOOL inserted = WCPLAddLocalMsgInsert((WCPLAddLocalMsgInsertRequest){
+                                              .messageMgr = messageMgr,
+                                              .sessionUserName = chatName,
+                                              .msgWrap = sendWrap,
+                                              .fixTime = YES,
+                                              .notify = NO,
+                                              .unique = YES,
+                                          },
+                                          &insertPath);
+    if (inserted) {
+        WCPLLogDebug(@"[语音转发] AddLocalMsg target=%@ path=%@ localID=%u",
+                     targetTag ?: @"(unknown)",
+                     WCPLAddLocalMsgInsertPathDescription(insertPath),
+                     sendWrap.m_uiMesLocalID);
+    } else {
+        WCPLLogWarning(@"[语音转发] AddLocalMsg 失败: target=%@ path=%@",
                        targetTag ?: @"(unknown)",
-                       exception.reason ?: @"unknown");
+                       WCPLAddLocalMsgInsertPathDescription(insertPath));
     }
-    return NO;
+    return inserted;
 }
 
 static BOOL wcpl_forwardInvokeResendVoiceTarget(id target,
@@ -1538,7 +1460,7 @@ static BOOL wcpl_forwardVoiceToTargetStrict(CMessageWrap *msgWrap,
     NSString *target = targetIdentifier.length > 0 ? targetIdentifier : @"(unknown)";
     NSString *chatName = wcpl_safeUserNameFromObject(targetContact);
     if (chatName.length == 0) {
-        chatName = wcpl_trimString(targetIdentifier);
+        chatName = WCPLTrimText(targetIdentifier);
     }
     if (chatName.length == 0) {
         WCPLLogWarning(@"[语音转发][strict] 目标会话为空: target=%@", target);
@@ -1601,7 +1523,7 @@ static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
     NSString *target = targetIdentifier.length > 0 ? targetIdentifier : @"(unknown)";
     NSString *chatName = wcpl_safeUserNameFromObject(targetContact);
     if (chatName.length == 0) {
-        chatName = wcpl_trimString(targetIdentifier);
+        chatName = WCPLTrimText(targetIdentifier);
     }
     NSString *selfUserName = wcpl_vmiyou_currentSelfUserName();
 
@@ -1967,7 +1889,7 @@ static __unused BOOL wcpl_presentVoiceForwardPicker(CMessageWrap *msgWrap, UIVie
 
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
     NSString *audioPath = wcpl_voiceAudioPathFromWrap(msgWrap);
-    unsigned long long audioSize = wcpl_fileSizeAtPath(audioPath);
+    unsigned long long audioSize = WCPLFileSizeAtPath(audioPath);
     WCPLLogInfo(@"[语音转发][trace] onForward sender=%@ wrap={%@} audioSize=%llu",
                 sender ? (NSStringFromClass([sender class]) ?: @"(unknown)") : @"(nil)",
                 wcpl_voiceForwardTraceWrap(msgWrap),

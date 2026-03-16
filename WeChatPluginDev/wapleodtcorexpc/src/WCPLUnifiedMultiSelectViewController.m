@@ -6,6 +6,7 @@
 
 #import "WCPLUnifiedMultiSelectViewController.h"
 
+#import "WCPLContactAdapter.h"
 #import "WCPLContactLookup.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
@@ -507,25 +508,7 @@
 }
 
 - (NSString *)wcpl_userNameFromObject:(id)obj {
-    if (!obj) {
-        return nil;
-    }
-    NSString *directName = WCPLNonEmptyStringOrNil(obj);
-    if (directName.length > 0) {
-        return directName;
-    }
-
-    NSArray<NSString *> *keys = @[@"m_nsUsrName", @"m_nsUserName", @"userName", @"username", @"m_nsChatRoomName"];
-    for (NSString *key in keys) {
-        @try {
-            id value = [obj valueForKey:key];
-            NSString *usrName = WCPLTrimText(value);
-            if (usrName.length > 0) {
-                return usrName;
-            }
-        } @catch (__unused NSException *exception) { WCPLCatchLog(exception); }
-    }
-    return nil;
+    return WCPLContactAdapterSafeUserName(obj);
 }
 
 - (NSArray<NSString *> *)wcpl_selectedUserNames {

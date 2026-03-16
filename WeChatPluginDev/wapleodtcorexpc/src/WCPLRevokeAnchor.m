@@ -4,6 +4,7 @@
 
 #import "WCPLRevokeAnchor.h"
 
+#import "WCPLAlertTextHelpers.h"
 #import "WCPLPureHelpers.h"
 
 static NSString *wcpl_revokeDedupSuffix(NSString *replaceText) {
@@ -12,8 +13,7 @@ static NSString *wcpl_revokeDedupSuffix(NSString *replaceText) {
         return @"";
     }
 
-    NSString *singleLine = [[trimmed stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-                            stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    NSString *singleLine = WCPLSanitizeInlineText(trimmed, 0) ?: @"";
     if (singleLine.length > 64) {
         return [singleLine substringToIndex:64];
     }

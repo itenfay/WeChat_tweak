@@ -4,6 +4,7 @@
 
 #import "WCPLRepeatButtonAssetManager.h"
 
+#import "WCPLFileHelpers.h"
 #import "WCPLGestureConfig.h"
 #import "WCPLLogger.h"
 
@@ -303,12 +304,11 @@ static UIImage *wcpl_repeatRenderCircularImageFillSquare(UIImage *sourceImage, C
     }
 
     for (NSString *candidatePath in candidatePaths) {
-        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:candidatePath error:nil];
-        NSString *fileType = [attrs fileType];
-        unsigned long long fileSize = [attrs fileSize];
+        unsigned long long fileSize = 0;
         // 自定义图片应很小，避免误读超大文件导致内存暴涨/OOM。
         static const unsigned long long kWCPLRepeatButtonLegacyImageMaxBytes = 10 * 1024 * 1024; // 10MB
-        if (![fileType isEqualToString:NSFileTypeRegular] || fileSize == 0 || fileSize > kWCPLRepeatButtonLegacyImageMaxBytes) {
+        if (!WCPLFileIsRegularNonEmptyAtPath(candidatePath, &fileSize) ||
+            fileSize > kWCPLRepeatButtonLegacyImageMaxBytes) {
             continue;
         }
 

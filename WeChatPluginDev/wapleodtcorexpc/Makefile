@@ -24,11 +24,24 @@ $(TWEAK_NAME)_USE_MODULES = 0
 WCPL_COMPILE_FILES := \
 	src/Tweak.xm \
 	src/WCHookMessageNavigator.m \
-	src/WCHookSettingsManager.m \
 	src/WCHookSwipeUtilities.m \
 	src/WCHookTableViewFactory.m \
 	src/WCPLAVConfig.m \
 	src/WCPLAVManager.m \
+	src/WCPLAppContextInfo.m \
+	src/WCPLAppMessageHelpers.m \
+	src/WCPLFileHelpers.m \
+	src/WCPLGestureActionHelpers.m \
+	src/WCPLIconImageHelpers.m \
+	src/WCPLLoadingViewHelpers.m \
+	src/WCPLMenuItemIconHelpers.m \
+	src/WCPLObjcSafeCall.m \
+	src/WCPLPerfClock.m \
+	src/WCPLSettingsTableViewManagerFactory.m \
+	src/WCPLUIKitHelpers.m \
+	src/WCPLUserNameHelpers.m \
+	src/WCPLUserDefaultsBackedConfig.m \
+	src/WCPLViewTraversalHelpers.m \
 	src/WCPLAlertTextHelpers.m \
 	src/WCPLBaseViewController.m \
 	src/WCPLConfigCenter.m \
@@ -43,6 +56,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLGestureConfig.m \
 	src/WCPLGestureHook.xm \
 	src/WCPLGroupPickerViewController.m \
+	src/WCPLPickerPresenterBaseViewController.m \
 	src/WCPLIPadLoginHook.xm \
 	src/WCPLIgnoreConfig.m \
 	src/WCPLIgnoreUIHook.xm \
@@ -52,8 +66,11 @@ WCPL_COMPILE_FILES := \
 	src/WCPLLogUploader.m \
 	src/WCPLLogger.m \
 	src/WCPLLoginConfig.m \
+	src/WCPLMarkAllReadMenuHooks.xm \
+	src/WCPLMarkAllReadService.xm \
 	src/WCPLMessageActionAdapter.m \
 	src/WCPLMessageAdapter.m \
+	src/WCPLMessagePersistenceAdapter.m \
 	src/WCPLMessageHook.xm \
 	src/WCPLNavigationAdapter.m \
 	src/WCPLPickerDataProvider.m \
@@ -61,9 +78,12 @@ WCPL_COMPILE_FILES := \
 	src/WCPLPluginEntryHook.xm \
 	src/WCPLPush2ChatConfig.m \
 	src/WCPLPush2ChatHook.xm \
-	src/WCPLPureHelpers.m \
-	src/WCPLQuitMonitorHook.xm \
-	src/WCPLRealtimeLogUploader.m \
+		src/WCPLPureHelpers.m \
+		src/WCPLQuitMonitorHelpers.m \
+		src/WCPLQuitMonitorHook.xm \
+		src/WCPLQuitMonitorMessageAdapter.m \
+		src/WCPLQuitMonitorService.m \
+		src/WCPLRealtimeLogUploader.m \
 	src/WCPLReceiveRedEnvelopOperation.m \
 	src/WCPLRedEnvelopBackgroundTaskTracker.m \
 	src/WCPLRedEnvelopConfig.m \
@@ -77,9 +97,12 @@ WCPL_COMPILE_FILES := \
 	src/WCPLRedEnvelopParamQueue.m \
 	src/WCPLRedEnvelopTaskManager.m \
 	src/WCPLRevokeAnchor.m \
+	src/WCPLRevokeMessageLookupAdapter.m \
+	src/WCPLRevokePersistenceAdapter.m \
 	src/WCPLRepeatCellAdapter.m \
 	src/WCPLRepeatButtonAssetManager.m \
 	src/WCPLRepeatButtonEngine.m \
+	src/WCPLSafariOpenHook.xm \
 	src/WCPLRevokeConfig.m \
 	src/WCPLRevokeHook.xm \
 	src/WCPLSafeStringContact.m \
@@ -99,11 +122,14 @@ WCPL_COMPILE_FILES := \
 	src/WCPLTimelineConfig.m \
 	src/WCPLTypeGuard.m \
 	src/WCPLUnifiedMultiSelectViewController.m \
+	src/WCPLWebViewOpenAdapter.m \
 	src/WeChatRedEnvelopParam.m
 $(TWEAK_NAME)_FILES = $(WCPL_COMPILE_FILES)
 
 # Legacy 档案：历史入口文件仅保留用于对照，禁止恢复编译
 WCPL_LEGACY_FILES := legacy/Tweak.m
+WCPL_ARCHIVED_FILES := \
+	src/WCHookSettingsManager.m
 WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLGestureHookCommon.xm \
 	src/WCPLGesturePureHelpers.xm \
@@ -130,12 +156,10 @@ WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLEntryPerfHelpers.xm \
 	src/WCPLEntrySettingsUIHelpers.xm \
 	src/WCPLEntrySettingsControllerHook.xm \
-	src/WCPLMarkAllReadService.xm \
-	src/WCPLMarkAllReadMenuHooks.xm \
 	src/WCPLVoiceForwardCore.xm \
 	src/WCPLVoiceForwardHook.xm \
 	src/WCPLClownFeatureHook.xm
-WCPL_BLOCKED_FILES := $(WCPL_LEGACY_FILES) $(WCPL_INTERNAL_INCLUDE_FILES)
+WCPL_BLOCKED_FILES := $(WCPL_LEGACY_FILES) $(WCPL_ARCHIVED_FILES) $(WCPL_INTERNAL_INCLUDE_FILES)
 WCPL_ALL_SOURCE_FILES := $(sort $(wildcard src/*.m) $(wildcard src/*.xm))
 WCPL_BLOCKED_ACTIVE := $(filter $(WCPL_BLOCKED_FILES),$($(TWEAK_NAME)_FILES))
 WCPL_SOURCE_DRIFT := $(filter-out \
@@ -167,9 +191,16 @@ before-all::
 	@echo "[wcpl] internal include files (must stay blocked): $(WCPL_INTERNAL_INCLUDE_FILES)"
 	@echo "[wcpl] blocked files: $(WCPL_BLOCKED_FILES)"
 
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore UserNotifications
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore SafariServices UserNotifications
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
+
+# 从 control 文件收口插件版本号，避免 UI 层硬编码字符串与打包元数据漂移。
+WCPL_PACKAGE_VERSION := $(strip $(shell awk -F': *' '/^Version:/{print $$2; exit}' control))
+ifeq ($(WCPL_PACKAGE_VERSION),)
+$(error [wcpl] failed to derive package version from control)
+endif
+$(TWEAK_NAME)_CFLAGS += -DWCPL_PACKAGE_VERSION=\"$(WCPL_PACKAGE_VERSION)\"
 
 # 消息功能开关：默认保持全开，可在命令行覆盖做实验性裁剪（部分组合仍待治理）。
 WCPL_ENABLE_MESSAGE_SEARCH_HOOK ?= 1
@@ -198,7 +229,6 @@ src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
 src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
 src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
 src/WCHookMessageNavigator.m_CFLAGS = -fobjc-arc
-src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc
 src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc
 src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc
 src/WCPLLogger.m_CFLAGS = -fobjc-arc
