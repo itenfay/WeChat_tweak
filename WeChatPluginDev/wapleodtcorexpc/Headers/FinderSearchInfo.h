@@ -1,0 +1,26 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class FinderContact, NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderSearchInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) FinderContact *contact; // @dynamic contact;
+@property(nonatomic) unsigned int fansCount; // @dynamic fansCount;
+@property(nonatomic) unsigned int friendFollowCount; // @dynamic friendFollowCount;
+@property(retain, nonatomic) NSString *highlightNickname; // @dynamic highlightNickname;
+@property(retain, nonatomic) NSString *highlightProfession; // @dynamic highlightProfession;
+@property(retain, nonatomic) NSString *highlightSignature; // @dynamic highlightSignature;
+
+@end
+

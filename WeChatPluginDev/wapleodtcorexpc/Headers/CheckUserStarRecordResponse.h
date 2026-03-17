@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseResponse;
+
+@class WXPBGeneratedMessage;
+
+@interface CheckUserStarRecordResponse : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
+@property(nonatomic) unsigned int starCount; // @dynamic starCount;
+@property(nonatomic) unsigned int status; // @dynamic status;
+
+@end
+

@@ -1,0 +1,24 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+typedef void (^CDUnknownBlockType)(void);
+
+@class MISSING_TYPE;
+
+@interface _TtC6WeChat24MBBootsPkgManagementBase : NSObject
+{
+    MISSING_TYPE *$__lazy_storage_$_enableDebug;
+    MISSING_TYPE *$__lazy_storage_$_appConfig;
+    MISSING_TYPE *version;
+}
+
+- (id)init;
+- (id)getVersionInfo;
+- (int)provideRemoteVersion;
+- (id)provideFileSystem;
+- (id)initWithInstanceName:(id)arg1;
+- (void)provideMainScript:(CDUnknownBlockType)arg1;
+
+@end

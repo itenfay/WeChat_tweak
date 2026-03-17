@@ -1,0 +1,20 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@protocol EmoticonUploadPrepareCgiDelegate;
+
+@interface EmoticonUploadPrepareCgi : NSObject
+{
+    id <EmoticonUploadPrepareCgiDelegate> _delegate;
+}
+
+@property(nonatomic) __weak id <EmoticonUploadPrepareCgiDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)didFailWithError:(id)arg1 response:(id)arg2;
+- (void)didGetResponse:(id)arg1;
+- (void)startRequest;
+- (id)initWithUploadInfo:(id)arg1 delegate:(id)arg2;
+
+@end
+

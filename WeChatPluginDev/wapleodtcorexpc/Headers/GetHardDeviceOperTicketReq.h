@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class GetHardDeviceOperTicketFilter, NSMutableArray;
+
+@class WXPBGeneratedMessage;
+
+@interface GetHardDeviceOperTicketReq : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) GetHardDeviceOperTicketFilter *filter; // @dynamic filter;
+@property(retain, nonatomic) NSMutableArray *info; // @dynamic info;
+
+@end
+

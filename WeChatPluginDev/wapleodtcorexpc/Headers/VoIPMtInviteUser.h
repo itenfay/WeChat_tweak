@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSData, VoIPMtUserInfo;
+
+@class WXPBGeneratedMessage;
+
+@interface VoIPMtInviteUser : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *inviteData; // @dynamic inviteData;
+@property(retain, nonatomic) VoIPMtUserInfo *userInfo; // @dynamic userInfo;
+
+@end
+

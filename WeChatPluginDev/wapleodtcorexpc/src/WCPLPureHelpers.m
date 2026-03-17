@@ -1,0 +1,575 @@
+//
+// WCPLPureHelpers.m
+//
+
+#import "WCPLPureHelpers.h"
+#include <limits.h>
+#include <stdlib.h>
+
+NSString *WCPLTrimText(id text) {
+    if (![text isKindOfClass:[NSString class]]) {
+        return nil;
+    }
+    NSString *trimmed = [(NSString *)text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmed.length > 0 ? trimmed : nil;
+}
+
+NSArray<NSString *> *WCPLSanitizeIdentifierArray(id value) {
+    if (![value isKindOfClass:[NSArray class]]) {
+        return @[];
+    }
+
+    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
+    for (id obj in (NSArray *)value) {
+        NSString *identifier = WCPLTrimText(obj);
+        if (identifier.length > 0) {
+            [results addObject:identifier];
+        }
+    }
+    return results.array;
+}
+
+static NSString *wcpl_percentDecodeString(NSString *value) {
+    if (![value isKindOfClass:[NSString class]] || value.length == 0) {
+        return nil;
+    }
+    NSString *decoded = [value stringByRemovingPercentEncoding];
+    return decoded ?: value;
+}
+
+NSString *WCPLQueryValueForKeyInURL(NSString *key, NSString *urlString) {
+    if (![key isKindOfClass:[NSString class]] || key.length == 0) {
+        return nil;
+    }
+    if (![urlString isKindOfClass:[NSString class]] || urlString.length == 0) {
+        return nil;
+    }
+
+    NSRange qmark = [urlString rangeOfString:@"?"];
+    if (qmark.location == NSNotFound || qmark.location + 1 >= urlString.length) {
+        return nil;
+    }
+
+    NSString *query = [urlString substringFromIndex:qmark.location + 1];
+    if (query.length == 0) {
+        return nil;
+    }
+
+    NSArray<NSString *> *pairs = [query componentsSeparatedByString:@"&"];
+    for (NSString *pair in pairs) {
+        if (![pair isKindOfClass:[NSString class]] || pair.length == 0) {
+            continue;
+        }
+        NSRange eq = [pair rangeOfString:@"="];
+        if (eq.location == NSNotFound) {
+            continue;
+        }
+
+        NSString *candidateKey = [pair substringToIndex:eq.location];
+        if (![candidateKey isEqualToString:key]) {
+            continue;
+        }
+
+        NSString *value = (eq.location + 1 < pair.length) ? [pair substringFromIndex:eq.location + 1] : @"";
+        NSString *decoded = wcpl_percentDecodeString(value);
+        return WCPLTrimText(decoded);
+    }
+
+    return nil;
+}
+
+NSString *WCPLDecodeBasicXMLEntities(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+        return nil;
+    }
+    if ([text rangeOfString:@"&"].location == NSNotFound) {
+        return text;
+    }
+
+    NSString *decoded = text;
+    for (NSUInteger pass = 0; pass < 3; pass++) {
+        NSString *next = [[[[decoded stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"]
+                           stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
+                          stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]
+                         stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+        next = [next stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+
+        if ([next isEqualToString:decoded]) {
+            break;
+        }
+        decoded = next;
+
+        if ([decoded rangeOfString:@"&"].location == NSNotFound) {
+            break;
+        }
+    }
+
+    return decoded;
+}
+
+NSString *WCPLExtractXMLValue(NSString *xml, NSString *openTag, NSString *closeTag) {
+    if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+        return nil;
+    }
+    NSRange openRange = [xml rangeOfString:openTag];
+    if (openRange.location == NSNotFound) {
+        return nil;
+    }
+    NSUInteger valueStart = NSMaxRange(openRange);
+    if (valueStart >= xml.length) {
+        return nil;
+    }
+    NSRange closeRange = [xml rangeOfString:closeTag options:0 range:NSMakeRange(valueStart, xml.length - valueStart)];
+    if (closeRange.location == NSNotFound || closeRange.location <= valueStart) {
+        return nil;
+    }
+    NSString *value = [xml substringWithRange:NSMakeRange(valueStart, closeRange.location - valueStart)];
+    return WCPLTrimText(value);
+}
+
+NSString *WCPLExtractQuoteTitleFromXML(NSString *xml) {
+    NSString *title = WCPLExtractXMLValue(xml, @"<title><![CDATA[", @"]]></title>");
+    if (title.length == 0) {
+        title = WCPLExtractXMLValue(xml, @"<title>", @"</title>");
+    }
+
+    if (title.length == 0) {
+        NSString *decodedXML = WCPLDecodeBasicXMLEntities(xml);
+        if (decodedXML.length > 0 && ![decodedXML isEqualToString:xml]) {
+            title = WCPLExtractXMLValue(decodedXML, @"<title><![CDATA[", @"]]></title>");
+            if (title.length == 0) {
+                title = WCPLExtractXMLValue(decodedXML, @"<title>", @"</title>");
+            }
+        }
+    }
+
+    title = WCPLTrimText(title);
+    return title.length > 0 ? title : nil;
+}
+
+BOOL WCPLIsChatRoomName(NSString *name) {
+    NSString *trimmed = WCPLTrimText(name);
+    if (trimmed.length == 0) {
+        return NO;
+    }
+    return ([trimmed rangeOfString:@"@chatroom" options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
+BOOL WCPLQuitMonitorIsDateLikeText(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length < 5 || trimmed.length > 32) {
+        return NO;
+    }
+
+    NSCharacterSet *allowed = [NSCharacterSet characterSetWithCharactersInString:@"0123456789-:/. "];
+    if ([[trimmed stringByTrimmingCharactersInSet:allowed] length] != 0) {
+        return NO;
+    }
+
+    BOOL hasDateSep = ([trimmed rangeOfString:@"-"].location != NSNotFound ||
+                       [trimmed rangeOfString:@"/"].location != NSNotFound);
+    BOOL hasTimeSep = ([trimmed rangeOfString:@":"].location != NSNotFound);
+    return hasDateSep || hasTimeSep;
+}
+
+BOOL WCPLQuitMonitorIsLowSignalSystemText(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length == 0) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"<msgsource" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"@chatroom"].location != NSNotFound) {
+        return YES;
+    }
+    if ([trimmed rangeOfString:@"wxid_"].location != NSNotFound && trimmed.length <= 64) {
+        return YES;
+    }
+    if (WCPLQuitMonitorIsDateLikeText(trimmed)) {
+        return YES;
+    }
+    return NO;
+}
+
+static BOOL wcpl_qm_containsAnyToken(NSString *text, NSArray<NSString *> *tokens) {
+    for (NSString *token in tokens) {
+        if ([text rangeOfString:token options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+static BOOL wcpl_qm_looksLikeExcludedSystemText(NSString *text) {
+    static NSArray<NSString *> *tokens = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tokens = @[
+            @"加入了群聊",
+            @"邀请",
+            @"群公告",
+            @"拍了拍",
+            @"修改群名",
+            @"群二维码",
+            @"撤回",
+            @"撤回了一条消息",
+            @"禁言",
+            @"红包",
+            @"转账",
+            @"直播",
+            @"left a message",
+            @"recalled a message"
+        ];
+    });
+    return wcpl_qm_containsAnyToken(text, tokens);
+}
+
+BOOL WCPLQuitMonitorLooksLikeQuitSystemText(NSString *content) {
+    NSString *text = WCPLTrimText(content);
+    if (text.length == 0) {
+        return NO;
+    }
+    if (wcpl_qm_looksLikeExcludedSystemText(text)) {
+        return NO;
+    }
+
+    static NSArray<NSString *> *tokens = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tokens = @[
+            @"退群",
+            @"退出了群聊",
+            @"退出群聊",
+            @"已退出群聊",
+            @"已退出该群",
+            @"离开了群聊",
+            @"离开群聊",
+            @"离开了该群",
+            @"被移出群聊",
+            @"被移出了群聊",
+            @"被踢出群聊",
+            @"left the group chat",
+            @"left the group",
+            @"removed from the group chat",
+            @"removed from the group",
+            @"delchatroommember"
+        ];
+    });
+    return wcpl_qm_containsAnyToken(text, tokens);
+}
+
+static NSInteger wcpl_qm_systemTextScore(NSString *text) {
+    NSString *trimmed = WCPLTrimText(text);
+    if (trimmed.length == 0) {
+        return NSIntegerMin;
+    }
+
+    NSInteger score = 0;
+    if (WCPLQuitMonitorLooksLikeQuitSystemText(trimmed)) {
+        score += 1000;
+    }
+    if ([trimmed rangeOfString:@"[退群监控]"].location != NSNotFound) {
+        // 本地提示文本只用于展示，不应压过真实系统消息候选。
+        score -= 1500;
+    }
+    if (wcpl_qm_looksLikeExcludedSystemText(trimmed)) {
+        score -= 900;
+    }
+    if (WCPLQuitMonitorIsLowSignalSystemText(trimmed)) {
+        score -= 700;
+    }
+    if ([trimmed rangeOfString:@"<"].location != NSNotFound ||
+        [trimmed rangeOfString:@">"].location != NSNotFound) {
+        score -= 120;
+    }
+    if (trimmed.length >= 6 && trimmed.length <= 220) {
+        score += 30;
+    } else if (trimmed.length > 320) {
+        score -= 40;
+    }
+    return score;
+}
+
+NSString *WCPLQuitMonitorSelectBestSystemTextFromCandidates(id candidates) {
+    if (![candidates isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+
+    NSMutableOrderedSet<NSString *> *normalized = [NSMutableOrderedSet orderedSet];
+    for (id item in (NSArray *)candidates) {
+        NSString *text = WCPLTrimText(item);
+        if (text.length > 0) {
+            [normalized addObject:text];
+        }
+    }
+    if (normalized.count == 0) {
+        return nil;
+    }
+
+    NSString *bestText = nil;
+    NSInteger bestScore = NSIntegerMin;
+    for (NSString *candidate in normalized) {
+        NSInteger score = wcpl_qm_systemTextScore(candidate);
+        if (!bestText ||
+            score > bestScore ||
+            (score == bestScore && candidate.length > bestText.length)) {
+            bestText = candidate;
+            bestScore = score;
+        }
+    }
+    return bestText;
+}
+
+NSArray<NSNumber *> *WCPLQuitMonitorPendingRetryScheduleSeconds(void) {
+    static NSArray<NSNumber *> *schedule = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        schedule = @[@0.8, @2.0, @5.0, @15.0, @60.0, @300.0, @900.0, @1800.0, @7200.0];
+    });
+    return schedule;
+}
+
+NSString *WCPLNormalizeMentionCandidate(NSString *candidate) {
+    NSString *value = WCPLTrimText(candidate);
+    if (value.length == 0) {
+        return nil;
+    }
+
+    if ([value hasPrefix:@"@"]) {
+        value = WCPLTrimText([value substringFromIndex:1]);
+    }
+    if ([value hasSuffix:@":"]) {
+        value = WCPLTrimText([value substringToIndex:MAX((NSInteger)value.length - 1, 0)]);
+    }
+    if (value.length == 0 || value.length > 128) {
+        return nil;
+    }
+
+    if ([value rangeOfString:@"<"].location != NSNotFound || [value rangeOfString:@">"].location != NSNotFound) {
+        return nil;
+    }
+    if ([value rangeOfCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].location != NSNotFound) {
+        return nil;
+    }
+    if (WCPLIsChatRoomName(value)) {
+        return nil;
+    }
+
+    return value;
+}
+
+NSString *WCPLExtractMentionCandidateFromXML(NSString *xmlText) {
+    if (![xmlText isKindOfClass:[NSString class]] || xmlText.length == 0) {
+        return nil;
+    }
+
+    NSArray<NSArray<NSString *> *> *tagPairs = @[
+        @[@"<memberusername><![CDATA[", @"]]></memberusername>"],
+        @[@"<memberusername>", @"</memberusername>"],
+        @[@"<senderusername><![CDATA[", @"]]></senderusername>"],
+        @[@"<senderusername>", @"</senderusername>"],
+        @[@"<fromusr><![CDATA[", @"]]></fromusr>"],
+        @[@"<fromusr>", @"</fromusr>"],
+        @[@"<chatusr><![CDATA[", @"]]></chatusr>"],
+        @[@"<chatusr>", @"</chatusr>"],
+        @[@"<realchatname><![CDATA[", @"]]></realchatname>"],
+        @[@"<realchatname>", @"</realchatname>"],
+        @[@"<username><![CDATA[", @"]]></username>"],
+        @[@"<username>", @"</username>"]
+    ];
+
+    NSString *(^extractFromText)(NSString *) = ^NSString *(NSString *text) {
+        if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+            return nil;
+        }
+        for (NSArray<NSString *> *pair in tagPairs) {
+            if (pair.count != 2) {
+                continue;
+            }
+            NSString *value = WCPLExtractXMLValue(text, pair[0], pair[1]);
+            NSString *candidate = WCPLNormalizeMentionCandidate(value);
+            if (candidate.length > 0) {
+                return candidate;
+            }
+        }
+        return nil;
+    };
+
+    NSString *candidate = extractFromText(xmlText);
+    if (candidate.length > 0) {
+        return candidate;
+    }
+
+    NSString *decoded = WCPLDecodeBasicXMLEntities(xmlText);
+    if (decoded.length > 0 && ![decoded isEqualToString:xmlText]) {
+        candidate = extractFromText(decoded);
+        if (candidate.length > 0) {
+            return candidate;
+        }
+    }
+
+    return nil;
+}
+
+NSString *WCPLExtractMentionCandidateFromGroupContentPrefix(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return nil;
+    }
+
+    NSRange newlineRange = [content rangeOfString:@"\n"];
+    if (newlineRange.location == NSNotFound || newlineRange.location == 0) {
+        return nil;
+    }
+
+    NSString *firstLine = [content substringToIndex:newlineRange.location];
+    return WCPLNormalizeMentionCandidate(firstLine);
+}
+
+unsigned int WCPLExtractVoiceAttrUInt(NSString *xml, NSString *attrName) {
+    if (![xml isKindOfClass:[NSString class]] || xml.length == 0 ||
+        ![attrName isKindOfClass:[NSString class]] || attrName.length == 0) {
+        return 0;
+    }
+
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:
+                                  [NSString stringWithFormat:@"%@\\s*=\\s*\\\"([0-9]{1,8})\\\"", attrName]
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:nil];
+    if (!regex) {
+        return 0;
+    }
+
+    NSTextCheckingResult *match = [regex firstMatchInString:xml options:0 range:NSMakeRange(0, xml.length)];
+    if (match && match.numberOfRanges >= 2) {
+        NSRange valueRange = [match rangeAtIndex:1];
+        if (valueRange.location != NSNotFound && valueRange.length > 0) {
+            NSString *value = [xml substringWithRange:valueRange];
+            unsigned long long parsed = strtoull(value.UTF8String, NULL, 10);
+            if (parsed > 0 && parsed <= UINT_MAX) {
+                return (unsigned int)parsed;
+            }
+        }
+    }
+
+    NSString *decodedXML = WCPLDecodeBasicXMLEntities(xml);
+    if (decodedXML.length > 0 && ![decodedXML isEqualToString:xml]) {
+        match = [regex firstMatchInString:decodedXML options:0 range:NSMakeRange(0, decodedXML.length)];
+        if (match && match.numberOfRanges >= 2) {
+            NSRange valueRange = [match rangeAtIndex:1];
+            if (valueRange.location != NSNotFound && valueRange.length > 0) {
+                NSString *value = [decodedXML substringWithRange:valueRange];
+                unsigned long long parsed = strtoull(value.UTF8String, NULL, 10);
+                if (parsed > 0 && parsed <= UINT_MAX) {
+                    return (unsigned int)parsed;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+NSString *WCPLBuildMinimalVoiceContent(unsigned int voiceLengthMs, unsigned int voiceFormat) {
+    unsigned int lengthMs = (voiceLengthMs > 0) ? voiceLengthMs : 1000;
+    unsigned int fmt = (voiceFormat > 0) ? voiceFormat : 4;
+    return [NSString stringWithFormat:@"<msg><voicemsg voicelength=\"%u\" voiceformat=\"%u\" forwardflag=\"0\" /></msg>",
+            lengthMs, fmt];
+}
+
+long long WCPLQuoteReferServerIDFromContent(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return 0;
+    }
+
+    NSArray<NSArray<NSString *> *> *tagPairs = @[
+        @[@"<svrid><![CDATA[", @"]]></svrid>"],
+        @[@"<svrid>", @"</svrid>"],
+        @[@"<msgsvrid><![CDATA[", @"]]></msgsvrid>"],
+        @[@"<msgsvrid>", @"</msgsvrid>"]
+    ];
+
+    long long (^extractServerIDFromXML)(NSString *) = ^long long(NSString *xml) {
+        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+            return 0;
+        }
+
+        for (NSArray<NSString *> *pair in tagPairs) {
+            if (pair.count != 2) {
+                continue;
+            }
+            NSString *value = WCPLExtractXMLValue(xml, pair[0], pair[1]);
+            if (![value isKindOfClass:[NSString class]] || value.length == 0) {
+                continue;
+            }
+            long long svrID = strtoll(value.UTF8String, NULL, 10);
+            if (svrID > 0) {
+                return svrID;
+            }
+        }
+
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<(?:msg)?svrid>(?:<!\\[CDATA\\[)?([0-9]{5,})(?:\\]\\]>)?</(?:msg)?svrid>" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult *match = [regex firstMatchInString:xml options:0 range:NSMakeRange(0, xml.length)];
+        if (!match || match.numberOfRanges < 2 || match.range.location == NSNotFound) {
+            return 0;
+        }
+
+        NSString *value = [xml substringWithRange:[match rangeAtIndex:1]];
+        if (![value isKindOfClass:[NSString class]] || value.length == 0) {
+            return 0;
+        }
+
+        long long svrID = strtoll(value.UTF8String, NULL, 10);
+        return svrID > 0 ? svrID : 0;
+    };
+
+    NSString *referSection = WCPLExtractXMLValue(content, @"<refermsg>", @"</refermsg>");
+    if (referSection.length == 0) {
+        NSRegularExpression *referRegex = [NSRegularExpression regularExpressionWithPattern:@"<refermsg[^>]*>([\\s\\S]*?)</refermsg>" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult *referMatch = [referRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+        if (referMatch && referMatch.numberOfRanges >= 2 && referMatch.range.location != NSNotFound) {
+            referSection = [content substringWithRange:[referMatch rangeAtIndex:1]];
+        }
+    }
+
+    if (referSection.length == 0) {
+        NSString *decodedContent = WCPLDecodeBasicXMLEntities(content);
+        if (decodedContent.length > 0 && ![decodedContent isEqualToString:content]) {
+            referSection = WCPLExtractXMLValue(decodedContent, @"<refermsg>", @"</refermsg>");
+            if (referSection.length == 0) {
+                NSRegularExpression *referRegex = [NSRegularExpression regularExpressionWithPattern:@"<refermsg[^>]*>([\\s\\S]*?)</refermsg>" options:NSRegularExpressionCaseInsensitive error:nil];
+                NSTextCheckingResult *referMatch = [referRegex firstMatchInString:decodedContent options:0 range:NSMakeRange(0, decodedContent.length)];
+                if (referMatch && referMatch.numberOfRanges >= 2 && referMatch.range.location != NSNotFound) {
+                    referSection = [decodedContent substringWithRange:[referMatch rangeAtIndex:1]];
+                }
+            }
+        }
+    }
+
+    if (referSection.length > 0) {
+        long long referSvrID = extractServerIDFromXML(referSection);
+        if (referSvrID > 0) {
+            return referSvrID;
+        }
+
+        NSString *decodedRefer = WCPLDecodeBasicXMLEntities(referSection);
+        if (decodedRefer.length > 0 && ![decodedRefer isEqualToString:referSection]) {
+            referSvrID = extractServerIDFromXML(decodedRefer);
+            if (referSvrID > 0) {
+                return referSvrID;
+            }
+        }
+    }
+
+    return 0;
+}
+
+NSString *WCPLGenerateClientMsgID(NSString *senderUserName) {
+    NSString *sender = WCPLTrimText(senderUserName);
+    unsigned int now = (unsigned int)[[NSDate date] timeIntervalSince1970];
+    unsigned int randomValue = arc4random();
+    if (sender.length > 0) {
+        return [NSString stringWithFormat:@"%@_%u_%u", sender, now, randomValue];
+    }
+    return [NSString stringWithFormat:@"wcpl_%u_%u", now, randomValue];
+}

@@ -1,0 +1,21 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
+
+@class NSString;
+
+@interface MMLiveKtvThemeResource : NSObject
+{
+    NSString *_uri;
+    NSString *_md5Hash;
+}
+
+@property(retain, nonatomic) NSString *md5Hash; // @synthesize md5Hash=_md5Hash;
+@property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
+- (void)fetchResourcesWithCompletionBlock:(CDUnknownBlockType)arg1;
+
+@end

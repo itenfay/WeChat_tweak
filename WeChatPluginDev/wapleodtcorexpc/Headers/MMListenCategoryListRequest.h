@@ -1,0 +1,24 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseRequest, MMListenRecommendInfo, NSData;
+
+@class WXPBGeneratedMessage;
+
+@interface MMListenCategoryListRequest : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) BaseRequest *baseRequest; // @dynamic baseRequest;
+@property(nonatomic) unsigned long long cliSeq; // @dynamic cliSeq;
+@property(retain, nonatomic) MMListenRecommendInfo *ctxRecommendInfo; // @dynamic ctxRecommendInfo;
+@property(retain, nonatomic) NSData *sessionBuffer; // @dynamic sessionBuffer;
+
+@end
+

@@ -1,0 +1,39 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@class NSString;
+
+@interface WCFinderContactFansInteractionData : NSObject
+{
+    unsigned int _memberFlag;
+    unsigned int _orderCount;
+    unsigned int _interactionCount;
+}
+
++ (unsigned long long)columnType;
++ (id)unarchiveWithWCTValue:(id)arg1;
++ (void)initialize;
++ (void)PBArrayAdd_interactionCount;
++ (void)PBArrayAdd_orderCount;
++ (void)PBArrayAdd_memberFlag;
+@property(nonatomic) unsigned int interactionCount; // @synthesize interactionCount=_interactionCount;
+@property(nonatomic) unsigned int orderCount; // @synthesize orderCount=_orderCount;
+@property(nonatomic) unsigned int memberFlag; // @synthesize memberFlag=_memberFlag;
+- (id)archivedWCTValue;
+- (id)getPBPropertyTable;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

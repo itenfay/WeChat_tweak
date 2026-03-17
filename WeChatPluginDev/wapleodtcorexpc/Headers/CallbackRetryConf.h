@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface CallbackRetryConf : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *defaultWording; // @dynamic defaultWording;
+@property(nonatomic) unsigned int intevalTime; // @dynamic intevalTime;
+@property(nonatomic) unsigned int maxCount; // @dynamic maxCount;
+
+@end
+

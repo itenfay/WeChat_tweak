@@ -1,0 +1,27 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseResponse, NSString, RealNameInfo, RemindWin;
+
+@class WXPBGeneratedMessage;
+
+@interface TransferPhoneChangeSwitchResp : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
+@property(nonatomic) unsigned int grantFlag; // @dynamic grantFlag;
+@property(retain, nonatomic) RemindWin *jumpWin; // @dynamic jumpWin;
+@property(retain, nonatomic) RealNameInfo *realNameInfo; // @dynamic realNameInfo;
+@property(nonatomic) unsigned int retCode; // @dynamic retCode;
+@property(retain, nonatomic) NSString *retMsg; // @dynamic retMsg;
+@property(retain, nonatomic) NSString *wording; // @dynamic wording;
+
+@end
+

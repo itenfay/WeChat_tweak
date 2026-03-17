@@ -1,0 +1,24 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class FinderLiveStreamPlayTogetherActiveMsgInfo, FinderLiveStreamPlayTogetherInteractiveTagInfo, FinderLiveStreamPlayTogetherTypeInfo;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderLiveStreamPlayTogetherInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) FinderLiveStreamPlayTogetherActiveMsgInfo *activeMsgInfo; // @dynamic activeMsgInfo;
+@property(retain, nonatomic) FinderLiveStreamPlayTogetherInteractiveTagInfo *tagInfo; // @dynamic tagInfo;
+@property(nonatomic) int type; // @dynamic type;
+@property(retain, nonatomic) FinderLiveStreamPlayTogetherTypeInfo *typeInfo; // @dynamic typeInfo;
+
+@end
+

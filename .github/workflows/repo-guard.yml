@@ -1,0 +1,38 @@
+name: Repository Guard
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'WeChatPluginDev/**'
+      - 'docs/**'
+      - '.github/workflows/**'
+  push:
+    branches:
+      - master
+    paths:
+      - 'WeChatPluginDev/**'
+      - 'docs/**'
+      - '.github/workflows/**'
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Refresh Generated Hooks
+        working-directory: WeChatPluginDev/wapleodtcorexpc
+        run: |
+          ./scripts/generate_wcpl_message_hook.sh
+          ./scripts/generate_wcpl_gesture_hook.sh
+          git diff --exit-code -- src/WCPLMessageHook.xm src/WCPLGestureHook.xm
+
+      - name: Run Maintainability Guard
+        working-directory: WeChatPluginDev/wapleodtcorexpc
+        run: ./scripts/maintainability_guard.sh
+
+      - name: Run Cross-Platform Tests
+        working-directory: WeChatPluginDev/wapleodtcorexpc
+        run: ./scripts/run_unit_tests.sh --cross-platform

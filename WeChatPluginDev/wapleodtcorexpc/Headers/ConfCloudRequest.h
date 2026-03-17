@@ -1,0 +1,25 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSData, NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface ConfCloudRequest : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *body; // @dynamic body;
+@property(nonatomic) unsigned int cmdid; // @dynamic cmdid;
+@property(nonatomic) _Bool longpolling; // @dynamic longpolling;
+@property(nonatomic) unsigned int taskid; // @dynamic taskid;
+@property(retain, nonatomic) NSString *url; // @dynamic url;
+
+@end
+

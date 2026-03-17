@@ -1,0 +1,17 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class WSTabInfo;
+
+@interface WSk1kViewConfig : NSObject
+{
+    WSTabInfo *_tabInfo;
+}
+
+@property(retain, nonatomic) WSTabInfo *tabInfo; // @synthesize tabInfo=_tabInfo;
+- (id)init;
+
+@end
+

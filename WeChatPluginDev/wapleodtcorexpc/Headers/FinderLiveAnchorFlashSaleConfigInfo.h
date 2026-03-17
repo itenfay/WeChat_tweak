@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class FinderAnchorFlashSaleConfig, NSData;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderLiveAnchorFlashSaleConfigInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+@property(readonly, nonatomic) FinderAnchorFlashSaleConfig *config;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *anchorFlashSaleConfig; // @dynamic anchorFlashSaleConfig;
+
+@end
+

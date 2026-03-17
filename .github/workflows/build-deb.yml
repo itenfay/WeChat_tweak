@@ -1,0 +1,394 @@
+name: Build DEB Packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+    paths:
+      - 'WeChatPluginDev/**'
+      - '.github/workflows/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Theos
+        uses: Randomblock1/theos-action@v1
+
+      - name: Setup Roothide Theos
+        run: |
+          ROOTHIDE_THEOS="${{ github.workspace }}/theos-roothide"
+
+          # Clone roothide theos with submodules
+          git clone --recursive --depth=1 https://github.com/roothide/theos.git "$ROOTHIDE_THEOS"
+
+          # Download roothide SDK
+          curl -LO https://github.com/roothide/theos/releases/download/v1.0.0/roothide-sdk.zip || true
+          if [ -f roothide-sdk.zip ]; then
+            unzip -o roothide-sdk.zip -d "$ROOTHIDE_THEOS/sdks/" || true
+          fi
+
+          # Run update-theos to install vendor dependencies
+          echo "=== Running update-theos ==="
+          cd "$ROOTHIDE_THEOS"
+          if [ -f "bin/update-theos" ]; then
+            chmod +x bin/update-theos
+            ./bin/update-theos || true
+          fi
+
+          # Fallback: manually install vendor dependencies if still missing
+          if [ ! -d "$ROOTHIDE_THEOS/vendor/include" ] || [ ! -d "$ROOTHIDE_THEOS/vendor/lib" ]; then
+            echo "=== Manually installing vendor dependencies ==="
+            rm -rf "$ROOTHIDE_THEOS/vendor/lib" "$ROOTHIDE_THEOS/vendor/include" 2>/dev/null || true
+            git clone --depth=1 https://github.com/theos/lib.git "$ROOTHIDE_THEOS/vendor/lib"
+            git clone --depth=1 https://github.com/theos/headers.git "$ROOTHIDE_THEOS/vendor/include"
+          fi
+
+          # Fix dm.pl for roothide theos
+          if [ ! -f "$ROOTHIDE_THEOS/bin/dm.pl" ]; then
+            echo "dm.pl not found in roothide theos, installing..."
+            rm -rf "$ROOTHIDE_THEOS/vendor/dm.pl" 2>/dev/null || true
+            git clone --depth=1 https://github.com/theos/dm.pl.git "$ROOTHIDE_THEOS/vendor/dm.pl"
+            mkdir -p "$ROOTHIDE_THEOS/bin"
+            ln -sf ../vendor/dm.pl/dm.pl "$ROOTHIDE_THEOS/bin/dm.pl"
+            chmod +x "$ROOTHIDE_THEOS/vendor/dm.pl/dm.pl"
+          fi
+
+          # Verify installation
+          echo "=== Verifying roothide theos ==="
+          ls -la "$ROOTHIDE_THEOS/vendor/" || true
+          ls -la "$ROOTHIDE_THEOS/vendor/include" | head -5 || true
+          ls -la "$ROOTHIDE_THEOS/vendor/lib" | head -5 || true
+          ls -la "$ROOTHIDE_THEOS/bin/dm.pl" || true
+
+      - name: Debug Environment
+        run: |
+          echo "=== Environment Variables ==="
+          echo "THEOS=$THEOS"
+          echo "HOME=$HOME"
+          echo "PWD=$PWD"
+          echo "=== Theos Directory ==="
+          ls -la $THEOS || echo "THEOS directory not found"
+          echo "=== Theos bin Directory ==="
+          ls -la $THEOS/bin/ || echo "THEOS bin directory not found"
+          echo "=== Check dm.pl ==="
+          ls -la $THEOS/bin/dm.pl || echo "dm.pl not found in bin"
+          ls -la $THEOS/vendor/dm.pl/ || echo "dm.pl vendor not found"
+          echo "=== Project Directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/
+          echo "=== Source Files ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/src/
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Fix dm.pl if missing
+        run: |
+          # Check if dm.pl exists
+          if [ ! -f "$THEOS/bin/dm.pl" ]; then
+            echo "dm.pl not found, installing..."
+            # Clone dm.pl to vendor directory
+            git clone --depth=1 https://github.com/theos/dm.pl.git "$THEOS/vendor/dm.pl" || true
+            # Create symlink
+            ln -sf ../vendor/dm.pl/dm.pl "$THEOS/bin/dm.pl" || true
+            chmod +x "$THEOS/vendor/dm.pl/dm.pl" || true
+          fi
+          # Verify
+          echo "=== Verifying dm.pl ==="
+          ls -la "$THEOS/bin/dm.pl"
+          "$THEOS/bin/dm.pl" --help 2>&1 | head -5 || echo "dm.pl test failed"
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Run Maintainability Guard
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          ./scripts/maintainability_guard.sh
+
+      - name: Run Darwin Host + Cross-Platform Unit Suites
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          ./scripts/run_unit_tests.sh --auto
+
+      - name: Bump package version (CI)
+        run: |
+          CONTROL_FILE="WeChatPluginDev/wapleodtcorexpc/control"
+          if [ ! -f "$CONTROL_FILE" ]; then
+            echo "control file not found: $CONTROL_FILE"
+            exit 1
+          fi
+
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+            TAG="${TAG#v}"
+            NEW_VERSION="$TAG"
+          else
+            BASE_VERSION="$(grep -E '^Version: ' "$CONTROL_FILE" | head -n 1 | cut -d' ' -f2-)"
+            if [ -z "$BASE_VERSION" ]; then
+              echo "failed to parse Version from $CONTROL_FILE"
+              exit 1
+            fi
+            SHORT_SHA="${GITHUB_SHA:0:7}"
+            NEW_VERSION="${BASE_VERSION}+${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}.g${SHORT_SHA}"
+          fi
+
+          sed -i '' -E "s/^Version: .*/Version: ${NEW_VERSION}/" "$CONTROL_FILE"
+          echo "CI package version: ${NEW_VERSION}"
+
+      - name: Run Strict Acceptance Gate
+        run: |
+          export PATH="$THEOS/bin:$PATH"
+          cd WeChatPluginDev/wapleodtcorexpc
+          rm -rf packages/*.deb 2>/dev/null || true
+          set -o pipefail
+          LOG_FILE="$RUNNER_TEMP/wcpl_strict_gate.log"
+          set +e
+          FINALPACKAGE=1 ./scripts/local_gate.sh --strict-toolchain --skip-tests 2>&1 | tee "$LOG_FILE"
+          status=${PIPESTATUS[0]}
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "=== Strict acceptance gate failed, extracting errors ==="
+            grep -E "error:|fatal error:|Undefined symbols|ld: " "$LOG_FILE" | tail -n 80 | while IFS= read -r line; do
+              echo "::error::$line"
+            done
+            echo "### Strict acceptance gate failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            tail -n 200 "$LOG_FILE" >> "$GITHUB_STEP_SUMMARY" || true
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            exit "$status"
+          fi
+
+          if grep -E "arm64e binaries for iOS earlier than 14.0" "$LOG_FILE" >/dev/null 2>&1; then
+            echo "::error::Rootless build detected arm64e deployment mismatch (< iOS 14.0)."
+            echo "### Rootless arm64e deployment mismatch" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Found warning: arm64e binaries for iOS earlier than 14.0" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Please ensure TARGET minimum deployment is iOS 14.0+ for rootless." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          {
+            echo "### Darwin Acceptance Passed"
+            echo ""
+            echo "- Executed: \`./scripts/maintainability_guard.sh\`"
+            echo "- Executed: \`./scripts/run_unit_tests.sh --auto\`"
+            echo "- Executed: \`FINALPACKAGE=1 ./scripts/local_gate.sh --strict-toolchain --skip-tests\`"
+            echo "- Result: macOS runner completed maintainability guard, Darwin host suite, cross-platform suite, \`make before-all\`, and real \`make clean + make package\`."
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+        env:
+          THEOS: ${{ github.workspace }}/theos
+          THEOS_PACKAGE_SCHEME: rootless
+          TARGET: iphone:clang:13.7:14.0
+          ARCHS: arm64e
+
+      - name: Rename Rootless Package
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          for f in packages/*.deb; do
+            if [ -f "$f" ]; then
+              case "$f" in
+                *-rootless.deb|*-roothide.deb)
+                  continue
+                  ;;
+              esac
+              newname=$(echo "$f" | sed 's/\.deb$/-rootless.deb/')
+              mv "$f" "$newname"
+            fi
+          done
+
+      - name: Build Roothide Package (mirror rootless)
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+
+          ROOTLESS_PKG=$(ls packages/*-rootless.deb 2>/dev/null | head -n 1)
+          if [ -z "$ROOTLESS_PKG" ]; then
+            echo "::error::Rootless package not found; cannot mirror roothide package"
+            exit 1
+          fi
+
+          ROOTHIDE_PKG=$(echo "$ROOTLESS_PKG" | sed 's/-rootless\.deb$/-roothide.deb/')
+          cp -f "$ROOTLESS_PKG" "$ROOTHIDE_PKG"
+
+          echo "Mirrored roothide package from rootless:"
+          echo "  rootless => $ROOTLESS_PKG"
+          echo "  roothide => $ROOTHIDE_PKG"
+
+      - name: List packages (debug)
+        if: always()
+        run: |
+          echo "=== Listing packages directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/packages/ || echo "packages directory not found"
+          echo "=== Finding all .deb files ==="
+          find . -name "*.deb" -type f 2>/dev/null || echo "No .deb files found"
+          echo "=== Listing obj directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
+
+      - name: Compare rootless and roothide payload
+        if: always()
+        run: |
+          set +e
+          validation_failed=0
+
+          PKG_DIR="WeChatPluginDev/wapleodtcorexpc/packages"
+          ROOTLESS_PKG=$(ls "$PKG_DIR"/*-rootless.deb 2>/dev/null | head -n 1)
+          ROOTHIDE_PKG=$(ls "$PKG_DIR"/*-roothide.deb 2>/dev/null | head -n 1)
+
+          echo "rootless pkg: ${ROOTLESS_PKG:-not-found}"
+          echo "roothide pkg: ${ROOTHIDE_PKG:-not-found}"
+
+          extract_deb() {
+            local pkg="$1"
+            local out="$2"
+            rm -rf "$out"
+            mkdir -p "$out"
+
+            if [ ! -f "$pkg" ]; then
+              return 1
+            fi
+
+            ( cd "$out" && ar -x "$GITHUB_WORKSPACE/$pkg" ) || return 1
+            local data_tar
+            data_tar=$(find "$out" -maxdepth 1 -type f -name 'data.tar*' | head -n 1)
+            if [ -z "$data_tar" ]; then
+              return 1
+            fi
+
+            case "$data_tar" in
+              *.xz) tar -xJf "$data_tar" -C "$out" ;;
+              *.zst) tar --use-compress-program=unzstd -xf "$data_tar" -C "$out" ;;
+              *.gz) tar -xzf "$data_tar" -C "$out" ;;
+              *) tar -xf "$data_tar" -C "$out" ;;
+            esac
+          }
+
+          ROOTLESS_OUT="$RUNNER_TEMP/wcpl_rootless_pkg"
+          ROOTHIDE_OUT="$RUNNER_TEMP/wcpl_roothide_pkg"
+
+          extract_deb "$ROOTLESS_PKG" "$ROOTLESS_OUT"
+          rootless_status=$?
+          extract_deb "$ROOTHIDE_PKG" "$ROOTHIDE_OUT"
+          roothide_status=$?
+
+          ROOTLESS_DYLIB=$(find "$ROOTLESS_OUT" -type f -name '*.dylib' | head -n 1)
+          ROOTHIDE_DYLIB=$(find "$ROOTHIDE_OUT" -type f -name '*.dylib' | head -n 1)
+
+          echo "rootless dylib: ${ROOTLESS_DYLIB:-not-found}"
+          echo "roothide dylib: ${ROOTHIDE_DYLIB:-not-found}"
+
+          {
+            echo "### Package Diagnostics"
+            echo ""
+            echo "- Rootless package: \`${ROOTLESS_PKG:-not-found}\`"
+            echo "- Roothide package: \`${ROOTHIDE_PKG:-not-found}\`"
+            echo "- Rootless extract status: $rootless_status"
+            echo "- Roothide extract status: $roothide_status"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ -n "$ROOTLESS_DYLIB" ] && [ -n "$ROOTHIDE_DYLIB" ]; then
+            echo "=== Dylib hash/size ==="
+            shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+            ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+            ROOTLESS_LIPO_INFO=$(lipo -info "$ROOTLESS_DYLIB" 2>/dev/null || true)
+            ROOTHIDE_LIPO_INFO=$(lipo -info "$ROOTHIDE_DYLIB" 2>/dev/null || true)
+
+            python3 scripts/validate_macho_consistency.py "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB"
+
+            python_status=$?
+            if [ "$python_status" -ne 0 ]; then
+              echo "::error::Binary consistency validation failed"
+              validation_failed=1
+            fi
+
+            {
+              echo "#### Dylib Hash"
+              echo "\`\`\`"
+              shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Dylib Architectures"
+              echo "\`\`\`"
+              echo "Rootless: ${ROOTLESS_LIPO_INFO:-unknown}"
+              echo "Roothide: ${ROOTHIDE_LIPO_INFO:-unknown}"
+              echo "\`\`\`"
+
+              echo "#### Dylib Size"
+              echo "\`\`\`"
+              ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Rootless otool -L"
+              echo "\`\`\`"
+              otool -L "$ROOTLESS_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Roothide otool -L"
+              echo "\`\`\`"
+              otool -L "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Rootless key symbols"
+              echo "\`\`\`"
+              nm -j "$ROOTLESS_DYLIB" 2>/dev/null | grep -E 'wchook_repeatMessageWrap|wcpl_handleLocalReplaceMenuItem|WCPLLogSettingsViewController' || true
+              echo "\`\`\`"
+
+              echo "#### Roothide key symbols"
+              echo "\`\`\`"
+              nm -j "$ROOTHIDE_DYLIB" 2>/dev/null | grep -E 'wchook_repeatMessageWrap|wcpl_handleLocalReplaceMenuItem|WCPLLogSettingsViewController' || true
+              echo "\`\`\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Unable to locate both dylibs for diagnostics"
+            echo "- Unable to locate both dylibs for diagnostics" >> "$GITHUB_STEP_SUMMARY"
+            validation_failed=1
+          fi
+
+          if [ "$validation_failed" -ne 0 ]; then
+            echo "### Binary validation failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "- rootless/roothide artifacts are inconsistent or invalid" >> "$GITHUB_STEP_SUMMARY"
+            set -e
+            exit 1
+          fi
+
+          set -e
+
+      - name: Upload DEB artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
+          if-no-files-found: warn
+
+      - name: Upload DEB to Nightly Release
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! ls WeChatPluginDev/wapleodtcorexpc/packages/*.deb >/dev/null 2>&1; then
+            echo "No .deb files found"
+            exit 1
+          fi
+
+          if ! gh release view nightly >/dev/null 2>&1; then
+            gh release create nightly -t "nightly" -p
+          fi
+
+          gh release edit nightly --target "$GITHUB_SHA"
+          gh release upload nightly WeChatPluginDev/wapleodtcorexpc/packages/*.deb --clobber
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: WeChatPluginDev/wapleodtcorexpc/packages/*.deb

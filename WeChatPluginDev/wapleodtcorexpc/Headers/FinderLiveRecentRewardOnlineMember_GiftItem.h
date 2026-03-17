@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class FinderLiveGift;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderLiveRecentRewardOnlineMember_GiftItem : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) FinderLiveGift *gift; // @dynamic gift;
+@property(nonatomic) unsigned int productCount; // @dynamic productCount;
+
+@end
+

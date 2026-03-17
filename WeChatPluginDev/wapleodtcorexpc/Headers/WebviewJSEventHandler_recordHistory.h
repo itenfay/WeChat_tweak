@@ -1,0 +1,17 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class WebRecordDB;
+
+@interface WebviewJSEventHandler_recordHistory : NSObject
+{
+    WebRecordDB *_db;
+}
+
+@property(retain, nonatomic) WebRecordDB *db; // @synthesize db=_db;
+- (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
+
+@end
+

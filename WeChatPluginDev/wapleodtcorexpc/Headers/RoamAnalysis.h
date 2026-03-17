@@ -1,0 +1,25 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface RoamAnalysis : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *deviceId; // @dynamic deviceId;
+@property(nonatomic) unsigned long long mediaCount; // @dynamic mediaCount;
+@property(nonatomic) unsigned long long msgCount; // @dynamic msgCount;
+@property(retain, nonatomic) NSString *sessionId; // @dynamic sessionId;
+@property(nonatomic) int state; // @dynamic state;
+
+@end
+

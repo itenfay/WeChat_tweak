@@ -1,0 +1,17 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@interface MMKEditTextOnFocusChangeCallback : NSObject
+{
+    struct Handle<std::shared_ptr<kinda::KEditTextOnFocusChangeCallback>> _cppRefHandle;
+}
+
+- (void)onFocusChange:(_Bool)arg1;
+- (id)initWithCpp:(const void *)arg1;
+
+@end
+

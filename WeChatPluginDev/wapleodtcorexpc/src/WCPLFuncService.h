@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 // The width of the screen.
 #define WCPLScreenWidth   UIScreen.mainScreen.bounds.size.width
 
@@ -32,9 +34,6 @@
 // Judge iPhone X series.
 #define WCPLIsPhoneXAll   ({BOOL isPhoneXAll = NO; if (@available(iOS 11.0, *)) { isPhoneXAll = UIApplication.sharedApplication.delegate.window.safeAreaInsets.bottom > 0.0; } isPhoneXAll;})
 
-// Status bar height.
-#define WCPLStatusBarHeight                 (WCPLIsPhoneXAll ? 44.f : 20.f)
-
 // Navigation bar height.
 #define WCPLNavigationBarHeight              44.f
 
@@ -47,24 +46,18 @@
 // View safe bottom margin.
 #define WCPLViewSafeBottomMargin            (WCPLIsPhoneXAll ? 34.f : 0.f)
 
-// Date format: "yyyy-MM-dd".
-FOUNDATION_EXPORT NSString *const WCPLShortDateFormat;
-
-// Date format: "yyyy-MM-dd HH:mm:ss".
-FOUNDATION_EXPORT NSString *const WCPLLongDateFormat;
-
 @interface WCPLFuncService : NSObject
-
-// Return screen width.
-+ (CGFloat)screenWidth;
-
-// Return screen height.
-+ (CGFloat)screenHeight;
 
 // Filt message from list.
 + (NSMutableArray *)filtMessageFromMsgList:(NSMutableArray *)msgList;
+// Check if a single message should be ignored.
++ (BOOL)shouldIgnoreMessageWrap:(id)msgWrap;
 
-// Convert `NSDate` object to string with formatter.
-+ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format;
+// Sync ignored users to WeChat notify status (屏蔽=免打扰, 取消屏蔽=恢复提醒).
++ (BOOL)syncIgnoreUserToSystemNotifyStatus:(NSString *)userName enabled:(BOOL)enabled;
++ (void)syncIgnoredUsersToSystemNotifyStatus:(NSArray<NSString *> *)ignoredUsers
+                     previousIgnoredUsers:(nullable NSArray<NSString *> *)previousIgnoredUsers;
 
 @end
+
+NS_ASSUME_NONNULL_END

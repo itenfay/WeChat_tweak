@@ -65,3 +65,37 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Theos
+.theos/
+*.deb
+packages/
+logs/
+
+# Agent/workspace artifacts
+.ai_memory/
+.autoflow/
+.ccb_config/
+.claude/
+.opencode/
+.tmp/
+plugin_source/
+scripts/__pycache__/
+__pycache__/
+*.bak
+theos-roothide/
+WeChatPluginDev/wapleodtcorexpc/src/Tweak.m
+WeChatPluginDev/wapleodtcorexpc/.tmp_repeat_clean.xm
+WeChatPluginDev/wapleodtcorexpc/.tmp_repeat_recover.xm
+.ccb/history/
+.spec-workflow/
+.tmp_device_db/
+artifacts/
+任务开始
+成功
+查询回包
+请求
+归档.zip
+归档_extracted/
+AGENTS.md
+CLAUDE.md

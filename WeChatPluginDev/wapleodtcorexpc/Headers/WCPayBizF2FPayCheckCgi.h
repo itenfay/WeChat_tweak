@@ -1,0 +1,20 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@protocol WCPayBizF2FPayCheckCgiDelegate;
+
+@interface WCPayBizF2FPayCheckCgi : NSObject
+{
+    id <WCPayBizF2FPayCheckCgiDelegate> _cgiDelegate;
+}
+
+@property(nonatomic) __weak id <WCPayBizF2FPayCheckCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
+- (void)didFailWithError:(id)arg1;
+- (void)didGetResponse:(id)arg1;
+- (void)startSendRequest;
+- (id)initPayCheckCgiWithDelegate:(id)arg1 request:(id)arg2;
+
+@end
+

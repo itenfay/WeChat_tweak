@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSData, NSMutableArray;
+
+@class WXPBGeneratedMessage;
+
+@interface VideoCdnInfo_CdnInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *articleUrl; // @dynamic articleUrl;
+@property(retain, nonatomic) NSMutableArray *cdnUrlInfo; // @dynamic cdnUrlInfo;
+@property(retain, nonatomic) NSData *coverUrl; // @dynamic coverUrl;
+
+@end
+

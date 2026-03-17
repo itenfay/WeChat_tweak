@@ -1,0 +1,24 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseResponse, NSString, SearchOpenIMContactItem;
+
+@class WXPBGeneratedMessage;
+
+@interface SearchOpenIMContactResp : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
+@property(retain, nonatomic) SearchOpenIMContactItem *contact; // @dynamic contact;
+@property(retain, nonatomic) NSString *spamWording; // @dynamic spamWording;
+@property(retain, nonatomic) NSString *url; // @dynamic url;
+
+@end
+

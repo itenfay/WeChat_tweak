@@ -1,0 +1,15 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import "NSObject-Protocol.h"
+
+@protocol UIBarPositioning;
+
+@protocol UIBarPositioningDelegate <NSObject>
+
+@optional
+- (long long)positionForBar:(id <UIBarPositioning>)arg1;
+@end
+

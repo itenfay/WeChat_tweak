@@ -1,0 +1,18 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class MISSING_TYPE;
+
+@interface _TtC6WeChat32MBEventHandler_getSystemInfoSync : NSObject
+{
+    MISSING_TYPE *impl;
+}
+
+- (id)init;
+- (id)invoke:(id)arg1;
+- (id)apiName;
+
+@end
+

@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSString;
+
+@interface WAJSEventHandler_joinVoIPChat : NSObject
+{
+    NSString *busiAppId;
+    int lastJoinSuccTicks;
+    int maxMember;
+    int currentPeakRoomMemberCount;
+    long long startTicks;
+}
+
+- (void)handleJSEvent:(id)arg1;
+- (void)reset;
+- (id)init;
+
+@end
+

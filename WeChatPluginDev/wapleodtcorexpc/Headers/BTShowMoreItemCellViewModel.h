@@ -1,0 +1,20 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSMutableArray;
+
+@interface BTShowMoreItemCellViewModel : NSObject
+{
+    struct CGSize _showMoreLabelSize;
+    NSMutableArray *_showMoreLabelStyles;
+}
+
+@property(readonly, nonatomic) NSMutableArray *showMoreLabelStyles;
+@property(readonly, nonatomic) struct CGSize showMoreLabelSize;
+- (double)viewHeight;
+- (id)itemViewClassName;
+
+@end
+

@@ -1,0 +1,20 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@protocol WCPayLQTRedeemFundCgiDelegate;
+
+@interface WCPayLQTRedeemFundCgi : NSObject
+{
+    id <WCPayLQTRedeemFundCgiDelegate> _cgiDelegate;
+}
+
+@property(nonatomic) __weak id <WCPayLQTRedeemFundCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
+- (void)didFailWithError:(id)arg1;
+- (void)didGetResponse:(id)arg1;
+- (void)startRequest;
+- (id)initWithDelegate:(id)arg1 request:(id)arg2;
+
+@end
+

@@ -1,0 +1,18 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSString;
+
+@interface WCAdHalfScreenLiteAppModel : NSObject
+{
+    NSString *_appId;
+    NSString *_pid;
+}
+
+@property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
+@property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
+
+@end
+

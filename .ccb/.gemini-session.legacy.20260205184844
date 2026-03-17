@@ -1,0 +1,13 @@
+{
+  "session_id": "ai-1769949337-2258436",
+  "runtime_dir": "/tmp/claude-ai-root/ai-1769949337-2258436/gemini",
+  "terminal": "tmux",
+  "tmux_session": "gemini-49337-2258436",
+  "pane_id": null,
+  "work_dir": "/root/WeChat_tweak",
+  "active": true,
+  "started_at": "2026-02-01 20:35:37",
+  "gemini_session_path": "/root/.gemini/tmp/d73b00eddb96ebc7b2b5b5e892e1fb02336603275e94af72ce3d4995de95cd06/chats/session-2025-12-22T13-03-5fc0b44c.json",
+  "gemini_project_hash": "d73b00eddb96ebc7b2b5b5e892e1fb02336603275e94af72ce3d4995de95cd06",
+  "gemini_session_id": "5fc0b44c-f1b9-464a-ae4d-e5110f66a257"
+}

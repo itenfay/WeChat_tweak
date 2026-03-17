@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class FinderTabTipsDSLRenderTmpl_RenderNode_Color;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderTabTipsDSLRenderTmpl_RenderNode_RenderAttr_BorderAttr : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) FinderTabTipsDSLRenderTmpl_RenderNode_Color *color; // @dynamic color;
+@property(nonatomic) unsigned int size; // @dynamic size;
+
+@end
+

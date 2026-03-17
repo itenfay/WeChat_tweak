@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseRequest, NSString, TextStateInfo;
+
+@class WXPBGeneratedMessage;
+
+@interface CheckTextStateReq : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *appId; // @dynamic appId;
+@property(retain, nonatomic) BaseRequest *baseRequest; // @dynamic baseRequest;
+@property(retain, nonatomic) TextStateInfo *textStateInfo; // @dynamic textStateInfo;
+
+@end
+

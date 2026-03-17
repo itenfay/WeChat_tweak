@@ -1,0 +1,17 @@
+{
+  "session_id": "ai-1770527517-951642",
+  "ccb_session_id": "ai-1770527517-951642",
+  "ccb_project_id": "6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238",
+  "runtime_dir": "/tmp/claude-ai-root/ai-1770527517-951642/opencode",
+  "terminal": "tmux",
+  "tmux_session": null,
+  "pane_id": "%9",
+  "pane_title_marker": "CCB-OpenCode",
+  "work_dir": "/root/WeChat_tweak",
+  "work_dir_norm": "/root/WeChat_tweak",
+  "start_dir": "/root/WeChat_tweak",
+  "active": false,
+  "started_at": "2026-02-08 13:11:58",
+  "start_cmd": "export CCB_MANAGED=1; export CCB_PARENT_PID=951642; export CCB_RUN_DIR=/root/.cache/ccb/projects/6fbd6f9e869e6600; export PATH=/root/.local/share/codex-dual/bin:/tmp/opencode-official:/root/.codex/tmp/arg0/codex-arg0orMsk1:/usr/lib/node_modules/@openai/codex/vendor/x86_64-unknown-linux-musl/path:/root/.opencode/bin:/root/.cargo/bin:/root/.local/bin:/usr/lib/go-1.24/bin:/opt/theos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; opencode",
+  "ended_at": "2026-02-13 01:46:38"
+}

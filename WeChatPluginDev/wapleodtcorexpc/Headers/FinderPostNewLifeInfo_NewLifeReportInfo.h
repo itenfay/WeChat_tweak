@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSMutableArray;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderPostNewLifeInfo_NewLifeReportInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSMutableArray *guideContent; // @dynamic guideContent;
+@property(nonatomic) unsigned int isUseAssist; // @dynamic isUseAssist;
+
+@end
+

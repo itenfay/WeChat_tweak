@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSData;
+
+@class WXPBGeneratedMessage;
+
+@interface FinderHotWordJumpInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *jumpBypassInfo; // @dynamic jumpBypassInfo;
+@property(nonatomic) unsigned int jumpDest; // @dynamic jumpDest;
+@property(nonatomic) unsigned int jumpScene; // @dynamic jumpScene;
+
+@end
+

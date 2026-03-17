@@ -1,0 +1,18 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSArray, NSString;
+
+@interface MMSpecialMsgClusterSearchResult : NSObject
+{
+    NSString *_clusterUsername;
+    NSArray *_arrClusterMsgItem;
+}
+
+@property(retain, nonatomic) NSArray *arrClusterMsgItem; // @synthesize arrClusterMsgItem=_arrClusterMsgItem;
+@property(retain, nonatomic) NSString *clusterUsername; // @synthesize clusterUsername=_clusterUsername;
+
+@end
+

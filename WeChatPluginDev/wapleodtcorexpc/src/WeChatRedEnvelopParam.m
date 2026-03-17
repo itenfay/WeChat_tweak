@@ -6,20 +6,23 @@
 //
 
 #import "WeChatRedEnvelopParam.h"
+#import "WCPLSharedConfigHelpers.h"
 
 @implementation WeChatRedEnvelopParam
 
 - (NSDictionary *)toParams {
-    return @{
-             @"msgType": self.msgType,
-             @"sendId": self.sendId,
-             @"channelId": self.channelId,
-             @"nickName": self.nickName,
-             @"headImg": self.headImg,
-             @"nativeUrl": self.nativeUrl,
-             @"sessionUserName": self.sessionUserName,
-             @"timingIdentifier": self.timingIdentifier
-             };
+    NSDictionary *fields = @{
+        @"msgType": self.msgType ?: [NSNull null],
+        @"sendId": self.sendId ?: [NSNull null],
+        @"channelId": self.channelId ?: [NSNull null],
+        @"nickName": self.nickName ?: [NSNull null],
+        @"headImg": self.headImg ?: [NSNull null],
+        @"nativeUrl": self.nativeUrl ?: [NSNull null],
+        @"sessionUserName": self.sessionUserName ?: [NSNull null],
+        @"timingIdentifier": self.timingIdentifier ?: [NSNull null],
+        @"sign": self.sign ?: [NSNull null],
+    };
+    return WCPLBuildRedEnvelopParamsFromDictionary(fields);
 }
 
 @end

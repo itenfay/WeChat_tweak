@@ -1,0 +1,26 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface WCPayJumpActionItem : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *actionAppNickname; // @dynamic actionAppNickname;
+@property(retain, nonatomic) NSString *actionAppUsername; // @dynamic actionAppUsername;
+@property(nonatomic) unsigned int actionType; // @dynamic actionType;
+@property(retain, nonatomic) NSString *actionUrl; // @dynamic actionUrl;
+@property(nonatomic) unsigned int designerUin; // @dynamic designerUin;
+@property(nonatomic) unsigned int finderProfileTabIndex; // @dynamic finderProfileTabIndex;
+
+@end
+

@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BatchSearchHardDeviceFilter, NSMutableArray;
+
+@class WXPBGeneratedMessage;
+
+@interface BatchSearchHardDeviceReq : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(nonatomic) unsigned int batchSearchSence; // @dynamic batchSearchSence;
+@property(retain, nonatomic) BatchSearchHardDeviceFilter *searchFilter; // @dynamic searchFilter;
+@property(retain, nonatomic) NSMutableArray *searchInfo; // @dynamic searchInfo;
+
+@end
+

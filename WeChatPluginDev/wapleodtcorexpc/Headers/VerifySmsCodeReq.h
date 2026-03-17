@@ -1,0 +1,30 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseRequest, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface VerifySmsCodeReq : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *appid; // @dynamic appid;
+@property(retain, nonatomic) NSString *bankType; // @dynamic bankType;
+@property(retain, nonatomic) BaseRequest *baseRequest; // @dynamic baseRequest;
+@property(retain, nonatomic) NSMutableArray *categoryId; // @dynamic categoryId;
+@property(retain, nonatomic) NSString *optionalMobile; // @dynamic optionalMobile;
+@property(retain, nonatomic) NSString *payToken; // @dynamic payToken;
+@property(retain, nonatomic) NSString *phoneId; // @dynamic phoneId;
+@property(retain, nonatomic) NSString *ticket; // @dynamic ticket;
+@property(retain, nonatomic) NSString *verifyCode; // @dynamic verifyCode;
+@property(retain, nonatomic) NSString *verifyToken; // @dynamic verifyToken;
+
+@end
+

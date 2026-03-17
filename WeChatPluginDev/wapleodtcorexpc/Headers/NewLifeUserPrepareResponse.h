@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseResponse, NewLifeUserEntryRule;
+
+@class WXPBGeneratedMessage;
+
+@interface NewLifeUserPrepareResponse : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
+@property(nonatomic) unsigned long long finderattrFlag; // @dynamic finderattrFlag;
+@property(retain, nonatomic) NewLifeUserEntryRule *userEntryRule; // @dynamic userEntryRule;
+
+@end
+

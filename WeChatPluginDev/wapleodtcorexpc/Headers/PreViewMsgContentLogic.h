@@ -1,0 +1,18 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSMutableArray;
+
+@interface PreViewMsgContentLogic : NSObject
+{
+    NSMutableArray *m_msgs;
+}
+
+- (id)GetMessageArray;
+- (void)setMsgArray:(id)arg1;
+- (id)init;
+
+@end
+

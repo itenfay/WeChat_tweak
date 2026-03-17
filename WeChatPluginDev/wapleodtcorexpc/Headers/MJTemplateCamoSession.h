@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+typedef void (^CDUnknownBlockType)(void);
+
+@class OMJCamoSession;
+
+@interface MJTemplateCamoSession : NSObject
+{
+    OMJCamoSession *_camoSession;
+}
+
+@property(retain, nonatomic) OMJCamoSession *camoSession; // @synthesize camoSession=_camoSession;
+- (void)_destroyCameraSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_tearDownCameraSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)cleanUpMaasSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)_createMaasCameraSession;
+- (_Bool)createMaasSession;
+- (_Bool)canBeginUseTemplate;
+
+@end

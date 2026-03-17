@@ -1,0 +1,26 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class BaseResponse, JSAPIBaseResponse, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
+
+@interface JSAPIPreVerifyResponse : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *appHeadimgUrl; // @dynamic appHeadimgUrl;
+@property(retain, nonatomic) NSMutableArray *authWebCompt; // @dynamic authWebCompt;
+@property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
+@property(retain, nonatomic) NSMutableArray *domainPathList; // @dynamic domainPathList;
+@property(retain, nonatomic) JSAPIBaseResponse *jsapiBaseresponse; // @dynamic jsapiBaseresponse;
+@property(retain, nonatomic) NSMutableArray *verifyInfoList; // @dynamic verifyInfoList;
+
+@end
+

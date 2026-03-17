@@ -1,0 +1,106 @@
+#import "WCPLPickerDataProvider.h"
+#import "WCPLPickerItem.h"
+#import "WCPLContactAdapter.h"
+#import "WCPLPureHelpers.h"
+#import "WCPLServiceCenter.h"
+#import "WCPLTypeGuard.h"
+#import "WCPLWeChatContactHeaders.h"
+#import <objc/message.h>
+
+@implementation WCPLPickerDataProvider
+
++ (NSArray<WCPLPickerItem *> *)allPickerItems {
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!contactMgr) {
+        return @[];
+    }
+
+    NSMutableArray *sourceContacts = [NSMutableArray array];
+    NSArray<NSNumber *> *listTypes = @[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9];
+    NSArray<NSNumber *> *contactTypes = @[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9];
+    NSMutableSet<NSString *> *seenContactIdentifier = [NSMutableSet set];
+
+    for (NSNumber *listType in listTypes) {
+        for (NSNumber *contactType in contactTypes) {
+            NSArray *contacts = [self wcpl_contactListFromManager:contactMgr
+                                                         listType:(unsigned int)listType.unsignedIntValue
+                                                      contactType:(unsigned int)contactType.unsignedIntValue];
+            if (contacts.count == 0) {
+                continue;
+            }
+            for (id contact in contacts) {
+                if (!contact) {
+                    continue;
+                }
+                NSString *identifier = WCPLContactAdapterSafeUserName(contact);
+                if (identifier.length == 0 || [seenContactIdentifier containsObject:identifier]) {
+                    continue;
+                }
+                [seenContactIdentifier addObject:identifier];
+                [sourceContacts addObject:contact];
+            }
+        }
+    }
+
+    NSMutableOrderedSet<NSString *> *seen = [NSMutableOrderedSet orderedSet];
+    NSMutableArray<WCPLPickerItem *> *results = [NSMutableArray array];
+
+    for (id contact in sourceContacts) {
+        NSString *identifier = WCPLContactAdapterSafeUserName(contact);
+        if (identifier.length == 0 || [seen containsObject:identifier]) {
+            continue;
+        }
+
+        WCPLPickerItemType type = WCPLIsChatRoomName(identifier)
+                                 ? WCPLPickerItemTypeGroup
+                                 : WCPLPickerItemTypeUser;
+        NSString *displayName = WCPLContactAdapterDisplayNameForContact(contact, identifier) ?: identifier;
+        NSString *subtitle = type == WCPLPickerItemTypeGroup ? @"群聊" : @"联系人";
+
+        WCPLPickerItem *item = [[WCPLPickerItem alloc] initWithIdentifier:identifier
+                                                               displayName:displayName
+                                                                  subtitle:subtitle
+                                                                      type:type];
+        [results addObject:item];
+        [seen addObject:identifier];
+    }
+
+    [results sortUsingComparator:^NSComparisonResult(WCPLPickerItem *obj1, WCPLPickerItem *obj2) {
+        if (obj1.type != obj2.type) {
+            return obj1.type < obj2.type ? NSOrderedAscending : NSOrderedDescending;
+        }
+        return [obj1.displayName compare:obj2.displayName options:NSCaseInsensitiveSearch];
+    }];
+
+    return results.copy;
+}
+
++ (NSArray *)wcpl_contactListFromManager:(CContactMgr *)contactMgr
+                                listType:(unsigned int)listType
+                             contactType:(unsigned int)contactType {
+    if (!contactMgr) {
+        return @[];
+    }
+
+    NSArray *contacts = nil;
+    @try {
+        if ([contactMgr respondsToSelector:@selector(getContactList:contactType:needLoadExt:)]) {
+            contacts = ((id (*)(id, SEL, unsigned int, unsigned int, BOOL))objc_msgSend)(contactMgr,
+                                                                                           @selector(getContactList:contactType:needLoadExt:),
+                                                                                           listType,
+                                                                                           contactType,
+                                                                                           NO);
+        } else if ([contactMgr respondsToSelector:@selector(getContactList:contactType:)]) {
+            contacts = ((id (*)(id, SEL, unsigned int, unsigned int))objc_msgSend)(contactMgr,
+                                                                                    @selector(getContactList:contactType:),
+                                                                                    listType,
+                                                                                    contactType);
+        }
+    } @catch (__unused NSException *exception) {
+        contacts = nil;
+    }
+
+    return WCPLArrayOrNil(contacts) ?: @[];
+}
+
+@end

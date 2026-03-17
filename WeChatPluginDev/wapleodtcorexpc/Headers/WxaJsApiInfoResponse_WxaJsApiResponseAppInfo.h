@@ -1,0 +1,22 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+
+@class CheckJsApiInfo, WxaJsApiRequestAppInfo;
+
+@class WXPBGeneratedMessage;
+
+@interface WxaJsApiInfoResponse_WxaJsApiResponseAppInfo : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) WxaJsApiRequestAppInfo *appInfo; // @dynamic appInfo;
+@property(retain, nonatomic) CheckJsApiInfo *jsapiInfo; // @dynamic jsapiInfo;
+
+@end
+

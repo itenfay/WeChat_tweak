@@ -1,0 +1,17 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSArray;
+
+@interface MMFinderLiveReplayOperationCommentSnapShot : NSObject
+{
+    NSArray *_diffCommentItemArr;
+}
+
++ (id)createReplayOperationCommentSnapshotWithCommentItems:(id)arg1;
+@property(retain, nonatomic) NSArray *diffCommentItemArr; // @synthesize diffCommentItemArr=_diffCommentItemArr;
+
+@end
+

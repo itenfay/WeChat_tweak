@@ -1,0 +1,20 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class BarrageParamCard;
+
+@interface BarrageParamCardBtn : NSObject
+{
+    BarrageParamCard *_paramCard;
+}
+
+@property(retain, nonatomic) BarrageParamCard *paramCard; // @synthesize paramCard=_paramCard;
+- (void)updateBackgroundColor;
+- (id)getTitleColor;
+- (void)refreshUI;
+- (id)initWithParamCard:(id)arg1;
+
+@end
+

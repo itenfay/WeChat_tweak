@@ -1,0 +1,580 @@
+{
+  "trim_text": [
+    {
+      "name": "trim_whitespace",
+      "input": " \talice \n",
+      "expected": "alice"
+    },
+    {
+      "name": "empty_after_trim",
+      "input": " \n ",
+      "expected": null
+    },
+    {
+      "name": "reject_non_string",
+      "input": 123,
+      "expected": null
+    }
+  ],
+  "sanitize_identifier_array": [
+    {
+      "name": "trim_dedupe_and_drop_invalid",
+      "input": [
+        "  room@chatroom  ",
+        "",
+        123,
+        "room@chatroom",
+        "alice\n",
+        " alice "
+      ],
+      "expected": [
+        "room@chatroom",
+        "alice"
+      ]
+    }
+  ],
+  "query_value_for_key_in_url": [
+    {
+      "name": "percent_decode_and_trim",
+      "key": "sendusername",
+      "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendusername=%20alice%20&total_num=3",
+      "expected": "alice"
+    },
+    {
+      "name": "keep_first_matching_pair",
+      "key": "total_num",
+      "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?total_num=3&total_num=4",
+      "expected": "3"
+    },
+    {
+      "name": "empty_value_becomes_null",
+      "key": "sendUserName",
+      "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendUserName=%20%20",
+      "expected": null
+    },
+    {
+      "name": "decode_multibyte_utf8_value",
+      "key": "sendusername",
+      "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendusername=%E4%BD%A0%E5%A5%BD",
+      "expected": "你好"
+    }
+  ],
+  "decode_basic_xml_entities": [
+    {
+      "name": "nested_amp_entities",
+      "input": "&amp;lt;title&amp;gt;Hello&amp;lt;/title&amp;gt;",
+      "expected": "<title>Hello</title>"
+    },
+    {
+      "name": "plain_text_passthrough",
+      "input": "hello",
+      "expected": "hello"
+    },
+    {
+      "name": "empty_input",
+      "input": "",
+      "expected": null
+    }
+  ],
+  "extract_xml_value": [
+    {
+      "name": "cdata_segment",
+      "xml": "<msg><title><![CDATA[ 引用标题 ]]></title></msg>",
+      "open_tag": "<title><![CDATA[",
+      "close_tag": "]]></title>",
+      "expected": "引用标题"
+    },
+    {
+      "name": "missing_tag_returns_null",
+      "xml": "<msg></msg>",
+      "open_tag": "<title>",
+      "close_tag": "</title>",
+      "expected": null
+    }
+  ],
+  "extract_quote_title_from_xml": [
+    {
+      "name": "plain_cdata_title",
+      "input": "<msg><title><![CDATA[  引用标题  ]]></title></msg>",
+      "expected": "引用标题"
+    },
+    {
+      "name": "encoded_plain_title",
+      "input": "&lt;msg&gt;&lt;title&gt;  Encoded Title  &lt;/title&gt;&lt;/msg&gt;",
+      "expected": "Encoded Title"
+    },
+    {
+      "name": "missing_title",
+      "input": "<msg></msg>",
+      "expected": null
+    }
+  ],
+  "is_chatroom_name": [
+    {
+      "name": "trimmed_chatroom",
+      "input": " room@chatroom ",
+      "expected": true
+    },
+    {
+      "name": "case_insensitive_chatroom",
+      "input": "ROOM@CHATROOM",
+      "expected": true
+    },
+    {
+      "name": "non_chatroom",
+      "input": "alice",
+      "expected": false
+    }
+  ],
+  "normalize_mention_candidate": [
+    {
+      "name": "strip_prefix_and_suffix",
+      "input": " @alice: ",
+      "expected": "alice"
+    },
+    {
+      "name": "chatroom_rejected",
+      "input": " room@chatroom ",
+      "expected": null
+    },
+    {
+      "name": "whitespace_rejected",
+      "input": "alice bob",
+      "expected": null
+    }
+  ],
+  "extract_mention_candidate_from_xml": [
+    {
+      "name": "memberusername_cdata",
+      "input": "<msgsource><memberusername><![CDATA[ @alice: ]]></memberusername></msgsource>",
+      "expected": "alice"
+    },
+    {
+      "name": "senderusername_encoded",
+      "input": "&lt;msgsource&gt;&lt;senderusername&gt;bob&lt;/senderusername&gt;&lt;/msgsource&gt;",
+      "expected": "bob"
+    },
+    {
+      "name": "invalid_chatroom_returns_null",
+      "input": "<msgsource><memberusername><![CDATA[ room@chatroom ]]></memberusername></msgsource>",
+      "expected": null
+    }
+  ],
+  "extract_mention_candidate_from_group_content_prefix": [
+    {
+      "name": "prefix_first_line",
+      "input": " @carol: \nhello",
+      "expected": "carol"
+    },
+    {
+      "name": "missing_newline",
+      "input": " @carol: ",
+      "expected": null
+    }
+  ],
+  "extract_voice_attr_uint": [
+    {
+      "name": "plain_voicelength",
+      "xml": "<msg><voicemsg voicelength=\"4321\" voiceformat=\"4\" /></msg>",
+      "attr_name": "voicelength",
+      "expected": 4321
+    },
+    {
+      "name": "encoded_voiceformat",
+      "xml": "&lt;msg&gt;&lt;voicemsg voiceformat=&quot;7&quot; /&gt;&lt;/msg&gt;",
+      "attr_name": "voiceformat",
+      "expected": 7
+    },
+    {
+      "name": "missing_attr",
+      "xml": "<msg><voicemsg voicelength=\"4321\" /></msg>",
+      "attr_name": "voiceformat",
+      "expected": 0
+    }
+  ],
+  "build_minimal_voice_content": [
+    {
+      "name": "explicit_values",
+      "voice_length_ms": 4321,
+      "voice_format": 7,
+      "expected": "<msg><voicemsg voicelength=\"4321\" voiceformat=\"7\" forwardflag=\"0\" /></msg>"
+    },
+    {
+      "name": "defaults_for_zero_values",
+      "voice_length_ms": 0,
+      "voice_format": 0,
+      "expected": "<msg><voicemsg voicelength=\"1000\" voiceformat=\"4\" forwardflag=\"0\" /></msg>"
+    }
+  ],
+  "quote_refer_server_id_from_content": [
+    {
+      "name": "plain_svrid",
+      "input": "<msg><refermsg><svrid><![CDATA[123456789]]></svrid></refermsg></msg>",
+      "expected": 123456789
+    },
+    {
+      "name": "encoded_msgsvrid",
+      "input": "&lt;msg&gt;&lt;refermsg&gt;&lt;msgsvrid&gt;987654321&lt;/msgsvrid&gt;&lt;/refermsg&gt;&lt;/msg&gt;",
+      "expected": 987654321
+    },
+    {
+      "name": "missing_refer_section",
+      "input": "<msg></msg>",
+      "expected": 0
+    }
+  ],
+  "sanitize_ignore_dictionary": [
+    {
+      "name": "trim_and_keep_truthy_string_keys",
+      "input": {
+        "  ": true,
+        " alice ": true,
+        "bob": 0,
+        "carol": "1",
+        "dave": "false",
+        "erin": "YES"
+      },
+      "expected": {
+        "alice": true,
+        "carol": true,
+        "erin": true
+      }
+    }
+  ],
+  "sanitize_reply_text": [
+    {
+      "name": "trim_reply_text",
+      "input": "  hello  ",
+      "expected": "hello"
+    },
+    {
+      "name": "empty_reply_text_becomes_empty_string",
+      "input": "  \n ",
+      "expected": ""
+    },
+    {
+      "name": "non_string_reply_text_becomes_empty_string",
+      "input": 123,
+      "expected": ""
+    }
+  ],
+  "build_red_envelop_params": [
+    {
+      "name": "full_fields_and_query_extraction",
+      "input": {
+        "msgType": 1,
+        "sendId": "sid_123",
+        "channelId": 7,
+        "nickName": "Alice",
+        "headImg": "https://example.com/a.png",
+        "nativeUrl": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendUserName=%20alice%20&total_num=3",
+        "sessionUserName": "room@chatroom",
+        "timingIdentifier": "tid_9",
+        "sign": "sig_456"
+      },
+      "expected": {
+        "msgType": "1",
+        "sendId": "sid_123",
+        "channelId": "7",
+        "nickName": "Alice",
+        "headImg": "https://example.com/a.png",
+        "nativeUrl": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendUserName=%20alice%20&total_num=3",
+        "sessionUserName": "room@chatroom",
+        "timingIdentifier": "tid_9",
+        "sign": "sig_456",
+        "sendUserName": "alice",
+        "total_num": "3",
+        "agreeDuty": "0",
+        "inWay": "0"
+      }
+    },
+    {
+      "name": "required_defaults_survive_missing_optional_fields",
+      "input": {
+        "sendId": "sid_only",
+        "nativeUrl": ""
+      },
+      "expected": {
+        "sendId": "sid_only",
+        "agreeDuty": "0",
+        "inWay": "0"
+      }
+    }
+  ],
+  "resolve_red_envelop_group_scope": [
+    {
+      "name": "default_scope_uses_allowed_group_presence",
+      "scope": null,
+      "allowed_groups": [
+        " room@chatroom ",
+        ""
+      ],
+      "expected": 1
+    },
+    {
+      "name": "default_scope_without_allowed_groups",
+      "scope": null,
+      "allowed_groups": [],
+      "expected": 0
+    },
+    {
+      "name": "invalid_scope_falls_back_to_default",
+      "scope": 99,
+      "allowed_groups": [
+        "room@chatroom"
+      ],
+      "expected": 1
+    },
+    {
+      "name": "valid_scope_is_preserved",
+      "scope": 2,
+      "allowed_groups": [],
+      "expected": 2
+    },
+    {
+      "name": "nonnumeric_string_matches_integer_value_semantics",
+      "scope": "abc",
+      "allowed_groups": [
+        "room@chatroom"
+      ],
+      "expected": 0
+    }
+  ],
+  "normalize_red_envelop_notify_target": [
+    {
+      "name": "missing_value_defaults_to_disabled",
+      "input": null,
+      "expected": 0
+    },
+    {
+      "name": "valid_value_is_preserved",
+      "input": 2,
+      "expected": 2
+    },
+    {
+      "name": "invalid_value_resets_to_disabled",
+      "input": 99,
+      "expected": 0
+    },
+    {
+      "name": "nonnumeric_string_becomes_zero",
+      "input": "abc",
+      "expected": 0
+    }
+  ],
+  "resolve_quit_monitor_scope": [
+    {
+      "name": "default_scope_uses_valid_chatroom_whitelist",
+      "scope": null,
+      "whitelist_info": {
+        " room@chatroom ": true,
+        "not_chatroom": true
+      },
+      "expected": 1
+    },
+    {
+      "name": "default_scope_without_valid_chatroom_whitelist",
+      "scope": null,
+      "whitelist_info": {
+        "not_chatroom": true
+      },
+      "expected": 0
+    },
+    {
+      "name": "invalid_scope_falls_back_to_default",
+      "scope": 7,
+      "whitelist_info": {
+        " room@chatroom ": true
+      },
+      "expected": 1
+    },
+    {
+      "name": "valid_scope_is_preserved",
+      "scope": 1,
+      "whitelist_info": {},
+      "expected": 1
+    },
+    {
+      "name": "nonnumeric_string_matches_integer_value_semantics",
+      "scope": "abc",
+      "whitelist_info": {
+        "room@chatroom": true
+      },
+      "expected": 0
+    }
+  ],
+  "sanitize_inline_text": [
+    {
+      "name": "replace_line_breaks_and_trim",
+      "input": "  hello\r\nworld  ",
+      "max_len": 0,
+      "expected": "hello  world"
+    },
+    {
+      "name": "truncate_with_ellipsis",
+      "input": "abcdef",
+      "max_len": 4,
+      "expected": "abcd…"
+    },
+    {
+      "name": "empty_input_returns_null",
+      "input": "  ",
+      "max_len": 10,
+      "expected": null
+    }
+  ],
+  "extract_revoker_name_from_replace_text": [
+    {
+      "name": "quoted_name",
+      "input": "\"Alice\"撤回了一条消息",
+      "expected": "Alice"
+    },
+    {
+      "name": "colon_prefixed_name",
+      "input": "[系统]：Bob撤回了一条消息",
+      "expected": "Bob"
+    },
+    {
+      "name": "missing_revoke_phrase",
+      "input": "normal text",
+      "expected": null
+    }
+  ],
+  "extract_revoked_content_from_replace_text": [
+    {
+      "name": "fullwidth_colon",
+      "input": "\"Alice\"撤回了一条消息 原消息：hello world",
+      "expected": "hello world"
+    },
+    {
+      "name": "ascii_colon",
+      "input": "\"Alice\"撤回了一条消息 原消息: hello world",
+      "expected": "hello world"
+    },
+    {
+      "name": "missing_original_message",
+      "input": "\"Alice\"撤回了一条消息",
+      "expected": null
+    }
+  ],
+  "is_sysmsg_template_content": [
+    {
+      "name": "sysmsg_template_xml",
+      "input": "<sysmsg type=\"sysmsgtemplate\"><content /></sysmsg>",
+      "expected": true
+    },
+    {
+      "name": "plain_text_not_sysmsg_template",
+      "input": "hello",
+      "expected": false
+    }
+  ],
+  "plain_text_from_sysmsg_template_content": [
+    {
+      "name": "plain_cdata_payload",
+      "input": "<sysmsg type=\"sysmsgtemplate\"><plain><![CDATA[[退群监控] Alice 退出了群聊]]></plain></sysmsg>",
+      "expected": "[退群监控] Alice 退出了群聊"
+    },
+    {
+      "name": "missing_plain_payload",
+      "input": "<sysmsg type=\"sysmsgtemplate\"></sysmsg>",
+      "expected": null
+    }
+  ],
+  "alert_tip_display_text_from_content": [
+    {
+      "name": "prefer_plain_text_from_template",
+      "input": "<sysmsg type=\"sysmsgtemplate\"><plain><![CDATA[[退群监控] Alice 退出了群聊]]></plain></sysmsg>",
+      "expected": "[退群监控] Alice 退出了群聊"
+    },
+    {
+      "name": "plain_text_passthrough",
+      "input": "已拦截撤回",
+      "expected": "已拦截撤回"
+    }
+  ],
+  "should_tint_alert_tip_display_text": [
+    {
+      "name": "revoke_tip",
+      "input": "\"Alice\"撤回了一条消息",
+      "expected": true
+    },
+    {
+      "name": "quit_monitor_tip",
+      "input": "[退群监控] Alice 退出了群聊",
+      "expected": true
+    },
+    {
+      "name": "normal_text",
+      "input": "hello",
+      "expected": false
+    }
+  ],
+  "quit_monitor_is_date_like_text": [
+    {
+      "name": "timestamp",
+      "input": "2026-02-26 16:51:23",
+      "expected": true
+    },
+    {
+      "name": "normal_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": false
+    }
+  ],
+  "quit_monitor_is_low_signal_system_text": [
+    {
+      "name": "msgsource_xml",
+      "input": "<msgsource><atuserlist><![CDATA[x]]></atuserlist></msgsource>",
+      "expected": true
+    },
+    {
+      "name": "quit_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": false
+    }
+  ],
+  "quit_monitor_looks_like_quit_system_text": [
+    {
+      "name": "quit_sentence",
+      "input": "Alice 退出了群聊",
+      "expected": true
+    },
+    {
+      "name": "revoke_sentence",
+      "input": "\"Alice\"撤回了一条消息",
+      "expected": false
+    }
+  ],
+  "quit_monitor_select_best_system_text": [
+    {
+      "name": "prefer_quit_text_over_revoke_text",
+      "input": [
+        "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息",
+        "Alice 退出了群聊"
+      ],
+      "expected": "Alice 退出了群聊"
+    },
+    {
+      "name": "fallback_to_only_candidate",
+      "input": [
+        "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息"
+      ],
+      "expected": "2026-02-26 16:51:23\n\"传奇爆破兵\"撤回了一条消息"
+    },
+    {
+      "name": "prefer_raw_quit_text_over_local_tip",
+      "input": [
+        "[退群监控] Alice 退出了群聊",
+        "Alice 退出了群聊"
+      ],
+      "expected": "Alice 退出了群聊"
+    }
+  ],
+  "quit_monitor_pending_retry_schedule_seconds": [
+    {
+      "name": "default_schedule",
+      "expected": [0.8, 2.0, 5.0, 15.0, 60.0, 300.0, 900.0, 1800.0, 7200.0]
+    }
+  ]
+}

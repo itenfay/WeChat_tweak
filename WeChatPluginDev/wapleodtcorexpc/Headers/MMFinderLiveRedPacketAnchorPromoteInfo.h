@@ -1,0 +1,18 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class FinderLivePromoteInfoRedPacketCover;
+
+@interface MMFinderLiveRedPacketAnchorPromoteInfo : NSObject
+{
+    FinderLivePromoteInfoRedPacketCover *_redPacketInfo;
+}
+
++ (id)createRedPacketAnchorPromoteInfoFrom:(id)arg1;
+@property(retain, nonatomic) FinderLivePromoteInfoRedPacketCover *redPacketInfo; // @synthesize redPacketInfo=_redPacketInfo;
+- (id)promoteKey;
+
+@end
+

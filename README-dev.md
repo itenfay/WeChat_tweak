@@ -2,6 +2,34 @@
 
 在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [GitHub](Dynamic%20library/dylib) 中有提供，即是 libsubstrate.dylib 。
 
+## 实时日志上传（仓库本地）
+
+本项目内置一个简单的日志上传服务端 `scripts/log_server.py`，配合插件内的“实时上传调试日志”开关，可把设备端调试日志增量写入到本仓库目录，方便直接查看实时输出并定位问题。
+
+1. 在仓库根目录启动日志服务：
+
+```
+python3 "scripts/log_server.py" --host 0.0.0.0 --port 8099
+```
+
+2. 在微信辣椒设置中：
+
+- 打开“启用调试日志”
+- 设置“日志上传地址”为 `http://<你的电脑IP>:8099/wcpl_log`
+- 打开“实时上传调试日志”
+
+3. 在仓库本地查看实时日志：
+
+```
+tail -f "logs/live/wcpl_debug_live.log"
+```
+
+说明：
+
+- `logs/live/`：实时追加文件（支持 append/replace）
+- `logs/`：手动上传生成的时间戳快照
+- 默认 `.gitignore` 会忽略 `logs/`，避免日志污染仓库；如需纳入版本管理请自行调整
+
 
 ## 打开终端
 

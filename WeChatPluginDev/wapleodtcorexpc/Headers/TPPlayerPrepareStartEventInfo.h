@@ -1,0 +1,17 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSString;
+
+@interface TPPlayerPrepareStartEventInfo : NSObject
+{
+    NSString *_flowId;
+}
+
+@property(retain, nonatomic) NSString *flowId; // @synthesize flowId=_flowId;
+- (id)init;
+
+@end
+

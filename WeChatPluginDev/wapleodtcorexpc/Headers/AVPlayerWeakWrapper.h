@@ -1,0 +1,19 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@class AVPlayer;
+
+@interface AVPlayerWeakWrapper : NSObject
+{
+    AVPlayer *_player;
+}
+
++ (id)wrapperWithPlayer:(id)arg1;
+@property(nonatomic) __weak AVPlayer *player; // @synthesize player=_player;
+
+@end
+

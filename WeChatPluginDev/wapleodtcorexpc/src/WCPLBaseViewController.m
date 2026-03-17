@@ -6,70 +6,55 @@
 //
 
 #import "WCPLBaseViewController.h"
-#import "WeChatRedEnvelop.h"
-#import <objc/objc-runtime.h>
+
+#import "WCPLLoadingViewHelpers.h"
+#import "WCPLLogger.h"
 
 @interface WCPLBaseViewController ()
 
-@property (strong, nonatomic) MMLoadingView *loadingView;
+@property (strong, nonatomic) id loadingView;
 
 @end
 
 @implementation WCPLBaseViewController
 
 - (void)startLoadingBlocked {
-    if (!self.loadingView) {
-        self.loadingView = [self createDefaultLoadingView];
-        [self.view addSubview:self.loadingView];
-    } else {
-        [self.view bringSubviewToFront:self.loadingView];
+    if (self.loadingView) {
+        @try {
+            [self.loadingView removeFromSuperview];
+        } @catch (NSException *exception) { WCPLCatchLog(exception); }
+        self.loadingView = nil;
     }
-    
-    [self.loadingView setM_bIgnoringInteractionEventsWhenLoading:YES];
-    [self.loadingView setFitFrame:1];
-    [self.loadingView startLoading];
+
+    self.loadingView = WCPLLoadingViewCreateAndStart(self.view, nil, YES);
 }
 
 - (void)startLoadingNonBlock {
-    if (!self.loadingView) {
-        self.loadingView = [self createDefaultLoadingView];
-        [self.view addSubview:self.loadingView];
-    } else {
-        [self.view bringSubviewToFront:self.loadingView];
+    if (self.loadingView) {
+        @try {
+            [self.loadingView removeFromSuperview];
+        } @catch (NSException *exception) { WCPLCatchLog(exception); }
+        self.loadingView = nil;
     }
-    
-    [self.loadingView setM_bIgnoringInteractionEventsWhenLoading:NO];
-    [self.loadingView setFitFrame:1];
-    [self.loadingView startLoading];
+
+    self.loadingView = WCPLLoadingViewCreateAndStart(self.view, nil, NO);
 }
 
 - (void)startLoadingWithText:(NSString *)text {
     [self startLoadingNonBlock];
-    [self.loadingView.m_label setText:text];
-}
-
-- (MMLoadingView *)createDefaultLoadingView {
-    MMLoadingView *loadingView     = [[objc_getClass("MMLoadingView") alloc] init];
-    
-    MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
-    MMLanguageMgr *languageMgr     = [serviceCenter getService:objc_getClass("MMLanguageMgr")];
-    NSString *loadingText          = [languageMgr getStringForCurLanguage:@"Common_DefaultLoadingText"];
-    
-    [loadingView.m_label setText:loadingText];
-    
-    return loadingView;
+    WCPLLoadingViewSetText(self.loadingView, text);
 }
 
 - (void)stopLoading {
-    [self.loadingView stopLoading];
+    WCPLLoadingViewStop(self.loadingView);
 }
 
 - (void)stopLoadingWithFailText:(NSString *)text {
-    [self.loadingView stopLoadingAndShowError:text];
+    WCPLLoadingViewStopWithResult(self.loadingView, NO, text);
 }
 
 - (void)stopLoadingWithOKText:(NSString *)text {
-    [self.loadingView stopLoadingAndShowOK:text];
+    WCPLLoadingViewStopWithResult(self.loadingView, YES, text);
 }
 
 @end

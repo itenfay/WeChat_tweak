@@ -7,39 +7,35 @@
 
 #import <Foundation/Foundation.h>
 
-@class CContact;
+typedef NS_ENUM(NSInteger, WCPLRedEnvelopNotifyTarget) {
+    WCPLRedEnvelopNotifyTargetDisabled = 0,
+    WCPLRedEnvelopNotifyTargetSelf = 1,
+    WCPLRedEnvelopNotifyTargetFileHelper = 2,
+};
 
 @interface WCPLRedEnvelopConfig : NSObject
 
 + (instancetype)sharedConfig;
++ (instancetype)configWithDefaults:(NSUserDefaults *)defaults;
+
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
 
 @property (assign, nonatomic) BOOL autoReceiveEnable;
+@property (assign, nonatomic) BOOL privateRedEnvelopEnable;
+@property (assign, nonatomic) BOOL groupRedEnvelopEnable;
 @property (assign, nonatomic) NSInteger delaySeconds;
 @property (assign, nonatomic) BOOL receiveSelfRedEnvelop;
 @property (assign, nonatomic) BOOL serialReceive;
-@property (strong, nonatomic) NSArray *blackList;
+@property (assign, nonatomic) NSInteger groupRedEnvelopScope;
+@property (strong, nonatomic) NSArray *allowedGroupList;
+@property (strong, nonatomic) NSArray *blockedGroupList;
+@property (copy, nonatomic) NSString *privateAutoReplyText;
+@property (copy, nonatomic) NSString *groupAutoReplyText;
+@property (assign, nonatomic) NSInteger redEnvelopNotifyTarget;
+@property (assign, nonatomic) BOOL receiveDonePageSummaryEnable;
 
-// Advanced sections.
-@property (assign, nonatomic) BOOL revokeEnable;
-
-// Step count.
-@property (assign, nonatomic) NSInteger stepCount;
-@property (strong, nonatomic) NSDate *lastChangeStepCountDate;
-
-- (void)saveLastChangeStepCountDateToLocalFile;
-
-// Filt Messages.
-@property ( copy , nonatomic) NSString *curUsrName;
-@property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *chatIgnoreInfo;
-
-- (void)saveChatIgnoreNameListToLocalFile;
-
-// Fake Location.
-@property (assign, nonatomic) double lat;
-@property (assign, nonatomic) double lng;
-@property (assign, nonatomic) BOOL fakeLocEnable;
-
-// TP.
-@property (assign, nonatomic) BOOL TPOn;
+// 旧命名（保持向后兼容）
+@property (strong, nonatomic) NSArray *blackList __attribute__((deprecated("Use allowedGroupList")));
+@property (strong, nonatomic) NSArray *groupDenyList __attribute__((deprecated("Use blockedGroupList")));
 
 @end
